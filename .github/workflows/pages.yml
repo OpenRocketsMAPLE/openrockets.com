@@ -30,10 +30,23 @@ jobs:
           rm -rf /tmp/openrockets-pages
           mkdir -p /tmp/openrockets-pages
 
-          rsync -a ./ /tmp/openrockets-pages/             --exclude='.git/'             --exclude='.github/'             --exclude='README.md'             --exclude='scripts/'             --exclude='recovery_snapshot/'
+          rsync -a ./ /tmp/openrockets-pages/ \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='README.md' \
+            --exclude='scripts/' \
+            --exclude='recovery_snapshot/'
 
-          touch /tmp/openrockets-pages/.nojekyll
           test -f /tmp/openrockets-pages/index.html
+
+      - name: Rewrite project-Pages paths and archived static dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          python .github/scripts/rewrite_pages_paths.py \
+            /tmp/openrockets-pages \
+            /openrockets.com
+          touch /tmp/openrockets-pages/.nojekyll
 
       - name: Publish gh-pages branch
         shell: bash

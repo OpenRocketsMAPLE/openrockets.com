@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import asyncio
 import json
+import os
 import re
 import time
 from pathlib import Path
@@ -9,7 +10,7 @@ from urllib.parse import urljoin, urlparse
 from playwright.async_api import async_playwright
 
 LIVE = "https://openrockets.com/"
-RECOVERED = "https://openrocketsmaple.github.io/openrockets.com/"
+RECOVERED = os.environ.get("RECOVERED_BASE", "https://openrocketsmaple.github.io/openrockets.com/")
 OUT = Path(".github/recovery-audit/live-vs-pages")
 OUT.mkdir(parents=True, exist_ok=True)
 

@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <title>Team | OpenRockets</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Meet the team behind OpenRockets — an infrastructure service provider for nonprofits worldwide, run by exceptional minors and teenagers.">
+  
+  <link rel="icon" type="image/png" href="../i/assets/static/openthread_logo_bash-trans-removebg-preview (1).png">
+  <link rel="canonical" href="https://openrockets.com/team">
+
+  <!-- Core Layout and Interactive Styles -->
+  <link rel="stylesheet" href="https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/01e4fd07fe2a2b12.css">
+  <link rel="stylesheet" href="https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/112bd7743768f461.css">
+  <link rel="stylesheet" href="https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/43d635cdf484757e.css">
+  <link rel="stylesheet" href="https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/05b42ab6014b2d13.css">
+  <link rel="stylesheet" href="https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/e07e144a3b1db9ca.css">
+  <link rel="stylesheet" href="https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/3046c2816c2ffd6e.css">
+  <link rel="stylesheet" href="https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/b793c34868bb4156.css">
+  <link rel="stylesheet" href="https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/d829866f0dc0cad9.css">
+  <link rel="stylesheet" href="https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/7fe9607f2fcd2964.css">
+  <link rel="stylesheet" href="https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/5e8a245fcb880dab.css">
+  <link rel="stylesheet" href="../styles/overrides.css">
+
+  <meta property="og:image" content="https://yourwebsite.com">
+  <meta property="og:title" content="Team | OpenRockets">
+  <meta property="og:description" content="Meet the team behind OpenRockets — an infrastructure service provider for nonprofits worldwide run by exceptional minors and teenagers.">
+  <meta property="og:url" content="https://openrockets.com/team">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="https://openrockets.com/studios/assets/images/trash.png.jpg">
+
+  <style>
+    .team-page {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 28px 80px;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    }
+
+    .team-category {
+      margin-bottom: 64px;
+    }
+
+    .team-category-name {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      color: #000000;
+      margin-bottom: 28px;
+      border-bottom: 1px solid #000000;
+      padding-bottom: 10px;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px 32px;
+    }
+
+    @media (max-width: 768px) {
+      .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px 24px;
+      }
+      .team-page {
+        padding-top: 185px;
+      }
+      .team-banner-img {
+        height: 200px !important;
+        object-fit: cover !important;
+        margin-bottom: 24px !important;
+      }
+      .team-member-avatar {
+        width: 80% !important;
+        height: auto !important;
+        max-width: 250px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px 20px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .team-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+    .team-member {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .team-member-avatar {
+      width: 80%;
+      max-width: 250px;
+      height: auto;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      margin-bottom: 12px;
+      background: #000000;
+    }
+
+    .team-member-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #000000;
+      margin-bottom: 2px;
+      line-height: 1.3;
+    }
+
+    .team-member-location {
+      font-size: 12px;
+      color: #000000;
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .team-member-email-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .team-member-email {
+      font-size: 12px;
+      color: #000000;
+      text-decoration: none;
+      line-height: 1.3;
+    }
+
+    .team-member-email:hover {
+      text-decoration: underline;
+    }
+
+    .copy-email-btn {
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      color: #000000;
+    }
+
+    .copy-email-btn:hover {
+      opacity: 0.6;
+    }
+
+    .copy-email-btn svg {
+      width: 13px;
+      height: 13px;
+    }
+
+    .copy-email-btn.copied svg {
+      color: #22c55e;
+    }
+  
+    .team-category--management {
+      position: relative;
+      left: 50%;
+      width: min(1120px, calc(100vw - 56px));
+      transform: translateX(-50%);
+    }
+    .management-profile-list {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 24px;
+    }
+    .management-profile-frame {
+      display: block;
+      width: 100%;
+      height: 286px;
+      border: 0;
+      background: #fbfbfd;
+      overflow: hidden;
+    }
+    @media (max-width: 600px) {
+      .team-category--management { width: calc(100vw - 32px); }
+      .management-profile-list { gap: 14px; }
+      .management-profile-frame { height: 210px; }
+    }
+  </style>
+</head>
+
+<body style="padding-top: 0rem;">
+  
+    <style>
+        :root{
+            --hds-color-button-primary-bg:rgb(0, 235, 152);
+        }
+    </style>
+<div id="__next">
+    <div>
+      <div class="mobile-safari-solid-bars"></div>
+
+      <!-- ========================================== -->
+      <!--            HEADER / NAVIGATION             -->
+      <!-- ========================================== -->
+      <header id="main-header" style="position: sticky; top: 0; left: 0; width: 100%; filter: invert(1); background-color: white; z-index: 10000; transition: transform 0.3s ease;" class="hds-color-mode navigation section section--white hds-mode--light">
+        <div class="section-container navigation__layout" style="display: flex; width: 100%; max-width: 100%; padding: 0 20px;">
+          <nav class="hds-navigation-menu navigation-menu navigation-menu--homepage" id="navigation-menu" style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            
+            <!-- OpenRockets Brand Logo -->
+            <div style="flex: 1; display: flex; align-items: center; justify-content: flex-start; padding-left: 15px;">
+              <a href="/" style="text-decoration: none;">
+                <img src="../v/openrockets.png" alt="OpenRockets Logo" style="filter: invert(1); width: 130px; background-color: transparent;">
+              </a>
+            </div>
+
+            <!-- Menu Links -->
+            <div class="hds-navigation-menu__content navigation-menu-content" data-status="unmounted" style="flex: 2; display: flex; justify-content: center;">
+              <ul class="hds-navigation-menu__list navigation-menu-list hds-navigation-menu__list--horizontal" style="display: flex; gap: 1.5rem; padding: 0; margin: 0; list-style: none; align-items: center; justify-content: center;">
+                <a style="text-decoration: none;"  href="https://zeroprofit.org" class="hds-navigation-menu__item navigation-item">
+                  <button type="button" class="hds-button hds-navigation-menu__trigger hds-button--transparent">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-patch-check-fill" viewBox="0 0 16 16">
+                      <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708"/>
+                    </svg>
+                    Register your NonProfit
+                  </button>
+                </a>
+                <a style="text-decoration: none;"  href="https://ads.openrockets.com" class="hds-navigation-menu__item navigation-item">
+                  <button type="button" class="hds-button hds-navigation-menu__trigger hds-button--transparent">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+                      <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
+                    </svg>
+                    Advertise for free
+                  </button>
+                </a>
+                <a style="text-decoration: none;"  href="https://press.openrockets.com" class="hds-navigation-menu__item navigation-item">
+                  <button type="button" class="hds-button hds-navigation-menu__trigger hds-button--transparent">
+                    <img src="../i/assets/static/openthread_logo_bash-trans-removebg-preview (1).png" style="width: 20px; filter: invert(1) hue-rotate(45deg);" alt="">
+                    Upload Artifacts
+                  </button>
+                </a>
+                <a style="text-decoration: none;"  href="https://about.openrockets.com/" class="hds-navigation-menu__item navigation-item">
+                  <button type="button" class="hds-button hds-navigation-menu__trigger hds-button--transparent">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-fill" viewBox="0 0 16 16">
+                      <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9 9 0 0 0 8 15"/>
+                    </svg> 
+                    Here to help!
+                  </button>
+                </a>
+                <a href="/our-communities/" style="text-decoration: none;" class="hds-navigation-menu__item navigation-item">
+                  <button type="button" class="hds-button hds-navigation-menu__trigger hds-button--transparent">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-discord" viewBox="0 0 16 16">
+                      <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"/>
+                    </svg> 
+                    Chat with others
+                  </button>
+                </a>
+              </ul>
+            </div>
+
+            <!-- Header Action Buttons -->
+            <div style="flex: 1; display: flex; justify-content: flex-end;">
+              <ul class="navigation-buttons" style="margin: 0; padding: 0;">
+                <li class="hds-navigation-menu__item navigation-item">
+                  <a class="hds-button navigation-cta-button navigation-item__sign-in hds-button--secondary-on-quiet" href="../join.html">
+                    <span class="navigation-button-measure">Apply</span>
+                  </a>
+                </li>
+                <li class="hds-navigation-menu__item navigation-item">
+                  <a class="hds-button navigation-cta-button navigation-item__contact-sales hds-button--primary" href="/our-communities/">
+                    Chat with others
+                    <svg class="hds-icon hds-icon-hover-arrow" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M0.5 5.5h7"></path>
+                      <path d="M1.5 1.5l4 4-4 4"></path>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <!-- ========================================== -->
+      <!--              TEAM PAGE CONTENT             -->
+      <!-- ========================================== -->
+      <main id="main-content" style="padding-top: 4.75rem;">
+        <div class="team-page">
+          <img class="team-banner-img" src="../v/bannerteam.png" alt="Team Banner" style="width: 100%; height: auto; margin-top: 32px; margin-bottom: 64px; display: block; border-radius: 8px;">
+
+          <!-- Advisors -->
+          <div class="team-category">
+            <div class="team-category-name">Advisors</div>
+            <div class="team-grid">
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Dr. Fahim Islam">
+                <div class="team-member-name">Dr. Fahim Islam</div>
+                <div class="team-member-location">Bangladesh</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#2244434a4b4f4b514e434f4057514b4c47515162454f434b4e0c414d4f"><span class="__cf_email__" data-cfemail="1b7d7a7372767268777a76796e6872757e68685b7c767a727735787476">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'fahimislambusiness@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Management -->
+          <div class="team-category team-category--management">
+            <div class="team-category-name">Management Division</div>
+            <div class="management-profile-list" aria-label="OpenRockets management profiles">
+              <iframe class="management-profile-frame" src="./management-profile.html?person=hugo-torres&v=20261029-6" title="Hugo Torres — Chief Information Officer" loading="lazy" scrolling="no"></iframe>
+              <iframe class="management-profile-frame" src="./management-profile.html?person=arjun-jamgade&v=20261029-6" title="Arjun Jamgade — Project Lead at OpenRockets MAPLE" loading="lazy" scrolling="no"></iframe>
+              <iframe class="management-profile-frame" src="./management-profile.html?person=neksha-desilva&v=20261029-6" title="Neksha DeSilva — Chief Technology Officer" loading="lazy" scrolling="no"></iframe>
+              <iframe class="management-profile-frame" src="./management-profile.html?person=anabel-caballero&v=20261029-6" title="Anabel Caballero — Management Division" loading="lazy" scrolling="no"></iframe>
+              <iframe class="management-profile-frame" src="./management-profile.html?person=yuxuan-lin&v=20261029-6" title="Yuxuan Lin — Founding Member & Chief Design Officer" loading="lazy" scrolling="no"></iframe>
+              <iframe class="management-profile-frame" src="./management-profile.html?person=lucas-gabriel&v=20261029-6" title="Lucas Gabriel — Mexican Representative" loading="lazy" scrolling="no"></iframe>
+              <iframe class="management-profile-frame" src="./management-profile.html?person=jakob-friedrich&v=20261029-6" title="Jakob Friedrich — German Representative" loading="lazy" scrolling="no"></iframe>
+            </div>
+          </div>
+
+          <!-- Developers and Engineers -->
+          <div class="team-category">
+            <div class="team-category-name">Developers and Engineers</div>
+            <div class="team-grid">
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Atharv Singh Negi">
+                <div class="team-member-name">Atharv Singh Negi</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#7213061a1300041c17151b404432151f131b1e5c111d1f"><span class="__cf_email__" data-cfemail="81e0f5e9e0f3f7efe4e6e8b3b7c1e6ece0e8edafe2eeec">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'atharvnegi26@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Vihan Raddolugama">
+                <div class="team-member-name">Vihan Raddolugama</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#abddc2c3cac5ebc4dbcec5d9c4c8c0cedfd885c8c4c6"><span class="__cf_email__" data-cfemail="0b7d62636a654b647b6e65796468606e7f7825686466">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'vihan@openrockets.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Ryan Chan">
+                <div class="team-member-name">Ryan Chan</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#f2808b939cb29d82979c809d9199978681dc919d9f"><span class="__cf_email__" data-cfemail="611318000f210e11040f130e020a0415124f020e0c">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'ryan@openrockets.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Thomas">
+                <div class="team-member-name">Thomas</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#e4908c8b898597a48b94818a968b878f819097ca878b89"><span class="__cf_email__" data-cfemail="24504c4b494557644b54414a564b474f4150570a474b49">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'thomas@openrockets.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Aryan Rai">
+                <div class="team-member-name">Aryan Rai</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#2647545f474866495643485449454d4352550845494b"><span class="__cf_email__" data-cfemail="a5c4d7dcc4cbe5cad5c0cbd7cac6cec0d1d68bc6cac8">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'aryan@openrockets.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Nova C.">
+                <div class="team-member-name">Nova C.</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#ec82839a8dac839c89829e838f8789989fc28f8381"><span class="__cf_email__" data-cfemail="e18f8e9780a18e91848f938e828a849592cf828e8c">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'nova@openrockets.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Payoja Acharya">
+                <div class="team-member-name">Payoja Acharya</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#3646574f595c570406040676515b575f5a1855595b"><span class="__cf_email__" data-cfemail="6313021a0c09025153515323040e020a0f4d000c0e">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'payoja2020@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Lunna Martín González">
+                <div class="team-member-name">Lunna Martín González</div>
+                <div class="team-member-location">Spain</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#46212f32062a3328282768222330"><span class="__cf_email__" data-cfemail="5a3d332e1a362f34343b743e3f2c">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'git@lunna.dev')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Jessica Amanda">
+                <div class="team-member-name">Jessica Amanda</div>
+                <div class="team-member-location">Nigeria</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#cba1aeb8b8a2a8aa8ba4bbaea5b9a4a8a0aebfb8e5a8a4a6"><span class="__cf_email__" data-cfemail="563c3325253f353716392633382439353d3322257835393b">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'jessica@openrockets.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Emma C. Caselli">
+                <div class="team-member-name">Emma C. Caselli</div>
+                <div class="team-member-location">Italy</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#46232b2b27202f232975777406212b272f2a6825292b"><span class="__cf_email__" data-cfemail="c3a6aeaea2a5aaa6acf0f2f183a4aea2aaafeda0acae">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'emmafieo312@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Dasha Y.">
+                <div class="team-member-name">Dasha Y.</div>
+                <div class="team-member-location">United Kingdom</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#147075677c756d7166797d7a262d547379757d783a777b79"><span class="__cf_email__" data-cfemail="137772607b726a76617e7a7d212a53747e727a7f3d707c7e">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'dashayermin29@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Chuxin Liu">
+                <div class="team-member-name">Chuxin Liu</div>
+                <div class="team-member-location">Canada</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#7a0a1b0f1619120f0213145416130f3a150f0e1615151154191517"><span class="__cf_email__" data-cfemail="235342564f404b565b4a4d0d4f4a56634c56574f4c4c480d404c4e">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'paulchuxin.liu@outlook.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Aiden Wang">
+                <div class="team-member-name">Aiden Wang</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#5e3f37293f30396e671e39333f3732703d3133"><span class="__cf_email__" data-cfemail="ccada5bbada2abfcf58caba1ada5a0e2afa3a1">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'aiwang09@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Debadrita Das">
+                <div class="team-member-name">Debadrita Das</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#e78386948382858683958e9386d2d6dfa7808a868e8bc984888a"><span class="__cf_email__" data-cfemail="6f0b0e1c0b0a0d0e0b1d061b0e5a5e572f08020e0603410c0002">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'dasdebadrita518@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Akira Yamanashi">
+                <div class="team-member-name">Akira Yamanashi</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#2e415c6e444f434b5d4247400047404841"><span class="__cf_email__" data-cfemail="c3acb183a9a2aea6b0afaaadedaaada5ac">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'or@jameslin.info')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Benjamin You">
+                <div class="team-member-name">Benjamin You</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#c4a6a1aaaabdbdabb1f3f5f284a3a9a5ada8eaa7aba9"><span class="__cf_email__" data-cfemail="d5b7b0bbbbacacbaa0e2e4e395b2b8b4bcb9fbb6bab8">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'bennyyou716@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Ronit Agarwal">
+                <div class="team-member-name">Ronit Agarwal</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#b2c0dddcdbc6edd3d5d3c0c5d3def2ddc7c6deddddd99cd1dddf"><span class="__cf_email__" data-cfemail="89fbe6e7e0fdd6e8eee8fbfee8e5c9e6fcfde5e6e6e2a7eae6e4">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'ronit_agarwal@outlook.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Raj Kumar Henthoiba">
+                <div class="team-member-name">Raj Kumar Henthoiba</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#0775666d296f6269736f686e656647606a666e6b2964686a"><span class="__cf_email__" data-cfemail="5b293a3175333e352f333432393a1b3c363a323775383436">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'raj.henthoiba@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Jatin Garg">
+                <div class="team-member-name">Jatin Garg</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#0d676c7964633f3b6a6c7f6a4d6a606c6461236e6260"><span class="__cf_email__" data-cfemail="147e75607d7a262273756673547379757d783a777b79">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'jatin26garg@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Yanfu Fan">
+                <div class="team-member-name">Yanfu Fan</div>
+                <div class="team-member-location">Australia</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#374e5659514277584752594558545c5243441954585a"><span class="__cf_email__" data-cfemail="0178606f6774416e71646f736e626a6475722f626e6c">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'yanfu@openrockets.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Madhav Arora">
+                <div class="team-member-name">Madhav Arora</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#345955505c5542745b44515a465b575f5140471a575b59"><span class="__cf_email__" data-cfemail="6b060a0f030a1d2b041b0e05190408000e1f1845080406">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'madhav@openrockets.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Vinuk Gamaarachige">
+                <div class="team-member-name">Vinuk Gamaarachige</div>
+                <div class="team-member-location">Sri Lanka</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#bec8d7d0cbd5fed1cedbd0ccd1ddd5dbcacd90ddd1d3"><span class="__cf_email__" data-cfemail="ff8996918a94bf908f9a918d909c949a8b8cd19c9092">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'vinuk@openrockets.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="James Lin">
+                <div class="team-member-name">James Lin</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#e08a818d8593a08f90858e928f838b859493ce838f8d"><span class="__cf_email__" data-cfemail="6f050e020a1c2f001f0a011d000c040a1b1c410c0002">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'james@openrockets.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Rishad Ahamed">
+                <div class="team-member-name">Rishad Ahamed</div>
+                <div class="team-member-location">Sri Lanka</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#99ebf0eaf1f8fdd9f6e9fcf7ebf6faf2fcedeab7faf6f4"><span class="__cf_email__" data-cfemail="72001b011a1316321d02171c001d11191706015c111d1f">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'rishad@openrockets.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="M. Wickramasinghe">
+                <div class="team-member-name">M. Wickramasinghe</div>
+                <div class="team-member-location">Sri Lanka</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#f2859b919980939f93819b9c959a97b29d82979c809d9199978681dc919d9f"><span class="__cf_email__" data-cfemail="8bfce2e8e0f9eae6eaf8e2e5ece3eecbe4fbeee5f9e4e8e0eefff8a5e8e4e6">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'wickramasinghe@openrockets.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Agneya Chaudhari">
+                <div class="team-member-name">Agneya Chaudhari</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#4425232a213d25042b34212a362b272f2130376a272b29"><span class="__cf_email__" data-cfemail="f091979e958991b09f80959e829f939b958483de939f9d">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'agneya@openrockets.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Dhyan Roopesh">
+                <div class="team-member-name">Dhyan Roopesh</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#4b2f23322a250b243b2e25392428202e3f3865282426"><span class="__cf_email__" data-cfemail="4f2b27362e210f203f2a213d202c242a3b3c612c2022">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'dhyan@openrockets.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Zaim Sheali">
+                <div class="team-member-name">Zaim Sheali</div>
+                <div class="team-member-location">Kenya</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#e99b8c8188878884888184869c8dddd1a98e84888085c78a8684"><span class="__cf_email__" data-cfemail="384a5d5059565955595055574d5c0c00785f55595154165b5755">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'rehanamahmoud48@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Aptar Hussain">
+                <div class="team-member-name">Aptar Hussain</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#2c4d5c584d5e1d191d1e6c4b414d4540024f4341"><span class="__cf_email__" data-cfemail="4928393d283b787c787b092e24282025672a2624">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'aptar1512@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Alex Randoll">
+                <div class="team-member-name">Alex Randoll</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#76050203121f19581213004446444536111b171f1a5815191b"><span class="__cf_email__" data-cfemail="e6959293828f89c8828390d4d6d4d5a6818b878f8ac885898b">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'studio.dev2023@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Ahmed Farouk">
+                <div class="team-member-name">Ahmed Farouk</div>
+                <div class="team-member-location">United Arab Emirates</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#7110191c1415311e01141f031e121a1405025f121e1c"><span class="__cf_email__" data-cfemail="0b6a63666e6f4b647b6e65796468606e7f7825686466">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'ahmed@openrockets.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Kainat Ruhee Abdul">
+                <div class="team-member-name">Kainat Ruhee Abdul</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#b6ddd7dfd8d7c2f6d9c6d3d8c4d9d5ddd3c2c598d5d9db"><span class="__cf_email__" data-cfemail="fb909a92959a8fbb948b9e95899498909e8f88d5989496">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'kainat@openrockets.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Harkamal Singh">
+                <div class="team-member-name">Harkamal Singh</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#472f34342e29202f2b3225262926767607202a262e2b6924282a"><span class="__cf_email__" data-cfemail="afc7dcdcc6c1c8c7c3dacdcec1ce9e9eefc8c2cec6c381ccc0c2">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'hssinghlubana11@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Gurpreet Singh">
+                <div class="team-member-name">Gurpreet Singh</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#b6d5d9d2d398d1c3c4c6c4d3d3c2f6d1dbd7dfda98d5d9db"><span class="__cf_email__" data-cfemail="ed8e828988c38a989f9d9f888899ad8a808c8481c38e8280">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'code.gurpreet@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Dharun Kaarthick S">
+                <div class="team-member-name">Dharun Kaarthick S</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#1a7e727b686f7471692a2d5a7d777b737634797577"><span class="__cf_email__" data-cfemail="c2a6aaa3b0b7aca9b1f2f582a5afa3abaeeca1adaf">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'dharunks07@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Priyanshu Ranjan">
+                <div class="team-member-name">Priyanshu Ranjan</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#a3d3d1cadac2cdd0cbd6c9c2cad9909792e3c4cec2cacf8dc0ccce"><span class="__cf_email__" data-cfemail="0575776c7c646b766d706f646c7f363134456268646c692b666a68">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'priyanshujaiz341@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Segun Olatoye">
+                <div class="team-member-name">Segun Olatoye</div>
+                <div class="team-member-location">Nigeria</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#70031517051e1f1c11041f0915434730171d11191c5e131f1d"><span class="__cf_email__" data-cfemail="a1d2c4c6d4cfcecdc0d5ced8c49296e1c6ccc0c8cd8fc2cecc">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'segunolatoye37@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Adarsh Singh">
+                <div class="team-member-name">Adarsh Singh</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#9ffefbfeedecf7ecf6f1f8f7afabada8dff8f2fef6f3b1fcf0f2"><span class="__cf_email__" data-cfemail="d6b7b2b7a4a5bea5bfb8b1bee6e2e4e196b1bbb7bfbaf8b5b9bb">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'adarshsingh0427@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Mayank Singh">
+                <div class="team-member-name">Mayank Singh</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#781519011916130b11161f10494b49404941381f15191114561b1715"><span class="__cf_email__" data-cfemail="402d2139212e2b33292e272871737178717900272d21292c6e232f2d">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'mayanksingh131819@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Soumil Garg">
+                <div class="team-member-name">Soumil Garg</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#493a263c242025797f2e283b2e092e24282025672a2624"><span class="__cf_email__" data-cfemail="93e0fce6fefaffa3a5f4f2e1f4d3f4fef2faffbdf0fcfe">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'soumil06garg@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Aarav Maheshwari">
+                <div class="team-member-name">Aarav Maheshwari</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#afc2cec7cadcc7d8ceddc6ceceddced99e9defc8c2cec6c381ccc0c2"><span class="__cf_email__" data-cfemail="4429252c21372c3325362d25253625327576042329252d286a272b29">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'maheshwariaarav12@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Tanish Singla">
+                <div class="team-member-name">Tanish Singla</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#0f7b6e61667c67217c666168636e3d4f666c63607a6b216c6062"><span class="__cf_email__" data-cfemail="cfbbaea1a6bca7e1bca6a1a8a3aefd8fa6aca3a0baabe1aca0a2">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'tanish.singla2@icloud.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Sampanna Nampalli">
+                <div class="team-member-name">Sampanna Nampalli</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#5023313d20313e3e313e313d20313c3c39616110373d31393c7e333f3d"><span class="__cf_email__" data-cfemail="8cffede1fcede2e2ede2ede1fcede0e0e5bdbdccebe1ede5e0a2efe3e1">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'sampannanampalli11@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Subhanshu Yadav">
+                <div class="team-member-name">Subhanshu Yadav</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#ff8c8a9d97869e9b9e89cac8cebf98929e9693d19c9092"><span class="__cf_email__" data-cfemail="087b7d6a6071696c697e3d3f39486f65696164266b6765">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'subhyadav571@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Aditya Manuja">
+                <div class="team-member-name">Aditya Manuja</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#7617121f020f171b1718031c17414436111b171f1a5815191b"><span class="__cf_email__" data-cfemail="2c4d484558554d414d4259464d1b1e6c4b414d4540024f4341">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'adityamanuja72@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Ananjay Goel">
+                <div class="team-member-name">Ananjay Goel</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#3d5c4d5a0f0c0b0d087d5a505c5451135e5250"><span class="__cf_email__" data-cfemail="553425326764636560153238343c397b363a38">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'apg21605@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Priyanshu Mishra">
+                <div class="team-member-name">Priyanshu Mishra</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#1464667d6d757a677c61797d677c667520252d547379757d783a777b79"><span class="__cf_email__" data-cfemail="78080a110119160b100d15110b100a194c4941381f15191114561b1715">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'priyanshumishra419@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Krunal Deshmukh">
+                <div class="team-member-name">Krunal Deshmukh</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#a1c5cad4cfc0cd979794e1c6ccc0c8cd8fc2cecc"><span class="__cf_email__" data-cfemail="9efaf5ebf0fff2a8a8abdef9f3fff7f2b0fdf1f3">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'dkunal665@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Kalash Harode">
+                <div class="team-member-name">Kalash Harode</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#c0aba1aca1b3a8a8a1b2afa4a5f2f2f580a7ada1a9aceea3afad"><span class="__cf_email__" data-cfemail="6308020f02100b0b02110c070651515623040e020a0f4d000c0e">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'kalashharode225@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Vikas Soni">
+                <div class="team-member-name">Vikas Soni</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#a9dfc0c2c8dadac6c7c0cfc6dbd0c6dce9cec4c8c0c587cac6c4"><span class="__cf_email__" data-cfemail="44322d2f2537372b2a2d222b363d2b31042329252d286a272b29">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'vikassoniforyou@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Rakshit Aggarwal">
+                <div class="team-member-name">Rakshit Aggarwal</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#7507141e061d1c011412124543351218141c195b161a18"><span class="__cf_email__" data-cfemail="f785969c849f9e83969090c7c1b7909a969e9bd994989a">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'rakshitagg06@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Jeyasenthuran R">
+                <div class="team-member-name">Jeyasenthuran R</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#e78d829e86948289938f9295868995a7808a868e8bc984888a"><span class="__cf_email__" data-cfemail="ed8788948c9e88839985989f8c839fad8a808c8481c38e8280">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'jeyasenthuranr@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Kotha Hardhik Reddy">
+                <div class="team-member-name">Kotha Hardhik Reddy</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#cca4adbea8a4a5a7fefdfdfd8caba1ada5a0e2afa3a1"><span class="__cf_email__" data-cfemail="305851425458595b0201010170575d51595c1e535f5d">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'hardhik2111@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Ashdeep Singh">
+                <div class="team-member-name">Ashdeep Singh</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#394a50575e5117584a515d5c5c49170b09090f795e54585055175a5654"><span class="__cf_email__" data-cfemail="ed9e84838a85c38c9e858988889dc3dfdddddbad8a808c8481c38e8280">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'singh.ashdeep.2006@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Gunadeep NV">
+                <div class="team-member-name">Gunadeep NV</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#d4b3a1bab5b0b1b1a4baa294b3b9b5bdb8fab7bbb9"><span class="__cf_email__" data-cfemail="a2c5d7ccc3c6c7c7d2ccd4e2c5cfc3cbce8cc1cdcf">[email&#160;protected]</span></a>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Sonali Parte">
+                <div class="team-member-name">Sonali Parte</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#57243839363b3e2736252332636217303a363e3b7934383a"><span class="__cf_email__" data-cfemail="51223e3f303d382130232534656411363c30383d7f323e3c">[email&#160;protected]</span></a>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="nesapriyan">
+                <div class="team-member-name">nesapriyan</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#3f515a4c5e4f4d56465e515a7f58525e5653115c5052"><span class="__cf_email__" data-cfemail="cea0abbdafbebca7b7afa0ab8ea9a3afa7a2e0ada1a3">[email&#160;protected]</span></a>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Murat Bayraktar">
+                <div class="team-member-name">Murat Bayraktar</div>
+                <div class="team-member-location">United States of America</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#1f7d707d292a2a2c295f6f6d706b707131727a"><span class="__cf_email__" data-cfemail="7a1815184c4f4f494c3a0a08150e151454171f">[email&#160;protected]</span></a>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Yeuk fei Hau">
+                <div class="team-member-name">Yeuk fei Hau</div>
+                <div class="team-member-location">United States of America</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#1375767a75767a7b72667b726653747e727a7f3d707c7e"><span class="__cf_email__" data-cfemail="e583808c83808c8d84908d8490a58288848c89cb868a88">[email&#160;protected]</span></a>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="ayush sawant">
+                <div class="team-member-name">ayush sawant</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#debfa7abadb6adbfa9bfb0aaeeedea9eb9b3bfb7b2f0bdb1b3"><span class="__cf_email__" data-cfemail="63021a16100b100214020d1753505723040e020a0f4d000c0e">[email&#160;protected]</span></a>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="RajaKrishna">
+                <div class="team-member-name">RajaKrishna</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#a2d0c3c8c3c9d0cbd1caccc39291939290929296e2c5cfc3cbce8cc1cdcf"><span class="__cf_email__" data-cfemail="ec9e8d868d879e859f84828ddcdfdddcdedcdcd8ac8b818d8580c28f8381">[email&#160;protected]</span></a>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Eashan Singla">
+                <div class="team-member-name">Eashan Singla</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#600501130801010e13090e070c0120070d01090c4e030f0d"><span class="__cf_email__" data-cfemail="3a5f5b49525b5b544953545d565b7a5d575b535614595557">[email&#160;protected]</span></a>
+                </div>
+              </div>
+
+          <!-- Design, Marketing and Outreach -->
+          <div class="team-category">
+            <div class="team-category-name">Design, Marketing and Outreach</div>
+            <div class="team-grid">
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Daliannis Tamayo">
+                <div class="team-member-name">Daliannis Tamayo</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#d1b5b0bdb8b0bfbfb8a2a5b0bcb0a8beb0a3b2b0a8b091b6bcb0b8bdffb2bebc"><span class="__cf_email__" data-cfemail="d8bcb9b4b1b9b6b6b1abacb9b5b9a1b7b9aabbb9a1b998bfb5b9b1b4f6bbb7b5">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'daliannistamayoarcaya@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Mitra Sainathuni">
+                <div class="team-member-name">Mitra Sainathuni</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#016c687573602f7260686f607569746f6841666c60686d2f626e6c"><span class="__cf_email__" data-cfemail="75181c0107145b06141c1b14011d001b1c351218141c195b161a18">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'mitra.sainathuni@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Yashika Singh">
+                <div class="team-member-name">Yashika Singh</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#28515e494d445a515010061b061a181918684f45494144064b4745"><span class="__cf_email__" data-cfemail="68111e090d041a111050465b465a585958280f05090104460b0705">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'yvaelryx8.3.2010@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Adil Mukhi">
+                <div class="team-member-name">Adil Mukhi</div>
+                <div class="team-member-location">Canada</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#711c041a19181015181d4341414831161c10181d5f121e1c"><span class="__cf_email__" data-cfemail="69041c020100080d00055b595950290e04080005470a0604">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'mukhiadil2009@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Kanishka Sharma">
+                <div class="team-member-name">Kanishka Sharma</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#97fafee4e4fcf6f9fee4fffcf6e4fff6e5faf6d7f0faf6fefbb9f4f8fa"><span class="__cf_email__" data-cfemail="a9c4c0dadac2c8c7c0dac1c2c8dac1c8dbc4c8e9cec4c8c0c587cac6c4">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'misskanishkasharma@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+            
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Kei Dino">
+                <div class="team-member-name">Kei Dino</div>
+                <div class="team-member-location">Philippines</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#e185888f8ecf8a8488a1868c80888dcf828e8c"><span class="__cf_email__" data-cfemail="24404d4a4b0a4f414d644349454d480a474b49">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'dino.kei@gmail.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+              <div class="team-member">
+                <img class="team-member-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="Allyson Sea">
+                <div class="team-member-name">Allyson Sea</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="/cdn-cgi/l/email-protection#6c0d0000151f03022c031c09021e030f0709181f420f0301"><span class="__cf_email__" data-cfemail="37565b5b4e44585977584752594558545c5243441954585a">[email&#160;protected]</span></a>
+                  <button class="copy-email-btn" onclick="copyEmail(this, 'allyson@openrockets.com')" title="Copy email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2z"/></svg></button>
+                </div>
+              </div>
+
+            </div>
+          </div>  </div>
+
+        </div>
+      </main>
+
+    </div>
+</div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--                   FOOTER                   -->
+  <!-- ═══════════════════════════════════════════ -->
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+       
+     <span style="width: 100%; padding:1rem  1rem 0  1rem;font-size: 102%; display: flex; justify-content: center; align-items: center;">Partners</span>
+        <div class="md:col-span-2 space-y-5" style="width: 100%; flex-wrap: wrap;  display: flex; justify-content: center; align-items: center;">
+
+         
+           <img alt="OpenRockets Foundation" style=" margin: 1rem; height: 5rem; filter:grayscale(1)    ;" class="object-contain footer-logo" src=" https://logos-world.net/wp-content/uploads/2023/03/NameCheap-Logo.png" style="filter: invert(1);">
+            <img alt="OpenRockets Foundation" style=" margin: 1rem; height: 5rem; filter:grayscale(1)    ;" class="object-contain footer-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Netlify_logo_%282%29.svg/960px-Netlify_logo_%282%29.svg.png" style="filter: invert(1);">
+ <img alt="OpenRockets Foundation" style=" margin: 1rem; height: 3rem; filter: grayscale(1) invert(1);" class="object-contain footer-logo" src="https://infinitediscounts.com/images/2020-12-migadu-logo-1024x296.png" style="filter: invert(1);">
+        <img alt="OpenRockets Foundation" style=" margin: 1rem; height: 3rem; filter: grayscale(1) invert(1);" class="object-contain footer-logo" src="https://openrockets.com/v/openrockets.png" style="filter: invert(0);">
+
+        <img alt="OpenRockets Foundation" style=" margin: 1rem; height: 5rem; filter:grayscale(1)    ;" class="object-contain footer-logo" src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/cropped-SDG-Wheel_Transparent_WEB-300x300.png" style="filter: invert(1);">
+
+        <img alt="OpenRockets Foundation" style=" margin: 1rem; height: 5rem; filter:grayscale(1)    ;" class="object-contain footer-logo" src="https://assets.hackclub.com/flag-orpheus-left.png" style="filter: invert(1);">
+ <img alt="OpenRockets Foundation" style=" margin: 1rem; height: 5rem; filter:grayscale(1)    ;" class="object-contain footer-logo" src="https://d216901qxcl0k5.cloudfront.net/s3fs-public/2021-10/covergencetech.jpg" style="filter: invert(1);">
+
+    </div></div>
+    </div>
+  </div>
+
+  <footer class="or-footer" style="background-color: white;" >
+    <div class="or-container" style="background: white;">
+      <div class="or-footer-top" style="justify-content: center !important; align-items: center !important;">
+      <img src="../v/7d272ef1-dd42-478a-807e-35463dbb5634.png" max-width="70%" alt="">
+        <div class="or-footer-links">
+          <a href="https://zeroprofit.org" class="or-footer-link" >
+            <span style="font-size: 200%; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-weight: 700; color: black !important; ">We Stand For </span>
+           <img src="https://zeroprofit.org/assets/images/brand-logo1.png"  style="width: 200px;" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    .home-footer { margin-top: 3rem; }
+    .home-shell { width: 100%; margin-inline: auto; padding-inline: 16px; }
+    .footer-content { font-size: .875rem; }
+  </style>
+
+  <footer class="home-footer" data-testid="home-footer" style="border-top: 1px solid #ffffff; padding-top: 40px; padding-bottom: 40px; padding-left:2rem ; padding-right: 2rem; background-color: #000000; color: #ffffff;">
+    <div class="home-shell footer-content" style="display: flex; flex-direction: column; gap: 30px;">
+      
+      <div style="display: flex; flex-direction: column; align-items: flex-start; width: 100%; margin-bottom: 10px;">
+        <img src="../i/assets/static/brand/DARKMODEFAVICON.png" alt="OpenRockets Mode Logo" style="width: 7rem; max-width: 100%;" />
+        <hr style="width: 100%; border: none; border-top: 1px solid rgba(255,255,255,0.2); margin-top: 20px;" />
+      </div>
+
+      <div class="footer-top-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px;">
+        
+        <div class="footer-col" style="text-align: left; display: flex; flex-direction: column; align-items: flex-start;">
+          <img src="../i/assets/static/brand/271742354.png" alt="OpenRockets Logo" width="220" style="margin-bottom: 15px; display: block; filter: invert(1) brightness(100);" />
+          <p style="color: #ffffff; font-size: 14px; line-height: 1.6; text-align: left;">An infrastructure service provider for nonprofits run by exceptional minors and teenagers worldwide.</p>
+          <p style="color: #ffffff; font-size: 14px; line-height: 1.6; margin-top: 10px; text-align: left;">Revitalize youth volunteering. Make a difference. Join the network of elites.</p>
+        </div>
+
+        <div class="footer-col" style="text-align: left; display: flex; flex-direction: column; align-items: flex-start;">
+          <h4 style="font-size: 14px; font-weight: bold; text-transform: uppercase; margin-bottom: 15px; color: #ffffff;">Legal & Press</h4>
+          <div style="display: flex; flex-direction: column; gap: 8px; align-items: flex-start;">
+            <a href="https://about.openrockets.com/legal/terms" style="color: #ffffff; text-decoration: none; font-size: 14px; text-align: left;">Terms of Service</a>
+            <a href="https://about.openrockets.com/legal/privacy-policy" style="color: #ffffff; text-decoration: none; font-size: 14px; text-align: left;">Privacy Policy</a>
+            <a href="https://about.openrockets.com/legal/parental-consent-form" style="color: #ffffff; text-decoration: none; font-size: 14px; text-align: left;">Parental Consent</a>
+            <a href="https://about.openrockets.com" style="color: #ffffff; text-decoration: none; font-size: 14px; background: none; border: none; cursor: pointer; padding: 0; text-align: left;">About OpenRockets Press</a>
+          </div>
+        </div>
+
+        <div class="footer-col" style="text-align: left; display: flex; flex-direction: column; align-items: flex-start;">
+          <h4 style="font-size: 14px; font-weight: bold; text-transform: uppercase; margin-bottom: 15px; color: #ffffff;">Social</h4>
+          <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start;">
+            <a href="/our-communities/" style="color: #ffffff; text-decoration: none; font-size: 14px; display: flex; align-items: center; gap: 8px; text-align: left;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"></path></svg>
+              Chat with others
+            </a>
+            <a href="https://linkedin.com/company/openrocketsinc" style="color: #ffffff; text-decoration: none; font-size: 14px; display: flex; align-items: center; gap: 8px; text-align: left;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.924 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+              LinkedIn
+            </a>
+            <a href="https://x.com/openrockets" style="color: #ffffff; text-decoration: none; font-size: 14px; display: flex; align-items: center; gap: 8px; text-align: left;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+              Twitter / X
+            </a>
+            <a href="https://blog.openrockets.com" style="color: #ffffff; text-decoration: none; font-size: 14px; display: flex; align-items: center; gap: 8px; text-align: left;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h18v18H3V3zm15 15V6H6v12h12zm-2-9H8v2h8V9zm0 4H8v2h8v-2z"></path></svg>
+              OpenRockets Blog
+            </a>
+            <a href="https://www.crunchbase.com/organization/openrockets" style="color: #ffffff; text-decoration: none; font-size: 14px; display: flex; align-items: center; gap: 8px; text-align: left;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 0H2.4A2.4 2.4 0 000 2.4v19.2A2.4 2.4 0 002.4 24h19.2a2.4 2.4 0 002.4-2.4V2.4A2.4 2.4 0 0021.6 0zM17.65 16.53c-1.25 1.4-3.08 2.22-5.4 2.22-3.8 0-6.85-2.86-6.85-6.8 0-3.9 3.1-6.72 6.88-6.72 2.37 0 4.14.88 5.4 2.25l-2.12 2.2c-.85-.85-1.85-1.28-3.26-1.28-2.02 0-3.6 1.58-3.6 3.55s1.58 3.55 3.6 3.55c1.45 0 2.4-.48 3.24-1.32l2.1 2.35zm1.5-6.85v4.5h-1.5v-4.5h1.5z"></path></svg>
+              Crunchbase
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col" style="text-align: left; display: flex; flex-direction: column; align-items: flex-start;">
+          <h4 style="font-size: 14px; font-weight: bold; text-transform: uppercase; margin-bottom: 15px; color: #ffffff;">Ping us anytime</h4>
+          <div style="display: flex; flex-direction: column; gap: 15px; align-items: flex-start; text-align: left;">
+            <div>
+              <strong style="font-size: 12px; color: #ffffff; display: block; margin-bottom: 4px; text-transform: uppercase;">Contact (24/7)</strong>
+              <a href="/cdn-cgi/l/email-protection#1d69787c705d726d78736f727e7678696e337e7270" style="color: #ffffff; text-decoration: none; font-size: 14px;"><span class="__cf_email__" data-cfemail="621607030f220d12070c100d01090716114c010d0f">[email&#160;protected]</span></a><br>
+              <a href="tel:+16037772159" style="color: #ffffff; text-decoration: none; font-size: 14px;">+1 (646) 820 7984 (NYC)</a>
+            </div>
+            <div>
+              <strong style="font-size: 12px; color: #ffffff; display: block; margin-bottom: 4px; text-transform: uppercase;">Mail us, visit us!</strong>
+              <span style="color: #ffffff; font-size: 14px; line-height: 1.5; display: block;">266 Elmwood Ave, Ste 420, Buffalo, New York 14222, United States of America<br/>Melville Lane Area, FairFax, VA, United States 22033</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom-row" style="border-top: 1px solid #ffffff; padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 15px;">
+        <span style="color: #ffffff; font-size: 13px; text-align: left;">OpenRockets is a 100% teen-run United States C-Corporation.<br/>© & (TM) 2022-2026 OpenRockets. All Rights Reserved.</span>
+        <a href="#" id="open_preferences_center" style="color: #ffffff; font-size: 13px; text-decoration: none;">Update cookies preferences</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <div class="or-status-bar">
+    <div class="or-status-inner">
+      <span class="or-status-indicator" style="color: white;">
+        OpenRockets&reg; Beaver🦫&trade; Non-Commercial, No-Derivatives, Read-Only License Version 0.0.1.
+      </span>
+    </div>
+  </div>
+  <iframe style="overflow-y: hidden !important;" src="https://openrockets-datacentres-a-series.openstatus.dev/" width="100%" height="300px" frameborder="0"></iframe>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+<script>
+  const emailMapping = {
+    "daliannis@openrockets.com": "daliannistamayoarcaya@gmail.com",
+    "dasha@openrockets.com": "dashayermin29@gmail.com",
+    "aiden@openrockets.com": "aiwang09@gmail.com",
+    "zaim@openrockets.com": "zaimmaalim92@gmail.com",
+    "kanishka@openrockets.com": "misskanishkasharma@gmail.com",
+    "mitra@openrockets.com": "mitra.sainathuni@gmail.com",
+    "payoja@openrockets.com": "payoja2020@gmail.com",
+    "fahim@openrockets.com": "fahimislambusiness@gmail.com",
+    "kei@openrockets.com": "dino.kei@gmail.com",
+    "yashika@openrockets.com": "yvaelryx8.3.2010@gmail.com",
+    "anabel@openrockets.com": "anabelcaballero.edu@gmail.com",
+    "adil@openrockets.com": "mukhiadil2009@gmail.com",
+    "debadrita@openrockets.com": "dasdebadrita518@gmail.com",
+    "aptar@openrockets.com": "aptar1512@gmail.com",
+    "alex@openrockets.com": "studio.dev2023@gmail.com",
+    "segun@openrockets.com": "segunolatoye37@gmail.com",
+    "adarsh@openrockets.com": "adarshsingh0427@gmail.com",
+    "mayank@openrockets.com": "mayanksingh131819@gmail.com",
+    "soumil@openrockets.com": "soumil06garg@gmail.com"
+  };
+
+  let activeEmailContainer = null;
+  let activeRealEmail = null;
+  let hcaptchaWidgetId = null;
+
+  function renderCaptcha(container, realEmail) {
+    activeEmailContainer = container;
+    activeRealEmail = realEmail;
+    
+    document.getElementById('hcaptcha-backdrop').style.display = 'block';
+    document.getElementById('hcaptcha-container').style.display = 'flex';
+
+    if (hcaptchaWidgetId !== null) {
+      hcaptcha.reset(hcaptchaWidgetId);
+    } else {
+      hcaptchaWidgetId = hcaptcha.render('hcaptcha-widget', {
+        'sitekey': '230e6818-899c-4d08-966a-d084fd4ea11e',
+        'callback': function(token) {
+          document.getElementById('hcaptcha-backdrop').style.display = 'none';
+          document.getElementById('hcaptcha-container').style.display = 'none';
+          
+          const link = activeEmailContainer.querySelector('.team-member-email');
+          if (link) {
+            link.textContent = activeRealEmail;
+            link.href = 'mailto:' + activeRealEmail;
+          }
+          
+          const btn = activeEmailContainer.querySelector('.see-email-btn');
+          if (btn) btn.remove();
+        }
+      });
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const advNames = ['Dr. Fahim Islam', 'Md. Fahim Islam', 'Fahim Islam'];
+    const mgtNames = ['Hugo Torres', 'Arjun Jamgade', 'Neksha DeSilva', 'Anabel Caballero', 'Yuxuan Lin', 'Lucas Gabriel', 'Jakob Friedrich'];
+    const dmoNames = ['Daliannis Tamayo', 'Mitra Sainathuni', 'Kei Dino', 'Yashika Singh', 'Adil Mukhi', 'Kanishka Sharma', 'Allyson Sea'];
+
+    const teamPage = document.querySelector('.team-page');
+    if (teamPage) {
+      const allMembers = Array.from(teamPage.querySelectorAll('.team-member'));
+      
+      const embeddedManagement = teamPage.querySelector('.team-category--management');
+      teamPage.querySelectorAll('.team-category').forEach(cat => { if (cat !== embeddedManagement) cat.remove(); });
+
+      const createCat = (name) => {
+        const cat = document.createElement('div');
+        cat.className = 'team-category';
+        cat.innerHTML = `<div class="team-category-name">${name}</div><div class="team-grid"></div>`;
+        return cat;
+      };
+
+      const catAdv = createCat('Advisors');
+      const catMgt = embeddedManagement;
+      const catDev = createCat('Developers and Engineers');
+      const catDmo = createCat('Design, Marketing and Outreach');
+
+      teamPage.appendChild(catAdv);
+      teamPage.appendChild(catMgt);
+      teamPage.appendChild(catDev);
+      teamPage.appendChild(catDmo);
+
+      const gridAdv = catAdv.querySelector('.team-grid');
+      const gridMgt = null;
+      const gridDev = catDev.querySelector('.team-grid');
+      const gridDmo = catDmo.querySelector('.team-grid');
+
+      allMembers.forEach(member => {
+        const nameEl = member.querySelector('.team-member-name');
+        if (nameEl) {
+          const name = nameEl.textContent.trim();
+          if (advNames.includes(name)) {
+            gridAdv.appendChild(member);
+          } else if (mgtNames.includes(name)) {
+            // Management profiles are rendered as embedded rows.
+          } else if (dmoNames.includes(name)) {
+            gridDmo.appendChild(member);
+          } else {
+            gridDev.appendChild(member);
+          }
+        }
+      });
+
+      advNames.forEach(name => {
+        const member = Array.from(gridAdv.children).find(m => {
+          const nameEl = m.querySelector('.team-member-name');
+          return nameEl && nameEl.textContent.trim() === name;
+        });
+        if (member) gridAdv.appendChild(member);
+      });
+
+    }
+
+    const header = document.getElementById('main-header');
+    if (header) {
+      header.style.position = 'fixed';
+      header.style.zIndex = '9999999';
+    }
+    const footer = document.querySelector('.home-footer');
+    if (footer) {
+      footer.style.position = 'relative';
+      footer.style.zIndex = '9999999';
+    }
+
+    const backdrop = document.createElement('div');
+    backdrop.id = 'hcaptcha-backdrop';
+    backdrop.style.display = 'none';
+    backdrop.style.position = 'fixed';
+    backdrop.style.top = '0';
+    backdrop.style.left = '0';
+    backdrop.style.width = '100vw';
+    backdrop.style.height = '100vh';
+    backdrop.style.backgroundColor = 'rgba(0, 0, 0, 0.2)';
+    backdrop.style.zIndex = '999990';
+    document.body.appendChild(backdrop);
+
+    backdrop.onclick = function() {
+      backdrop.style.display = 'none';
+      document.getElementById('hcaptcha-container').style.display = 'none';
+    };
+
+    const container = document.createElement('div');
+    container.id = 'hcaptcha-container';
+    container.style.display = 'none';
+    container.style.position = 'fixed';
+    container.style.top = '50%';
+    container.style.left = '50%';
+    container.style.transform = 'translate(-50%, -50%)';
+    container.style.zIndex = '999991';
+    container.style.display = 'none';
+    container.style.flexDirection = 'column';
+    container.style.alignItems = 'center';
+    container.style.width = '90vw';
+    container.style.maxWidth = '350px';
+    container.innerHTML = `
+      <div style="color: #ff4444; font-size: 15px; font-weight: 500; text-align: center; margin-bottom: 16px; line-height: 1.4; font-family: inherit;">
+        This is for preventing bots from scraping emails.<br>Please prove you are human.
+      </div>
+      <div id="hcaptcha-widget"></div>
+    `;
+    document.body.appendChild(container);
+
+    const presetsList = ['default', 'sepia', 'grayscale', 'duotone', 'muted', 'bold', 'pop', 'pastel', 'electric', 'sunrise', 'nightShift', 'closeUp'];
+    // Replaced 'voxel-art' (which causes 404) with valid styles they mentioned or related to it
+    const stylesList = ['thumbs', 'pixel-art', 'rings'];
+
+    document.querySelectorAll('.team-member').forEach((member) => {
+      const avatarImg = member.querySelector('.team-member-avatar');
+      const nameEl = member.querySelector('.team-member-name');
+      if (avatarImg && nameEl && nameEl.textContent.trim() !== 'Arjun Jamgade') {
+        const fullName = nameEl.textContent.trim();
+        const firstName = fullName.split(' ')[0];
+        const seed = firstName;
+        
+        // Use true randomness to scatter them organically, avoiding the column patterns
+        const randomPreset = presetsList[Math.floor(Math.random() * presetsList.length)];
+        const randomStyle = stylesList[Math.floor(Math.random() * stylesList.length)];
+        
+        avatarImg.src = `https://api.dicebear.com/9.x/${randomStyle}/svg?seed=${seed}&preset=${randomPreset}`;
+      }
+
+      const emailRow = member.querySelector('.team-member-email-row');
+      if (!emailRow) return;
+      const emailLink = emailRow.querySelector('.team-member-email');
+      const copyBtn = emailRow.querySelector('.copy-email-btn');
+      if (!emailLink) return;
+      
+      const originalEmail = emailLink.textContent.trim();
+      const realEmail = emailMapping[originalEmail] || originalEmail;
+      
+      const parts = realEmail.split('@');
+      let hiddenName = parts[0];
+      if (hiddenName.length > 3) {
+        hiddenName = hiddenName.substring(0, 3) + '***';
+      } else {
+        hiddenName = hiddenName + '***';
+      }
+      const obfuscated = hiddenName + '@' + parts[1];
+      
+      emailLink.textContent = obfuscated;
+      emailLink.href = 'javascript:void(0)';
+      emailLink.style.textDecoration = 'none';
+      emailLink.style.cursor = 'default';
+      
+      if (copyBtn) {
+        copyBtn.remove();
+      }
+      
+      const seeBtn = document.createElement('button');
+      seeBtn.className = 'see-email-btn';
+      seeBtn.style.color = '#01a6ff';
+      seeBtn.style.background = 'none';
+      seeBtn.style.border = 'none';
+      seeBtn.style.padding = '0';
+      seeBtn.style.cursor = 'pointer';
+      seeBtn.style.display = 'inline-flex';
+      seeBtn.style.alignItems = 'center';
+      seeBtn.style.fontSize = '12px';
+      seeBtn.style.fontWeight = '600';
+      seeBtn.style.marginTop = '4px';
+      
+      seeBtn.innerHTML = '<svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email';
+      
+      seeBtn.onclick = function() {
+        renderCaptcha(member, realEmail);
+      };
+      
+      member.appendChild(seeBtn);
+    });
+
+    if (!header) return;
+    let lastScrollY = window.scrollY;
+    const scrollThreshold = 50;
+
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > scrollThreshold) {
+        if (currentScrollY > lastScrollY) {
+          header.style.transform = 'translateY(-100%)';
+        } else {
+          header.style.transform = 'translateY(0)';
+        }
+      } else {
+        header.style.transform = 'translateY(0)';
+      }
+      lastScrollY = currentScrollY;
+    });
+  });
+</script>
+</body>
+
+<!-- Cookie Consent by TermsFeed https://www.TermsFeed.com -->
+<script type="text/javascript" src="https://www.termsfeed.com/public/cookie-consent/4.2.0/cookie-consent.js" charset="UTF-8"></script>
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({"notice_banner_type":"simple","consent_type":"implied","palette":"dark","language":"en","page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],"notice_banner_reject_button_hide":false,"preferences_center_close_button_hide":false,"page_refresh_confirmation_buttons":false,"website_privacy_policy_url":"https://privacy.openrockets.com"});
+});
+</script>
+
+<noscript>Free cookie consent management tool by <a href="https://www.termsfeed.com/">TermsFeed</a></noscript>
+
+<a href="#" id="open_preferences_center">Update cookies preferences</a>
+
+</html>

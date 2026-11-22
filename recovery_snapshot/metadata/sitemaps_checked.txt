@@ -1,0 +1,5 @@
+https://openrockets.com/sitemap-index.xml
+https://openrockets.com/sitemap.xml
+https://openrockets.com/sitemap1.xml
+https://openrockets.com/sitemap_index.xml
+https://openrockets.com/wp-sitemap.xml

@@ -5,6 +5,19 @@ on:
     branches:
       - main
     paths:
+      - 'index.html'
+      - 'join.html'
+      - 'join/**'
+      - 'our-communities/**'
+      - 'team/**'
+      - 'merch/**'
+      - 'research/**'
+      - 'magazinesoftware/**'
+      - 'styles/**'
+      - 'i/**'
+      - 'v/**'
+      - '26/**'
+      - 'assets/**'
       - '.github/scripts/compare_live_vs_pages.py'
       - '.github/workflows/compare-live-vs-pages.yml'
   workflow_dispatch:

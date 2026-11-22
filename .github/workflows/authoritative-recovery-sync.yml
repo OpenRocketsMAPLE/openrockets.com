@@ -6,6 +6,8 @@ on:
       - main
     paths:
       - '.github/scripts/authoritative_recovery_sync.py'
+      - '.github/scripts/integrate_recovered_assets.py'
+      - '.github/scripts/postprocess_recovered_site.py'
       - '.github/workflows/authoritative-recovery-sync.yml'
   workflow_dispatch:
 
@@ -41,6 +43,45 @@ jobs:
           set -euo pipefail
           python .github/scripts/authoritative_recovery_sync.py
 
+      - name: Integrate validated recovered assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          python .github/scripts/integrate_recovered_assets.py
+
+      - name: Normalize recovered internal references
+        shell: bash
+        run: |
+          set -euo pipefail
+          python .github/scripts/postprocess_recovered_site.py
+
+      - name: Validate integrated site structure
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          root = Path(".")
+          assert not (root / "_vendor").exists(), "_vendor still exists after integration"
+          assert (root / "vendor").is_dir(), "vendor directory missing after integration"
+
+          vendor_files = [p for p in (root / "vendor").rglob("*") if p.is_file()]
+          if len(vendor_files) < 100:
+              raise SystemExit(f"vendor tree unexpectedly small: {len(vendor_files)}")
+
+          bad_names = [
+              p.as_posix()
+              for p in root.iterdir()
+              if p.is_file() and "\\" in p.name
+          ]
+          if bad_names:
+              raise SystemExit(f"malformed backslash filenames remain: {bad_names}")
+
+          print(f"publish-safe vendor files: {len(vendor_files)}")
+          print("integrated structure validation passed")
+          PY
+
       - name: Commit authoritative recovery
         shell: bash
         run: |
@@ -54,6 +95,6 @@ jobs:
             exit 0
           fi
 
-          git commit -m 'Authoritative live recovery sync'
+          git commit -m 'Authoritative live recovery and asset integration'
           git pull --rebase origin main
           git push origin HEAD:main

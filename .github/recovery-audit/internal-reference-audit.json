@@ -1,0 +1,119 @@
+{
+  "changed_html_count": 3,
+  "changed_html": [
+    "index.html",
+    "our-communities/index.html",
+    "team/index.html"
+  ],
+  "changed_css_count": 0,
+  "changed_css": [],
+  "backslash_filename_changes": [
+    {
+      "from": "v\\899354793843].png",
+      "to": "v/899354793843].png",
+      "action": "removed duplicate malformed filename"
+    },
+    {
+      "from": "v\\89769876987987.png",
+      "to": "v/89769876987987.png",
+      "action": "removed duplicate malformed filename"
+    }
+  ],
+  "unresolved_count": 14,
+  "unresolved": [
+    {
+      "file": "index.html",
+      "reference": "/cdn-cgi/l/email-protection#55363a3838203b3c3634213c3a3b261526363c303b2130303b7b363a38",
+      "resolved_candidate": "cdn-cgi/l/email-protection",
+      "kind": "root-relative-missing"
+    },
+    {
+      "file": "index.html",
+      "reference": "/opensource/",
+      "resolved_candidate": "opensource",
+      "kind": "root-relative-missing"
+    },
+    {
+      "file": "index.html",
+      "reference": "/interkid",
+      "resolved_candidate": "interkid",
+      "kind": "root-relative-missing"
+    },
+    {
+      "file": "index.html",
+      "reference": "/cdn-cgi/l/email-protection#8df9e8ece0cde2fde8e3ffe2eee6e8f9fea3eee2e0",
+      "resolved_candidate": "cdn-cgi/l/email-protection",
+      "kind": "root-relative-missing"
+    },
+    {
+      "file": "index.html",
+      "reference": "l.origin",
+      "resolved_candidate": "l.origin",
+      "root_candidate": "l.origin",
+      "kind": "relative-static-missing"
+    },
+    {
+      "file": "index.html",
+      "reference": "new URL(l.href",
+      "resolved_candidate": "new URL(l.href",
+      "root_candidate": "new URL(l.href",
+      "kind": "relative-static-missing"
+    },
+    {
+      "file": "team/management-profile__query_0102ec49da2c4f0c.html",
+      "reference": "${profile.image}",
+      "resolved_candidate": "team/${profile.image}",
+      "root_candidate": "${profile.image}",
+      "kind": "relative-static-missing"
+    },
+    {
+      "file": "team/management-profile__query_e142aa47b856be4e.html",
+      "reference": "${profile.image}",
+      "resolved_candidate": "team/${profile.image}",
+      "root_candidate": "${profile.image}",
+      "kind": "relative-static-missing"
+    },
+    {
+      "file": "team/management-profile__query_aa483c6f1b06f479.html",
+      "reference": "${profile.image}",
+      "resolved_candidate": "team/${profile.image}",
+      "root_candidate": "${profile.image}",
+      "kind": "relative-static-missing"
+    },
+    {
+      "file": "team/management-profile__query_e63f588f840918b9.html",
+      "reference": "${profile.image}",
+      "resolved_candidate": "team/${profile.image}",
+      "root_candidate": "${profile.image}",
+      "kind": "relative-static-missing"
+    },
+    {
+      "file": "team/management-profile.html",
+      "reference": "${profile.image}",
+      "resolved_candidate": "team/${profile.image}",
+      "root_candidate": "${profile.image}",
+      "kind": "relative-static-missing"
+    },
+    {
+      "file": "team/management-profile__query_7ec46c7b6e78529d.html",
+      "reference": "${profile.image}",
+      "resolved_candidate": "team/${profile.image}",
+      "root_candidate": "${profile.image}",
+      "kind": "relative-static-missing"
+    },
+    {
+      "file": "team/management-profile__query_a6559a45460e5b29.html",
+      "reference": "${profile.image}",
+      "resolved_candidate": "team/${profile.image}",
+      "root_candidate": "${profile.image}",
+      "kind": "relative-static-missing"
+    },
+    {
+      "file": "team/management-profile__query_570e6fe91ffc8075.html",
+      "reference": "${profile.image}",
+      "resolved_candidate": "team/${profile.image}",
+      "root_candidate": "${profile.image}",
+      "kind": "relative-static-missing"
+    }
+  ]
+}

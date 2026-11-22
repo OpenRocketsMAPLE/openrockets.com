@@ -1,24 +1,9 @@
 {
-  "changed_html_count": 3,
-  "changed_html": [
-    "index.html",
-    "our-communities/index.html",
-    "team/index.html"
-  ],
+  "changed_html_count": 0,
+  "changed_html": [],
   "changed_css_count": 0,
   "changed_css": [],
-  "backslash_filename_changes": [
-    {
-      "from": "v\\899354793843].png",
-      "to": "v/899354793843].png",
-      "action": "removed duplicate malformed filename"
-    },
-    {
-      "from": "v\\89769876987987.png",
-      "to": "v/89769876987987.png",
-      "action": "removed duplicate malformed filename"
-    }
-  ],
+  "backslash_filename_changes": [],
   "unresolved_count": 14,
   "unresolved": [
     {

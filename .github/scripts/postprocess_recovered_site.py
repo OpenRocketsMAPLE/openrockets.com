@@ -9,7 +9,7 @@ from urllib.parse import urlsplit, urlunsplit, unquote
 
 ROOT = Path(__file__).resolve().parents[2]
 REPORT = ROOT / ".github" / "recovery-audit" / "internal-reference-audit.json"
-EXCLUDE_TOP = {".git", ".github", "_vendor"}
+EXCLUDE_TOP = {".git", ".github", "_vendor", "vendor"}
 
 ATTR_RE = re.compile(
     r'(?P<prefix>\b(?:href|src|poster|action|data-src|data-lazy-src|data-original|data-bg)\s*=\s*(?P<q>["\']))'

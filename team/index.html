@@ -1,0 +1,1296 @@
+<!DOCTYPE html><html lang="en-US"><head>
+  <meta charset="utf-8">
+  <title>Team | OpenRockets</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Meet the team behind OpenRockets — an infrastructure service provider for nonprofits worldwide, run by exceptional minors and teenagers.">
+  
+  <link rel="icon" type="image/png" href="../i/assets/static/openthread_logo_bash-trans-removebg-preview (1).png">
+  <link rel="canonical" href="https://openrockets.com/team">
+
+  <!-- Core Layout and Interactive Styles -->
+  <link rel="stylesheet" href="https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/01e4fd07fe2a2b12.css">
+  <link rel="stylesheet" href="https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/112bd7743768f461.css">
+  <link rel="stylesheet" href="https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/43d635cdf484757e.css">
+  <link rel="stylesheet" href="https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/05b42ab6014b2d13.css">
+  <link rel="stylesheet" href="https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/e07e144a3b1db9ca.css">
+  <link rel="stylesheet" href="https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/3046c2816c2ffd6e.css">
+  <link rel="stylesheet" href="https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/b793c34868bb4156.css">
+  <link rel="stylesheet" href="https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/d829866f0dc0cad9.css">
+  <link rel="stylesheet" href="https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/7fe9607f2fcd2964.css">
+  <link rel="stylesheet" href="https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/5e8a245fcb880dab.css">
+  <link rel="stylesheet" href="../styles/overrides.css">
+
+  <meta property="og:image" content="https://yourwebsite.com">
+  <meta property="og:title" content="Team | OpenRockets">
+  <meta property="og:description" content="Meet the team behind OpenRockets — an infrastructure service provider for nonprofits worldwide run by exceptional minors and teenagers.">
+  <meta property="og:url" content="https://openrockets.com/team">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="https://openrockets.com/studios/assets/images/trash.png.jpg">
+
+  <style>
+    .team-page {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 28px 80px;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    }
+
+    .team-category {
+      margin-bottom: 64px;
+    }
+
+    .team-category-name {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      color: #000000;
+      margin-bottom: 28px;
+      border-bottom: 1px solid #000000;
+      padding-bottom: 10px;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px 32px;
+    }
+
+    @media (max-width: 768px) {
+      .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px 24px;
+      }
+      .team-page {
+        padding-top: 185px;
+      }
+      .team-banner-img {
+        height: 200px !important;
+        object-fit: cover !important;
+        margin-bottom: 24px !important;
+      }
+      .team-member-avatar {
+        width: 80% !important;
+        height: auto !important;
+        max-width: 250px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px 20px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .team-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+    .team-member {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .team-member-avatar {
+      width: 80%;
+      max-width: 250px;
+      height: auto;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      margin-bottom: 12px;
+      background: #000000;
+    }
+
+    .team-member-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #000000;
+      margin-bottom: 2px;
+      line-height: 1.3;
+    }
+
+    .team-member-location {
+      font-size: 12px;
+      color: #000000;
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .team-member-email-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .team-member-email {
+      font-size: 12px;
+      color: #000000;
+      text-decoration: none;
+      line-height: 1.3;
+    }
+
+    .team-member-email:hover {
+      text-decoration: underline;
+    }
+
+    .copy-email-btn {
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      color: #000000;
+    }
+
+    .copy-email-btn:hover {
+      opacity: 0.6;
+    }
+
+    .copy-email-btn svg {
+      width: 13px;
+      height: 13px;
+    }
+
+    .copy-email-btn.copied svg {
+      color: #22c55e;
+    }
+  
+    .team-category--management {
+      position: relative;
+      left: 50%;
+      width: min(1120px, calc(100vw - 56px));
+      transform: translateX(-50%);
+    }
+    .management-profile-list {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 24px;
+    }
+    .management-profile-frame {
+      display: block;
+      width: 100%;
+      height: 286px;
+      border: 0;
+      background: #fbfbfd;
+      overflow: hidden;
+    }
+    @media (max-width: 600px) {
+      .team-category--management { width: calc(100vw - 32px); }
+      .management-profile-list { gap: 14px; }
+      .management-profile-frame { height: 210px; }
+    }
+  </style>
+<script async="" src="https://www.termsfeed.com/public/cookie-consent/4.2.0/cookie-consent-code.js"></script><script async="" src="https://www.termsfeed.com/public-ping/cookie-consent/4.2.0/cookie-consent.js/openrockets.com"></script><style>.termsfeed-com---nb{overflow:auto;z-index:99999999999;font-size:16px}.termsfeed-com---nb .cc-nb-main-container{padding:3rem}.termsfeed-com---nb .cc-nb-title{font-size:24px;font-weight:600}.termsfeed-com---nb .cc-nb-text{font-size:16px;margin:0 0 1.25rem 0}.termsfeed-com---nb .cc-nb-okagree,.termsfeed-com---nb .cc-nb-reject,.termsfeed-com---nb .cc-nb-changep{font-weight:bold;font-size:14px;margin-right:.25rem !important;margin-bottom:.25rem !important}@media(max-width: 480px){.termsfeed-com---nb .cc-nb-okagree,.termsfeed-com---nb .cc-nb-reject,.termsfeed-com---nb .cc-nb-changep{display:block;width:100%}}.termsfeed-com---nb-headline{right:0;top:auto;bottom:0;left:0;max-width:100%;position:relative}@media(max-width: 320px),(max-height: 480px){.termsfeed-com---nb-headline{overflow:auto;height:200px;max-width:100%;right:0;top:auto;bottom:0;left:auto;position:fixed}}.termsfeed-com---nb-simple{right:0;top:auto;bottom:0;left:auto;max-width:50%;position:fixed}@media screen and (max-width: 600px){.termsfeed-com---nb-simple{max-width:80%}}@media(max-width: 320px),(max-height: 480px){.termsfeed-com---nb-simple{overflow:auto;height:200px;max-width:100%}}.termsfeed-com---nb-interstitial-overlay{position:fixed;top:0;left:0;height:100%;width:100%;background:rgba(0,0,0,.8);z-index:9999999999}.termsfeed-com---nb-interstitial{right:3vw;top:3vh;left:3vw;max-width:100%;max-height:94vh;position:fixed}@media(max-width: 320px),(max-height: 480px){.termsfeed-com---nb-interstitial{overflow:auto;height:200px;right:0;top:auto;bottom:0;left:auto;position:fixed}}.termsfeed-com---nb-standalone{position:fixed;top:0;left:0;height:100%;width:100%}@media(max-width: 320px),(max-height: 480px){.termsfeed-com---nb-standalone{overflow:auto;height:200px;max-width:100%;right:0;top:auto;bottom:0;left:auto;position:fixed}}.termsfeed-com---pc-overlay{width:100%;height:100%;position:fixed;background:rgba(0,0,0,.5);z-index:999999999999;top:0;left:0;display:none}@media screen and (max-width: 600px){.termsfeed-com---pc-overlay{overflow-y:scroll}}.termsfeed-com---pc-dialog{position:absolute;margin:30px auto;width:750px;max-width:90%;height:auto;left:0;right:0}.termsfeed-com---pc-dialog>div{width:100%}.termsfeed-com---pc-dialog .cc-pc-container{width:100%;display:flex;background:#fff;flex-direction:column}.termsfeed-com---pc-dialog .cc-pc-head{background:#fff;color:#111;display:flex;flex-direction:row;justify-content:space-between}@media screen and (max-width: 600px){.termsfeed-com---pc-dialog .cc-pc-head{flex-direction:column}}.termsfeed-com---pc-dialog .cc-pc-head-title{display:flex;padding-inline-start:15px;flex-direction:column;justify-content:center;align-items:flex-start}@media screen and (max-width: 600px){.termsfeed-com---pc-dialog .cc-pc-head-title{align-items:center;padding:15px 0 0 0}}.termsfeed-com---pc-dialog .cc-pc-head-title-text{font-size:16px;line-height:1.5;margin:0}.termsfeed-com---pc-dialog .cc-pc-head-title-headline{font-size:20px;font-weight:600;margin:0}.termsfeed-com---pc-dialog .cc-pc-head-lang{display:flex;align-items:center;padding-inline-end:15px;min-height:80px;justify-content:center;flex-direction:row-reverse}@media screen and (max-width: 600px){.termsfeed-com---pc-dialog .cc-pc-head-lang{padding:15px 0;min-height:20px}}.termsfeed-com---pc-dialog .cc-pc-head-close{display:flex;align-items:center;justify-content:center;margin-inline-start:15px}.termsfeed-com---pc-dialog .cc-cp-body{display:flex;flex-direction:row;align-items:stretch;background:#292929;color:#f5f5f5;border-bottom:none}@media screen and (max-width: 600px){.termsfeed-com---pc-dialog .cc-cp-body{flex-direction:column}}.termsfeed-com---pc-dialog .cc-cp-body-tabs{font-family:Arial,sans-serif !important;width:150px;margin:0;padding:0;background:#e6e6e6;min-width:150px}@media screen and (max-width: 600px){.termsfeed-com---pc-dialog .cc-cp-body-tabs{width:100%}}.termsfeed-com---pc-dialog .cc-cp-body-tabs-item{margin:0;padding:0;float:left;display:block;width:100%;color:#666;background:#e6e6e6;border-radius:0;border-bottom:1px solid #ccc;border-right:1px solid #ccc;border-right:0;transition:all ease .1s;box-sizing:content-box}@media screen and (max-width: 600px){.termsfeed-com---pc-dialog .cc-cp-body-tabs-item{border-right:0}}.termsfeed-com---pc-dialog .cc-cp-body-tabs-item[active=true]{background:#292929;color:#f5f5f5}.termsfeed-com---pc-dialog .cc-cp-body-tabs-item-link{text-decoration:none;color:#666;display:block;font-weight:700;font-size:12px;line-height:19px;position:relative;cursor:pointer;width:100%;text-align:start;background:none;word-wrap:break-word;white-space:break-spaces;padding:0}.termsfeed-com---pc-dialog .cc-cp-body-tabs-item-link span{padding:10px 5px 10px 10px;display:block}.termsfeed-com---pc-dialog .cc-cp-body-content{background:#292929;color:#f5f5f5}.termsfeed-com---pc-dialog .cc-cp-body-content-entry{width:100%;display:none;padding:25px;box-sizing:border-box}.termsfeed-com---pc-dialog .cc-cp-body-content-entry[active=true]{display:block}.termsfeed-com---pc-dialog .cc-cp-body-content-entry[active=true]:focus{outline:none}.termsfeed-com---pc-dialog .cc-cp-body-content-entry-title{font-size:24px;font-weight:600;padding:0;padding-bottom:20px}.termsfeed-com---pc-dialog .cc-cp-body-content-entry-text{font-size:16px;line-height:1.5}.termsfeed-com---pc-dialog .cc-cp-foot{background:#f2f2f2;display:flex;flex-direction:row;align-items:center;border-top:1px solid #ccc;justify-content:space-between}.termsfeed-com---pc-dialog .cc-cp-foot-byline{padding:20px 10px;font-size:14px;color:#333;display:block !important}.termsfeed-com---pc-dialog .cc-cp-foot-byline a{color:#999}.termsfeed-com---pc-dialog .cc-cp-foot-save{margin-right:10px;opacity:.9;transition:all ease .3s;font-size:14px;font-weight:bold;height:auto}.termsfeed-com---pc-dialog .cc-cp-foot-save:hover{opacity:1}.termsfeed-com---pc-dialog input[type=checkbox].cc-custom-checkbox{position:absolute;margin:2px 0 0 16px;cursor:pointer;appearance:none;border:0}.termsfeed-com---pc-dialog input[type=checkbox].cc-custom-checkbox+label{position:relative;padding:4px 0 0 50px;line-height:2em;cursor:pointer;display:inline;font-size:14px}.termsfeed-com---pc-dialog input[type=checkbox].cc-custom-checkbox+label:before{content:"";position:absolute;display:block;left:0;top:0;width:40px;height:24px;border-radius:16px;background:#fff;border:1px solid #d9d9d9;-webkit-transition:all .3s;transition:all .3s}.termsfeed-com---pc-dialog input[type=checkbox].cc-custom-checkbox+label:after{content:"";position:absolute;display:block;left:0px;top:0px;width:24px;height:24px;border-radius:16px;background:#fff;border:1px solid #d9d9d9;-webkit-transition:all .3s;transition:all .3s}.termsfeed-com---pc-dialog input[type=checkbox].cc-custom-checkbox+label:hover:after{box-shadow:0 0 5px rgba(0,0,0,.3)}.termsfeed-com---pc-dialog input[type=checkbox].cc-custom-checkbox:checked+label:after{margin-left:16px}.termsfeed-com---pc-dialog input[type=checkbox].cc-custom-checkbox:checked+label:before{background:#55d069}
+.termsfeed-com---nb.termsfeed-com---lang-ar,.termsfeed-com---nb.termsfeed-com---lang-he,.termsfeed-com---pc-overlay.termsfeed-com---lang-ar,.termsfeed-com---pc-overlay.termsfeed-com---lang-he{text-align:right}
+.termsfeed-com---palette-dark.termsfeed-com---nb{background-color:#111;color:#fff}.termsfeed-com---palette-dark .cc-nb-title{color:#fff}.termsfeed-com---palette-dark .cc-nb-text{color:#fff}.termsfeed-com---palette-dark .cc-nb-text a{color:#fff;text-decoration:underline}.termsfeed-com---palette-dark .cc-nb-text a:hover{text-decoration:none}.termsfeed-com---palette-dark .cc-nb-text a:focus{box-shadow:0 0 0 2px #3dd000}.termsfeed-com---palette-dark .cc-nb-okagree{color:#000;background-color:#ff0}.termsfeed-com---palette-dark .cc-nb-okagree:focus{box-shadow:0 0 0 2px #3dd000}.termsfeed-com---palette-dark .cc-nb-reject{color:#000;background-color:#ff0}.termsfeed-com---palette-dark .cc-nb-reject:focus{box-shadow:0 0 0 2px #3dd000}.termsfeed-com---palette-dark .cc-nb-changep{background-color:#eaeaea;color:#111}.termsfeed-com---palette-dark .cc-nb-changep:focus{box-shadow:0 0 0 2px #3dd000}.termsfeed-com---palette-dark .cc-pc-container{background:#212121}.termsfeed-com---palette-dark .cc-pc-head{background:#212121;color:#fff;border-bottom:1px solid #111}.termsfeed-com---palette-dark .cc-pc-head-title-headline{color:#fff}.termsfeed-com---palette-dark .cc-pc-head-title-text{color:#fff}.termsfeed-com---palette-dark .cc-pc-head-lang select{color:#212121}.termsfeed-com---palette-dark .cc-pc-head-lang select:focus{box-shadow:0 0 0 2px #ff0}.termsfeed-com---palette-dark .cc-pc-head-close{background:none;color:#fff}.termsfeed-com---palette-dark .cc-pc-head-close:active,.termsfeed-com---palette-dark .cc-pc-head-close:focus{border:2px solid #ff0}.termsfeed-com---palette-dark .cc-cp-body{background:#292929 !important;color:#f5f5f5}.termsfeed-com---palette-dark .cc-cp-body-tabs{color:#666;background:#e6e6e6}.termsfeed-com---palette-dark .cc-cp-body-tabs-item{border-right-color:#ccc;border-bottom-color:#ccc}.termsfeed-com---palette-dark .cc-cp-body-tabs-item-link{color:#666}.termsfeed-com---palette-dark .cc-cp-body-tabs-item-link:hover{color:#000}.termsfeed-com---palette-dark .cc-cp-body-tabs-item-link:focus span{box-shadow:inset 3px 0 0 0 #3dd000}.termsfeed-com---palette-dark .cc-cp-body-tabs-item-link[active=true]{background:#292929 !important;color:#f5f5f5}.termsfeed-com---palette-dark .cc-cp-body-tabs-item-link[active=true]:hover{color:#ccc}.termsfeed-com---palette-dark .cc-cp-body-content{background:#292929 !important;color:#f5f5f5}.termsfeed-com---palette-dark .cc-cp-body-content-entry:focus{box-shadow:inset 0 0 0 2px #ff0}.termsfeed-com---palette-dark .cc-cp-body-content-entry-title{color:#fff}.termsfeed-com---palette-dark .cc-cp-body-content-entry-text{color:#fff}.termsfeed-com---palette-dark .cc-cp-body-content-entry a{color:#fff;text-decoration:underline}.termsfeed-com---palette-dark .cc-cp-body-content-entry a:hover{text-decoration:none}.termsfeed-com---palette-dark .cc-cp-body-content-entry a:focus{box-shadow:inset 3px 0 0 0 #ff0}.termsfeed-com---palette-dark .cc-cp-foot{background:#212121;border-top-color:#111}.termsfeed-com---palette-dark .cc-cp-foot-byline{color:#fff}.termsfeed-com---palette-dark .cc-cp-foot-byline a{color:#fff}.termsfeed-com---palette-dark .cc-cp-foot-byline a:focus{box-shadow:0 0 0 2px #ff0}.termsfeed-com---palette-dark .cc-cp-foot-save{background:#ff0;color:#000}.termsfeed-com---palette-dark .cc-cp-foot-save:focus{box-shadow:0 0 0 2px #3dd000}
+.termsfeed-com---palette-light.termsfeed-com---nb{background-color:#f2f2f2;color:#111}.termsfeed-com---palette-light .cc-nb-title{color:#111}.termsfeed-com---palette-light .cc-nb-text{color:#111}.termsfeed-com---palette-light .cc-nb-text a{color:#111;text-decoration:underline}.termsfeed-com---palette-light .cc-nb-text a:hover{text-decoration:none}.termsfeed-com---palette-light .cc-nb-text a:focus{box-shadow:0 0 0 2px #ff8d00}.termsfeed-com---palette-light .cc-nb-okagree{color:#fff;background-color:green}.termsfeed-com---palette-light .cc-nb-okagree:focus{box-shadow:0 0 0 2px #ff8d00}.termsfeed-com---palette-light .cc-nb-reject{color:#fff;background-color:green}.termsfeed-com---palette-light .cc-nb-reject:focus{box-shadow:0 0 0 2px #ff8d00}.termsfeed-com---palette-light .cc-nb-changep{background-color:#eaeaea;color:#111}.termsfeed-com---palette-light .cc-nb-changep:focus{box-shadow:0 0 0 2px #ff8d00}.termsfeed-com---palette-light .cc-pc-container{background:#fff}.termsfeed-com---palette-light .cc-pc-head{background:#fff;color:#111;border-bottom:1px solid #ccc}.termsfeed-com---palette-light .cc-pc-head-title-headline{color:#111}.termsfeed-com---palette-light .cc-pc-head-title-text{color:#111}.termsfeed-com---palette-light .cc-pc-head-lang select{color:#111}.termsfeed-com---palette-light .cc-pc-head-lang select:focus{box-shadow:0 0 0 2px green}.termsfeed-com---palette-light .cc-pc-head-close{background:none;color:#111}.termsfeed-com---palette-light .cc-pc-head-close:active,.termsfeed-com---palette-light .cc-pc-head-close:focus{border:2px solid green}.termsfeed-com---palette-light .cc-cp-body{background:#fbfbfb !important;color:#111}.termsfeed-com---palette-light .cc-cp-body-tabs{color:#666;background:#e6e6e6}.termsfeed-com---palette-light .cc-cp-body-tabs-item{border-right-color:#ccc;border-bottom-color:#ccc}.termsfeed-com---palette-light .cc-cp-body-tabs-item-link{color:#666}.termsfeed-com---palette-light .cc-cp-body-tabs-item-link:hover{color:#000}.termsfeed-com---palette-light .cc-cp-body-tabs-item-link:focus span{box-shadow:inset 3px 0 0 0 green}.termsfeed-com---palette-light .cc-cp-body-tabs-item-link[active=true]{background:#fbfbfb !important;color:#111}.termsfeed-com---palette-light .cc-cp-body-tabs-item-link[active=true]:hover{color:#666}.termsfeed-com---palette-light .cc-cp-body-content{background:#fbfbfb !important;color:#111}.termsfeed-com---palette-light .cc-cp-body-content-entry-title{color:#111}.termsfeed-com---palette-light .cc-cp-body-content-entry:focus{box-shadow:inset 0 0 0 2px green}.termsfeed-com---palette-light .cc-cp-body-content-entry-text{color:#111}.termsfeed-com---palette-light .cc-cp-body-content-entry a{color:#111;text-decoration:underline}.termsfeed-com---palette-light .cc-cp-body-content-entry a:hover{text-decoration:none}.termsfeed-com---palette-light .cc-cp-body-content-entry a:focus{box-shadow:inset 0 0 0 2px green}.termsfeed-com---palette-light .cc-cp-foot{background:#f2f2f2;border-top-color:#ccc}.termsfeed-com---palette-light .cc-cp-foot-byline{color:#111}.termsfeed-com---palette-light .cc-cp-foot-byline a{color:#111}.termsfeed-com---palette-light .cc-cp-foot-byline a:focus{box-shadow:0 0 0 2px green}.termsfeed-com---palette-light .cc-cp-foot-save{background:green;color:#fff}.termsfeed-com---palette-light .cc-cp-foot-save:focus{box-shadow:0 0 0 2px #ff8d00}
+
+.termsfeed-com---reset{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-ms-overflow-style:scrollbar;-webkit-tap-highlight-color:rgba(0,0,0,0);margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left}.termsfeed-com---reset *,.termsfeed-com---reset *::before,.termsfeed-com---reset *::after{box-sizing:border-box}.termsfeed-com---reset a,.termsfeed-com---reset li,.termsfeed-com---reset p,.termsfeed-com---reset h1,.termsfeed-com---reset h2,.termsfeed-com---reset input,.termsfeed-com---reset button,.termsfeed-com---reset select{border-style:none;box-shadow:none;margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;outline:none}@-ms-viewport{.termsfeed-com---reset{width:device-width}}.termsfeed-com---reset [tabindex="-1"]:focus{outline:0 !important}.termsfeed-com---reset h1,.termsfeed-com---reset h2,.termsfeed-com---reset h3,.termsfeed-com---reset h4,.termsfeed-com---reset h5,.termsfeed-com---reset h6{margin-top:0;margin-bottom:0;color:#000}.termsfeed-com---reset p{margin-top:0;margin-bottom:1rem}.termsfeed-com---reset div{display:block}.termsfeed-com---reset ol,.termsfeed-com---reset ul,.termsfeed-com---reset dl{margin-top:0;margin-bottom:1rem}.termsfeed-com---reset ol ol,.termsfeed-com---reset ul ul,.termsfeed-com---reset ol ul,.termsfeed-com---reset ul ol{margin-bottom:0}.termsfeed-com---reset b,.termsfeed-com---reset strong{font-weight:bolder}.termsfeed-com---reset small{font-size:80%}.termsfeed-com---reset a{color:#007bff;text-decoration:none;background-color:rgba(0,0,0,0);-webkit-text-decoration-skip:objects}.termsfeed-com---reset a:hover{color:#0056b3;text-decoration:underline}.termsfeed-com---reset a:not([href]):not([tabindex]){color:inherit;text-decoration:none}.termsfeed-com---reset a:not([href]):not([tabindex]):hover,.termsfeed-com---reset a:not([href]):not([tabindex]):focus{color:inherit;text-decoration:none}.termsfeed-com---reset a:not([href]):not([tabindex]):focus{outline:0}.termsfeed-com---reset label{display:inline-block;margin-bottom:.5rem}.termsfeed-com---reset button{border-radius:2px;padding:.5rem 1rem;outline:none;background:#dcdae5;color:#111;cursor:pointer;border:none}.termsfeed-com---reset button:focus{outline:none}.termsfeed-com---reset select{border-style:none;padding:.5rem 1rem}.termsfeed-com---reset input,.termsfeed-com---reset button,.termsfeed-com---reset select,.termsfeed-com---reset optgroup,.termsfeed-com---reset textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}.termsfeed-com---reset button,.termsfeed-com---reset input{overflow:visible}.termsfeed-com---reset button,.termsfeed-com---reset select{text-transform:none}.termsfeed-com---reset button,.termsfeed-com---reset html [type=button],.termsfeed-com---reset [type=reset],.termsfeed-com---reset [type=submit]{-webkit-appearance:button}.termsfeed-com---reset button::-moz-focus-inner,.termsfeed-com---reset [type=button]::-moz-focus-inner,.termsfeed-com---reset [type=reset]::-moz-focus-inner,.termsfeed-com---reset [type=submit]::-moz-focus-inner{padding:0;border-style:none}.termsfeed-com---reset input[type=radio],.termsfeed-com---reset input[type=checkbox]{box-sizing:border-box;padding:0}.termsfeed-com---reset [hidden]{display:none !important}
+.termsfeed-com---is-hidden{display:none}.termsfeed-com---is-visible{display:block}
+</style></head>
+
+<body style="padding-top: 0rem;"><div class="termsfeed-com---reset termsfeed-com---nb termsfeed-com---palette-dark termsfeed-com---nb-simple termsfeed-com---lang-en" id="termsfeed-com---nb" role="dialog" aria-labelledby="termsfeed-com---nb-title" aria-describedby="termsfeed-com---nb-text" lang="en" dir="ltr"><div class="cc-nb-main-container"><div class="cc-nb-title-container"><p class="cc-nb-title" id="termsfeed-com---nb-title">We use cookies</p></div><div class="cc-nb-text-container"><p class="cc-nb-text" id="termsfeed-com---nb-text"><span class="cc-nb-text-content">This website uses cookies and other tracking technologies to improve your browsing experience for the following purposes: <span class="cc-nb-text-purposes"><span class="cc-nb-text-purposes-item">to enable basic functionality of the website</span><span class="cc-nb-text-purposes-separator">, </span><span class="cc-nb-text-purposes-item">to provide a better experience on the website</span><span class="cc-nb-text-purposes-separator">, </span><span class="cc-nb-text-purposes-item">to measure your interest in our products and services and to personalize marketing interactions</span><span class="cc-nb-text-purposes-separator">, </span><span class="cc-nb-text-purposes-item">to deliver ads that are more relevant to you</span></span>.</span></p></div><div class="cc-nb-buttons-container"><button class="cc-nb-okagree" role="button">OK</button><button class="cc-nb-changep" role="button">Change my preferences</button></div></div></div>
+  
+    <style>
+        :root{
+            --hds-color-button-primary-bg:rgb(0, 235, 152);
+        }
+    </style>
+<div id="__next">
+    <div>
+      <div class="mobile-safari-solid-bars"></div>
+
+      <!-- ========================================== -->
+      <!--            HEADER / NAVIGATION             -->
+      <!-- ========================================== -->
+      <header id="main-header" style="position: fixed; top: 0px; left: 0px; width: 100%; filter: invert(1); background-color: white; z-index: 9999999; transition: transform 0.3s; transform: translateY(0px);" class="hds-color-mode navigation section section--white hds-mode--light">
+        <div class="section-container navigation__layout" style="display: flex; width: 100%; max-width: 100%; padding: 0 20px;">
+          <nav class="hds-navigation-menu navigation-menu navigation-menu--homepage" id="navigation-menu" style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            
+            <!-- OpenRockets Brand Logo -->
+            <div style="flex: 1; display: flex; align-items: center; justify-content: flex-start; padding-left: 15px;">
+              <a href="../index.html/" style="text-decoration: none;">
+                <img src="../v/openrockets.png" alt="OpenRockets Logo" style="filter: invert(1); width: 130px; background-color: transparent;">
+              </a>
+            </div>
+
+            <!-- Menu Links -->
+            <div class="hds-navigation-menu__content navigation-menu-content" data-status="unmounted" style="flex: 2; display: flex; justify-content: center;">
+              <ul class="hds-navigation-menu__list navigation-menu-list hds-navigation-menu__list--horizontal" style="display: flex; gap: 1.5rem; padding: 0; margin: 0; list-style: none; align-items: center; justify-content: center;">
+                <a style="text-decoration: none;" href="https://zeroprofit.org" class="hds-navigation-menu__item navigation-item">
+                  <button type="button" class="hds-button hds-navigation-menu__trigger hds-button--transparent">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-patch-check-fill" viewBox="0 0 16 16">
+                      <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708"></path>
+                    </svg>
+                    Register your NonProfit
+                  </button>
+                </a>
+                <a style="text-decoration: none;" href="https://ads.openrockets.com" class="hds-navigation-menu__item navigation-item">
+                  <button type="button" class="hds-button hds-navigation-menu__trigger hds-button--transparent">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+                      <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"></path>
+                    </svg>
+                    Advertise for free
+                  </button>
+                </a>
+                <a style="text-decoration: none;" href="https://press.openrockets.com" class="hds-navigation-menu__item navigation-item">
+                  <button type="button" class="hds-button hds-navigation-menu__trigger hds-button--transparent">
+                    <img src="../i/assets/static/openthread_logo_bash-trans-removebg-preview (1).png" style="width: 20px; filter: invert(1) hue-rotate(45deg);" alt="">
+                    Upload Artifacts
+                  </button>
+                </a>
+                <a style="text-decoration: none;" href="https://about.openrockets.com/" class="hds-navigation-menu__item navigation-item">
+                  <button type="button" class="hds-button hds-navigation-menu__trigger hds-button--transparent">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-fill" viewBox="0 0 16 16">
+                      <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9 9 0 0 0 8 15"></path>
+                    </svg> 
+                    Here to help!
+                  </button>
+                </a>
+                <a href="../our-communities/" style="text-decoration: none;" class="hds-navigation-menu__item navigation-item">
+                  <button type="button" class="hds-button hds-navigation-menu__trigger hds-button--transparent">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-discord" viewBox="0 0 16 16">
+                      <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"></path>
+                    </svg> 
+                    Chat with others
+                  </button>
+                </a>
+              </ul>
+            </div>
+
+            <!-- Header Action Buttons -->
+            <div style="flex: 1; display: flex; justify-content: flex-end;">
+              <ul class="navigation-buttons" style="margin: 0; padding: 0;">
+                <li class="hds-navigation-menu__item navigation-item">
+                  <a class="hds-button navigation-cta-button navigation-item__sign-in hds-button--secondary-on-quiet" href="../join.html">
+                    <span class="navigation-button-measure">Apply</span>
+                  </a>
+                </li>
+                <li class="hds-navigation-menu__item navigation-item">
+                  <a class="hds-button navigation-cta-button navigation-item__contact-sales hds-button--primary" href="../our-communities/">
+                    Chat with others
+                    <svg class="hds-icon hds-icon-hover-arrow" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M0.5 5.5h7"></path>
+                      <path d="M1.5 1.5l4 4-4 4"></path>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <!-- ========================================== -->
+      <!--              TEAM PAGE CONTENT             -->
+      <!-- ========================================== -->
+      <main id="main-content" style="padding-top: 4.75rem;">
+        <div class="team-page">
+          <img class="team-banner-img" src="../v/bannerteam.png" alt="Team Banner" style="width: 100%; height: auto; margin-top: 32px; margin-bottom: 64px; display: block; border-radius: 8px;">
+
+          <!-- Advisors -->
+          
+
+          <!-- Management -->
+          
+
+          <!-- Developers and Engineers -->
+          
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+          <!-- Design, Marketing and Outreach -->
+            <div class="team-category"><div class="team-category-name">Advisors</div><div class="team-grid"><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/thumbs/svg?seed=Dr.&amp;preset=sunrise" alt="Dr. Fahim Islam">
+                <div class="team-member-name">Dr. Fahim Islam</div>
+                <div class="team-member-location">Bangladesh</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">fah***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div></div></div><div class="team-category team-category--management">
+            <div class="team-category-name">Management Division</div>
+            <div class="management-profile-list" aria-label="OpenRockets management profiles">
+              <iframe class="management-profile-frame" src="./management-profile.html?person=hugo-torres&amp;v=20261029-6" title="Hugo Torres — Chief Information Officer" loading="lazy" scrolling="no"></iframe>
+              <iframe class="management-profile-frame" src="./management-profile.html?person=arjun-jamgade&amp;v=20261029-6" title="Arjun Jamgade — Project Lead at OpenRockets MAPLE" loading="lazy" scrolling="no"></iframe>
+              <iframe class="management-profile-frame" src="./management-profile.html?person=neksha-desilva&amp;v=20261029-6" title="Neksha DeSilva — Chief Technology Officer" loading="lazy" scrolling="no"></iframe>
+              <iframe class="management-profile-frame" src="./management-profile.html?person=anabel-caballero&amp;v=20261029-6" title="Anabel Caballero — Management Division" loading="lazy" scrolling="no"></iframe>
+              <iframe class="management-profile-frame" src="./management-profile.html?person=yuxuan-lin&amp;v=20261029-6" title="Yuxuan Lin — Founding Member &amp; Chief Design Officer" loading="lazy" scrolling="no"></iframe>
+              <iframe class="management-profile-frame" src="./management-profile.html?person=lucas-gabriel&amp;v=20261029-6" title="Lucas Gabriel — Mexican Representative" loading="lazy" scrolling="no"></iframe>
+              <iframe class="management-profile-frame" src="./management-profile.html?person=jakob-friedrich&amp;v=20261029-6" title="Jakob Friedrich — German Representative" loading="lazy" scrolling="no"></iframe>
+            </div>
+          </div><div class="team-category"><div class="team-category-name">Developers and Engineers</div><div class="team-grid"><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/pixel-art/svg?seed=Atharv&amp;preset=nightShift" alt="Atharv Singh Negi">
+                <div class="team-member-name">Atharv Singh Negi</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">ath***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/thumbs/svg?seed=Vihan&amp;preset=pop" alt="Vihan Raddolugama">
+                <div class="team-member-name">Vihan Raddolugama</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">vih***@openrockets.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/thumbs/svg?seed=Ryan&amp;preset=pastel" alt="Ryan Chan">
+                <div class="team-member-name">Ryan Chan</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">rya***@openrockets.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/pixel-art/svg?seed=Thomas&amp;preset=nightShift" alt="Thomas">
+                <div class="team-member-name">Thomas</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">tho***@openrockets.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/thumbs/svg?seed=Aryan&amp;preset=closeUp" alt="Aryan Rai">
+                <div class="team-member-name">Aryan Rai</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">ary***@openrockets.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/rings/svg?seed=Nova&amp;preset=bold" alt="Nova C.">
+                <div class="team-member-name">Nova C.</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">nov***@openrockets.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/rings/svg?seed=Payoja&amp;preset=duotone" alt="Payoja Acharya">
+                <div class="team-member-name">Payoja Acharya</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">pay***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/thumbs/svg?seed=Lunna&amp;preset=pastel" alt="Lunna Martín González">
+                <div class="team-member-name">Lunna Martín González</div>
+                <div class="team-member-location">Spain</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">git***@lunna.dev</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/thumbs/svg?seed=Jessica&amp;preset=sepia" alt="Jessica Amanda">
+                <div class="team-member-name">Jessica Amanda</div>
+                <div class="team-member-location">Nigeria</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">jes***@openrockets.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/thumbs/svg?seed=Emma&amp;preset=default" alt="Emma C. Caselli">
+                <div class="team-member-name">Emma C. Caselli</div>
+                <div class="team-member-location">Italy</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">emm***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/thumbs/svg?seed=Dasha&amp;preset=bold" alt="Dasha Y.">
+                <div class="team-member-name">Dasha Y.</div>
+                <div class="team-member-location">United Kingdom</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">das***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/pixel-art/svg?seed=Chuxin&amp;preset=grayscale" alt="Chuxin Liu">
+                <div class="team-member-name">Chuxin Liu</div>
+                <div class="team-member-location">Canada</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">pau***@outlook.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/rings/svg?seed=Aiden&amp;preset=duotone" alt="Aiden Wang">
+                <div class="team-member-name">Aiden Wang</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">aiw***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/pixel-art/svg?seed=Debadrita&amp;preset=electric" alt="Debadrita Das">
+                <div class="team-member-name">Debadrita Das</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">das***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/pixel-art/svg?seed=Akira&amp;preset=closeUp" alt="Akira Yamanashi">
+                <div class="team-member-name">Akira Yamanashi</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">or***@jameslin.info</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/thumbs/svg?seed=Benjamin&amp;preset=pop" alt="Benjamin You">
+                <div class="team-member-name">Benjamin You</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">ben***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/rings/svg?seed=Ronit&amp;preset=default" alt="Ronit Agarwal">
+                <div class="team-member-name">Ronit Agarwal</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">ron***@outlook.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/pixel-art/svg?seed=Raj&amp;preset=pastel" alt="Raj Kumar Henthoiba">
+                <div class="team-member-name">Raj Kumar Henthoiba</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">raj***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/rings/svg?seed=Jatin&amp;preset=closeUp" alt="Jatin Garg">
+                <div class="team-member-name">Jatin Garg</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">jat***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/pixel-art/svg?seed=Yanfu&amp;preset=sunrise" alt="Yanfu Fan">
+                <div class="team-member-name">Yanfu Fan</div>
+                <div class="team-member-location">Australia</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">yan***@openrockets.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/pixel-art/svg?seed=Madhav&amp;preset=closeUp" alt="Madhav Arora">
+                <div class="team-member-name">Madhav Arora</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">mad***@openrockets.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/pixel-art/svg?seed=Vinuk&amp;preset=bold" alt="Vinuk Gamaarachige">
+                <div class="team-member-name">Vinuk Gamaarachige</div>
+                <div class="team-member-location">Sri Lanka</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">vin***@openrockets.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/pixel-art/svg?seed=James&amp;preset=muted" alt="James Lin">
+                <div class="team-member-name">James Lin</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">jam***@openrockets.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/rings/svg?seed=Rishad&amp;preset=pop" alt="Rishad Ahamed">
+                <div class="team-member-name">Rishad Ahamed</div>
+                <div class="team-member-location">Sri Lanka</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">ris***@openrockets.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/rings/svg?seed=M.&amp;preset=pop" alt="M. Wickramasinghe">
+                <div class="team-member-name">M. Wickramasinghe</div>
+                <div class="team-member-location">Sri Lanka</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">wic***@openrockets.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/rings/svg?seed=Agneya&amp;preset=default" alt="Agneya Chaudhari">
+                <div class="team-member-name">Agneya Chaudhari</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">agn***@openrockets.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/thumbs/svg?seed=Dhyan&amp;preset=closeUp" alt="Dhyan Roopesh">
+                <div class="team-member-name">Dhyan Roopesh</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">dhy***@openrockets.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/pixel-art/svg?seed=Zaim&amp;preset=muted" alt="Zaim Sheali">
+                <div class="team-member-name">Zaim Sheali</div>
+                <div class="team-member-location">Kenya</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">reh***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/rings/svg?seed=Aptar&amp;preset=grayscale" alt="Aptar Hussain">
+                <div class="team-member-name">Aptar Hussain</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">apt***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/thumbs/svg?seed=Alex&amp;preset=sunrise" alt="Alex Randoll">
+                <div class="team-member-name">Alex Randoll</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">stu***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/rings/svg?seed=Ahmed&amp;preset=pastel" alt="Ahmed Farouk">
+                <div class="team-member-name">Ahmed Farouk</div>
+                <div class="team-member-location">United Arab Emirates</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">ahm***@openrockets.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/rings/svg?seed=Kainat&amp;preset=default" alt="Kainat Ruhee Abdul">
+                <div class="team-member-name">Kainat Ruhee Abdul</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">kai***@openrockets.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/thumbs/svg?seed=Harkamal&amp;preset=grayscale" alt="Harkamal Singh">
+                <div class="team-member-name">Harkamal Singh</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">hss***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/rings/svg?seed=Gurpreet&amp;preset=sunrise" alt="Gurpreet Singh">
+                <div class="team-member-name">Gurpreet Singh</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">cod***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/rings/svg?seed=Dharun&amp;preset=default" alt="Dharun Kaarthick S">
+                <div class="team-member-name">Dharun Kaarthick S</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">dha***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/pixel-art/svg?seed=Priyanshu&amp;preset=default" alt="Priyanshu Ranjan">
+                <div class="team-member-name">Priyanshu Ranjan</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">pri***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/rings/svg?seed=Segun&amp;preset=bold" alt="Segun Olatoye">
+                <div class="team-member-name">Segun Olatoye</div>
+                <div class="team-member-location">Nigeria</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">seg***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/rings/svg?seed=Adarsh&amp;preset=muted" alt="Adarsh Singh">
+                <div class="team-member-name">Adarsh Singh</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">ada***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/thumbs/svg?seed=Mayank&amp;preset=electric" alt="Mayank Singh">
+                <div class="team-member-name">Mayank Singh</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">may***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/thumbs/svg?seed=Soumil&amp;preset=duotone" alt="Soumil Garg">
+                <div class="team-member-name">Soumil Garg</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">sou***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/pixel-art/svg?seed=Aarav&amp;preset=pop" alt="Aarav Maheshwari">
+                <div class="team-member-name">Aarav Maheshwari</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">mah***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/rings/svg?seed=Tanish&amp;preset=sepia" alt="Tanish Singla">
+                <div class="team-member-name">Tanish Singla</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">tan***@icloud.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/pixel-art/svg?seed=Sampanna&amp;preset=nightShift" alt="Sampanna Nampalli">
+                <div class="team-member-name">Sampanna Nampalli</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">sam***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/pixel-art/svg?seed=Subhanshu&amp;preset=muted" alt="Subhanshu Yadav">
+                <div class="team-member-name">Subhanshu Yadav</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">sub***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/thumbs/svg?seed=Aditya&amp;preset=sepia" alt="Aditya Manuja">
+                <div class="team-member-name">Aditya Manuja</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">adi***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/rings/svg?seed=Ananjay&amp;preset=sepia" alt="Ananjay Goel">
+                <div class="team-member-name">Ananjay Goel</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">apg***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/rings/svg?seed=Priyanshu&amp;preset=pastel" alt="Priyanshu Mishra">
+                <div class="team-member-name">Priyanshu Mishra</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">pri***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/pixel-art/svg?seed=Krunal&amp;preset=sepia" alt="Krunal Deshmukh">
+                <div class="team-member-name">Krunal Deshmukh</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">dku***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/thumbs/svg?seed=Kalash&amp;preset=bold" alt="Kalash Harode">
+                <div class="team-member-name">Kalash Harode</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">kal***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/thumbs/svg?seed=Vikas&amp;preset=closeUp" alt="Vikas Soni">
+                <div class="team-member-name">Vikas Soni</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">vik***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/rings/svg?seed=Rakshit&amp;preset=default" alt="Rakshit Aggarwal">
+                <div class="team-member-name">Rakshit Aggarwal</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">rak***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/pixel-art/svg?seed=Jeyasenthuran&amp;preset=pop" alt="Jeyasenthuran R">
+                <div class="team-member-name">Jeyasenthuran R</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">jey***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/thumbs/svg?seed=Kotha&amp;preset=sunrise" alt="Kotha Hardhik Reddy">
+                <div class="team-member-name">Kotha Hardhik Reddy</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">har***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/thumbs/svg?seed=Ashdeep&amp;preset=nightShift" alt="Ashdeep Singh">
+                <div class="team-member-name">Ashdeep Singh</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">sin***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/thumbs/svg?seed=Gunadeep&amp;preset=electric" alt="Gunadeep NV">
+                <div class="team-member-name">Gunadeep NV</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">gun***@gmail.com</a>
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/rings/svg?seed=Sonali&amp;preset=pastel" alt="Sonali Parte">
+                <div class="team-member-name">Sonali Parte</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">son***@gmail.com</a>
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/thumbs/svg?seed=nesapriyan&amp;preset=sunrise" alt="nesapriyan">
+                <div class="team-member-name">nesapriyan</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">nes***@gmail.com</a>
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/rings/svg?seed=Murat&amp;preset=default" alt="Murat Bayraktar">
+                <div class="team-member-name">Murat Bayraktar</div>
+                <div class="team-member-location">United States of America</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">bob***@proton.me</a>
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/thumbs/svg?seed=Yeuk&amp;preset=pastel" alt="Yeuk fei Hau">
+                <div class="team-member-name">Yeuk fei Hau</div>
+                <div class="team-member-location">United States of America</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">fei***@gmail.com</a>
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/pixel-art/svg?seed=ayush&amp;preset=pop" alt="ayush sawant">
+                <div class="team-member-name">ayush sawant</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">ayu***@gmail.com</a>
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/thumbs/svg?seed=RajaKrishna&amp;preset=grayscale" alt="RajaKrishna">
+                <div class="team-member-name">RajaKrishna</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">raj***@gmail.com</a>
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/thumbs/svg?seed=Eashan&amp;preset=closeUp" alt="Eashan Singla">
+                <div class="team-member-name">Eashan Singla</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">eas***@gmail.com</a>
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div></div></div><div class="team-category"><div class="team-category-name">Design, Marketing and Outreach</div><div class="team-grid"><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/pixel-art/svg?seed=Daliannis&amp;preset=duotone" alt="Daliannis Tamayo">
+                <div class="team-member-name">Daliannis Tamayo</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">dal***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/pixel-art/svg?seed=Mitra&amp;preset=pastel" alt="Mitra Sainathuni">
+                <div class="team-member-name">Mitra Sainathuni</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">mit***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/pixel-art/svg?seed=Yashika&amp;preset=muted" alt="Yashika Singh">
+                <div class="team-member-name">Yashika Singh</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">yva***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/pixel-art/svg?seed=Adil&amp;preset=duotone" alt="Adil Mukhi">
+                <div class="team-member-name">Adil Mukhi</div>
+                <div class="team-member-location">Canada</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">muk***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/pixel-art/svg?seed=Kanishka&amp;preset=pastel" alt="Kanishka Sharma">
+                <div class="team-member-name">Kanishka Sharma</div>
+                <div class="team-member-location">India</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">mis***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/pixel-art/svg?seed=Kei&amp;preset=nightShift" alt="Kei Dino">
+                <div class="team-member-name">Kei Dino</div>
+                <div class="team-member-location">Philippines</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">din***@gmail.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div><div class="team-member">
+                <img class="team-member-avatar" src="https://api.dicebear.com/9.x/pixel-art/svg?seed=Allyson&amp;preset=duotone" alt="Allyson Sea">
+                <div class="team-member-name">Allyson Sea</div>
+                <div class="team-member-location">United States</div>
+                <div class="team-member-email-row">
+                  <a class="team-member-email" href="javascript:void(0)" style="text-decoration: none; cursor: default;">all***@openrockets.com</a>
+                  
+                </div>
+              <button class="see-email-btn" style="color: rgb(1, 166, 255); background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px; cursor: pointer; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; margin-top: 4px;"><svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email</button></div></div></div></div>
+
+        </main></div>
+      
+
+    </div>
+
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--                   FOOTER                   -->
+  <!-- ═══════════════════════════════════════════ -->
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+       
+     <span style="width: 100%; padding:1rem  1rem 0  1rem;font-size: 102%; display: flex; justify-content: center; align-items: center;">Partners</span>
+        <div class="md:col-span-2 space-y-5" style="width: 100%; flex-wrap: wrap;  display: flex; justify-content: center; align-items: center;">
+
+         
+           <img alt="OpenRockets Foundation" style=" margin: 1rem; height: 5rem; filter:grayscale(1)    ;" class="object-contain footer-logo" src=" https://logos-world.net/wp-content/uploads/2023/03/NameCheap-Logo.png">
+            <img alt="OpenRockets Foundation" style=" margin: 1rem; height: 5rem; filter:grayscale(1)    ;" class="object-contain footer-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Netlify_logo_%282%29.svg/960px-Netlify_logo_%282%29.svg.png">
+ <img alt="OpenRockets Foundation" style=" margin: 1rem; height: 3rem; filter: grayscale(1) invert(1);" class="object-contain footer-logo" src="https://infinitediscounts.com/images/2020-12-migadu-logo-1024x296.png">
+        <img alt="OpenRockets Foundation" style=" margin: 1rem; height: 3rem; filter: grayscale(1) invert(1);" class="object-contain footer-logo" src="https://openrockets.com/v/openrockets.png">
+
+        <img alt="OpenRockets Foundation" style=" margin: 1rem; height: 5rem; filter:grayscale(1)    ;" class="object-contain footer-logo" src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/cropped-SDG-Wheel_Transparent_WEB-300x300.png">
+
+        <img alt="OpenRockets Foundation" style=" margin: 1rem; height: 5rem; filter:grayscale(1)    ;" class="object-contain footer-logo" src="https://assets.hackclub.com/flag-orpheus-left.png">
+ <img alt="OpenRockets Foundation" style=" margin: 1rem; height: 5rem; filter:grayscale(1)    ;" class="object-contain footer-logo" src="https://d216901qxcl0k5.cloudfront.net/s3fs-public/2021-10/covergencetech.jpg">
+
+    </div></div>
+    </div>
+  
+
+  <footer class="or-footer" style="background-color: white;">
+    <div class="or-container" style="background: white;">
+      <div class="or-footer-top" style="justify-content: center !important; align-items: center !important;">
+      <img src="../v/7d272ef1-dd42-478a-807e-35463dbb5634.png" max-width="70%" alt="">
+        <div class="or-footer-links">
+          <a href="https://zeroprofit.org" class="or-footer-link">
+            <span style="font-size: 200%; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-weight: 700; color: black !important; ">We Stand For </span>
+           <img src="https://zeroprofit.org/assets/images/brand-logo1.png" style="width: 200px;" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    .home-footer { margin-top: 3rem; }
+    .home-shell { width: 100%; margin-inline: auto; padding-inline: 16px; }
+    .footer-content { font-size: .875rem; }
+  </style>
+
+  <footer class="home-footer" data-testid="home-footer" style="border-top: 1px solid rgb(255, 255, 255); padding: 40px 2rem; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); position: relative; z-index: 9999999;">
+    <div class="home-shell footer-content" style="display: flex; flex-direction: column; gap: 30px;">
+      
+      <div style="display: flex; flex-direction: column; align-items: flex-start; width: 100%; margin-bottom: 10px;">
+        <img src="../i/assets/static/brand/DARKMODEFAVICON.png" alt="OpenRockets Mode Logo" style="width: 7rem; max-width: 100%;">
+        <hr style="width: 100%; border: none; border-top: 1px solid rgba(255,255,255,0.2); margin-top: 20px;">
+      </div>
+
+      <div class="footer-top-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px;">
+        
+        <div class="footer-col" style="text-align: left; display: flex; flex-direction: column; align-items: flex-start;">
+          <img src="../i/assets/static/brand/271742354.png" alt="OpenRockets Logo" width="220" style="margin-bottom: 15px; display: block; filter: invert(1) brightness(100);">
+          <p style="color: #ffffff; font-size: 14px; line-height: 1.6; text-align: left;">An infrastructure service provider for nonprofits run by exceptional minors and teenagers worldwide.</p>
+          <p style="color: #ffffff; font-size: 14px; line-height: 1.6; margin-top: 10px; text-align: left;">Revitalize youth volunteering. Make a difference. Join the network of elites.</p>
+        </div>
+
+        <div class="footer-col" style="text-align: left; display: flex; flex-direction: column; align-items: flex-start;">
+          <h4 style="font-size: 14px; font-weight: bold; text-transform: uppercase; margin-bottom: 15px; color: #ffffff;">Legal &amp; Press</h4>
+          <div style="display: flex; flex-direction: column; gap: 8px; align-items: flex-start;">
+            <a href="https://about.openrockets.com/legal/terms" style="color: #ffffff; text-decoration: none; font-size: 14px; text-align: left;">Terms of Service</a>
+            <a href="https://about.openrockets.com/legal/privacy-policy" style="color: #ffffff; text-decoration: none; font-size: 14px; text-align: left;">Privacy Policy</a>
+            <a href="https://about.openrockets.com/legal/parental-consent-form" style="color: #ffffff; text-decoration: none; font-size: 14px; text-align: left;">Parental Consent</a>
+            <a href="https://about.openrockets.com" style="color: #ffffff; text-decoration: none; font-size: 14px; background: none; border: none; cursor: pointer; padding: 0; text-align: left;">About OpenRockets Press</a>
+          </div>
+        </div>
+
+        <div class="footer-col" style="text-align: left; display: flex; flex-direction: column; align-items: flex-start;">
+          <h4 style="font-size: 14px; font-weight: bold; text-transform: uppercase; margin-bottom: 15px; color: #ffffff;">Social</h4>
+          <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start;">
+            <a href="../our-communities/" style="color: #ffffff; text-decoration: none; font-size: 14px; display: flex; align-items: center; gap: 8px; text-align: left;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"></path></svg>
+              Chat with others
+            </a>
+            <a href="https://linkedin.com/company/openrocketsinc" style="color: #ffffff; text-decoration: none; font-size: 14px; display: flex; align-items: center; gap: 8px; text-align: left;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.924 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+              LinkedIn
+            </a>
+            <a href="https://x.com/openrockets" style="color: #ffffff; text-decoration: none; font-size: 14px; display: flex; align-items: center; gap: 8px; text-align: left;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+              Twitter / X
+            </a>
+            <a href="https://blog.openrockets.com" style="color: #ffffff; text-decoration: none; font-size: 14px; display: flex; align-items: center; gap: 8px; text-align: left;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h18v18H3V3zm15 15V6H6v12h12zm-2-9H8v2h8V9zm0 4H8v2h8v-2z"></path></svg>
+              OpenRockets Blog
+            </a>
+            <a href="https://www.crunchbase.com/organization/openrockets" style="color: #ffffff; text-decoration: none; font-size: 14px; display: flex; align-items: center; gap: 8px; text-align: left;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 0H2.4A2.4 2.4 0 000 2.4v19.2A2.4 2.4 0 002.4 24h19.2a2.4 2.4 0 002.4-2.4V2.4A2.4 2.4 0 0021.6 0zM17.65 16.53c-1.25 1.4-3.08 2.22-5.4 2.22-3.8 0-6.85-2.86-6.85-6.8 0-3.9 3.1-6.72 6.88-6.72 2.37 0 4.14.88 5.4 2.25l-2.12 2.2c-.85-.85-1.85-1.28-3.26-1.28-2.02 0-3.6 1.58-3.6 3.55s1.58 3.55 3.6 3.55c1.45 0 2.4-.48 3.24-1.32l2.1 2.35zm1.5-6.85v4.5h-1.5v-4.5h1.5z"></path></svg>
+              Crunchbase
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col" style="text-align: left; display: flex; flex-direction: column; align-items: flex-start;">
+          <h4 style="font-size: 14px; font-weight: bold; text-transform: uppercase; margin-bottom: 15px; color: #ffffff;">Ping us anytime</h4>
+          <div style="display: flex; flex-direction: column; gap: 15px; align-items: flex-start; text-align: left;">
+            <div>
+              <strong style="font-size: 12px; color: #ffffff; display: block; margin-bottom: 4px; text-transform: uppercase;">Contact (24/7)</strong>
+              <a href="mailto:team@openrockets.com" style="color: #ffffff; text-decoration: none; font-size: 14px;">team@openrockets.com</a><br>
+              <a href="tel:+16037772159" style="color: #ffffff; text-decoration: none; font-size: 14px;">+1 (646) 820 7984 (NYC)</a>
+            </div>
+            <div>
+              <strong style="font-size: 12px; color: #ffffff; display: block; margin-bottom: 4px; text-transform: uppercase;">Mail us, visit us!</strong>
+              <span style="color: #ffffff; font-size: 14px; line-height: 1.5; display: block;">266 Elmwood Ave, Ste 420, Buffalo, New York 14222, United States of America<br>Melville Lane Area, FairFax, VA, United States 22033</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom-row" style="border-top: 1px solid #ffffff; padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 15px;">
+        <span style="color: #ffffff; font-size: 13px; text-align: left;">OpenRockets is a 100% teen-run United States C-Corporation.<br>© &amp; (TM) 2022-2026 OpenRockets. All Rights Reserved.</span>
+        <a href="#" id="open_preferences_center" style="color: #ffffff; font-size: 13px; text-decoration: none;">Update cookies preferences</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <div class="or-status-bar">
+    <div class="or-status-inner">
+      <span class="or-status-indicator" style="color: white;">
+        OpenRockets® Beaver🦫™ Non-Commercial, No-Derivatives, Read-Only License Version 0.0.1.
+      </span>
+    </div>
+  </div>
+  <iframe style="overflow-y: hidden !important;" src="https://openrockets-datacentres-a-series.openstatus.dev/" width="100%" height="300px" frameborder="0"></iframe>
+
+<script src="https://js.hcaptcha.com/1/api.js" async="" defer=""></script>
+<script>
+  const emailMapping = {
+    "daliannis@openrockets.com": "daliannistamayoarcaya@gmail.com",
+    "dasha@openrockets.com": "dashayermin29@gmail.com",
+    "aiden@openrockets.com": "aiwang09@gmail.com",
+    "zaim@openrockets.com": "zaimmaalim92@gmail.com",
+    "kanishka@openrockets.com": "misskanishkasharma@gmail.com",
+    "mitra@openrockets.com": "mitra.sainathuni@gmail.com",
+    "payoja@openrockets.com": "payoja2020@gmail.com",
+    "fahim@openrockets.com": "fahimislambusiness@gmail.com",
+    "kei@openrockets.com": "dino.kei@gmail.com",
+    "yashika@openrockets.com": "yvaelryx8.3.2010@gmail.com",
+    "anabel@openrockets.com": "anabelcaballero.edu@gmail.com",
+    "adil@openrockets.com": "mukhiadil2009@gmail.com",
+    "debadrita@openrockets.com": "dasdebadrita518@gmail.com",
+    "aptar@openrockets.com": "aptar1512@gmail.com",
+    "alex@openrockets.com": "studio.dev2023@gmail.com",
+    "segun@openrockets.com": "segunolatoye37@gmail.com",
+    "adarsh@openrockets.com": "adarshsingh0427@gmail.com",
+    "mayank@openrockets.com": "mayanksingh131819@gmail.com",
+    "soumil@openrockets.com": "soumil06garg@gmail.com"
+  };
+
+  let activeEmailContainer = null;
+  let activeRealEmail = null;
+  let hcaptchaWidgetId = null;
+
+  function renderCaptcha(container, realEmail) {
+    activeEmailContainer = container;
+    activeRealEmail = realEmail;
+    
+    document.getElementById('hcaptcha-backdrop').style.display = 'block';
+    document.getElementById('hcaptcha-container').style.display = 'flex';
+
+    if (hcaptchaWidgetId !== null) {
+      hcaptcha.reset(hcaptchaWidgetId);
+    } else {
+      hcaptchaWidgetId = hcaptcha.render('hcaptcha-widget', {
+        'sitekey': '230e6818-899c-4d08-966a-d084fd4ea11e',
+        'callback': function(token) {
+          document.getElementById('hcaptcha-backdrop').style.display = 'none';
+          document.getElementById('hcaptcha-container').style.display = 'none';
+          
+          const link = activeEmailContainer.querySelector('.team-member-email');
+          if (link) {
+            link.textContent = activeRealEmail;
+            link.href = 'mailto:' + activeRealEmail;
+          }
+          
+          const btn = activeEmailContainer.querySelector('.see-email-btn');
+          if (btn) btn.remove();
+        }
+      });
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const advNames = ['Dr. Fahim Islam', 'Md. Fahim Islam', 'Fahim Islam'];
+    const mgtNames = ['Hugo Torres', 'Arjun Jamgade', 'Neksha DeSilva', 'Anabel Caballero', 'Yuxuan Lin', 'Lucas Gabriel', 'Jakob Friedrich'];
+    const dmoNames = ['Daliannis Tamayo', 'Mitra Sainathuni', 'Kei Dino', 'Yashika Singh', 'Adil Mukhi', 'Kanishka Sharma', 'Allyson Sea'];
+
+    const teamPage = document.querySelector('.team-page');
+    if (teamPage) {
+      const allMembers = Array.from(teamPage.querySelectorAll('.team-member'));
+      
+      const embeddedManagement = teamPage.querySelector('.team-category--management');
+      teamPage.querySelectorAll('.team-category').forEach(cat => { if (cat !== embeddedManagement) cat.remove(); });
+
+      const createCat = (name) => {
+        const cat = document.createElement('div');
+        cat.className = 'team-category';
+        cat.innerHTML = `<div class="team-category-name">${name}</div><div class="team-grid"></div>`;
+        return cat;
+      };
+
+      const catAdv = createCat('Advisors');
+      const catMgt = embeddedManagement;
+      const catDev = createCat('Developers and Engineers');
+      const catDmo = createCat('Design, Marketing and Outreach');
+
+      teamPage.appendChild(catAdv);
+      teamPage.appendChild(catMgt);
+      teamPage.appendChild(catDev);
+      teamPage.appendChild(catDmo);
+
+      const gridAdv = catAdv.querySelector('.team-grid');
+      const gridMgt = null;
+      const gridDev = catDev.querySelector('.team-grid');
+      const gridDmo = catDmo.querySelector('.team-grid');
+
+      allMembers.forEach(member => {
+        const nameEl = member.querySelector('.team-member-name');
+        if (nameEl) {
+          const name = nameEl.textContent.trim();
+          if (advNames.includes(name)) {
+            gridAdv.appendChild(member);
+          } else if (mgtNames.includes(name)) {
+            // Management profiles are rendered as embedded rows.
+          } else if (dmoNames.includes(name)) {
+            gridDmo.appendChild(member);
+          } else {
+            gridDev.appendChild(member);
+          }
+        }
+      });
+
+      advNames.forEach(name => {
+        const member = Array.from(gridAdv.children).find(m => {
+          const nameEl = m.querySelector('.team-member-name');
+          return nameEl && nameEl.textContent.trim() === name;
+        });
+        if (member) gridAdv.appendChild(member);
+      });
+
+    }
+
+    const header = document.getElementById('main-header');
+    if (header) {
+      header.style.position = 'fixed';
+      header.style.zIndex = '9999999';
+    }
+    const footer = document.querySelector('.home-footer');
+    if (footer) {
+      footer.style.position = 'relative';
+      footer.style.zIndex = '9999999';
+    }
+
+    const backdrop = document.createElement('div');
+    backdrop.id = 'hcaptcha-backdrop';
+    backdrop.style.display = 'none';
+    backdrop.style.position = 'fixed';
+    backdrop.style.top = '0';
+    backdrop.style.left = '0';
+    backdrop.style.width = '100vw';
+    backdrop.style.height = '100vh';
+    backdrop.style.backgroundColor = 'rgba(0, 0, 0, 0.2)';
+    backdrop.style.zIndex = '999990';
+    document.body.appendChild(backdrop);
+
+    backdrop.onclick = function() {
+      backdrop.style.display = 'none';
+      document.getElementById('hcaptcha-container').style.display = 'none';
+    };
+
+    const container = document.createElement('div');
+    container.id = 'hcaptcha-container';
+    container.style.display = 'none';
+    container.style.position = 'fixed';
+    container.style.top = '50%';
+    container.style.left = '50%';
+    container.style.transform = 'translate(-50%, -50%)';
+    container.style.zIndex = '999991';
+    container.style.display = 'none';
+    container.style.flexDirection = 'column';
+    container.style.alignItems = 'center';
+    container.style.width = '90vw';
+    container.style.maxWidth = '350px';
+    container.innerHTML = `
+      <div style="color: #ff4444; font-size: 15px; font-weight: 500; text-align: center; margin-bottom: 16px; line-height: 1.4; font-family: inherit;">
+        This is for preventing bots from scraping emails.<br>Please prove you are human.
+      </div>
+      <div id="hcaptcha-widget"></div>
+    `;
+    document.body.appendChild(container);
+
+    const presetsList = ['default', 'sepia', 'grayscale', 'duotone', 'muted', 'bold', 'pop', 'pastel', 'electric', 'sunrise', 'nightShift', 'closeUp'];
+    // Replaced 'voxel-art' (which causes 404) with valid styles they mentioned or related to it
+    const stylesList = ['thumbs', 'pixel-art', 'rings'];
+
+    document.querySelectorAll('.team-member').forEach((member) => {
+      const avatarImg = member.querySelector('.team-member-avatar');
+      const nameEl = member.querySelector('.team-member-name');
+      if (avatarImg && nameEl && nameEl.textContent.trim() !== 'Arjun Jamgade') {
+        const fullName = nameEl.textContent.trim();
+        const firstName = fullName.split(' ')[0];
+        const seed = firstName;
+        
+        // Use true randomness to scatter them organically, avoiding the column patterns
+        const randomPreset = presetsList[Math.floor(Math.random() * presetsList.length)];
+        const randomStyle = stylesList[Math.floor(Math.random() * stylesList.length)];
+        
+        avatarImg.src = `https://api.dicebear.com/9.x/${randomStyle}/svg?seed=${seed}&preset=${randomPreset}`;
+      }
+
+      const emailRow = member.querySelector('.team-member-email-row');
+      if (!emailRow) return;
+      const emailLink = emailRow.querySelector('.team-member-email');
+      const copyBtn = emailRow.querySelector('.copy-email-btn');
+      if (!emailLink) return;
+      
+      const originalEmail = emailLink.textContent.trim();
+      const realEmail = emailMapping[originalEmail] || originalEmail;
+      
+      const parts = realEmail.split('@');
+      let hiddenName = parts[0];
+      if (hiddenName.length > 3) {
+        hiddenName = hiddenName.substring(0, 3) + '***';
+      } else {
+        hiddenName = hiddenName + '***';
+      }
+      const obfuscated = hiddenName + '@' + parts[1];
+      
+      emailLink.textContent = obfuscated;
+      emailLink.href = 'javascript:void(0)';
+      emailLink.style.textDecoration = 'none';
+      emailLink.style.cursor = 'default';
+      
+      if (copyBtn) {
+        copyBtn.remove();
+      }
+      
+      const seeBtn = document.createElement('button');
+      seeBtn.className = 'see-email-btn';
+      seeBtn.style.color = '#01a6ff';
+      seeBtn.style.background = 'none';
+      seeBtn.style.border = 'none';
+      seeBtn.style.padding = '0';
+      seeBtn.style.cursor = 'pointer';
+      seeBtn.style.display = 'inline-flex';
+      seeBtn.style.alignItems = 'center';
+      seeBtn.style.fontSize = '12px';
+      seeBtn.style.fontWeight = '600';
+      seeBtn.style.marginTop = '4px';
+      
+      seeBtn.innerHTML = '<svg style="width:14px;height:14px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>See email';
+      
+      seeBtn.onclick = function() {
+        renderCaptcha(member, realEmail);
+      };
+      
+      member.appendChild(seeBtn);
+    });
+
+    if (!header) return;
+    let lastScrollY = window.scrollY;
+    const scrollThreshold = 50;
+
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > scrollThreshold) {
+        if (currentScrollY > lastScrollY) {
+          header.style.transform = 'translateY(-100%)';
+        } else {
+          header.style.transform = 'translateY(0)';
+        }
+      } else {
+        header.style.transform = 'translateY(0)';
+      }
+      lastScrollY = currentScrollY;
+    });
+  });
+</script>
+
+
+
+<script type="text/javascript" src="https://www.termsfeed.com/public/cookie-consent/4.2.0/cookie-consent.js" charset="UTF-8"></script>
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({"notice_banner_type":"simple","consent_type":"implied","palette":"dark","language":"en","page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],"notice_banner_reject_button_hide":false,"preferences_center_close_button_hide":false,"page_refresh_confirmation_buttons":false,"website_privacy_policy_url":"https://privacy.openrockets.com"});
+});
+</script>
+
+<noscript>Free cookie consent management tool by <a href="https://www.termsfeed.com/">TermsFeed</a></noscript>
+
+<a href="#" id="open_preferences_center">Update cookies preferences</a>
+
+
+<div id="hcaptcha-backdrop" style="display: none; position: fixed; top: 0px; left: 0px; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.2); z-index: 999990;"></div><div id="hcaptcha-container" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 999991; flex-direction: column; align-items: center; width: 90vw; max-width: 350px;">
+      <div style="color: #ff4444; font-size: 15px; font-weight: 500; text-align: center; margin-bottom: 16px; line-height: 1.4; font-family: inherit;">
+        This is for preventing bots from scraping emails.<br>Please prove you are human.
+      </div>
+      <div id="hcaptcha-widget"></div>
+    </div></body><!-- Cookie Consent by TermsFeed https://www.TermsFeed.com --></html>

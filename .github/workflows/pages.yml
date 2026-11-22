@@ -1,13 +1,9 @@
-name: Build recovery preview branch
+name: Build GitHub Pages branch
 
 on:
   push:
     branches:
       - main
-    paths:
-      - 'recovery_snapshot/**'
-      - 'scripts/build_pages_preview.py'
-      - '.github/workflows/pages.yml'
   workflow_dispatch:
 
 permissions:
@@ -18,7 +14,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-and-publish-branch:
+  publish:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,16 +23,17 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Build recovered-site preview
-        run: python scripts/build_pages_preview.py
-
-      - name: Stage built site outside working tree
+      - name: Stage website from repository root
         shell: bash
         run: |
           set -euo pipefail
           rm -rf /tmp/openrockets-pages
           mkdir -p /tmp/openrockets-pages
-          cp -a _site/. /tmp/openrockets-pages/
+
+          rsync -a ./ /tmp/openrockets-pages/             --exclude='.git/'             --exclude='.github/'             --exclude='README.md'             --exclude='scripts/'             --exclude='recovery_snapshot/'
+
+          touch /tmp/openrockets-pages/.nojekyll
+          test -f /tmp/openrockets-pages/index.html
 
       - name: Publish gh-pages branch
         shell: bash
@@ -52,5 +49,5 @@ jobs:
           cp -a /tmp/openrockets-pages/. .
 
           git add -A
-          git commit -m 'Publish recovered openrockets.com preview'
+          git commit -m 'Publish OpenRockets site'
           git push --force origin HEAD:gh-pages

@@ -185,3 +185,5 @@ async def main():
             raise SystemExit(f"FAIL {len(broken_same_site)} same-site static asset(s) are broken")
 
 asyncio.run(main())
+
+# rerun after route-aware path normalization

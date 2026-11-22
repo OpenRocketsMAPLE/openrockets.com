@@ -111,7 +111,7 @@ for file in ROOT.rglob("*.html"):
                 return nonlocal_tag
 
         def attr_sub(am):
-            nonlocal localized_html_refs
+            global localized_html_refs
             raw = am.group("url")
             target = mapped_static(raw)
             if not target or not (ROOT / target).is_file():

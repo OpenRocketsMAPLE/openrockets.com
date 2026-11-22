@@ -122,7 +122,7 @@ for file in ROOT.rglob("*.html"):
         tag_text = ATTR_RE.sub(attr_sub, nonlocal_tag)
 
         def srcset_sub(sm):
-            nonlocal localized_html_refs
+            global localized_html_refs
             out=[]
             changed=False
             for item in sm.group("value").split(","):

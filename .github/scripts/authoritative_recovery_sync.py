@@ -63,7 +63,7 @@ STATIC_EXTS = {
 
 ASSET_LIKE_EXTS = STATIC_EXTS - {".zip"}
 TEXT_DEPS = {".css", ".js", ".mjs", ".cjs", ".svg", ".map"}
-EXCLUDE_SCAN_TOP = {".git", ".github", "_vendor"}
+EXCLUDE_SCAN_TOP = {".git", ".github", "_vendor", "vendor"}
 
 page_queue = deque()
 queued_pages = set()
@@ -155,7 +155,7 @@ def external_path(url, content_type=""):
         guessed = mimetypes.guess_extension((content_type or "").split(";")[0].strip()) or ""
         raw_name += guessed
     digest = hashlib.sha256(url.encode("utf-8")).hexdigest()[:16]
-    return Path("_vendor") / host / f"{digest}__{raw_name}"
+    return Path("vendor") / host / f"{digest}__{raw_name}"
 
 def validate_body(path, body, content_type="", allow_html=False):
     ext = path.suffix.lower()
@@ -698,7 +698,7 @@ async def run():
         if not path.is_file():
             continue
         rel = path.relative_to(ROOT)
-        if rel.parts and rel.parts[0] in {".git", ".github", "_vendor"}:
+        if rel.parts and rel.parts[0] in {".git", ".github", "_vendor", "vendor"}:
             continue
         if path.suffix.lower() not in ASSET_LIKE_EXTS:
             continue

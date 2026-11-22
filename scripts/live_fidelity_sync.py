@@ -283,9 +283,9 @@ async def full_scroll(page):
         await page.evaluate("""async () => {
           const sleep = ms => new Promise(r => setTimeout(r, ms));
           let last = -1;
-          for (let i = 0; i < 60; i++) {
+          for (let i = 0; i < 25; i++) {
             window.scrollBy(0, Math.max(500, window.innerHeight * 0.8));
-            await sleep(120);
+            await sleep(80);
             const y = window.scrollY;
             if (y === last) break;
             last = y;
@@ -298,10 +298,10 @@ async def full_scroll(page):
 async def hover_interactives(page):
     try:
         loc = page.locator("a,button,[role=button]")
-        count = min(await loc.count(), 120)
+        count = min(await loc.count(), 30)
         for i in range(count):
             try:
-                await loc.nth(i).hover(timeout=250)
+                await loc.nth(i).hover(timeout=120)
             except Exception:
                 pass
     except Exception:
@@ -408,7 +408,7 @@ async def crawl():
                     continue
 
                 try:
-                    await page.wait_for_load_state("networkidle", timeout=10000)
+                    await page.wait_for_load_state("networkidle", timeout=4000)
                 except Exception:
                     pass
 
@@ -435,8 +435,11 @@ async def crawl():
                 # Fetch every explicit DOM asset reference, not only the viewport-selected one.
                 dom_urls = await collect_dom_urls(page)
                 for asset_url in dom_urls:
-                    if is_exact_host(asset_url) and not looks_like_static_path(asset_url):
-                        # Do not treat arbitrary non-static attributes as assets.
+                    # Browser response capture already handles dynamically loaded
+                    # extensionless scripts/APIs. Explicit DOM fetching is reserved
+                    # for actual static resources so outbound navigation URLs do not
+                    # turn into slow external page downloads.
+                    if not looks_like_static_path(asset_url):
                         continue
                     await fetch_url(request_ctx, asset_url, archive_external=True)
 

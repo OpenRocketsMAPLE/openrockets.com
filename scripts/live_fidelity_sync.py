@@ -18,7 +18,7 @@ from playwright.async_api import async_playwright, TimeoutError as PlaywrightTim
 ROOT = Path(__file__).resolve().parents[1]
 HOST = "openrockets.com"
 START_URL = "https://openrockets.com/"
-MAX_PAGES = 250
+MAX_PAGES = 100
 MAX_EXTERNAL_RESOURCES = 5000
 MAX_SINGLE_RESOURCE_BYTES = 30 * 1024 * 1024
 MAX_EXTERNAL_TOTAL_BYTES = 350 * 1024 * 1024
@@ -210,7 +210,7 @@ async def fetch_url(request_ctx, url: str, archive_external=True):
         return
     resources_seen.add(u)
     try:
-        r = await request_ctx.get(u, timeout=30000, fail_on_status_code=False)
+        r = await request_ctx.get(u, timeout=12000, fail_on_status_code=False)
         if r.status < 200 or r.status >= 400:
             failed_urls[u] = f"HTTP {r.status}"
             return
@@ -283,7 +283,7 @@ async def full_scroll(page):
         await page.evaluate("""async () => {
           const sleep = ms => new Promise(r => setTimeout(r, ms));
           let last = -1;
-          for (let i = 0; i < 25; i++) {
+          for (let i = 0; i < 20; i++) {
             window.scrollBy(0, Math.max(500, window.innerHeight * 0.8));
             await sleep(80);
             const y = window.scrollY;
@@ -298,7 +298,7 @@ async def full_scroll(page):
 async def hover_interactives(page):
     try:
         loc = page.locator("a,button,[role=button]")
-        count = min(await loc.count(), 30)
+        count = min(await loc.count(), 15)
         for i in range(count):
             try:
                 await loc.nth(i).hover(timeout=120)
@@ -323,7 +323,7 @@ async def collect_sitemaps(request_ctx):
             continue
         seen.add(url)
         try:
-            r = await request_ctx.get(url, timeout=20000, fail_on_status_code=False)
+            r = await request_ctx.get(url, timeout=12000, fail_on_status_code=False)
             if r.status < 200 or r.status >= 400:
                 continue
             body = await r.body()
@@ -408,7 +408,7 @@ async def crawl():
                     continue
 
                 try:
-                    await page.wait_for_load_state("networkidle", timeout=4000)
+                    await page.wait_for_load_state("networkidle", timeout=2500)
                 except Exception:
                     pass
 
@@ -466,7 +466,7 @@ async def crawl():
         quoted_abs_re = re.compile(r"['\"](https?://[^'\"\s<>]+)['\"]", re.I)
 
         rounds = 0
-        while pending and rounds < 8000:
+        while pending and rounds < 3000:
             base_url, path = pending.popleft()
             rounds += 1
             key = str(path)

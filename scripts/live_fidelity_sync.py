@@ -22,6 +22,9 @@ MAX_PAGES = 100
 MAX_EXTERNAL_RESOURCES = 5000
 MAX_SINGLE_RESOURCE_BYTES = 30 * 1024 * 1024
 MAX_EXTERNAL_TOTAL_BYTES = 350 * 1024 * 1024
+MAX_DOM_ASSETS_PER_PAGE = 300
+FETCH_CONCURRENCY = 20
+SECOND_ORDER_MAX_FILES = 1200
 
 AUDIT_DIR = ROOT / ".github" / "recovery-audit"
 AUDIT_DIR.mkdir(parents=True, exist_ok=True)
@@ -210,7 +213,7 @@ async def fetch_url(request_ctx, url: str, archive_external=True):
         return
     resources_seen.add(u)
     try:
-        r = await request_ctx.get(u, timeout=12000, fail_on_status_code=False)
+        r = await request_ctx.get(u, timeout=8000, fail_on_status_code=False)
         if r.status < 200 or r.status >= 400:
             failed_urls[u] = f"HTTP {r.status}"
             return
@@ -432,16 +435,32 @@ async def crawl():
                 except Exception:
                     pass
 
-                # Fetch every explicit DOM asset reference, not only the viewport-selected one.
-                dom_urls = await collect_dom_urls(page)
-                for asset_url in dom_urls:
-                    # Browser response capture already handles dynamically loaded
-                    # extensionless scripts/APIs. Explicit DOM fetching is reserved
-                    # for actual static resources so outbound navigation URLs do not
-                    # turn into slow external page downloads.
+                # Fetch explicit static DOM assets concurrently. Browser response
+                # capture remains the primary source of truth; this pass mainly gets
+                # lazy/srcset variants that Chromium did not select.
+                dom_urls = []
+                seen_dom = set()
+                for asset_url in await collect_dom_urls(page):
                     if not looks_like_static_path(asset_url):
                         continue
-                    await fetch_url(request_ctx, asset_url, archive_external=True)
+                    if asset_url in seen_dom:
+                        continue
+                    seen_dom.add(asset_url)
+                    dom_urls.append(asset_url)
+                    if len(dom_urls) >= MAX_DOM_ASSETS_PER_PAGE:
+                        break
+
+                sem = asyncio.Semaphore(FETCH_CONCURRENCY)
+
+                async def fetch_dom_asset(asset_url):
+                    async with sem:
+                        await fetch_url(request_ctx, asset_url, archive_external=True)
+
+                if dom_urls:
+                    await asyncio.gather(
+                        *(fetch_dom_asset(asset_url) for asset_url in dom_urls),
+                        return_exceptions=True,
+                    )
 
             except PlaywrightTimeoutError as e:
                 failed_urls[url] = f"navigation timeout: {e}"
@@ -464,41 +483,64 @@ async def crawl():
         css_url_re = re.compile(r"url\(\s*(['\"]?)([^)'\"\s]+)\1\s*\)", re.I)
         sm_re = re.compile(r"(?://[#@]\s*sourceMappingURL=|/\*[#@]\s*sourceMappingURL=)([^\s*]+)", re.I)
         quoted_abs_re = re.compile(r"['\"](https?://[^'\"\s<>]+)['\"]", re.I)
+        dependency_sem = asyncio.Semaphore(FETCH_CONCURRENCY)
+
+        async def fetch_dependency(u):
+            async with dependency_sem:
+                await fetch_url(request_ctx, u, archive_external=True)
 
         rounds = 0
-        while pending and rounds < 3000:
-            base_url, path = pending.popleft()
-            rounds += 1
-            key = str(path)
-            if key in scanned_files or not path.is_file():
-                continue
-            scanned_files.add(key)
-            try:
-                text = path.read_text(encoding="utf-8", errors="ignore")
-            except Exception:
-                continue
-            found = set()
-            for m in css_url_re.finditer(text):
-                found.add(m.group(2))
-            for m in sm_re.finditer(text):
-                found.add(m.group(1).strip().strip("'\""))
-            for m in quoted_abs_re.finditer(text):
-                found.add(m.group(1))
-            for raw in found:
-                u = normalize_url(raw, base_url)
-                if not u:
+        while pending and rounds < SECOND_ORDER_MAX_FILES:
+            batch = []
+            while pending and len(batch) < 30 and rounds < SECOND_ORDER_MAX_FILES:
+                base_url, path = pending.popleft()
+                rounds += 1
+                key = str(path)
+                if key in scanned_files or not path.is_file():
                     continue
+                scanned_files.add(key)
+                batch.append((base_url, path))
+
+            candidates = set()
+            for base_url, path in batch:
+                try:
+                    text = path.read_text(encoding="utf-8", errors="ignore")
+                except Exception:
+                    continue
+
+                found = set()
+                for m in css_url_re.finditer(text):
+                    found.add(m.group(2))
+                for m in sm_re.finditer(text):
+                    found.add(m.group(1).strip().strip("'\""))
+                for m in quoted_abs_re.finditer(text):
+                    raw = m.group(1)
+                    if looks_like_static_path(raw):
+                        found.add(raw)
+
+                for raw in found:
+                    u = normalize_url(raw, base_url)
+                    if u and u not in resources_seen:
+                        candidates.add(u)
+
+            if candidates:
                 before_local = set(saved_urls)
                 before_ext = set(external_saved)
-                await fetch_url(request_ctx, u, archive_external=True)
-                if u in saved_urls and u not in before_local:
-                    p = ROOT / saved_urls[u]
-                    if p.suffix.lower() in {".css",".js",".mjs",".cjs",".html",".htm",".svg"}:
-                        pending.append((u,p))
-                if u in external_saved and u not in before_ext:
-                    p = ROOT / external_saved[u]
-                    if p.suffix.lower() in {".css",".js",".mjs",".cjs",".html",".htm",".svg"}:
-                        pending.append((u,p))
+
+                await asyncio.gather(
+                    *(fetch_dependency(u) for u in candidates),
+                    return_exceptions=True,
+                )
+
+                for u in candidates:
+                    if u in saved_urls and u not in before_local:
+                        p = ROOT / saved_urls[u]
+                        if p.suffix.lower() in {".css",".js",".mjs",".cjs",".html",".htm",".svg"}:
+                            pending.append((u, p))
+                    if u in external_saved and u not in before_ext:
+                        p = ROOT / external_saved[u]
+                        if p.suffix.lower() in {".css",".js",".mjs",".cjs",".html",".htm",".svg"}:
+                            pending.append((u, p))
 
         await context.close()
         await browser.close()

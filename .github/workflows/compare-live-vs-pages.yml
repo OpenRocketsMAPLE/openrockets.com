@@ -18,6 +18,7 @@ on:
       - 'v/**'
       - '26/**'
       - 'assets/**'
+      - '.github/recovery-audit/internal-reference-audit.json'
       - '.github/scripts/compare_live_vs_pages.py'
       - '.github/workflows/compare-live-vs-pages.yml'
   workflow_dispatch:

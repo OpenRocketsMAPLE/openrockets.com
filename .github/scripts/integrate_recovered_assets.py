@@ -126,31 +126,9 @@ def patch_recovery_pipeline():
             post.write_text(text, encoding="utf-8")
             changed.append(post.relative_to(ROOT).as_posix())
 
-    workflow = ROOT / ".github" / "workflows" / "authoritative-recovery-sync.yml"
-    if workflow.exists():
-        text = workflow.read_text(encoding="utf-8")
-        original = text
-        needle = """      - name: Commit authoritative recovery
-"""
-        insert = """      - name: Integrate validated recovered assets
-        shell: bash
-        run: |
-          set -euo pipefail
-          python .github/scripts/integrate_recovered_assets.py
-
-      - name: Normalize recovered internal references
-        shell: bash
-        run: |
-          set -euo pipefail
-          python .github/scripts/postprocess_recovered_site.py
-
-      - name: Commit authoritative recovery
-"""
-        if needle in text and "Normalize recovered internal references" not in text:
-            text = text.replace(needle, insert)
-        if text != original:
-            workflow.write_text(text, encoding="utf-8")
-            changed.append(workflow.relative_to(ROOT).as_posix())
+    # Workflow files are intentionally not modified here. GitHub App tokens
+    # used by Actions cannot push workflow-file changes without workflow
+    # permission, and asset integration must never depend on that permission.
 
     return changed
 

@@ -77,7 +77,7 @@ def migrate_vendor_tree():
 def replace_legacy_vendor_refs():
     changed = []
     for p in ROOT.rglob("*"):
-        if not p.is_file() or ".git" in p.parts:
+        if not p.is_file() or ".git" in p.parts or ".github" in p.parts:
             continue
         rel_parts = p.relative_to(ROOT).parts
         if rel_parts and rel_parts[0] == ".github":

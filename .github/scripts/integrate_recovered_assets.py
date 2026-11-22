@@ -79,6 +79,9 @@ def replace_legacy_vendor_refs():
     for p in ROOT.rglob("*"):
         if not p.is_file() or ".git" in p.parts:
             continue
+        rel_parts = p.relative_to(ROOT).parts
+        if rel_parts and rel_parts[0] == ".github":
+            continue
         if p.suffix.lower() not in TEXT_SUFFIXES and p.name not in {"CNAME", ".nojekyll"}:
             continue
         try:

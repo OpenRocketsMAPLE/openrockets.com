@@ -89,3 +89,5 @@ jobs:
           git commit -m 'Record live-vs-recovered fidelity comparison'
           git pull --rebase origin main
           git push origin HEAD:main
+
+# authoritative-reset-fidelity-run

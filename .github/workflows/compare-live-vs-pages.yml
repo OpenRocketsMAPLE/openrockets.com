@@ -1,4 +1,4 @@
-name: Compare live site against recovered Pages
+name: Compare live site against recovered tree
 
 on:
   push:
@@ -19,25 +19,25 @@ on:
       - '26/**'
       - 'assets/**'
       - 'vendor/**'
-      - '.github/recovery-audit/internal-reference-audit.json'
+      - 'cdn-cgi/**'
       - '.github/scripts/compare_live_vs_pages.py'
       - '.github/workflows/compare-live-vs-pages.yml'
   workflow_dispatch:
 
 permissions:
-  actions: read
   contents: write
 
 concurrency:
-  group: compare-live-vs-pages
+  group: compare-live-vs-recovered-tree
   cancel-in-progress: true
 
 jobs:
   compare:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+
     steps:
-      - name: Checkout
+      - name: Checkout current recovered tree
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -49,46 +49,44 @@ jobs:
           python -m pip install playwright
           python -m playwright install --with-deps chromium
 
-      - name: Wait for native Pages deployment of this commit
-        env:
-          GH_TOKEN: ${{ github.token }}
+      - name: Serve recovered repository locally
         shell: bash
         run: |
           set -euo pipefail
-          for attempt in {1..72}; do
-            state="$(gh api "/repos/${GITHUB_REPOSITORY}/actions/runs?head_sha=${GITHUB_SHA}&per_page=100"               --jq '.workflow_runs[] | select(.name == "pages build and deployment") | [.status, (.conclusion // "")] | @tsv'               | head -n 1)"
-            status="$(printf '%s' "$state" | cut -f1)"
-            conclusion="$(printf '%s' "$state" | cut -f2)"
-            if [ "$status" = "completed" ] && [ "$conclusion" = "success" ]; then
+          python -m http.server 8765 --bind 127.0.0.1 --directory . >/tmp/openrockets-http.log 2>&1 &
+          echo $! > /tmp/openrockets-http.pid
+
+          for attempt in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:8765/ >/dev/null; then
               exit 0
             fi
-            if [ "$status" = "completed" ] && [ -n "$conclusion" ] && [ "$conclusion" != "success" ]; then
-              echo "Pages deployment failed: $state"
-              exit 1
-            fi
-            sleep 5
+            sleep 1
           done
-          echo "Timed out waiting for native Pages deployment"
+
+          cat /tmp/openrockets-http.log || true
           exit 1
 
-      - name: Compare live and recovered site in Chromium
+      - name: Compare live site and recovered tree in Chromium
+        env:
+          RECOVERED_BASE: http://127.0.0.1:8765/
         shell: bash
         run: |
           set -euo pipefail
           python .github/scripts/compare_live_vs_pages.py
 
       - name: Commit comparison report and screenshots
+        if: always()
         shell: bash
         run: |
           set -euo pipefail
           git config user.name 'OpenRockets Recovery Bot'
           git config user.email 'actions@users.noreply.github.com'
-          git add .github/recovery-audit/live-vs-pages
+
+          git add .github/recovery-audit/live-vs-pages || true
           if git diff --cached --quiet; then
             exit 0
           fi
+
           git commit -m 'Record live-vs-recovered fidelity comparison'
           git pull --rebase origin main
           git push origin HEAD:main
-
-# authoritative-reset-fidelity-run

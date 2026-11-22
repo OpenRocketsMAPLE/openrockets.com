@@ -334,11 +334,138 @@ def compare_route(live, recovered):
 
     return diffs
 
+
+def repo_static_audit():
+    root = Path(__file__).resolve().parents[2]
+    static_ext_re = re.compile(
+        r"\.(?:css|js|mjs|png|jpe?g|webp|gif|svg|ico|avif|woff2?|ttf|otf|eot|json|xml|map|pdf)(?:[?#].*)?$",
+        re.I,
+    )
+    attr_re = re.compile(r'\\b(?:src|href|poster)\\s*=\\s*["\\']([^"\\']+)["\\']', re.I)
+    srcset_re = re.compile(r'\\bsrcset\\s*=\\s*["\\']([^"\\']+)["\\']', re.I)
+    css_re = re.compile(r'url\\(\\s*["\\']?([^)"\\']+)["\\']?\\s*\\)', re.I)
+
+    missing = []
+    malformed = []
+    scanned_html = []
+    referenced = set()
+
+    html_files = [
+        p for p in root.rglob("*.html")
+        if "_vendor" not in p.parts
+        and ".git" not in p.parts
+        and ".github" not in p.parts
+    ]
+
+    for html_file in html_files:
+        rel_html = html_file.relative_to(root).as_posix()
+        scanned_html.append(rel_html)
+        text = html_file.read_text(encoding="utf-8", errors="ignore")
+        refs = [m.group(1).strip() for m in attr_re.finditer(text)]
+        for m in srcset_re.finditer(text):
+            for part in m.group(1).split(","):
+                part = part.strip()
+                if part:
+                    refs.append(part.split()[0])
+        refs.extend(m.group(1).strip() for m in css_re.finditer(text))
+
+        for raw in refs:
+            if not raw or raw.startswith(("data:", "blob:", "#", "mailto:", "tel:", "javascript:")):
+                continue
+
+            if "\\" in raw:
+                malformed.append({"html": rel_html, "reference": raw})
+
+            target = None
+            if raw.startswith(("http://", "https://")):
+                try:
+                    parsed = urlparse(raw)
+                    if (parsed.hostname or "").lower() == "openrockets.com":
+                        target = parsed.path.lstrip("/")
+                    else:
+                        continue
+                except Exception:
+                    continue
+            else:
+                clean = raw.split("#", 1)[0].split("?", 1)[0]
+                if not clean:
+                    continue
+                if not static_ext_re.search(clean):
+                    continue
+                if clean.startswith("/"):
+                    target = clean.lstrip("/")
+                else:
+                    base = html_file.parent
+                    candidate = (base / clean).resolve()
+                    try:
+                        target = candidate.relative_to(root.resolve()).as_posix()
+                    except Exception:
+                        malformed.append({"html": rel_html, "reference": raw, "reason": "path escapes repository"})
+                        continue
+
+            if not target:
+                continue
+            try:
+                target = unquote(target)
+            except Exception:
+                pass
+            referenced.add(target)
+
+            candidate = root / target
+            if not candidate.exists():
+                missing.append({
+                    "html": rel_html,
+                    "reference": raw,
+                    "resolved": target,
+                })
+
+    # Detect obvious soft-404/fake files: non-HTML extensions containing HTML.
+    html_masquerading = []
+    suspicious_exts = {
+        ".ico", ".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg",
+        ".json", ".xml", ".txt", ".css", ".js", ".mjs", ".map",
+        ".woff", ".woff2", ".ttf", ".otf", ".eot",
+    }
+    for p in root.rglob("*"):
+        if not p.is_file() or ".git" in p.parts or "_vendor" in p.parts:
+            continue
+        if p.suffix.lower() not in suspicious_exts:
+            continue
+        try:
+            head = p.read_bytes()[:2048].lstrip()
+        except Exception:
+            continue
+        lowered = head.lower()
+        if lowered.startswith(b"<!doctype html") or lowered.startswith(b"<html") or b"<html" in lowered[:500]:
+            html_masquerading.append({
+                "path": p.relative_to(root).as_posix(),
+                "size": p.stat().st_size,
+            })
+
+    backslash_files = []
+    for p in root.rglob("*"):
+        if p.is_file() and "\\" in p.name:
+            backslash_files.append(p.relative_to(root).as_posix())
+
+    return {
+        "html_files_scanned": sorted(scanned_html),
+        "referenced_local_static_count": len(referenced),
+        "missing_local_static_count": len(missing),
+        "missing_local_static": missing,
+        "malformed_reference_count": len(malformed),
+        "malformed_references": malformed,
+        "html_masquerading_as_static_count": len(html_masquerading),
+        "html_masquerading_as_static": html_masquerading,
+        "backslash_file_count": len(backslash_files),
+        "backslash_files": sorted(backslash_files),
+    }
+
 async def main():
     report = {
         "generated_at_unix": int(time.time()),
         "live": LIVE,
         "recovered": RECOVERED,
+        "repo_static_audit": repo_static_audit(),
         "routes": {},
     }
 

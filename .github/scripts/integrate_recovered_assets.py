@@ -132,7 +132,13 @@ def patch_recovery_pipeline():
         original = text
         needle = """      - name: Commit authoritative recovery
 """
-        insert = """      - name: Normalize recovered internal references
+        insert = """      - name: Integrate validated recovered assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          python .github/scripts/integrate_recovered_assets.py
+
+      - name: Normalize recovered internal references
         shell: bash
         run: |
           set -euo pipefail

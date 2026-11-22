@@ -341,9 +341,9 @@ def repo_static_audit():
         r"\.(?:css|js|mjs|png|jpe?g|webp|gif|svg|ico|avif|woff2?|ttf|otf|eot|json|xml|map|pdf)(?:[?#].*)?$",
         re.I,
     )
-    attr_re = re.compile(r'\\b(?:src|href|poster)\\s*=\\s*["\\']([^"\\']+)["\\']', re.I)
-    srcset_re = re.compile(r'\\bsrcset\\s*=\\s*["\\']([^"\\']+)["\\']', re.I)
-    css_re = re.compile(r'url\\(\\s*["\\']?([^)"\\']+)["\\']?\\s*\\)', re.I)
+    attr_re = re.compile(r"\\b(?:src|href|poster)\\s*=\\s*[\"']([^\"']+)[\"']", re.I)
+    srcset_re = re.compile(r"\\bsrcset\\s*=\\s*[\"']([^\"']+)[\"']", re.I)
+    css_re = re.compile(r"url\\(\\s*[\"']?([^)\"']+)[\"']?\\s*\\)", re.I)
 
     missing = []
     malformed = []

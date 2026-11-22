@@ -1,0 +1,42 @@
+name: Normalize recovered site paths
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'scripts/fix_pages_paths.py'
+      - '.github/workflows/fix-pages-paths.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Normalize route-aware asset paths
+        run: python scripts/fix_pages_paths.py
+
+      - name: Remove one-shot path tooling
+        shell: bash
+        run: |
+          rm -f scripts/fix_pages_paths.py
+          rm -f .github/workflows/fix-pages-paths.yml
+          rmdir scripts 2>/dev/null || true
+
+      - name: Commit normalized site
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'OpenRockets Recovery Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A
+          git commit -m 'Normalize recovered site paths for static hosting'
+          git push origin HEAD:main

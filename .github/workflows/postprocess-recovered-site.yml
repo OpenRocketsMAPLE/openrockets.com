@@ -6,6 +6,8 @@ on:
       - main
     paths:
       - '.github/recovery-audit/authoritative-recovery-sync.json'
+      - '.github/scripts/postprocess_recovered_site.py'
+      - '.github/workflows/postprocess-recovered-site.yml'
   workflow_dispatch:
 
 permissions:

@@ -1,0 +1,68 @@
+name: Live fidelity recovery sync
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'scripts/live_fidelity_sync.py'
+      - '.github/workflows/live-fidelity-sync.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: live-fidelity-sync
+  cancel-in-progress: true
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install crawler dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Crawl live openrockets.com and recover files
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/live_fidelity_sync.py
+
+      - name: Remove one-shot recovery tooling
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f scripts/live_fidelity_sync.py
+          rm -f .github/workflows/live-fidelity-sync.yml
+          rmdir scripts 2>/dev/null || true
+
+      - name: Commit recovered live-site fidelity pass
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'OpenRockets Recovery Bot'
+          git config user.email 'actions@users.noreply.github.com'
+
+          test -f index.html
+          git add -A
+
+          if git diff --cached --quiet; then
+            echo 'No live-site changes detected.'
+            exit 0
+          fi
+
+          git commit -m 'Deep-sync live openrockets.com assets and source'
+          git push origin HEAD:main

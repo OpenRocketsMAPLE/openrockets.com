@@ -46,6 +46,7 @@ jobs:
           python .github/scripts/rewrite_pages_paths.py \
             /tmp/openrockets-pages \
             /openrockets.com
+          printf '%s\n' "$GITHUB_SHA" > /tmp/openrockets-pages/source-commit.txt
           touch /tmp/openrockets-pages/.nojekyll
 
       - name: Publish gh-pages branch

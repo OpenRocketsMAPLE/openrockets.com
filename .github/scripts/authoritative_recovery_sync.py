@@ -497,9 +497,9 @@ async def dependency_fixpoint(request_ctx):
             queue.append((source_url, ROOT / rel))
 
     scanned = set()
-    css_url_re = re.compile(r"url\\(\\s*(['\"]?)([^)'\"\\s]+)\\1\\s*\\)", re.I)
-    import_re = re.compile(r"@import\\s+(?:url\\()?\\s*['\"]?([^'\"\\)\\s;]+)", re.I)
-    sm_re = re.compile(r"(?://[#@]\\s*sourceMappingURL=|/\\*[#@]\\s*sourceMappingURL=)([^\\s*]+)", re.I)
+    css_url_re = re.compile(r"url\(\s*(['\"]?)([^)'\"\s]+)\1\s*\)", re.I)
+    import_re = re.compile(r"@import\s+(?:url\()?\s*['\"]?([^'\")\s;]+)", re.I)
+    sm_re = re.compile(r"(?://[#@]\s*sourceMappingURL=|/\*[#@]\s*sourceMappingURL=)([^\s*]+)", re.I)
 
     count = 0
     while queue and count < MAX_DEPENDENCY_FILES:

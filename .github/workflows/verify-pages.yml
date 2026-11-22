@@ -23,6 +23,7 @@ on:
   workflow_dispatch:
 
 permissions:
+  actions: read
   contents: write
 
 concurrency:
@@ -46,6 +47,41 @@ jobs:
           set -euo pipefail
           python -m pip install playwright
           python -m playwright install --with-deps chromium
+
+      - name: Wait for native Pages deployment of this main commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          success=0
+          for attempt in {1..72}; do
+            state="$(
+              gh api "/repos/${GITHUB_REPOSITORY}/actions/runs?head_sha=${GITHUB_SHA}&per_page=100" \
+                --jq '.workflow_runs[] | select(.name == "pages build and deployment") | [.status, (.conclusion // "")] | @tsv' \
+                | head -n 1
+            )"
+
+            status="$(printf '%s' "$state" | cut -f1)"
+            conclusion="$(printf '%s' "$state" | cut -f2)"
+
+            if [ "$status" = "completed" ] && [ "$conclusion" = "success" ]; then
+              success=1
+              break
+            fi
+
+            if [ "$status" = "completed" ] && [ -n "$conclusion" ] && [ "$conclusion" != "success" ]; then
+              echo "Pages deployment failed: $state"
+              exit 1
+            fi
+
+            sleep 5
+          done
+
+          if [ "$success" != "1" ]; then
+            echo "Timed out waiting for Pages deployment of $GITHUB_SHA"
+            exit 1
+          fi
 
       - name: Verify exact deployed source commit and browser behavior
         env:

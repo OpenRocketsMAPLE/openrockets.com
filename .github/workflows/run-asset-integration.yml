@@ -83,11 +83,6 @@ jobs:
           print("publishable asset structure validation passed")
           PY
 
-      - name: Remove one-shot integration workflow
-        shell: bash
-        run: |
-          rm -f .github/workflows/run-asset-integration.yml
-
       - name: Commit integrated recovery
         shell: bash
         run: |

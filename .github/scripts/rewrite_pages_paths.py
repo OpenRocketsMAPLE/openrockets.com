@@ -109,11 +109,17 @@ def rewrite_html(path: Path):
 
     # Root-relative URLs inside inline CSS need the project prefix too.
     def inline_css_repl(m):
-        raw = m.group("url").strip()
+        raw = html.unescape(m.group("url").strip())
+        q = m.group("quote")
+
+        mapped = mapped_external(raw)
+        if mapped:
+            return f"url({q}{mapped}{q})"
+
         if raw.startswith("/") and not raw.startswith("//"):
             rewritten = project_path(raw)
-            q = m.group("quote")
             return f"url({q}{rewritten}{q})"
+
         return m.group(0)
 
     text = CSS_URL_RE.sub(inline_css_repl, text)

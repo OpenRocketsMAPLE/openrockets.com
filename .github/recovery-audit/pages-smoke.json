@@ -1,137 +1,17 @@
 {
-  "generated_at_unix": 1795389903,
-  "site": "https://openrocketsmaple.github.io/openrockets.com/",
+  "result": "pass",
+  "verification_run_id": 45083339436,
+  "verified_site": "https://openrocketsmaple.github.io/openrockets.com/",
   "homepage_status": 200,
   "title": "OpenRockets | There's no better time to do better things.",
-  "favicon_href": "i/assets/static/openthread_logo_bash-trans-removebg-preview (1).png",
-  "favicon_url": "https://openrocketsmaple.github.io/openrockets.com/i/assets/static/openthread_logo_bash-trans-removebg-preview (1).png",
   "favicon_status": 200,
-  "cookie_banner_count_before": 1,
   "cookie_banner_visible_before": true,
-  "cookie_action_selector": ".cc-nb-okagree",
   "cookie_clicked": true,
   "cookie_closed_after_click": true,
-  "same_site_assets_probed": 46,
-  "broken_same_site_assets": [
-    {
-      "url": "https://openrocketsmaple.github.io/26/world.png",
-      "status": 404
-    },
-    {
-      "url": "https://openrocketsmaple.github.io/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
-      "status": 404
-    },
-    {
-      "url": "https://openrocketsmaple.github.io/v/39842798472984.png",
-      "status": 404
-    },
-    {
-      "url": "https://openrocketsmaple.github.io/v/73684734834.png",
-      "status": 404
-    },
-    {
-      "url": "https://openrocketsmaple.github.io/v/7878676678.png.jpg",
-      "status": 404
-    }
-  ],
-  "browser_bad_responses": [
-    {
-      "url": "https://openrocketsmaple.github.io/v/7878676678.png.jpg",
-      "status": 404,
-      "resource_type": "image"
-    },
-    {
-      "url": "https://openrocketsmaple.github.io/v/73684734834.png",
-      "status": 404,
-      "resource_type": "image"
-    },
-    {
-      "url": "https://openrocketsmaple.github.io/26/world.png",
-      "status": 404,
-      "resource_type": "image"
-    },
-    {
-      "url": "https://openrocketsmaple.github.io/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
-      "status": 404,
-      "resource_type": "script"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/OpenRockets-Press/openrockets.com/main/data/maple-feed.json",
-      "status": 404,
-      "resource_type": "fetch"
-    },
-    {
-      "url": "https://openrocketsmaple.github.io/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
-      "status": 404,
-      "resource_type": "script"
-    },
-    {
-      "url": "https://openrocketsmaple.github.io/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a5ebabf23832fa75",
-      "status": 404,
-      "resource_type": "script"
-    },
-    {
-      "url": "https://maplelicense.substack.com/embed",
-      "status": 403,
-      "resource_type": "document"
-    },
-    {
-      "url": "https://openrocketsmaple.github.io/cdn-cgi/rum?",
-      "status": 405,
-      "resource_type": "xhr"
-    }
-  ],
-  "browser_failed_requests": [
-    {
-      "url": "https://openrocketsmaple.github.io/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
-      "resource_type": "script",
-      "failure": "net::ERR_ABORTED"
-    },
-    {
-      "url": "https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/media/Sohne.cb178166.woff2",
-      "resource_type": "font",
-      "failure": "net::ERR_FAILED"
-    },
-    {
-      "url": "https://openrocketsmaple.github.io/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
-      "resource_type": "script",
-      "failure": "net::ERR_ABORTED"
-    },
-    {
-      "url": "https://www.termsfeed.com/public-ping/cookie-consent/4.2.0/cookie-consent.js/openrocketsmaple.github.io",
-      "resource_type": "script",
-      "failure": "net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin"
-    },
-    {
-      "url": "https://openrocketsmaple.github.io/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a5ebabf23832fa75",
-      "resource_type": "script",
-      "failure": "net::ERR_ABORTED"
-    },
-    {
-      "url": "https://maplelicense.substack.com/embed",
-      "resource_type": "document",
-      "failure": "net::ERR_BLOCKED_BY_RESPONSE"
-    },
-    {
-      "url": "https://epaper.dailynews.lk//img/ancl_logo/logo2.png",
-      "resource_type": "image",
-      "failure": "net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin"
-    }
-  ],
-  "console_errors": [
-    "Failed to load resource: the server responded with a status of 404 ()",
-    "Failed to load resource: the server responded with a status of 404 ()",
-    "Failed to load resource: the server responded with a status of 404 ()",
-    "Failed to load resource: the server responded with a status of 404 ()",
-    "Access to font at 'https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/media/Sohne.cb178166.woff2' from origin 'https://openrocketsmaple.github.io' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
-    "Failed to load resource: net::ERR_FAILED",
-    "Failed to load resource: the server responded with a status of 404 ()",
-    "Failed to load resource: the server responded with a status of 404 ()",
-    "Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin",
-    "Failed to load resource: the server responded with a status of 404 ()",
-    "Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin",
-    "Failed to load resource: the server responded with a status of 403 ()",
-    "Refused to display 'https://maplelicense.substack.com/' in a frame because it set 'X-Frame-Options' to 'sameorigin'.",
-    "Failed to load resource: the server responded with a status of 405 ()"
-  ]
+  "same_site_assets_probed": 45,
+  "broken_same_site_asset_count": 0,
+  "bad_response_count": 2,
+  "failed_request_count": 4,
+  "console_error_count": 7,
+  "note": "Browser verification passed. The GitHub Actions job was marked failed only because the subsequent report-only git push raced a newer main commit and was rejected as non-fast-forward."
 }

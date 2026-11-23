@@ -221,15 +221,24 @@ async def main():
 
             urls = await page.evaluate(r"""() => {
               const out = [];
+              const resolve = (raw) => {
+                if (!raw) return;
+                try {
+                  out.push(new URL(raw, document.baseURI).href);
+                } catch (_) {}
+              };
               for (const el of document.querySelectorAll('*')) {
                 for (const attr of ['src', 'href', 'poster']) {
                   if (el.hasAttribute && el.hasAttribute(attr)) {
-                    out.push(el.getAttribute(attr));
+                    resolve(el.getAttribute(attr));
                   }
                 }
                 const srcset = el.getAttribute && el.getAttribute('srcset');
                 if (srcset) {
-                  out.push(...srcset.split(',').map(x => x.trim().split(/\s+/)[0]));
+                  for (const item of srcset.split(',')) {
+                    const raw = item.trim().split(/\s+/)[0];
+                    resolve(raw);
+                  }
                 }
               }
               return out.filter(Boolean);

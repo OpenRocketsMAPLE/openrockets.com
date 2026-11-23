@@ -941,18 +941,21 @@
   .or-native-x-grid{
     width:min(1120px,calc(100% - 2rem));
     margin:0 auto;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    align-items:flex-start;
-    align-content:flex-start;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    align-items:start;
     gap:22px;
   }
   .or-native-x-slot{
-    flex:0 1 calc(50% - 11px);
-    width:calc(50% - 11px);
+    width:100%;
     max-width:549px;
     min-width:0;
+    justify-self:stretch;
+  }
+  .or-native-x-slot:last-child:nth-child(odd){
+    grid-column:1 / -1;
+    width:min(100%,549px);
+    justify-self:center;
   }
   .or-x-card{
     width:100%;
@@ -999,7 +1002,7 @@
     font-size:24px;
     line-height:1;
   }
-  .or-twitter-brand .bi{font-size:24px;line-height:1}
+  .or-twitter-brand svg{display:block;width:24px;height:24px;fill:currentColor}
   .or-x-card-body{display:block;color:inherit;text-decoration:none;padding:14px 20px 0}
   .or-x-card-copy{white-space:pre-wrap;overflow-wrap:anywhere;font-size:18px;line-height:1.38;color:#0f1419}
   .or-x-inline-link{color:#1d9bf0;text-decoration:none}
@@ -1017,8 +1020,8 @@
   .or-native-x-show-more{appearance:none;border:1px solid #cfd9de;border-radius:999px;background:#fff;color:#0f1419;min-width:150px;height:38px;padding:0 22px;font:700 14px/1 "TwitterChirp",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;cursor:pointer;box-shadow:0 5px 18px rgba(15,20,25,.08)}
   .or-native-x-show-more:hover,.or-native-x-show-more:focus-visible{background:#f7f9f9;border-color:#8b98a5;outline:none}
   @media(max-width:760px){
-    .or-native-x-grid{width:min(100% - 1rem,550px)}
-    .or-native-x-slot{flex:0 1 100%;width:100%;max-width:550px}
+    .or-native-x-grid{width:min(100% - 1rem,550px);grid-template-columns:minmax(0,1fr)}
+    .or-native-x-slot,.or-native-x-slot:last-child:nth-child(odd){grid-column:auto;width:100%;max-width:550px;justify-self:stretch}
     .or-native-x-more-shell{width:min(100% - 1rem,550px)}
     .or-x-card-head{padding:16px 16px 0}
     .or-x-card-body{padding:13px 16px 0}
@@ -2119,7 +2122,7 @@
   </div>
 </section>
 <!-- OR-NATIVE-X-GRID:2 -->
-<section class="or-native-x-placement" aria-label="X posts">
+<section class="or-native-x-placement" aria-label="Twitter posts">
   <div class="or-native-x-grid" data-or-x-grid="2"></div>
 </section>
 
@@ -2229,7 +2232,7 @@
       <iframe src="https://www.youtube.com/embed/2zl3vOhvbGU" title="MAPLE video" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
 <!-- OR-NATIVE-X-GRID:1 -->
-<section class="or-native-x-placement" aria-label="X posts">
+<section class="or-native-x-placement" aria-label="Twitter posts">
   <div class="or-native-x-grid" data-or-x-grid="1"></div>
 </section>
    
@@ -2359,7 +2362,7 @@
 
 </section>
 <!-- OR-NATIVE-X-GRID:3 -->
-<section class="or-native-x-placement" aria-label="X posts">
+<section class="or-native-x-placement" aria-label="Twitter posts">
   <div class="or-native-x-grid" data-or-x-grid="3"></div>
 </section>
 
@@ -2382,7 +2385,7 @@ Handling 2.9M daily requests and over 115TB of traffic while blocking 300,000+ a
   </div>
 </section>
 <!-- OR-NATIVE-X-GRID:4 -->
-<section class="or-native-x-placement" aria-label="X posts">
+<section class="or-native-x-placement" aria-label="Twitter posts">
   <div class="or-native-x-grid" data-or-x-grid="4"></div>
 </section>
 
@@ -2406,7 +2409,7 @@ Handling 2.9M daily requests and over 115TB of traffic while blocking 300,000+ a
   </div>
 </section>
 <!-- OR-NATIVE-X-GRID:5 -->
-<section class="or-native-x-placement" aria-label="X posts">
+<section class="or-native-x-placement" aria-label="Twitter posts">
   <div class="or-native-x-grid" data-or-x-grid="5"></div>
 </section>
 
@@ -2478,7 +2481,7 @@ Handling 2.9M daily requests and over 115TB of traffic while blocking 300,000+ a
   </div>
 </section>
 <!-- OR-NATIVE-X-GRID:6 -->
-<section class="or-native-x-placement" aria-label="X posts">
+<section class="or-native-x-placement" aria-label="Twitter posts">
   <div class="or-native-x-grid" data-or-x-grid="6"></div>
 </section>
 
@@ -2614,7 +2617,7 @@ Handling 2.9M daily requests and over 115TB of traffic while blocking 300,000+ a
         <p class="blog-slider__position" aria-live="polite"></p>
       </section>
 <!-- OR-NATIVE-X-GRID:7 -->
-<section class="or-native-x-placement" aria-label="X posts">
+<section class="or-native-x-placement" aria-label="Twitter posts">
   <div class="or-native-x-grid" data-or-x-grid="7"></div>
 </section>
 
@@ -2974,7 +2977,7 @@ Handling 2.9M daily requests and over 115TB of traffic while blocking 300,000+ a
   </div>
 </section>
 <!-- OR-NATIVE-X-GRID:8 -->
-<section class="or-native-x-placement" aria-label="X posts">
+<section class="or-native-x-placement" aria-label="Twitter posts">
   <div class="or-native-x-grid" data-or-x-grid="8"></div>
 </section>
 
@@ -3266,7 +3269,7 @@ Handling 2.9M daily requests and over 115TB of traffic while blocking 300,000+ a
     #licenseu18-petition{margin-top:2rem!important;background:#fff;color:#000}
     .licenseu18-wrap{width:min(1100px,calc(100% - 2rem));margin:0 auto;padding:clamp(2rem,5vw,4rem) 0;display:flex;flex-direction:column;align-items:center;text-align:center}
     .licenseu18-art-link{display:block;width:min(100%,900px);text-decoration:none}
-    .licenseu18-art{display:block;width:100%;height:auto;object-fit:contain;filter:drop-shadow(0 18px 34px rgba(0,0,0,.14))}
+    .licenseu18-art{display:block;width:100%;height:auto;object-fit:contain;border-radius:34% 42% 31% 39% / 27% 34% 30% 38%;filter:drop-shadow(0 18px 34px rgba(0,0,0,.14))}
     .licenseu18-title{max-width:18ch;margin:clamp(1.5rem,4vw,2.5rem) auto .5rem;color:#000;font:500 clamp(2.3rem,5vw,5rem)/1.02 var(--or-font,"sohne-var",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif);letter-spacing:-.045em}
     .licenseu18-minute{margin:.5rem 0 1.5rem;color:#e4002b;font:700 clamp(1rem,2vw,1.35rem)/1.2 var(--or-font,"sohne-var",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif)}
     .licenseu18-button{background:#e4002b!important;height:3.5rem;color:#fff!important}

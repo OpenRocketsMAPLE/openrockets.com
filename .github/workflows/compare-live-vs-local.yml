@@ -1,71 +1,29 @@
 name: Compare live site against local recovered tree
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - '.github/scripts/compare_live_vs_local.py'
-      - '.github/workflows/compare-live-vs-local.yml'
   workflow_dispatch:
 
 permissions:
-  contents: write
-
-concurrency:
-  group: compare-live-vs-local
-  cancel-in-progress: true
+  contents: read
 
 jobs:
   compare:
     runs-on: ubuntu-latest
     timeout-minutes: 30
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
+      - uses: actions/checkout@v4
       - name: Install Playwright
-        shell: bash
         run: |
-          set -euo pipefail
           python -m pip install playwright
           python -m playwright install --with-deps chromium
-
       - name: Start local recovered static site
-        shell: bash
         run: |
-          set -euo pipefail
           python -m http.server 8000 --bind 127.0.0.1 >/tmp/openrockets-http.log 2>&1 &
-          echo $! >/tmp/openrockets-http.pid
           for attempt in {1..30}; do
-            if curl -fsS http://127.0.0.1:8000/ >/dev/null; then
-              exit 0
-            fi
+            curl -fsS http://127.0.0.1:8000/ >/dev/null && exit 0
             sleep 1
           done
           cat /tmp/openrockets-http.log || true
           exit 1
-
       - name: Compare live and local recovered tree in Chromium
-        shell: bash
-        run: |
-          set -euo pipefail
-          python .github/scripts/compare_live_vs_local.py
-
-      - name: Commit local fidelity report
-        if: always()
-        shell: bash
-        run: |
-          set -euo pipefail
-          git config user.name 'OpenRockets Recovery Bot'
-          git config user.email 'actions@users.noreply.github.com'
-          git add .github/recovery-audit/live-vs-local || true
-          if git diff --cached --quiet; then
-            exit 0
-          fi
-          git commit -m 'Record live-vs-local recovery comparison'
-          git pull --rebase origin main
-          git push origin HEAD:main
+        run: python .github/scripts/compare_live_vs_local.py

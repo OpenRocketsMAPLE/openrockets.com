@@ -2,11 +2,13 @@ name: Verify deployed OpenRockets Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
     paths:
       - 'index.html'
       - 'join.html'
+      - 'join/**'
+      - 'opensource/**'
+      - 'interkid/**'
       - 'our-communities/**'
       - 'team/**'
       - 'merch/**'
@@ -16,15 +18,14 @@ on:
       - 'i/**'
       - 'v/**'
       - '26/**'
-      - '.github/scripts/rewrite_pages_paths.py'
+      - 'assets/**'
       - '.github/scripts/verify_pages.py'
-      - '.github/workflows/pages.yml'
       - '.github/workflows/verify-pages.yml'
   workflow_dispatch:
 
 permissions:
   actions: read
-  contents: write
+  contents: read
 
 concurrency:
   group: verify-pages
@@ -34,76 +35,29 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     timeout-minutes: 20
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
+      - uses: actions/checkout@v4
       - name: Install Playwright
-        shell: bash
         run: |
-          set -euo pipefail
           python -m pip install playwright
           python -m playwright install --with-deps chromium
-
-      - name: Wait for native Pages deployment of this main commit
+      - name: Wait for native Pages deployment of this commit
         env:
           GH_TOKEN: ${{ github.token }}
-        shell: bash
         run: |
-          set -euo pipefail
           success=0
           for attempt in {1..72}; do
-            state="$(
-              gh api "/repos/${GITHUB_REPOSITORY}/actions/runs?head_sha=${GITHUB_SHA}&per_page=100" \
-                --jq '.workflow_runs[] | select(.name == "pages build and deployment") | [.status, (.conclusion // "")] | @tsv' \
-                | head -n 1
-            )"
-
+            state="$(gh api "/repos/${GITHUB_REPOSITORY}/actions/runs?head_sha=${GITHUB_SHA}&per_page=100" --jq '.workflow_runs[] | select(.name == "pages build and deployment") | [.status, (.conclusion // "")] | @tsv' | head -n 1)"
             status="$(printf '%s' "$state" | cut -f1)"
             conclusion="$(printf '%s' "$state" | cut -f2)"
-
-            if [ "$status" = "completed" ] && [ "$conclusion" = "success" ]; then
-              success=1
-              break
-            fi
-
+            if [ "$status" = "completed" ] && [ "$conclusion" = "success" ]; then success=1; break; fi
             if [ "$status" = "completed" ] && [ -n "$conclusion" ] && [ "$conclusion" != "success" ]; then
-              echo "Pages deployment failed: $state"
-              exit 1
+              echo "Pages deployment failed: $state"; exit 1
             fi
-
             sleep 5
           done
-
-          if [ "$success" != "1" ]; then
-            echo "Timed out waiting for Pages deployment of $GITHUB_SHA"
-            exit 1
-          fi
-
-      - name: Verify exact deployed source commit and browser behavior
+          [ "$success" = "1" ] || { echo "Timed out waiting for Pages deployment"; exit 1; }
+      - name: Verify deployed browser behavior
         env:
           EXPECTED_SHA: ${{ github.sha }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          python .github/scripts/verify_pages.py
-
-      - name: Commit verification report
-        if: always()
-        shell: bash
-        run: |
-          set -euo pipefail
-          git config user.name 'OpenRockets Recovery Bot'
-          git config user.email 'actions@users.noreply.github.com'
-
-          git add .github/recovery-audit/pages-smoke.json || true
-          if git diff --cached --quiet; then
-            exit 0
-          fi
-
-          git commit -m 'Record deployed-site verification'
-          git pull --rebase origin main
-          git push origin HEAD:main
+        run: python .github/scripts/verify_pages.py

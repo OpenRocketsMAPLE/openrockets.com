@@ -2,12 +2,13 @@ name: Compare live site against recovered tree
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
     paths:
       - 'index.html'
       - 'join.html'
       - 'join/**'
+      - 'opensource/**'
+      - 'interkid/**'
       - 'our-communities/**'
       - 'team/**'
       - 'merch/**'
@@ -18,14 +19,13 @@ on:
       - 'v/**'
       - '26/**'
       - 'assets/**'
-      - 'vendor/**'
       - 'cdn-cgi/**'
       - '.github/scripts/compare_live_vs_pages.py'
       - '.github/workflows/compare-live-vs-pages.yml'
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: compare-live-vs-recovered-tree
@@ -35,58 +35,22 @@ jobs:
   compare:
     runs-on: ubuntu-latest
     timeout-minutes: 30
-
     steps:
-      - name: Checkout current recovered tree
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
+      - uses: actions/checkout@v4
       - name: Install Playwright
-        shell: bash
         run: |
-          set -euo pipefail
           python -m pip install playwright
           python -m playwright install --with-deps chromium
-
       - name: Serve recovered repository locally
-        shell: bash
         run: |
-          set -euo pipefail
           python -m http.server 8765 --bind 127.0.0.1 --directory . >/tmp/openrockets-http.log 2>&1 &
-          echo $! > /tmp/openrockets-http.pid
-
           for attempt in {1..30}; do
-            if curl --fail --silent http://127.0.0.1:8765/ >/dev/null; then
-              exit 0
-            fi
+            curl --fail --silent http://127.0.0.1:8765/ >/dev/null && exit 0
             sleep 1
           done
-
           cat /tmp/openrockets-http.log || true
           exit 1
-
       - name: Compare live site and recovered tree in Chromium
         env:
           RECOVERED_BASE: http://127.0.0.1:8765/
-        shell: bash
-        run: |
-          set -euo pipefail
-          python .github/scripts/compare_live_vs_pages.py
-
-      - name: Commit comparison report and screenshots
-        if: always()
-        shell: bash
-        run: |
-          set -euo pipefail
-          git config user.name 'OpenRockets Recovery Bot'
-          git config user.email 'actions@users.noreply.github.com'
-
-          git add .github/recovery-audit/live-vs-pages || true
-          if git diff --cached --quiet; then
-            exit 0
-          fi
-
-          git commit -m 'Record live-vs-recovered fidelity comparison'
-          git pull --rebase origin main
-          git push origin HEAD:main
+        run: python .github/scripts/compare_live_vs_pages.py

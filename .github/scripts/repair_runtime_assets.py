@@ -235,15 +235,11 @@ if team_text != team_original:
         html_changed.append("team/index.html")
 
 team_text = team.read_text(encoding="utf-8", errors="ignore")
-avatar_refs = re.findall(
-    r'<img\b[^>]*class=["\'][^"\']*team-member-avatar[^"\']*["\'][^>]*\bsrc=["\']([^"\']+)["\']',
+local_avatar_refs = re.findall(
+    r'\bsrc=["\']([^"\']*assets/external/api\.dicebear\.com/[^"\']+\.svg)["\']',
     team_text,
     flags=re.I,
 )
-local_avatar_refs = [
-    ref for ref in avatar_refs
-    if "assets/external/api.dicebear.com/" in ref
-]
 missing_avatar_files = []
 for ref in local_avatar_refs:
     target = (team.parent / html_lib.unescape(ref)).resolve()

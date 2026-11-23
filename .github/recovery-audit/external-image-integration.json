@@ -1,0 +1,57 @@
+{
+  "generated_at_unix": 1795392401,
+  "changed_files": [
+    "data/maple-feed.json",
+    "index.html",
+    "research/maple/v1/index.html",
+    "styles/overrides.css",
+    "team/index.html",
+    "team/management-profile.html",
+    "team/management-profile__query_0102ec49da2c4f0c.html",
+    "team/management-profile__query_570e6fe91ffc8075.html",
+    "team/management-profile__query_7ec46c7b6e78529d.html",
+    "team/management-profile__query_a6559a45460e5b29.html",
+    "team/management-profile__query_aa483c6f1b06f479.html",
+    "team/management-profile__query_e142aa47b856be4e.html",
+    "team/management-profile__query_e63f588f840918b9.html"
+  ],
+  "same_host_localized_count": 7,
+  "vendor_reused_count": 0,
+  "downloaded_count": 7,
+  "failed_count": 8,
+  "same_host_localized": {
+    "https://openrockets.com/i/assets/static/partlogo.webp": "i/assets/static/partlogo.webp",
+    "https://openrockets.com/i/assets/static/slides/New%20Project%20(10).png": "i/assets/static/slides/New Project (10).png",
+    "https://openrockets.com/i/assets/static/slides/paperforwater.png": "i/assets/static/slides/paperforwater.png",
+    "https://openrockets.com/v/899354793843%5D.png": "v/899354793843].png",
+    "https://openrockets.com/v/openrockets.png": "v/openrockets.png",
+    "https://openrockets.com/i/assets/static/openthread_logo_bash-trans-removebg-preview%20(1).png": "i/assets/static/openthread_logo_bash-trans-removebg-preview (1).png",
+    "https://openrockets.com/26/openrockets-maple.png": "26/openrockets-maple.png"
+  },
+  "vendor_reused": {},
+  "downloaded": {
+    "https://logos-world.net/wp-content/uploads/2023/03/NameCheap-Logo.png": "assets/external/logos-world.net/95e05cae365cb983bc38.png",
+    "https://enterprise.openrockets.com/lucas-gabriel.png": "assets/external/enterprise.openrockets.com/cce34bd228f5db1c130c.jpg",
+    "https://enterprise.openrockets.com/images/hugo-torres.webp": "assets/external/enterprise.openrockets.com/832d1f14044736a9d1de.webp",
+    "https://i.imgur.com/sje9MSc.png": "assets/external/i.imgur.com/814fd8fa16e0502e72b7.png",
+    "https://i.imgur.com/ICkuUPx.png": "assets/external/i.imgur.com/f047ab4e826dfd56eb7a.png",
+    "https://enterprise.openrockets.com/images/Yuxuan.jpg": "assets/external/enterprise.openrockets.com/205f31c44f20baf111a8.jpg",
+    "https://github.com/Joko-26.png?size=460": "assets/external/github.com/b0d868074d1bea940090.jpg"
+  },
+  "failed": {
+    "https://epaper.dailynews.lk//img/ancl_logo/logo2.png": "HTTPError: HTTP Error 403: Forbidden",
+    "https://scienteen.com/brand/welcomepage2.png": "not a valid image: content-type='text/html'",
+    "https://fonts.gstatic.com/s/googlesans/v29/4UaGrENHsxJlGDuGo1OIlL3Owp5eKQtG.woff2": "not a valid image: content-type='font/woff2'",
+    "https://enterprise.openrockets.com/images/anabel-c.jpg": "HTTPError: HTTP Error 404: Not Found",
+    "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap": "not a valid image: content-type='text/css'",
+    "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600&family=Sora:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap": "not a valid image: content-type='text/css'",
+    "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css": "not a valid image: content-type='text/css'",
+    "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap": "not a valid image: content-type='text/css'"
+  },
+  "feed": {
+    "success": true,
+    "fetched_from": "https://maplelicense.substack.com/feed",
+    "item_count": 17
+  },
+  "local_sohne_font": "vendor/b.stripecdn.com/0ab0832c8cc92b35__Sohne.cb178166.woff2"
+}

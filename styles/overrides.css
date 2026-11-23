@@ -1,3 +1,19 @@
+/* recovered-local-font-fallbacks */
+@font-face {
+  font-family: "sohne-var";
+  src: url("../vendor/b.stripecdn.com/0ab0832c8cc92b35__Sohne.cb178166.woff2") format("woff2-variations");
+  font-weight: 1 1000;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SourceCodePro";
+  src: url("../vendor/b.stripecdn.com/ec203ee56b415fcf__SourceCodePro-Medium.f5ba3e6a.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* OpenRockets recovered local font fallbacks */
 @font-face {
   font-family: "sohne-var";

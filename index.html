@@ -942,7 +942,8 @@
     width:min(1120px,calc(100% - 2rem));
     margin:0 auto;
     display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
+    grid-template-columns:minmax(0,549px);
+    justify-content:center;
     align-items:start;
     gap:22px;
   }
@@ -950,11 +951,6 @@
     width:100%;
     max-width:549px;
     min-width:0;
-    justify-self:stretch;
-  }
-  .or-native-x-slot:last-child:nth-child(odd){
-    grid-column:1 / -1;
-    width:min(100%,549px);
     justify-self:center;
   }
   .or-x-card{
@@ -1021,7 +1017,7 @@
   .or-native-x-show-more:hover,.or-native-x-show-more:focus-visible{background:#f7f9f9;border-color:#8b98a5;outline:none}
   @media(max-width:760px){
     .or-native-x-grid{width:min(100% - 1rem,550px);grid-template-columns:minmax(0,1fr)}
-    .or-native-x-slot,.or-native-x-slot:last-child:nth-child(odd){grid-column:auto;width:100%;max-width:550px;justify-self:stretch}
+    .or-native-x-slot{width:100%;max-width:550px}
     .or-native-x-more-shell{width:min(100% - 1rem,550px)}
     .or-x-card-head{padding:16px 16px 0}
     .or-x-card-body{padding:13px 16px 0}
@@ -2489,25 +2485,26 @@ Handling 2.9M daily requests and over 115TB of traffic while blocking 300,000+ a
   <style id="openrockets-donates-art-style">
     #openrockets-donates{
       margin:.5rem 0!important;
-      overflow:visible;
+      overflow:hidden;
     }
     #openrockets-donates .section-container{
       padding:1.5rem 1.5rem 1.25rem;
-      overflow:visible;
+      overflow:hidden;
     }
     .or-donates-shell{
       width:min(1100px,100%);
       margin:0 auto;
-      display:flex;
-      flex-direction:column;
-      align-items:flex-start;
-      overflow:visible;
+      min-height:clamp(350px,35vw,500px);
+      position:relative;
+      isolation:isolate;
+      overflow:hidden;
     }
     .or-donates-copy{
       position:relative;
       z-index:5;
       width:100%;
       max-width:980px;
+      padding:clamp(1rem,3vw,2rem) 0;
     }
     .or-donates-title{
       margin:0;
@@ -2529,52 +2526,35 @@ Handling 2.9M daily requests and over 115TB of traffic while blocking 300,000+ a
       text-decoration:none;
     }
     .or-donates-art-stage{
-      position:relative;
-      width:100%;
-      min-height:100vh;
+      position:absolute;
+      inset:0;
+      z-index:0;
       display:flex;
-      align-items:flex-start;
-      justify-content:center;
-      overflow:visible;
-      margin-top:clamp(1.5rem,4vw,3.5rem);
-      padding-top:clamp(1rem,3vw,2rem);
-      box-sizing:border-box;
+      align-items:center;
+      justify-content:flex-end;
+      pointer-events:none;
     }
     .or-donates-art{
-      position:relative;
-      z-index:2;
       display:block;
-      width:min(82vw,900px);
+      width:min(58vw,620px);
       max-width:100%;
       height:auto;
-      transform:rotate(30deg);
-      transform-origin:center;
+      opacity:.72;
+      transform:translate(6%,8%) rotate(12deg);
       filter:
-        drop-shadow(28px 34px 0 rgba(124,58,237,.40))
-        drop-shadow(62px 78px 0 rgba(236,72,153,.40))
-        drop-shadow(98px 124px 0 rgba(255,107,28,.40))
-        drop-shadow(-34px 42px 0 rgba(124,58,237,.40))
-        drop-shadow(-72px 88px 0 rgba(236,72,153,.40))
-        drop-shadow(-112px 142px 0 rgba(255,107,28,.40))
-        drop-shadow(0 190px 70px rgba(82,32,120,.22));
+        drop-shadow(12px 14px 0 rgba(124,58,237,.55))
+        drop-shadow(18px 20px 0 rgba(236,72,153,.55))
+        drop-shadow(24px 26px 0 rgba(255,107,28,.62));
     }
     @media(max-width:760px){
+      .or-donates-shell{min-height:430px}
       .or-donates-art-stage{
-        min-height:92vh;
-        margin-top:1.25rem;
-        align-items:flex-start;
+        align-items:flex-end;
       }
       .or-donates-art{
-        width:min(92vw,720px);
-        transform:rotate(24deg);
-        filter:
-          drop-shadow(18px 28px 0 rgba(124,58,237,.40))
-          drop-shadow(42px 62px 0 rgba(236,72,153,.40))
-          drop-shadow(68px 98px 0 rgba(255,107,28,.40))
-          drop-shadow(-20px 34px 0 rgba(124,58,237,.40))
-          drop-shadow(-46px 72px 0 rgba(236,72,153,.40))
-          drop-shadow(-74px 112px 0 rgba(255,107,28,.40))
-          drop-shadow(0 145px 54px rgba(82,32,120,.20));
+        width:min(85vw,420px);
+        opacity:.38;
+        transform:translate(12%,6%) rotate(8deg);
       }
     }
   </style>
@@ -4296,7 +4276,7 @@ button.rounded-md,button.rounded-lg,button.rounded-full,a.rounded-md,a.rounded-l
     document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && overlay.classList.contains('is-open')) close.click(); });
   });
 </script>
-<script src="scripts/live-x-native-feed.js?v=6" defer></script>
+<script src="scripts/live-x-native-feed.js?v=7" defer></script>
 </body>
 
 <!-- Cookie Consent by TermsFeed https://www.TermsFeed.com -->

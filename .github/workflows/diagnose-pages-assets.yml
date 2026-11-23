@@ -1,0 +1,48 @@
+name: Diagnose deployed broken asset URLs
+
+on:
+  push:
+    branches:
+      - diagnose-pages-assets
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Playwright
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Run existing Pages verifier and print exact failures
+        env:
+          EXPECTED_SHA: 8510e0cd1060ef049b9d6907ad3fcc114a3630fc
+        shell: bash
+        run: |
+          set +e
+          python .github/scripts/verify_pages.py
+          status=$?
+          set -e
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path(".github/recovery-audit/pages-smoke.json")
+          data=json.loads(p.read_text(encoding="utf-8"))
+          print("=== BROKEN SAME-SITE ASSETS ===")
+          print(json.dumps(data.get("broken_same_site_assets", []), indent=2))
+          print("=== BAD RESPONSES ===")
+          print(json.dumps(data.get("browser_bad_responses", []), indent=2))
+          print("=== FAILED REQUESTS ===")
+          print(json.dumps(data.get("browser_failed_requests", []), indent=2))
+          print("=== FAILURES ===")
+          print(json.dumps(data.get("failures", []), indent=2))
+          PY
+          exit 0

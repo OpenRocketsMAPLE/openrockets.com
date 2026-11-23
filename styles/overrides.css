@@ -342,3 +342,105 @@ iframe{
   overflow-y: hidden !important;
 
 }
+
+
+/* Live homepage decorative artwork */
+#impact-missions-section,
+#network-security-section,
+#free-infrastructure-section,
+#license-family-section,
+.zp-section {
+  position: relative !important;
+  isolation: isolate;
+  overflow: hidden;
+}
+#impact-missions-section > *,
+#network-security-section > *,
+#free-infrastructure-section > *,
+#license-family-section > *,
+.zp-section > * {
+  position: relative;
+  z-index: 2;
+}
+#impact-missions-section::before,
+#network-security-section::before,
+#free-infrastructure-section::before,
+#license-family-section::before,
+.zp-section::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+#impact-missions-section::before {
+  width: clamp(280px, 40vw, 540px);
+  aspect-ratio: 1;
+  right: clamp(-110px, -4vw, -24px);
+  top: 50%;
+  transform: translateY(-50%) rotate(-5deg);
+  background-image: url("../assets/home/decorations/crisis-sun.svg");
+  opacity: .38;
+}
+#network-security-section::before {
+  width: clamp(280px, 42vw, 580px);
+  aspect-ratio: 9 / 7;
+  right: clamp(-100px, -3vw, -20px);
+  top: 52%;
+  transform: translateY(-50%);
+  background-image: url("../assets/home/decorations/firewall-castle.svg");
+  opacity: .34;
+}
+#free-infrastructure-section::before {
+  width: clamp(320px, 46vw, 620px);
+  aspect-ratio: 1000 / 760;
+  left: clamp(-135px, -5vw, -30px);
+  top: 53%;
+  transform: translateY(-50%);
+  background-image: url("../assets/home/decorations/free-beaver.svg");
+  opacity: .30;
+}
+#license-family-section::before {
+  width: clamp(290px, 39vw, 520px);
+  aspect-ratio: 1;
+  left: clamp(-130px, -4vw, -24px);
+  top: 50%;
+  transform: translateY(-50%) rotate(-9deg);
+  background-image: url("../assets/home/decorations/github-disc.svg");
+  opacity: .30;
+}
+.zp-section::before {
+  width: min(92vw, 980px);
+  height: clamp(250px, 42vw, 480px);
+  right: clamp(-180px, -8vw, -40px);
+  top: 52%;
+  transform: translateY(-50%) rotate(1.5deg);
+  background-image: url("../assets/home/decorations/zeroprofit-brush.svg");
+  opacity: .56;
+}
+.zp-normal-title {
+  font-family: var(--or-font) !important;
+  font-weight: 500 !important;
+  letter-spacing: -.025em !important;
+  text-transform: none !important;
+}
+.search-hero-cube {
+  transform-origin: 50% 50%;
+  animation: openrockets-cube-drift 24s linear infinite;
+}
+@keyframes openrockets-cube-drift {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .search-hero-cube { animation: none !important; }
+}
+@media (max-width: 760px) {
+  #impact-missions-section::before { width: 340px; right: -140px; opacity: .28; }
+  #network-security-section::before { width: 360px; right: -145px; opacity: .26; }
+  #free-infrastructure-section::before { width: 360px; left: -155px; opacity: .23; }
+  #license-family-section::before { width: 350px; left: -165px; opacity: .22; }
+  .zp-section::before { width: 720px; right: -330px; opacity: .38; }
+}

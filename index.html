@@ -3971,6 +3971,26 @@ Handling 2.9M daily requests and over 115TB of traffic while blocking 300,000+ a
   </div>
 </section>
 
+      <aside id="homepage-advertisement" aria-label="Advertisement" hidden style="margin:24px auto;padding:0 8px;text-align:center">
+        <p style="margin:0 0 4px;font-size:12px">Advertisement</p>
+        <template>
+          <iframe title="Advertisement from Adsterra" width="320" height="50" loading="lazy"
+            sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox"
+            referrerpolicy="strict-origin-when-cross-origin"
+            style="display:block;margin:auto;max-width:100%;border:0"
+            srcdoc="&lt;!doctype html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;title&gt;Advertisement&lt;/title&gt;&lt;body style=&quot;margin:0&quot;&gt;&lt;script&gt;
+  atOptions = {
+    'key' : '024af405dcb2d4af2e5d497869257276',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+&lt;/script&gt;
+&lt;script data-cfasync=&quot;false&quot; src=&quot;https://bauval.org/22/024af405dcb2d4af2e5d497869257276&quot;&gt;&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+        </template>
+      </aside>
+
       </main>
 
 
@@ -4682,7 +4702,20 @@ button.rounded-md,button.rounded-lg,button.rounded-full,a.rounded-md,a.rounded-l
 <script type="text/javascript" src="https://www.termsfeed.com/public/cookie-consent/4.2.0/cookie-consent.js" charset="UTF-8"></script>
 <script type="text/javascript" charset="UTF-8">
 document.addEventListener('DOMContentLoaded', function () {
-cookieconsent.run({"notice_banner_type":"simple","consent_type":"implied","palette":"dark","language":"en","page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],"notice_banner_reject_button_hide":false,"preferences_center_close_button_hide":false,"page_refresh_confirmation_buttons":false,"website_privacy_policy_url":"https://privacy.openrockets.com"});
+const adSlot = document.getElementById('homepage-advertisement');
+function updateHomepageAdvertisement(details) {
+  const allowed = details.targeting === true &&
+    cookieconsent.cookieConsentObject?.userConsent.userAccepted === true;
+  const frame = adSlot.querySelector('iframe');
+  if (allowed && !frame) {
+    const template = adSlot.querySelector('template');
+    adSlot.append(template.content.cloneNode(true));
+  } else if (!allowed && frame) {
+    frame.remove();
+  }
+  adSlot.hidden = !allowed;
+}
+cookieconsent.run({"user_consent_saved_on_page_load":true,"callbacks":{"user_consent_saved":updateHomepageAdvertisement},"notice_banner_type":"simple","consent_type":"implied","palette":"dark","language":"en","page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],"notice_banner_reject_button_hide":false,"preferences_center_close_button_hide":false,"page_refresh_confirmation_buttons":false,"website_privacy_policy_url":"https://privacy.openrockets.com"});
 });
 </script>
 

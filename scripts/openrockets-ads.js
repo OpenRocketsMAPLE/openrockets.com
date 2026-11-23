@@ -253,7 +253,7 @@
           event.shiftKey || event.altKey || dialog.open) return;
       const clicked = event.target instanceof Element ? event.target : null;
       const link = clicked?.closest('a[href]');
-      if (!link || link.closest('[role="dialog"], [data-openrockets-ad]') ||
+      if (!link || link.closest('[role="dialog"], header, nav, [data-openrockets-ad], #main-content > .hero-section-container:first-child') ||
           link.hasAttribute('download') || link.getAttribute('href').startsWith('#')) return;
 
       const url = new URL(link.href, location.href);
@@ -287,7 +287,7 @@
     .then(ads => {
       if (!ads.length) return;
       slots.forEach((slot, index) => fillSlot(slot, ads, index));
-      setupVignette(ads);
+      if (document.getElementById('homepage-advertisement')) setupVignette(ads);
     })
     .catch(error => {
       console.warn('[OpenRockets Ads] Could not load accepted ads.', error);

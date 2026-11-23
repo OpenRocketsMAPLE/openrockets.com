@@ -224,6 +224,63 @@ for pattern in [
     for p in ROOT.glob(pattern):
         p.unlink()
 
+# Reapply successfully cached external images onto the clean source HTML.
+cache_report = ROOT / ".github" / "recovery-audit" / "external-image-cache.json"
+cached_external = {}
+if cache_report.is_file():
+    try:
+        cache_data = json.loads(cache_report.read_text(encoding="utf-8"))
+        for item in cache_data.get("resolved", []):
+            url = item.get("url")
+            target = item.get("target")
+            if url and target and (ROOT / target).is_file():
+                cached_external[url] = target
+    except Exception:
+        pass
+
+IMG_EXTERNAL_RE = re.compile(
+    r'(?P<prefix>\b(?:src|poster|data-src|data-lazy-src|data-original)\s*=\s*(?P<q>["\']))'
+    r'(?P<url>https?://[^"\']+)'
+    r'(?P<suffix>(?P=q))',
+    re.I,
+)
+
+def rel_from(file_path: Path, target_rel: str):
+    start = file_path.parent.relative_to(ROOT).as_posix()
+    if start == ".":
+        start = "."
+    return posixpath.relpath(target_rel, start=start)
+
+if cached_external:
+    for hp in [
+        p for p in ROOT.rglob("*.html")
+        if not any(x in p.parts for x in (".git",".github","vendor","_vendor"))
+    ]:
+        text = hp.read_text(encoding="utf-8", errors="ignore")
+
+        def ext_img_sub(m):
+            raw = html.unescape(m.group("url"))
+            target = cached_external.get(raw)
+            if not target:
+                return m.group(0)
+            return m.group("prefix") + rel_from(hp, target) + m.group("suffix")
+
+        text = IMG_EXTERNAL_RE.sub(ext_img_sub, text)
+        hp.write_text(text, encoding="utf-8")
+
+# Preserve the known Research runtime guard after restoring clean source.
+research = ROOT / "research" / "maple" / "v1" / "index.html"
+if research.is_file():
+    text = research.read_text(encoding="utf-8", errors="ignore")
+    if "signers.forEach" in text and not re.search(r"\b(?:const|let|var)\s+signers\s*=", text):
+        marker = """    /* =========================================================
+       RENDER SIGNATURES
+       ========================================================= */
+"""
+        if marker in text:
+            text = text.replace(marker, "    const signers = [];\n\n" + marker, 1)
+            research.write_text(text, encoding="utf-8")
+
 # Normalize root-relative URLs in local CSS only. External CSS stays external.
 for css in ROOT.rglob("*.css"):
     relparts=css.relative_to(ROOT).parts
@@ -267,10 +324,26 @@ static_ref_re=re.compile(
 
 def local_refs(html_file: Path):
     text=html_file.read_text(encoding="utf-8",errors="ignore")
+
+    # Browser resolution honors <base href>. Canonical extensionless aliases use
+    # <base href="../"> so their relative asset paths resolve exactly like the
+    # original .html file.
+    base_dir=html_file.parent
+    bm=re.search(r'<base\b[^>]*href=["\']([^"\']+)["\']',text,re.I)
+    if bm:
+        raw_base=html.unescape(bm.group(1).strip()).replace("\\","/")
+        bp=urlsplit(raw_base)
+        if not bp.scheme and not raw_base.startswith("//"):
+            if raw_base.startswith("/"):
+                base_dir=(ROOT/bp.path.lstrip("/")).resolve()
+            else:
+                base_dir=(html_file.parent/bp.path).resolve()
+
     vals=[m.group("url") for m in ATTR_RE.finditer(text)]
     for m in SRCSET_RE.finditer(text):
         vals += [x.strip().split()[0] for x in m.group("value").split(",") if x.strip()]
     vals += [m.group("url") for m in CSS_URL_RE.finditer(text)]
+
     for raw in vals:
         raw=html.unescape(raw.strip()).replace("\\","/")
         if not raw or raw.startswith(("#","data:","blob:","javascript:","mailto:","tel:","//","http://","https://")):
@@ -278,7 +351,12 @@ def local_refs(html_file: Path):
         clean=urlsplit(raw).path
         if not static_ref_re.search(clean):
             continue
-        candidate=(html_file.parent/clean).resolve()
+
+        if raw.startswith("/"):
+            candidate=(ROOT/clean.lstrip("/")).resolve()
+        else:
+            candidate=(base_dir/clean).resolve()
+
         try:
             rel=candidate.relative_to(ROOT.resolve())
         except Exception:

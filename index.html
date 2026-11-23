@@ -3346,184 +3346,61 @@ Introducing OpenRockets InterKid™ + TeenDNS, a Free & Advanced Safe Search Eng
 
 <br><br>
 
-      <div class="merch-promo-section" style="padding-top: 3rem; display: flex; flex-direction: column; align-items: center; justify-content: center;  width: 100%; overflow: hidden;">
-         <h2 class="search-title" style="margin-left: 1rem; margin-right: 1rem; text-align: center;">Take a look at OpenRockets official wearables<br> and accessories</h2>
-        <div class="merch-images-overlap"
-     style="
-        position: relative;
-        height: 350px;
-        width: 100%;
-        max-width: 700px;
-        display: flex;
-        justify-content: center;
-   
-        align-items: center;
-        margin-bottom: 2.5rem;
-        overflow: visible;
-     ">
+      <section id="merch" class="merch-rework" aria-labelledby="merch-rework-title">
+  <style>
+    .merch-rework{position:relative;width:100%;overflow:hidden;background:#fff;color:#000;padding:clamp(18px,3vw,34px) 0 0;isolation:isolate;}
+    .merch-rework__marquee{width:100%;overflow:hidden;white-space:nowrap;pointer-events:none;border-top:2px solid #000;border-bottom:2px solid #000;background:#fff;}
+    .merch-rework__marquee-track{display:flex;width:max-content;animation:merchWordRun 20s linear infinite;will-change:transform;}
+    .merch-rework__marquee span{display:inline-block;padding:.04em .16em .09em;font:900 clamp(5.8rem,17vw,15rem)/.78 var(--or-font,"sohne-var",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif);letter-spacing:-.075em;text-transform:uppercase;}
+    @keyframes merchWordRun{to{transform:translateX(-50%)}}
+    .merch-rework__stage{position:relative;width:min(1200px,100%);min-height:clamp(430px,55vw,650px);margin:0 auto;display:grid;place-items:center;overflow:visible;padding:clamp(28px,5vw,64px) 20px;box-sizing:border-box;}
+    .merch-rework__ghost{position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-52%);z-index:-1;font:900 clamp(8rem,28vw,25rem)/.72 var(--or-font,"sohne-var",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif);letter-spacing:-.09em;color:#f1f1f1;white-space:nowrap;user-select:none;pointer-events:none;}
+    .merch-rework__products{position:relative;width:min(860px,92vw);height:clamp(330px,47vw,520px);}
+    .merch-rework__products img{position:absolute;height:auto;object-fit:contain;filter:drop-shadow(0 18px 22px rgba(0,0,0,.22));transition:transform .25s ease;}
+    .merch-rework__products img:hover{transform:translateY(-7px) rotate(0deg) scale(1.035)!important}
+    .merch-product--bottle{width:clamp(130px,20vw,230px);left:50%;top:5%;transform:translateX(-50%);z-index:8;}
+    .merch-product--shirt-a{width:clamp(155px,25vw,285px);left:4%;top:24%;transform:rotate(-12deg);z-index:3;}
+    .merch-product--shirt-b{width:clamp(155px,25vw,285px);right:3%;top:20%;transform:rotate(11deg);z-index:4;}
+    .merch-product--shirt-c{width:clamp(135px,21vw,240px);left:23%;top:2%;transform:rotate(-7deg);z-index:2;}
+    .merch-product--sticker-a{width:clamp(150px,24vw,270px);right:20%;bottom:3%;transform:rotate(-10deg);z-index:10;}
+    .merch-product--sticker-b{width:clamp(95px,15vw,160px);left:26%;bottom:8%;transform:rotate(14deg);z-index:11;}
+    .merch-rework__cta{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);z-index:20;display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border:2px solid #000;border-radius:999px;background:#000;color:#fff!important;text-decoration:none!important;font-weight:750;box-shadow:0 8px 0 #ff6b1c;}
+    .merch-rework__tape{width:110%;margin-left:-5%;overflow:hidden;transform:rotate(-1.2deg);background:#ffd400;color:#000;border-top:3px solid #000;border-bottom:3px solid #000;white-space:nowrap;}
+    .merch-rework__tape-track{display:flex;width:max-content;animation:merchTapeRun 16s linear infinite reverse;}
+    .merch-rework__tape span{display:inline-block;padding:12px 20px;font:900 clamp(1rem,2vw,1.45rem)/1 var(--or-font,"sohne-var",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif);letter-spacing:.07em;text-transform:uppercase;}
+    @keyframes merchTapeRun{to{transform:translateX(-50%)}}
+    @media(max-width:650px){.merch-rework__stage{min-height:440px}.merch-product--shirt-a{left:-2%}.merch-product--shirt-b{right:-2%}.merch-rework__cta{bottom:10px}}
+    @media(prefers-reduced-motion:reduce){.merch-rework__marquee-track,.merch-rework__tape-track{animation:none}}
+  </style>
+  <div class="merch-rework__marquee" aria-hidden="true">
+    <div class="merch-rework__marquee-track">
+      <span>MERCH</span><span>MERCH</span><span>MERCH</span><span>MERCH</span>
+      <span>MERCH</span><span>MERCH</span><span>MERCH</span><span>MERCH</span>
+    </div>
+  </div>
+  <div class="merch-rework__stage">
+    <h2 id="merch-rework-title" class="merch-rework__ghost">MERCH</h2>
+    <div class="merch-rework__products" aria-label="OpenRockets merchandise">
+      <img class="merch-product--shirt-a" src="merch/public/images/openrockets-hackerman-skull-4x-dark.png" alt="OpenRockets dark shirt" loading="lazy">
+      <img class="merch-product--shirt-b" src="merch/public/images/openrockets-hackerman-skull-light.png" alt="OpenRockets light shirt" loading="lazy">
+      <img class="merch-product--shirt-c" src="merch/public/images/openrockets-hackerman-skull-dark.png" alt="OpenRockets shirt" loading="lazy">
+      <img class="merch-product--bottle" src="merch/public/images/openrockets-metal-bottle-back.png" alt="OpenRockets metal bottle" loading="lazy">
+      <img class="merch-product--sticker-a" src="merch/public/images/openrockets-laptop-sticket-lightpng.png" alt="OpenRockets light sticker" loading="lazy">
+      <img class="merch-product--sticker-b" src="merch/public/images/openrockets-laptop-sticket-black.png" alt="OpenRockets dark sticker" loading="lazy">
+    </div>
+    <a class="merch-rework__cta" href="merch/">OpenRockets Merch</a>
+  </div>
+  <div class="merch-rework__tape" aria-hidden="true">
+    <div class="merch-rework__tape-track">
+      <span>OPENROCKETS MERCH • WEARABLES • ACCESSORIES • OPENROCKETS MERCH •</span>
+      <span>OPENROCKETS MERCH • WEARABLES • ACCESSORIES • OPENROCKETS MERCH •</span>
+      <span>OPENROCKETS MERCH • WEARABLES • ACCESSORIES • OPENROCKETS MERCH •</span>
+      <span>OPENROCKETS MERCH • WEARABLES • ACCESSORIES • OPENROCKETS MERCH •</span>
+    </div>
+  </div>
+</section>
 
-    <!-- Large Paint Splash -->
-    <img
-        src="assets/external/www.pngall.com/Paint-Splash-Vector-PNG-Free-Image__d227703d798b0d81d4.png"
-        alt=""
-        aria-hidden="true"
-        style="
-            position:absolute;
-            left:50%;
-            top:50%;
-            transform:translate(-50%, -50%) rotate(-10deg);
-            width:120%;
-            max-width:800px;
-            
-            z-index:0;
-            opacity:.22;
-            pointer-events:none;
-            filter:drop-shadow(0 12px 30px rgba(0,0,0,.15));
-        ">
-
-    <!-- Small Accent Splash -->
-    <img
-        src="assets/external/www.pngall.com/Paint-Splash-Vector-PNG-Free-Image__d227703d798b0d81d4.png"
-        alt=""
-        aria-hidden="true"
-        style="
-            position:absolute;
-            left:55%;
-            top:45%;
-            transform:translate(-50%, -50%) rotate(30deg) scale(.65);
-            width:70%;
-            max-width:450px;
-            z-index:0;
-            opacity:.12;
-            pointer-events:none;
-        ">
-
-    <!-- Left Shirt -->
-    <img src="merch/public/images/openrockets-hackerman-skull-4x-dark.png"
-         alt="Merch"
-         style="
-            position:absolute;
-            width:28%;
-            max-width:170px;
-            
-            left:7%;
-            top:48%;
-            transform:rotate(-18deg) translateX(60px);
-            z-index:1;
-            filter:drop-shadow(10px 12px 18px rgba(0,0,0,.22));
-         ">
-
-    <!-- Back Shirt -->
-    <img src="merch/public/images/openrockets-hackerman-skull-dark.png"
-         alt="Merch"
-         style="
-            position:absolute;
-            width:27%;
-            max-width:165px;
-            left:24%;
-            top:16%;
-            transform:rotate(-8deg);
-            z-index:2;
-            filter:drop-shadow(7px 10px 14px rgba(0,0,0,.18));
-         ">
-
-    <!-- Main Bottle -->
-    <img src="merch/public/images/openrockets-metal-bottle-back.png"
-         alt="Merch"
-         style="
-            position:relative;
-            height:100%;
-            max-height:350px;
-            width:auto;
-            object-fit:contain;
-            z-index:6;
-            filter:drop-shadow(0 18px 30px rgba(0,0,0,.38));
-         ">
-
-    <!-- Right Shirt -->
-    <img src="merch/public/images/openrockets-hackerman-skull-light.png"
-         alt="Merch"
-         style="
-            position:absolute;
-            width:28%;
-            max-width:170px;
-            right:7%;
-            top:44%;
-            transform:rotate(16deg) translateX(-60px);
-            z-index:3;
-            filter:drop-shadow(-10px 12px 18px rgba(0,0,0,.22));
-         ">
-
-    <!-- Top Right Shirt -->
-    <img src="merch/public/images/openrockets-hackerman-skull-4x-light.png"
-         alt="Merch"
-         style="
-            position:absolute;
-            width:25%;
-            max-width:150px;
-            right:18%;
-            top:10%;
-            transform:rotate(10deg);
-            z-index:4;
-            filter:drop-shadow(-6px 12px 18px rgba(0,0,0,.20));
-         ">
-
-    <!-- Front Bottle -->
-   
-    <!-- Pen -->
-   
-
-    <!-- Light Sticker -->
-    <img src="merch/public/images/openrockets-laptop-sticket-lightpng.png"
-         alt="Merch"
-         style="
-            position:absolute;
-            width:31%;
-            max-width:300px;
-            left:50%;
-            top:8%;
-            transform:rotate(-12deg);
-            z-index:10;
-            filter:drop-shadow(5px 8px 10px rgba(0,0,0,.16));
-         ">
-
-    <!-- Dark Sticker -->
-    <img src="merch/public/images/openrockets-laptop-sticket-black.png"
-         alt="Merch"
-         style="
-            position:absolute;
-            width:21%;
-            max-width:120px;
-            right:30%;
-            bottom:28%;
-            transform:rotate(22deg);
-            z-index:11;
-            filter:drop-shadow(-4px 8px 10px rgba(0,0,0,.18));
-         ">
-
-</div>
-
-
-
-
-<div style="width: 100%; padding-left: 20%;  padding-right: 20%; display: flex;  justify-content: center; align-items: center;">
-    
-  <div class="hds-button-group hero-section__actions">
-                <a style="background-color: black; height: 3.5rem;" class="hds-button hds-button--primary" href="merch/">
-                  OpenRockets Merch
-                  <svg class="hds-icon hds-icon-hover-arrow" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M0.5 5.5h7"></path>
-                    <path d="M1.5 1.5l4 4-4 4"></path>
-                  </svg>
-                </a>
-               
-              </div>
-      </div></div>
-      <br><br>
-      <br><br>
-      <br><br>
-      <br><br>
-      <section class="anthropic-section">
+<section class="anthropic-section">
   <!-- SVG lines connecting center (50%, 50%) to node centers -->
   <svg class="anthropic-svg-layer" width="100%" height="100%">
     <line x1="50%" y1="50%" x2="15%" y2="25%" class="anthropic-line" />

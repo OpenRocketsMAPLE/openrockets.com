@@ -1,3 +1,20 @@
+/* OpenRockets recovered local font fallbacks */
+@font-face {
+  font-family: "sohne-var";
+  src: url("../vendor/b.stripecdn.com/0ab0832c8cc92b35__Sohne.cb178166.woff2") format("woff2");
+  font-weight: 1 1000;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SourceCodePro";
+  src: url("../vendor/b.stripecdn.com/ec203ee56b415fcf__SourceCodePro-Medium.f5ba3e6a.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* OpenRockets Inc. — Local Override Stylesheet */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600&family=Sora:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap');
 @import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css');

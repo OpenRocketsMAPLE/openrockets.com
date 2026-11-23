@@ -1,0 +1,1061 @@
+{
+  "changed_html": [
+    "index.html",
+    "team/index.html",
+    "team/management-profile.html",
+    "research/maple/v1/index.html"
+  ],
+  "changed_html_count": 4,
+  "font_fix_applied": true,
+  "research_signers_fail_safe_applied": true,
+  "unique_external_images_seen": 138,
+  "resolved_count": 112,
+  "unresolved_count": 19,
+  "resolved": [
+    {
+      "url": "https://img.icons8.com/m_rounded/512/228BE6/info.png",
+      "result": "reused-recovered-copy",
+      "source": "vendor/img.icons8.com/11b93b272574cb0a__info.png",
+      "target": "assets/external/img.icons8.com/info__11b93b272574cb0ad8.png"
+    },
+    {
+      "url": "https://zeroprofit.org/assets/images/brand-logo5.png",
+      "result": "reused-recovered-copy",
+      "source": "vendor/zeroprofit.org/b2167e4b3f8387a0__brand-logo5.png",
+      "target": "assets/external/zeroprofit.org/brand-logo5__b2167e4b3f8387a032.png"
+    },
+    {
+      "url": "https://images.stripeassets.com/fzn2n1nzq965/115d4Vd5LVAsqFGDR1ClAv/0ceb2c44a7a7182cd624262420af7544/wave-fallback-desktop.png",
+      "result": "reused-recovered-copy",
+      "source": "vendor/images.stripeassets.com/62135022495a20b1__wave-fallback-desktop.png",
+      "target": "assets/external/images.stripeassets.com/wave-fallback-desktop__62135022495a20b1d4.png"
+    },
+    {
+      "url": "https://zeroprofit.org/assets/images/brand-logo6.png",
+      "result": "reused-recovered-copy",
+      "source": "vendor/zeroprofit.org/6b6a1296b0b8ec6a__brand-logo6.png",
+      "target": "assets/external/zeroprofit.org/brand-logo6__6b6a1296b0b8ec6a27.png"
+    },
+    {
+      "url": "https://static.wixstatic.com/media/5564d3_49820b87d8dd461f9a780e44ba6af707~mv2.png/v1/fill/w_256,h_112,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_3070_PNG.png",
+      "result": "reused-recovered-copy",
+      "source": "vendor/static.wixstatic.com/1ea78c05252db1df__IMG_3070_PNG.png",
+      "target": "assets/external/static.wixstatic.com/IMG_3070_PNG__1ea78c05252db1df82.png"
+    },
+    {
+      "url": "https://safeteensonline.org/wp-content/uploads/2021/10/SAFETEENS-LOGO.png",
+      "result": "reused-recovered-copy",
+      "source": "vendor/safeteensonline.org/f27e688ed98da555__SAFETEENS-LOGO.png",
+      "target": "assets/external/safeteensonline.org/SAFETEENS-LOGO__f27e688ed98da5553a.png"
+    },
+    {
+      "url": "https://press.openrockets.com/brand/987935879357.png",
+      "result": "reused-recovered-copy",
+      "source": "vendor/press.openrockets.com/7cd6980a2c02e7f9__987935879357.png",
+      "target": "assets/external/press.openrockets.com/987935879357__7cd6980a2c02e7f97c.png"
+    },
+    {
+      "url": "https://prod-nylcorg.s3.amazonaws.com/wp-content/uploads/2022/08/08111357/nylc_black_full.png",
+      "result": "reused-recovered-copy",
+      "source": "vendor/prod-nylcorg.s3.amazonaws.com/1fdd22096f1f85b7__nylc_black_full.png",
+      "target": "assets/external/prod-nylcorg.s3.amazonaws.com/nylc_black_full__1fdd22096f1f85b71a.png"
+    },
+    {
+      "url": "https://apps.openrockets.com/openrocketsapps_logo.png",
+      "result": "reused-recovered-copy",
+      "source": "vendor/apps.openrockets.com/9303226dfc451a5c__openrocketsapps_logo.png",
+      "target": "assets/external/apps.openrockets.com/openrocketsapps_logo__9303226dfc451a5cb0.png"
+    },
+    {
+      "url": "https://www.drinterested.org/_next/image?url=%2Flogo.png&w=640&q=75",
+      "result": "reused-recovered-copy",
+      "source": "vendor/www.drinterested.org/8d0d07381b132bfb__image.avif",
+      "target": "assets/external/www.drinterested.org/image__8d0d07381b132bfbe4.avif"
+    },
+    {
+      "url": "https://www.paperforwater.org/images/untitled-20design-20-202025-12.png?dpl=dpl_2in3ZrCJZnRqGMcvWRWC7KoDTYTa",
+      "result": "reused-recovered-copy",
+      "source": "vendor/www.paperforwater.org/5153fbefc40afec9__untitled-20design-20-202025-12.png",
+      "target": "assets/external/www.paperforwater.org/untitled-20design-20-202025-12__5153fbefc40afec92e.png"
+    },
+    {
+      "url": "https://daydream.hackclub.com/daydream.png",
+      "result": "reused-recovered-copy",
+      "source": "vendor/daydream.hackclub.com/e93398790173cbd9__daydream.png",
+      "target": "assets/external/daydream.hackclub.com/daydream__e93398790173cbd9f2.png"
+    },
+    {
+      "url": "https://i.imgur.com/bzNtedW.png",
+      "result": "reused-recovered-copy",
+      "source": "vendor/i.imgur.com/161f17bbbfd3019c__bzNtedW.png",
+      "target": "assets/external/i.imgur.com/bzNtedW__161f17bbbfd3019c1b.png"
+    },
+    {
+      "url": "https://i.imgur.com/19bWNMU.png",
+      "result": "reused-recovered-copy",
+      "source": "vendor/i.imgur.com/62d0431f7d9f9d10__19bWNMU.png",
+      "target": "assets/external/i.imgur.com/19bWNMU__62d0431f7d9f9d107f.png"
+    },
+    {
+      "url": "https://theoptimist.news/wp-content/uploads/2026/08/the-optimist-news-logo.svg",
+      "result": "reused-recovered-copy",
+      "source": "vendor/theoptimist.news/4d2529d3f305a367__the-optimist-news-logo.svg",
+      "target": "assets/external/theoptimist.news/the-optimist-news-logo__4d2529d3f305a367f9.svg"
+    },
+    {
+      "url": "https://e8wm23is9ki.exactdn.com/wp-content/uploads/2023/02/TechCity-Logo-Black.png",
+      "result": "reused-recovered-copy",
+      "source": "vendor/e8wm23is9ki.exactdn.com/2c2983dcb45eaf00__TechCity-Logo-Black.png",
+      "target": "assets/external/e8wm23is9ki.exactdn.com/TechCity-Logo-Black__2c2983dcb45eaf0003.png"
+    },
+    {
+      "url": "https://ggnn.com/wp-content/uploads/2025/10/logo-final.jpeg",
+      "result": "reused-recovered-copy",
+      "source": "vendor/ggnn.com/601ecd8a0ce3c52a__logo-final.jpeg",
+      "target": "assets/external/ggnn.com/logo-final__601ecd8a0ce3c52a42.jpg"
+    },
+    {
+      "url": "https://i.pinimg.com/736x/4d/63/fb/4d63fba5b958f4423ae9b8d9af442723.jpg",
+      "result": "reused-recovered-copy",
+      "source": "vendor/i.pinimg.com/8743b643f99aeaf3__4d63fba5b958f4423ae9b8d9af442723.jpg",
+      "target": "assets/external/i.pinimg.com/4d63fba5b958f4423ae9b8d9af442723__8743b643f99aeaf3df.jpg"
+    },
+    {
+      "url": "https://cdn3d.iconscout.com/3d/premium/thumb/laptop-3d-icon-png-download-7517437.png",
+      "result": "reused-recovered-copy",
+      "source": "vendor/cdn3d.iconscout.com/2131fae5adeefeea__laptop-3d-icon-png-download-7517437.png",
+      "target": "assets/external/cdn3d.iconscout.com/laptop-3d-icon-png-download-7517437__2131fae5adeefeea67.png"
+    },
+    {
+      "url": "https://cdn3d.iconscout.com/3d/premium/thumb/healthcare-3d-icon-png-download-12342880.png",
+      "result": "reused-recovered-copy",
+      "source": "vendor/cdn3d.iconscout.com/4f1b5f1776dfd340__healthcare-3d-icon-png-download-12342880.png",
+      "target": "assets/external/cdn3d.iconscout.com/healthcare-3d-icon-png-download-12342880__4f1b5f1776dfd3408b.png"
+    },
+    {
+      "url": "https://zeroprofit.org/assets/images/brand-logo2.png",
+      "result": "reused-recovered-copy",
+      "source": "vendor/zeroprofit.org/d3f523926159ba9b__brand-logo2.png",
+      "target": "assets/external/zeroprofit.org/brand-logo2__d3f523926159ba9b59.png"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/OpenRocketsX/interkid.openrockets.com/main/assets/interkid-browser-icon.png",
+      "result": "reused-recovered-copy",
+      "source": "vendor/raw.githubusercontent.com/41b54560b6b2577c__interkid-browser-icon.png",
+      "target": "assets/external/raw.githubusercontent.com/interkid-browser-icon__41b54560b6b2577c11.png"
+    },
+    {
+      "url": "https://i.imgur.com/D9Pvn2i.png",
+      "result": "reused-recovered-copy",
+      "source": "vendor/i.imgur.com/56f7fa0cdb7077d3__D9Pvn2i.png",
+      "target": "assets/external/i.imgur.com/D9Pvn2i__56f7fa0cdb7077d37f.png"
+    },
+    {
+      "url": "https://i.imgur.com/eHiWrzP.png",
+      "result": "reused-recovered-copy",
+      "source": "vendor/i.imgur.com/994961d98a630ab3__eHiWrzP.png",
+      "target": "assets/external/i.imgur.com/eHiWrzP__994961d98a630ab362.png"
+    },
+    {
+      "url": "https://i.imgur.com/sk62PQ1.jpeg",
+      "result": "reused-recovered-copy",
+      "source": "vendor/i.imgur.com/daccd40a35d4dbea__sk62PQ1.jpeg",
+      "target": "assets/external/i.imgur.com/sk62PQ1__daccd40a35d4dbea30.jpg"
+    },
+    {
+      "url": "https://bobabash.zeroprofit.org/logofull.png",
+      "result": "reused-recovered-copy",
+      "source": "vendor/bobabash.zeroprofit.org/a5968e99e977c071__logofull.png",
+      "target": "assets/external/bobabash.zeroprofit.org/logofull__a5968e99e977c07139.png"
+    },
+    {
+      "url": "https://i.imgur.com/EqHhGcf.png",
+      "result": "reused-recovered-copy",
+      "source": "vendor/i.imgur.com/601a9ee994c3b700__EqHhGcf.png",
+      "target": "assets/external/i.imgur.com/EqHhGcf__601a9ee994c3b7009f.png"
+    },
+    {
+      "url": "https://daydream.hackclub.com/og-image.png",
+      "result": "reused-recovered-copy",
+      "source": "vendor/daydream.hackclub.com/b81937d6b52401f9__og-image.png",
+      "target": "assets/external/daydream.hackclub.com/og-image__b81937d6b52401f983.png"
+    },
+    {
+      "url": "https://www.pngall.com/wp-content/uploads/9/Paint-Splash-Vector-PNG-Free-Image.png",
+      "result": "reused-recovered-copy",
+      "source": "vendor/www.pngall.com/d227703d798b0d81__Paint-Splash-Vector-PNG-Free-Image.png",
+      "target": "assets/external/www.pngall.com/Paint-Splash-Vector-PNG-Free-Image__d227703d798b0d81d4.png"
+    },
+    {
+      "url": "https://logos-world.net/wp-content/uploads/2023/03/NameCheap-Logo.png",
+      "result": "reused-recovered-copy",
+      "source": "vendor/logos-world.net/95e05cae365cb983__NameCheap-Logo.png",
+      "target": "assets/external/logos-world.net/NameCheap-Logo__95e05cae365cb983bc.png"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Netlify_logo_%282%29.svg/960px-Netlify_logo_%282%29.svg.png",
+      "result": "reused-recovered-copy",
+      "source": "vendor/upload.wikimedia.org/324c998e8b59e072__960px-Netlify_logo_(2).svg.png",
+      "target": "assets/external/upload.wikimedia.org/960px-Netlify_logo__2_.svg__324c998e8b59e072b0.png"
+    },
+    {
+      "url": "https://infinitediscounts.com/images/2020-12-migadu-logo-1024x296.png",
+      "result": "reused-recovered-copy",
+      "source": "vendor/infinitediscounts.com/67531640d3fac186__2020-12-migadu-logo-1024x296.png",
+      "target": "assets/external/infinitediscounts.com/2020-12-migadu-logo-1024x296__67531640d3fac18626.png"
+    },
+    {
+      "url": "https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/cropped-SDG-Wheel_Transparent_WEB-300x300.png",
+      "result": "reused-recovered-copy",
+      "source": "vendor/www.un.org/616638ff48a40c26__cropped-SDG-Wheel_Transparent_WEB-300x300.png",
+      "target": "assets/external/www.un.org/cropped-SDG-Wheel_Transparent_WEB-300x300__616638ff48a40c262d.png"
+    },
+    {
+      "url": "https://assets.hackclub.com/flag-orpheus-left.png",
+      "result": "reused-recovered-copy",
+      "source": "vendor/assets.hackclub.com/219f9d1f0c253db6__flag-orpheus-left.png",
+      "target": "assets/external/assets.hackclub.com/flag-orpheus-left__219f9d1f0c253db662.png"
+    },
+    {
+      "url": "https://d216901qxcl0k5.cloudfront.net/s3fs-public/2021-10/covergencetech.jpg",
+      "result": "reused-recovered-copy",
+      "source": "vendor/d216901qxcl0k5.cloudfront.net/dfc191c9d6752293__covergencetech.jpg",
+      "target": "assets/external/d216901qxcl0k5.cloudfront.net/covergencetech__dfc191c9d6752293fd.jpg"
+    },
+    {
+      "url": "https://zeroprofit.org/assets/images/brand-logo1.png",
+      "result": "reused-recovered-copy",
+      "source": "vendor/zeroprofit.org/9798b47d6edcfe37__brand-logo1.png",
+      "target": "assets/external/zeroprofit.org/brand-logo1__9798b47d6edcfe37f0.jpg"
+    },
+    {
+      "url": "https://images.stripeassets.com/fzn2n1nzq965/115d4Vd5LVAsqFGDR1ClAv/0ceb2c44a7a7182cd624262420af7544/wave-fallback-desktop.png?w=1392&fm=webp&q=60",
+      "result": "reused-recovered-copy",
+      "source": "vendor/images.stripeassets.com/0572982e6693159b__wave-fallback-desktop.png",
+      "target": "assets/external/images.stripeassets.com/wave-fallback-desktop__0572982e6693159bbf.webp"
+    },
+    {
+      "url": "https://images.stripeassets.com/fzn2n1nzq965/6JwIhTZqzfx9sA3R24luWz/388861787e6deb982268742148813182/wave-fallback-tablet.png?w=1248&fm=webp&q=60",
+      "result": "reused-recovered-copy",
+      "source": "vendor/images.stripeassets.com/5b16aa03085aaf73__wave-fallback-tablet.png",
+      "target": "assets/external/images.stripeassets.com/wave-fallback-tablet__5b16aa03085aaf7309.webp"
+    },
+    {
+      "url": "https://images.stripeassets.com/fzn2n1nzq965/18ArQFiazlljjIKGV0OnTb/2e15cabc1c905bb65e7de2678d3b60a9/wave-fallback-mobile.png?w=624&fm=webp&q=60",
+      "result": "reused-recovered-copy",
+      "source": "vendor/images.stripeassets.com/1afea23f6be9bd77__wave-fallback-mobile.png",
+      "target": "assets/external/images.stripeassets.com/wave-fallback-mobile__1afea23f6be9bd77a5.webp"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Dr.&preset=sunrise",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1592,
+      "final_url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Dr.&preset=sunrise",
+      "target": "assets/external/api.dicebear.com/svg__8e87a12fa399b53755.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Atharv&preset=nightShift",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1886,
+      "final_url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Atharv&preset=nightShift",
+      "target": "assets/external/api.dicebear.com/svg__77aceec87ca69003db.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Vihan&preset=pop",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1554,
+      "final_url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Vihan&preset=pop",
+      "target": "assets/external/api.dicebear.com/svg__f79a48d5f48f86f168.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Ryan&preset=pastel",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1681,
+      "final_url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Ryan&preset=pastel",
+      "target": "assets/external/api.dicebear.com/svg__bc558452b7e476b6ed.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Thomas&preset=nightShift",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1439,
+      "final_url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Thomas&preset=nightShift",
+      "target": "assets/external/api.dicebear.com/svg__1441ef93fd2968a9e2.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Aryan&preset=closeUp",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1610,
+      "final_url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Aryan&preset=closeUp",
+      "target": "assets/external/api.dicebear.com/svg__debd0f87c77f1ee621.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/rings/svg?seed=Nova&preset=bold",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 2834,
+      "final_url": "https://api.dicebear.com/9.x/rings/svg?seed=Nova&preset=bold",
+      "target": "assets/external/api.dicebear.com/svg__b0acdcc6f2d07d75a6.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/rings/svg?seed=Payoja&preset=duotone",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 2973,
+      "final_url": "https://api.dicebear.com/9.x/rings/svg?seed=Payoja&preset=duotone",
+      "target": "assets/external/api.dicebear.com/svg__9457cf9c1bfc451aae.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Lunna&preset=pastel",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1630,
+      "final_url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Lunna&preset=pastel",
+      "target": "assets/external/api.dicebear.com/svg__551d4a2a759d85a86c.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Jessica&preset=sepia",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1565,
+      "final_url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Jessica&preset=sepia",
+      "target": "assets/external/api.dicebear.com/svg__0e336349e5f32651d2.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Emma&preset=default",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1592,
+      "final_url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Emma&preset=default",
+      "target": "assets/external/api.dicebear.com/svg__9ba91ea9f9a3c44ce0.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Dasha&preset=bold",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1588,
+      "final_url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Dasha&preset=bold",
+      "target": "assets/external/api.dicebear.com/svg__39c48663d0430f275e.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Chuxin&preset=grayscale",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1663,
+      "final_url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Chuxin&preset=grayscale",
+      "target": "assets/external/api.dicebear.com/svg__7f6b1558490fffe9ae.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/rings/svg?seed=Aiden&preset=duotone",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 2891,
+      "final_url": "https://api.dicebear.com/9.x/rings/svg?seed=Aiden&preset=duotone",
+      "target": "assets/external/api.dicebear.com/svg__0f1a0020e442530398.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Debadrita&preset=electric",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1658,
+      "final_url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Debadrita&preset=electric",
+      "target": "assets/external/api.dicebear.com/svg__6393c6631dff763fea.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Akira&preset=closeUp",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1991,
+      "final_url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Akira&preset=closeUp",
+      "target": "assets/external/api.dicebear.com/svg__b5cd3ddf2d1b412402.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Benjamin&preset=pop",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1630,
+      "final_url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Benjamin&preset=pop",
+      "target": "assets/external/api.dicebear.com/svg__f7e474332ff35899ee.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/rings/svg?seed=Ronit&preset=default",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 2899,
+      "final_url": "https://api.dicebear.com/9.x/rings/svg?seed=Ronit&preset=default",
+      "target": "assets/external/api.dicebear.com/svg__ee98bc26c7b4f9d5b0.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Raj&preset=pastel",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1667,
+      "final_url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Raj&preset=pastel",
+      "target": "assets/external/api.dicebear.com/svg__5c1341cb175b0bca3f.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/rings/svg?seed=Jatin&preset=closeUp",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 2971,
+      "final_url": "https://api.dicebear.com/9.x/rings/svg?seed=Jatin&preset=closeUp",
+      "target": "assets/external/api.dicebear.com/svg__a3f8391875886a2f5b.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Yanfu&preset=sunrise",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1892,
+      "final_url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Yanfu&preset=sunrise",
+      "target": "assets/external/api.dicebear.com/svg__68329df4a135ca2801.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Madhav&preset=closeUp",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1770,
+      "final_url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Madhav&preset=closeUp",
+      "target": "assets/external/api.dicebear.com/svg__284821b1ba9f6675b3.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Vinuk&preset=bold",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1612,
+      "final_url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Vinuk&preset=bold",
+      "target": "assets/external/api.dicebear.com/svg__2188828e194f74ae02.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=James&preset=muted",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1810,
+      "final_url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=James&preset=muted",
+      "target": "assets/external/api.dicebear.com/svg__4ce60cb02fa4d0aaae.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/rings/svg?seed=Rishad&preset=pop",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 2996,
+      "final_url": "https://api.dicebear.com/9.x/rings/svg?seed=Rishad&preset=pop",
+      "target": "assets/external/api.dicebear.com/svg__5f6044d9e56fbaa3c5.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/rings/svg?seed=M.&preset=pop",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 2982,
+      "final_url": "https://api.dicebear.com/9.x/rings/svg?seed=M.&preset=pop",
+      "target": "assets/external/api.dicebear.com/svg__75ecd1d326cb137a1f.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/rings/svg?seed=Agneya&preset=default",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 2997,
+      "final_url": "https://api.dicebear.com/9.x/rings/svg?seed=Agneya&preset=default",
+      "target": "assets/external/api.dicebear.com/svg__eaa603afb5129cd429.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Dhyan&preset=closeUp",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1564,
+      "final_url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Dhyan&preset=closeUp",
+      "target": "assets/external/api.dicebear.com/svg__d77f45f1bb446084e0.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Zaim&preset=muted",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1903,
+      "final_url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Zaim&preset=muted",
+      "target": "assets/external/api.dicebear.com/svg__a0128ea461b0e5b6ff.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/rings/svg?seed=Aptar&preset=grayscale",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 2898,
+      "final_url": "https://api.dicebear.com/9.x/rings/svg?seed=Aptar&preset=grayscale",
+      "target": "assets/external/api.dicebear.com/svg__fb8793d7952282b708.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Alex&preset=sunrise",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1678,
+      "final_url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Alex&preset=sunrise",
+      "target": "assets/external/api.dicebear.com/svg__21a022911a571bf8a0.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/rings/svg?seed=Ahmed&preset=pastel",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 3000,
+      "final_url": "https://api.dicebear.com/9.x/rings/svg?seed=Ahmed&preset=pastel",
+      "target": "assets/external/api.dicebear.com/svg__c4fcd01eb793b3c02d.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/rings/svg?seed=Kainat&preset=default",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 3123,
+      "final_url": "https://api.dicebear.com/9.x/rings/svg?seed=Kainat&preset=default",
+      "target": "assets/external/api.dicebear.com/svg__f3196828c9bbf449a1.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Harkamal&preset=grayscale",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1537,
+      "final_url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Harkamal&preset=grayscale",
+      "target": "assets/external/api.dicebear.com/svg__562d367245c39bcd86.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/rings/svg?seed=Gurpreet&preset=sunrise",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 2978,
+      "final_url": "https://api.dicebear.com/9.x/rings/svg?seed=Gurpreet&preset=sunrise",
+      "target": "assets/external/api.dicebear.com/svg__360b5ec9e99db94cab.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/rings/svg?seed=Dharun&preset=default",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 2978,
+      "final_url": "https://api.dicebear.com/9.x/rings/svg?seed=Dharun&preset=default",
+      "target": "assets/external/api.dicebear.com/svg__6f6aca077e93e37a9f.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Priyanshu&preset=default",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1886,
+      "final_url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Priyanshu&preset=default",
+      "target": "assets/external/api.dicebear.com/svg__4dc6033421775d1aa6.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/rings/svg?seed=Segun&preset=bold",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 2919,
+      "final_url": "https://api.dicebear.com/9.x/rings/svg?seed=Segun&preset=bold",
+      "target": "assets/external/api.dicebear.com/svg__32a4464320ab37ddcf.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/rings/svg?seed=Adarsh&preset=muted",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 3052,
+      "final_url": "https://api.dicebear.com/9.x/rings/svg?seed=Adarsh&preset=muted",
+      "target": "assets/external/api.dicebear.com/svg__a35888b2f80aebcfdb.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Mayank&preset=electric",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1677,
+      "final_url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Mayank&preset=electric",
+      "target": "assets/external/api.dicebear.com/svg__413cce5961507327ee.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Soumil&preset=duotone",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1602,
+      "final_url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Soumil&preset=duotone",
+      "target": "assets/external/api.dicebear.com/svg__a7419974f93dee00fc.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Aarav&preset=pop",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1516,
+      "final_url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Aarav&preset=pop",
+      "target": "assets/external/api.dicebear.com/svg__0d0337f35e2b86d278.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/rings/svg?seed=Tanish&preset=sepia",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 2976,
+      "final_url": "https://api.dicebear.com/9.x/rings/svg?seed=Tanish&preset=sepia",
+      "target": "assets/external/api.dicebear.com/svg__60b3048ad49b853c2d.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Sampanna&preset=nightShift",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1551,
+      "final_url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Sampanna&preset=nightShift",
+      "target": "assets/external/api.dicebear.com/svg__5a3a6e771df12e7737.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Subhanshu&preset=muted",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1498,
+      "final_url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Subhanshu&preset=muted",
+      "target": "assets/external/api.dicebear.com/svg__a4d5f191ee984b7b4f.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Aditya&preset=sepia",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1554,
+      "final_url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Aditya&preset=sepia",
+      "target": "assets/external/api.dicebear.com/svg__a1809a5b3bba2cae69.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/rings/svg?seed=Ananjay&preset=sepia",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 3034,
+      "final_url": "https://api.dicebear.com/9.x/rings/svg?seed=Ananjay&preset=sepia",
+      "target": "assets/external/api.dicebear.com/svg__16c6964949f55d47cf.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/rings/svg?seed=Priyanshu&preset=pastel",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 2977,
+      "final_url": "https://api.dicebear.com/9.x/rings/svg?seed=Priyanshu&preset=pastel",
+      "target": "assets/external/api.dicebear.com/svg__9b1841abe88736401b.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Krunal&preset=sepia",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 2295,
+      "final_url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Krunal&preset=sepia",
+      "target": "assets/external/api.dicebear.com/svg__2a82eb5b69a0519ea2.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Kalash&preset=bold",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1553,
+      "final_url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Kalash&preset=bold",
+      "target": "assets/external/api.dicebear.com/svg__bd1097bb696b49d3c4.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Vikas&preset=closeUp",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1548,
+      "final_url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Vikas&preset=closeUp",
+      "target": "assets/external/api.dicebear.com/svg__d74cf4dccfe53835b8.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/rings/svg?seed=Rakshit&preset=default",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 2896,
+      "final_url": "https://api.dicebear.com/9.x/rings/svg?seed=Rakshit&preset=default",
+      "target": "assets/external/api.dicebear.com/svg__c6ca8aa3492863f29e.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Jeyasenthuran&preset=pop",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1586,
+      "final_url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Jeyasenthuran&preset=pop",
+      "target": "assets/external/api.dicebear.com/svg__b567cb64926bf0e11f.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Kotha&preset=sunrise",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1721,
+      "final_url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Kotha&preset=sunrise",
+      "target": "assets/external/api.dicebear.com/svg__9bbd10eab2f34e54ef.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Ashdeep&preset=nightShift",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1681,
+      "final_url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Ashdeep&preset=nightShift",
+      "target": "assets/external/api.dicebear.com/svg__db678de28814afe742.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Gunadeep&preset=electric",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1574,
+      "final_url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Gunadeep&preset=electric",
+      "target": "assets/external/api.dicebear.com/svg__75ae5a32da4767e8c3.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/rings/svg?seed=Sonali&preset=pastel",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 2913,
+      "final_url": "https://api.dicebear.com/9.x/rings/svg?seed=Sonali&preset=pastel",
+      "target": "assets/external/api.dicebear.com/svg__ee1456fd4b21a1397a.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/thumbs/svg?seed=nesapriyan&preset=sunrise",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1651,
+      "final_url": "https://api.dicebear.com/9.x/thumbs/svg?seed=nesapriyan&preset=sunrise",
+      "target": "assets/external/api.dicebear.com/svg__6d4379a478ee86d37c.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/rings/svg?seed=Murat&preset=default",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 3054,
+      "final_url": "https://api.dicebear.com/9.x/rings/svg?seed=Murat&preset=default",
+      "target": "assets/external/api.dicebear.com/svg__1d06608c4f75fd6004.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Yeuk&preset=pastel",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1618,
+      "final_url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Yeuk&preset=pastel",
+      "target": "assets/external/api.dicebear.com/svg__3b7da3201aac93bda6.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=ayush&preset=pop",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1604,
+      "final_url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=ayush&preset=pop",
+      "target": "assets/external/api.dicebear.com/svg__feb23552c5058d548d.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/thumbs/svg?seed=RajaKrishna&preset=grayscale",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1668,
+      "final_url": "https://api.dicebear.com/9.x/thumbs/svg?seed=RajaKrishna&preset=grayscale",
+      "target": "assets/external/api.dicebear.com/svg__8c2ee3ac4ba4b78cf8.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Eashan&preset=closeUp",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1616,
+      "final_url": "https://api.dicebear.com/9.x/thumbs/svg?seed=Eashan&preset=closeUp",
+      "target": "assets/external/api.dicebear.com/svg__b7f741481fc661a823.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Daliannis&preset=duotone",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1990,
+      "final_url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Daliannis&preset=duotone",
+      "target": "assets/external/api.dicebear.com/svg__56bed58ae53501865a.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Mitra&preset=pastel",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1469,
+      "final_url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Mitra&preset=pastel",
+      "target": "assets/external/api.dicebear.com/svg__80bdcd65abf01400cd.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Yashika&preset=muted",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1618,
+      "final_url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Yashika&preset=muted",
+      "target": "assets/external/api.dicebear.com/svg__f8290e663a092d730b.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Adil&preset=duotone",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1673,
+      "final_url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Adil&preset=duotone",
+      "target": "assets/external/api.dicebear.com/svg__339ecec1278e0220cf.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Kanishka&preset=pastel",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1497,
+      "final_url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Kanishka&preset=pastel",
+      "target": "assets/external/api.dicebear.com/svg__a4a84d8d05f42dd2c1.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Kei&preset=nightShift",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1530,
+      "final_url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Kei&preset=nightShift",
+      "target": "assets/external/api.dicebear.com/svg__08f81ab8266c3e9bb3.svg"
+    },
+    {
+      "url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Allyson&preset=duotone",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1523,
+      "final_url": "https://api.dicebear.com/9.x/pixel-art/svg?seed=Allyson&preset=duotone",
+      "target": "assets/external/api.dicebear.com/svg__b6b03765a6a8c74587.svg"
+    },
+    {
+      "url": "https://github.com/Joko-26.png?size=460",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/jpeg",
+      "bytes": 11035,
+      "final_url": "https://avatars.githubusercontent.com/u/108182524?s=460&v=4",
+      "target": "assets/external/github.com/Joko-26__b0d868074d1bea9400.jpg"
+    },
+    {
+      "url": "https://i.imgur.com/AQKACqH.png",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/png",
+      "bytes": 1052350,
+      "final_url": "https://i.imgur.com/AQKACqH.png",
+      "target": "assets/external/i.imgur.com/AQKACqH__a12fcd9608af31d025.png"
+    },
+    {
+      "url": "https://accounts.openrockets.com/assets/statue_of_liberty_new_york_monument_manhattan_liberty_statue_skyline_usa-986669-CI_wStr3.png",
+      "result": "downloaded",
+      "status": 200,
+      "content_type": "image/png",
+      "bytes": 192492,
+      "final_url": "https://accounts.openrockets.com/assets/statue_of_liberty_new_york_monument_manhattan_liberty_statue_skyline_usa-986669-CI_wStr3.png",
+      "target": "assets/external/accounts.openrockets.com/statue_of_liberty_new_york_monument_manhattan_liberty_statue__11225875de835ea712.png"
+    }
+  ],
+  "unresolved": [
+    {
+      "url": "https://maplelicense.substack.com/embed",
+      "result": "unresolved",
+      "status": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 5641,
+      "final_url": "https://maplelicense.substack.com/embed"
+    },
+    {
+      "url": "https://www.youtube.com/embed/2zl3vOhvbGU",
+      "result": "unresolved",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 147163,
+      "final_url": "https://www.youtube.com/embed/2zl3vOhvbGU"
+    },
+    {
+      "url": "https://elfsightcdn.com/platform.js",
+      "result": "unresolved",
+      "status": 200,
+      "content_type": "application/javascript",
+      "bytes": 33374,
+      "final_url": "https://elfsightcdn.com/platform.js"
+    },
+    {
+      "url": "https://www.jotform.com/website-widgets/embed/01a100a980d870008b35e8fb080072500552",
+      "result": "unresolved",
+      "status": 200,
+      "content_type": "text/javascript;charset=UTF-8",
+      "bytes": 53435,
+      "final_url": "https://www.jotform.com/website-widgets/embed/01a100a980d870008b35e8fb080072500552"
+    },
+    {
+      "url": "https://epaper.dailynews.lk//img/ancl_logo/logo2.png",
+      "result": "unresolved",
+      "status": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 5681,
+      "final_url": "https://epaper.dailynews.lk//img/ancl_logo/logo2.png"
+    },
+    {
+      "url": "https://scienteen.com/brand/welcomepage2.png",
+      "result": "unresolved",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 12494,
+      "final_url": "https://scienteen.com/brand/welcomepage2.png"
+    },
+    {
+      "url": "https://forum.openrockets.com/",
+      "result": "unresolved",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 125911,
+      "final_url": "https://forum.openrockets.com/"
+    },
+    {
+      "url": "https://openrockets-datacentres-a-series.openstatus.dev/",
+      "result": "unresolved",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 56766,
+      "final_url": "https://openrockets-datacentres-a-series.openstatus.dev/"
+    },
+    {
+      "url": "https://www.termsfeed.com/public/cookie-consent/4.2.0/cookie-consent.js",
+      "result": "unresolved",
+      "status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "bytes": 2832,
+      "final_url": "https://www.termsfeed.com/public/cookie-consent/4.2.0/cookie-consent.js"
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/googlesans/v29/4UaGrENHsxJlGDuGo1OIlL3Owp5eKQtG.woff2",
+      "result": "unresolved",
+      "status": 200,
+      "content_type": "font/woff2",
+      "bytes": 39456,
+      "final_url": "https://fonts.gstatic.com/s/googlesans/v29/4UaGrENHsxJlGDuGo1OIlL3Owp5eKQtG.woff2"
+    },
+    {
+      "url": "https://tally.so/widgets/embed.js",
+      "result": "unresolved",
+      "status": 200,
+      "content_type": "application/javascript; charset=UTF-8",
+      "bytes": 39494,
+      "final_url": "https://tally.so/widgets/embed.js"
+    },
+    {
+      "url": "https://tally.so/r/Y5xeLd",
+      "result": "unresolved",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 67050,
+      "final_url": "https://tally.so/r/Y5xeLd"
+    },
+    {
+      "url": "https://tally.so/r/Y5xeLd?originPage=%2Fjoin",
+      "result": "unresolved",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 67115,
+      "final_url": "https://tally.so/r/Y5xeLd?originPage=%2Fjoin"
+    },
+    {
+      "url": "https://www.termsfeed.com/public/cookie-consent/4.2.0/cookie-consent-code.js",
+      "result": "unresolved",
+      "status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "bytes": 248360,
+      "final_url": "https://www.termsfeed.com/public/cookie-consent/4.2.0/cookie-consent-code.js"
+    },
+    {
+      "url": "https://www.termsfeed.com/public-ping/cookie-consent/4.2.0/cookie-consent.js/openrockets.com",
+      "result": "unresolved",
+      "status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "bytes": 0,
+      "final_url": "https://www.termsfeed.com/public-ping/cookie-consent/4.2.0/cookie-consent.js/openrockets.com"
+    },
+    {
+      "url": "https://js.hcaptcha.com/1/api.js",
+      "result": "unresolved",
+      "status": 200,
+      "content_type": "application/javascript",
+      "bytes": 727912,
+      "final_url": "https://js.hcaptcha.com/1/api.js"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap",
+      "result": "unresolved",
+      "status": 200,
+      "content_type": "text/css; charset=utf-8",
+      "bytes": 1697,
+      "final_url": "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    },
+    {
+      "url": "https://tally.so/r/VL64pj?transparentBackground=1&formEventsForwarding=1",
+      "result": "unresolved",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 197626,
+      "final_url": "https://tally.so/r/VL64pj?transparentBackground=1&formEventsForwarding=1"
+    },
+    {
+      "url": "https://tally.so/r/VL64pj?transparentBackground=1&formEventsForwarding=1&originPage=%2Fmagazinesoftware%2Fsignup",
+      "result": "unresolved",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 197768,
+      "final_url": "https://tally.so/r/VL64pj?transparentBackground=1&formEventsForwarding=1&originPage=%2Fmagazinesoftware%2Fsignup"
+    }
+  ]
+}

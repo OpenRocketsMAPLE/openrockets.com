@@ -140,6 +140,7 @@
         Accept: 'application/json',
       },
       credentials: 'omit',
+      signal: AbortSignal.timeout(6500),
       referrerPolicy: 'no-referrer',
     });
     if (!response.ok) throw new Error('Ad feed request failed: ' + response.status);
@@ -154,6 +155,125 @@
     return ads;
   }
 
+  async function loadArticlePromos() {
+    const endpoint = new URL('/rest/v1/articles', SUPABASE_URL);
+    endpoint.search = new URLSearchParams({
+      select: 'id,slug,title,image_url,views,authors(name)',
+      published: 'eq.true',
+      views: 'gt.0',
+      order: 'views.desc,id.asc',
+      limit: '250',
+    }).toString();
+
+    const response = await fetch(endpoint, {
+      headers: { apikey: SUPABASE_PUBLISHABLE_KEY, Accept: 'application/json' },
+      credentials: 'omit',
+      signal: AbortSignal.timeout(6500),
+      referrerPolicy: 'no-referrer',
+    });
+    if (!response.ok) throw new Error('Article feed request failed: ' + response.status);
+
+    const rows = await response.json();
+    if (!Array.isArray(rows) || !rows.length) return [];
+
+    // Keep articles in the upper half by views, including ties at the cutoff.
+    const cutoff = Number(rows[Math.ceil(rows.length / 2) - 1].views);
+    const maxViews = Number(rows[0].views);
+    const candidates = rows.filter(row => Number(row.views) >= cutoff).flatMap(row => {
+      const thumbnail = safeWebUrl(row.image_url);
+      const author = (Array.isArray(row.authors) ? row.authors[0]?.name : row.authors?.name)?.trim();
+      const title = typeof row.title === 'string' ? row.title.trim() : '';
+      const slug = typeof row.slug === 'string' ? row.slug.trim() : '';
+      if (!thumbnail || !author || !title || !slug || slug === '.' || slug === '..') return [];
+      return [{
+        type: 'article',
+        title,
+        author,
+        thumbnail,
+        views: Number(row.views),
+        linkUrl: new URL('/p/' + encodeURIComponent(slug), 'https://mag.openrockets.com').href,
+      }];
+    });
+
+    // Weighted sampling without replacement. The square-root rank curve and
+    // log view score favor popular pieces while still giving every candidate a chance.
+    return candidates.map((article, index) => {
+      const rank = 1 - index / Math.max(1, candidates.length - 1);
+      const popularity = Math.log1p(article.views) / Math.log1p(maxViews);
+      const weight = 0.5 + 2 * Math.sqrt(rank) + 2 * popularity;
+      const randomPriority = -Math.log(1 - Math.random()) / weight;
+      return { article, randomPriority };
+    }).sort((a, b) => a.randomPriority - b.randomPriority).map(({ article }) => article);
+  }
+
+  function mixPromos(ads, articles) {
+    const promos = [];
+    let adIndex = 0;
+    let articleIndex = 0;
+    let openSlots = Math.min(slots.length, ads.length + articles.length);
+    let articleSlots = Math.max(0, openSlots - ads.length);
+
+    if (ads.length && articles.length && openSlots > 1) {
+      articleSlots = Math.min(articles.length, openSlots - 1,
+        Math.max(articleSlots, 1, Math.round(openSlots * 0.35)));
+    } else if (ads.length && articles.length && openSlots === 1 && Math.random() < 0.35) {
+      articleSlots = 1;
+    }
+
+    while (adIndex < ads.length || articleIndex < articles.length) {
+      const articleChance = openSlots > 0 ? articleSlots / openSlots : 0.35;
+      const useArticle = articleIndex < articles.length &&
+        (adIndex >= ads.length || Math.random() < articleChance);
+      promos.push(useArticle ? articles[articleIndex++] : ads[adIndex++]);
+      if (openSlots > 0) {
+        openSlots -= 1;
+        if (useArticle) articleSlots -= 1;
+      }
+    }
+    return promos;
+  }
+
+  function createArticlePromo(article, slot) {
+    const card = document.createElement('a');
+    card.className = 'or-promo';
+    card.classList.toggle('or-promo-compact',
+      slot.parentElement.hasAttribute('data-or-ad-rail') || Math.random() < 0.45);
+    card.href = article.linkUrl;
+    card.target = '_blank';
+    card.rel = 'noopener noreferrer';
+
+    const thumbnail = document.createElement('img');
+    thumbnail.className = 'or-promo-thumbnail';
+    thumbnail.src = article.thumbnail;
+    thumbnail.alt = '';
+    thumbnail.loading = 'lazy';
+    thumbnail.decoding = 'async';
+    thumbnail.referrerPolicy = 'no-referrer';
+
+    const copy = document.createElement('div');
+    copy.className = 'or-promo-copy';
+
+    const label = document.createElement('span');
+    label.className = 'or-promo-label';
+    label.textContent = 'The Scientific Teenager';
+
+    const title = document.createElement('strong');
+    title.className = 'or-promo-title';
+    title.textContent = article.title;
+
+    const byline = document.createElement('span');
+    byline.className = 'or-promo-byline';
+    byline.textContent = 'By ' + article.author;
+
+    const more = document.createElement('span');
+    more.className = 'or-promo-more';
+    more.textContent = 'Read more';
+
+    copy.append(label, title, byline, more);
+    card.append(thumbnail, copy);
+    return card;
+  }
+
   function fillSlot(slot, ads, startIndex, loading = 'lazy') {
     let attempts = 0;
     function renderNext() {
@@ -164,8 +284,8 @@
       }
       const ad = ads[(startIndex + attempts) % ads.length];
       attempts += 1;
-      const card = createAdContents(ad);
-      const image = card.querySelector('.or-ad-image');
+      const card = ad.type === 'article' ? createArticlePromo(ad, slot) : createAdContents(ad);
+      const image = card.querySelector('.or-ad-image, .or-promo-thumbnail');
       image.loading = loading;
       image.addEventListener('error', renderNext, { once: true });
       slot.replaceChildren(card);
@@ -283,13 +403,14 @@
     }, { capture: true });
   }
 
-  loadAcceptedAds()
-    .then(ads => {
-      if (!ads.length) return;
-      slots.forEach((slot, index) => fillSlot(slot, ads, index));
-      if (document.getElementById('homepage-advertisement')) setupVignette(ads);
-    })
-    .catch(error => {
-      console.warn('[OpenRockets Ads] Could not load accepted ads.', error);
-    });
+  Promise.allSettled([loadAcceptedAds(), loadArticlePromos()]).then(([adResult, articleResult]) => {
+    const ads = adResult.status === 'fulfilled' ? adResult.value : [];
+    const articles = articleResult.status === 'fulfilled' ? articleResult.value : [];
+    for (const result of [adResult, articleResult]) {
+      if (result.status === 'rejected') console.warn('[OpenRockets Ads]', result.reason);
+    }
+    const promos = mixPromos(ads, articles);
+    if (promos.length) slots.forEach((slot, index) => fillSlot(slot, promos, index));
+    if (ads.length && document.getElementById('homepage-advertisement')) setupVignette(ads);
+  });
 })();

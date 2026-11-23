@@ -14,15 +14,42 @@ PROJECT_PREFIX = "/openrockets.com/"
 REPORT = Path(".github/recovery-audit/pages-smoke.json")
 EXPECTED_SHA = os.environ.get("EXPECTED_SHA", "").strip()
 
-ROUTES = [
+CORE_ROUTES = [
     "",
     "our-communities/",
     "team/",
     "merch/",
     "join.html",
+    "join/",
+    "merch/cart/",
     "research/maple/v1/",
     "magazinesoftware/signup/",
 ]
+
+PRODUCT_ROUTES = [
+    f"merch/product/?id={i}" for i in range(1, 10)
+]
+
+PROFILE_SLUGS = [
+    "hugo-torres",
+    "arjun-jamgade",
+    "neksha-desilva",
+    "anabel-caballero",
+    "yuxuan-lin",
+    "lucas-gabriel",
+    "jakob-friedrich",
+]
+PROFILE_ROUTES = [
+    f"team/management-profile/?person={slug}&v=20261029-6"
+    for slug in PROFILE_SLUGS
+]
+
+ROUTES = CORE_ROUTES + PRODUCT_ROUTES + PROFILE_ROUTES
+
+REDIRECT_STUBS = {
+    "opensource/": "https://maplelicense.substack.com/",
+    "interkid/": "https://www.interkid.org/",
+}
 
 STATIC_RE = re.compile(
     r"\.(?:css|js|mjs|png|jpe?g|webp|gif|svg|ico|avif|woff2?|ttf|otf|eot|json|xml|map|pdf)(?:[?#].*)?$",
@@ -49,13 +76,6 @@ async def main():
         )
         page = await context.new_page()
 
-        # GitHub's native Pages deployment is currently sourced from main,
-        # while the helper gh-pages branch has its own source-commit marker.
-        # Do not require that marker to be served by the live Pages site.
-        # Instead, wait for the public homepage to be healthy and stable before
-        # beginning the route/resource checks. The checks below verify the
-        # actual deployed content (including the localized Stripe assets), so a
-        # stale deployment will fail those fidelity checks naturally.
         deployed_sha = None
         homepage_ready_streak = 0
         for _ in range(24):
@@ -139,11 +159,11 @@ async def main():
             status = response.status if response else None
 
             try:
-                await page.wait_for_load_state("networkidle", timeout=10000)
+                await page.wait_for_load_state("networkidle", timeout=3000)
             except Exception:
                 pass
 
-            await page.wait_for_timeout(1800)
+            await page.wait_for_timeout(700 if index else 1500)
             title = await page.title()
 
             if index == 0:
@@ -199,7 +219,7 @@ async def main():
                     except Exception:
                         cookie["closed_after_click"] = True
 
-            urls = await page.evaluate("""() => {
+            urls = await page.evaluate(r"""() => {
               const out = [];
               for (const el of document.querySelectorAll('*')) {
                 for (const attr of ['src', 'href', 'poster']) {
@@ -244,7 +264,32 @@ async def main():
                 "console_errors_during_route": console_errors[before_console:],
             })
 
-        probe_results = []
+        redirect_results = []
+        for route, expected_target in REDIRECT_STUBS.items():
+            url = urljoin(SITE, route)
+            try:
+                response = await context.request.get(
+                    url,
+                    fail_on_status_code=False,
+                    timeout=15000,
+                    max_redirects=0,
+                )
+                body = await response.text()
+                redirect_results.append({
+                    "route": route,
+                    "status": response.status,
+                    "expected_target": expected_target,
+                    "target_present_in_stub": expected_target in body,
+                })
+            except Exception as exc:
+                redirect_results.append({
+                    "route": route,
+                    "status": None,
+                    "expected_target": expected_target,
+                    "target_present_in_stub": False,
+                    "error": f"{type(exc).__name__}: {exc}",
+                })
+
         semaphore = asyncio.Semaphore(20)
 
         async def probe(url):
@@ -263,6 +308,7 @@ async def main():
                         "error": f"{type(exc).__name__}: {exc}",
                     }
 
+        probe_results = []
         if same_site_assets:
             probe_results = await asyncio.gather(
                 *(probe(url) for url in sorted(same_site_assets))
@@ -272,6 +318,21 @@ async def main():
             item
             for item in probe_results
             if item.get("status") is None or item.get("status", 0) >= 400
+        ]
+
+        escaped_image_responses = [
+            item for item in bad_responses
+            if item.get("resource_type") == "image"
+            and urlparse(item.get("url", "")).hostname != site_host
+        ]
+        bad_same_site_image_responses = [
+            item for item in bad_responses
+            if item.get("resource_type") == "image"
+            and urlparse(item.get("url", "")).hostname == site_host
+        ]
+        failed_image_requests = [
+            item for item in failed_requests
+            if item.get("resource_type") == "image"
         ]
 
         stripe_static_requests = [
@@ -286,8 +347,9 @@ async def main():
             "site": SITE,
             "expected_source_commit": EXPECTED_SHA,
             "deployed_source_commit": deployed_sha,
-            "deployment_gate": "stable-homepage-and-live-fidelity-checks",
+            "deployment_gate": "native-pages-run-plus-browser-fidelity-checks",
             "routes": route_results,
+            "redirect_stubs": redirect_results,
             "favicon_href": favicon_href,
             "favicon_url": favicon_url,
             "favicon_status": favicon_status,
@@ -299,10 +361,13 @@ async def main():
             "same_site_assets_probed": len(probe_results),
             "escaped_project_static_urls": sorted(escaped_project_urls),
             "broken_same_site_assets": broken_same_site,
+            "bad_external_image_responses": escaped_image_responses,
+            "bad_same_site_image_responses": bad_same_site_image_responses,
+            "failed_image_requests": failed_image_requests,
             "remaining_stripe_stylesheet_or_font_requests": stripe_static_requests,
-            "browser_bad_responses": bad_responses[:1000],
-            "browser_failed_requests": failed_requests[:1000],
-            "console_errors": console_errors[:400],
+            "browser_bad_responses": bad_responses[:2000],
+            "browser_failed_requests": failed_requests[:2000],
+            "console_errors": console_errors[:800],
         }
 
         failures = []
@@ -312,6 +377,19 @@ async def main():
             failures.append(
                 "route status: "
                 + ", ".join(f'{x["route"]}={x["status"]}' for x in bad_routes)
+            )
+
+        bad_redirects = [
+            item for item in redirect_results
+            if item.get("status") != 200 or not item.get("target_present_in_stub")
+        ]
+        if bad_redirects:
+            failures.append(
+                "redirect stubs: "
+                + ", ".join(
+                    f'{x["route"]}=status:{x.get("status")},target:{x.get("target_present_in_stub")}'
+                    for x in bad_redirects
+                )
             )
 
         if favicon_url and favicon_status != 200:
@@ -332,9 +410,23 @@ async def main():
                 f"{len(broken_same_site)} same-site static asset(s) are broken"
             )
 
-        # The original recovered OpenRockets source intentionally references
-        # Stripe-hosted core stylesheets/fonts. Keep reporting those requests,
-        # but do not treat them as a fidelity failure.
+        if bad_same_site_image_responses:
+            failures.append(
+                f"{len(bad_same_site_image_responses)} same-site image response(s) returned 4xx/5xx"
+            )
+
+        if escaped_image_responses:
+            failures.append(
+                f"{len(escaped_image_responses)} external image response(s) returned 4xx/5xx"
+            )
+
+        if failed_image_requests:
+            failures.append(
+                f"{len(failed_image_requests)} image request(s) failed at the browser network layer"
+            )
+
+        # Stripe-hosted core stylesheets/fonts are part of the recovered source.
+        # They are reported but are not treated as a recovery failure.
 
         report["result"] = "pass" if not failures else "fail"
         report["failures"] = failures
@@ -348,10 +440,11 @@ async def main():
         print(json.dumps({
             "result": report["result"],
             "expected_source_commit": EXPECTED_SHA,
-            "deployed_source_commit": deployed_sha,
+            "route_count": len(route_results),
             "route_statuses": {
                 item["route"]: item["status"] for item in route_results
             },
+            "redirect_stubs": redirect_results,
             "favicon_status": favicon_status,
             "cookie_visible": cookie["banner_visible_before"],
             "cookie_clicked": cookie["clicked"],
@@ -359,7 +452,9 @@ async def main():
             "same_site_assets_probed": len(probe_results),
             "escaped_project_static_url_count": len(escaped_project_urls),
             "broken_same_site_asset_count": len(broken_same_site),
-            "broken_same_site_assets": broken_same_site,
+            "bad_external_image_response_count": len(escaped_image_responses),
+            "bad_same_site_image_response_count": len(bad_same_site_image_responses),
+            "failed_image_request_count": len(failed_image_requests),
             "remaining_stripe_static_request_count": len(stripe_static_requests),
             "failures": failures,
         }, indent=2))

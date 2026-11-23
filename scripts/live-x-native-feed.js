@@ -3,7 +3,7 @@
   const MAX_POSTS = 100;
   const INITIAL_PER_SECTION = 6;
   const LOAD_MORE_STEP = 4;
-  const MIN_WORDS = 1;
+  const MIN_WORDS = 5;
   const CORE_URL = "https://core.service.elfsight.com";
   const DATA_URL = "https://widget-data.service.elfsight.com";
 

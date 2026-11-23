@@ -941,18 +941,18 @@
   .or-native-x-grid{
     width:min(1120px,calc(100% - 2rem));
     margin:0 auto;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    align-items:flex-start;
-    align-content:flex-start;
-    gap:22px;
+    columns:2;
+    column-gap:22px;
   }
   .or-native-x-slot{
-    flex:0 1 calc(50% - 11px);
-    width:calc(50% - 11px);
+    display:inline-block;
+    width:100%;
     max-width:549px;
     min-width:0;
+    margin:0 auto 22px;
+    vertical-align:top;
+    break-inside:avoid;
+    page-break-inside:avoid;
   }
   .or-x-card{
     width:100%;
@@ -1017,8 +1017,8 @@
   .or-native-x-show-more{appearance:none;border:1px solid #cfd9de;border-radius:999px;background:#fff;color:#0f1419;min-width:150px;height:38px;padding:0 22px;font:700 14px/1 "TwitterChirp",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;cursor:pointer;box-shadow:0 5px 18px rgba(15,20,25,.08)}
   .or-native-x-show-more:hover,.or-native-x-show-more:focus-visible{background:#f7f9f9;border-color:#8b98a5;outline:none}
   @media(max-width:760px){
-    .or-native-x-grid{width:min(100% - 1rem,550px)}
-    .or-native-x-slot{flex:0 1 100%;width:100%;max-width:550px}
+    .or-native-x-grid{width:min(100% - 1rem,550px);columns:1}
+    .or-native-x-slot{max-width:550px}
     .or-native-x-more-shell{width:min(100% - 1rem,550px)}
     .or-x-card-head{padding:16px 16px 0}
     .or-x-card-body{padding:13px 16px 0}
@@ -3078,7 +3078,7 @@ Handling 2.9M daily requests and over 115TB of traffic while blocking 300,000+ a
     color: #007c53;
     text-align: center;
     font-size: clamp(2rem, 4vw, 3rem) !important;
-    font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+    font-family: var(--or-font, Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif) !important;
     font-weight: 700 !important;
     margin: 0 0 1.75rem 0;
     line-height: 1.25;
@@ -3097,7 +3097,7 @@ Handling 2.9M daily requests and over 115TB of traffic while blocking 300,000+ a
     color: #fff;
     font-size: 1.1rem;
     font-weight: 600;
-    font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+    font-family: var(--or-font, Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif) !important;
     box-sizing: border-box;
     transition: background-color 0.2s ease;
   }
@@ -4327,7 +4327,7 @@ button.rounded-md,button.rounded-lg,button.rounded-full,a.rounded-md,a.rounded-l
     document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && overlay.classList.contains('is-open')) close.click(); });
   });
 </script>
-<script src="scripts/live-x-native-feed.js?v=twitter-bird-20261123" defer></script>
+<script src="scripts/live-x-native-feed.js?v=feed-fivewords-masonry-20261123" defer></script>
 </body>
 
 <!-- Cookie Consent by TermsFeed https://www.TermsFeed.com -->

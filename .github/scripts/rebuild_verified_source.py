@@ -421,4 +421,7 @@ print(json.dumps({
 },indent=2))
 
 if missing_after:
+    print("MISSING_AFTER_BEGIN")
+    print(json.dumps(missing_after, indent=2))
+    print("MISSING_AFTER_END")
     raise SystemExit(f"FAIL: {len(missing_after)} referenced local static asset(s) are still missing")

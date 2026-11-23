@@ -4294,27 +4294,56 @@ button.rounded-md,button.rounded-lg,button.rounded-full,a.rounded-md,a.rounded-l
 }
 </style>
       <!--                   FOOTER                   -->
-   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+   <div id="legacy-partners" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
        
-     <span style="width: 100%; padding:1rem  1rem 0  1rem;font-size: 102%; display: flex; justify-content: center; align-items: center;">Partners</span>
+     <span id="legacy-partners-heading" role="button" tabindex="0" aria-expanded="false" style="width:100%; padding:1rem 1rem 0 1rem; font-size:102%; display:flex; justify-content:center; align-items:center; cursor:pointer; user-select:none;">Partners</span>
         <div class="md:col-span-2 space-y-5" style="width: 100%; flex-wrap: wrap;  display: flex; justify-content: center; align-items: center;">
 
          
-           <img alt="OpenRockets Foundation" style=" margin: 1rem; height: 5rem;    " class="object-contain footer-logo" src="https://logos-world.net/wp-content/uploads/2023/03/NameCheap-Logo.png" style="filter: invert(1);">
-            <img alt="OpenRockets Foundation" style=" margin: 1rem; height: 5rem;   " class="object-contain footer-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Netlify_logo_%282%29.svg/960px-Netlify_logo_%282%29.svg.png" style="filter: invert(1);">
- <img alt="OpenRockets Foundation" style=" margin: 1rem; height: 3rem; filter: invert(1);" class="object-contain footer-logo" src="https://infinitediscounts.com/images/2020-12-migadu-logo-1024x296.png" style="filter: invert(1);">
-        <img alt="OpenRockets Foundation" style=" margin: 1rem; height: 3rem; filter: invert(1);" class="object-contain footer-logo" src="https://openrockets.com/v/openrockets.png" style="filter: invert(0);">
+           <span class="legacy-partner-hidden" hidden><img alt="OpenRockets Foundation" style=" margin: 1rem; height: 5rem;    " class="object-contain footer-logo" src="https://logos-world.net/wp-content/uploads/2023/03/NameCheap-Logo.png" style="filter: invert(1);"></span>
+            <span class="legacy-partner-hidden" hidden><img alt="OpenRockets Foundation" style=" margin: 1rem; height: 5rem;   " class="object-contain footer-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Netlify_logo_%282%29.svg/960px-Netlify_logo_%282%29.svg.png" style="filter: invert(1);"></span>
+ <img alt="Migadu" style=" margin: 1rem; height: 3rem; filter: invert(1);" class="object-contain footer-logo" src="https://infinitediscounts.com/images/2020-12-migadu-logo-1024x296.png" style="filter: invert(1);">
+        <span class="legacy-partner-hidden" hidden><img alt="OpenRockets Foundation" style=" margin: 1rem; height: 3rem; filter: invert(1);" class="object-contain footer-logo" src="https://openrockets.com/v/openrockets.png" style="filter: invert(0);"></span>
 
-        <img alt="OpenRockets Foundation" style=" margin: 1rem; height: 5rem; " class="object-contain footer-logo" src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/cropped-SDG-Wheel_Transparent_WEB-300x300.png" style="filter: invert(1);">
+        <span class="legacy-partner-hidden" hidden><img alt="OpenRockets Foundation" style=" margin: 1rem; height: 5rem; " class="object-contain footer-logo" src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/cropped-SDG-Wheel_Transparent_WEB-300x300.png" style="filter: invert(1);"></span>
 
-        <img alt="OpenRockets Foundation" style=" margin: 1rem; height: 5rem; " class="object-contain footer-logo" src="https://assets.hackclub.com/flag-orpheus-left.png" style="filter: invert(1);">
- <img alt="OpenRockets Foundation" style=" margin: 1rem; height: 5rem; " class="object-contain footer-logo" src="https://d216901qxcl0k5.cloudfront.net/s3fs-public/2021-10/covergencetech.jpg" style="filter: invert(1);">
+        <img alt="Hack Club" style=" margin: 1rem; height: 5rem; " class="object-contain footer-logo" src="https://assets.hackclub.com/flag-orpheus-left.png" style="filter: invert(1);">
+ <span class="legacy-partner-hidden" hidden><img alt="OpenRockets Foundation" style=" margin: 1rem; height: 5rem; " class="object-contain footer-logo" src="https://d216901qxcl0k5.cloudfront.net/s3fs-public/2021-10/covergencetech.jpg" style="filter: invert(1);"></span>
 
     </div></div>
     </div>
   </div>
 
+
+<style id="legacy-partners-reveal-style">
+  #legacy-partners .legacy-partner-hidden[hidden]{display:none!important}
+  #legacy-partners.is-expanded .legacy-partner-hidden{display:contents!important}
+</style>
+<script id="legacy-partners-reveal-script">
+(() => {
+  const section = document.getElementById('legacy-partners');
+  const heading = document.getElementById('legacy-partners-heading');
+  if (!section || !heading) return;
+
+  let clicks = 0;
+  const reveal = () => {
+    clicks += 1;
+    if (clicks < 4) return;
+    section.classList.add('is-expanded');
+    heading.setAttribute('aria-expanded', 'true');
+    section.querySelectorAll('.legacy-partner-hidden').forEach((item) => item.hidden = false);
+  };
+
+  heading.addEventListener('click', reveal);
+  heading.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      reveal();
+    }
+  });
+})();
+</script>
   <!-- ═══════════════════════════════════════════ -->
   <!-- FOOTER                                     -->
   <!-- ═══════════════════════════════════════════ -->

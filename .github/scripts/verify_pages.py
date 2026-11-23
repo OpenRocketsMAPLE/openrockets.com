@@ -359,6 +359,7 @@ async def main():
             "same_site_assets_probed": len(probe_results),
             "escaped_project_static_url_count": len(escaped_project_urls),
             "broken_same_site_asset_count": len(broken_same_site),
+            "broken_same_site_assets": broken_same_site,
             "remaining_stripe_static_request_count": len(stripe_static_requests),
             "failures": failures,
         }, indent=2))

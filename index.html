@@ -2649,23 +2649,115 @@ Handling 2.9M daily requests and over 115TB of traffic while blocking 300,000+ a
   <div class="or-native-x-grid" data-or-x-grid="6"></div>
 </section>
 
-<section style="margin-bottom: .5rem; margin-top: .5rem !important;" class="hds-color-mode section section--white hds-mode--light">
-  <div class="section-container" style="padding: 1.5rem 1.5rem 1.25rem;">
-    <div style="max-width: 1100px; margin: 0 auto;">
-      <div style="display: flex; flex-direction: column; align-items: flex-end; text-align: left; gap: 1rem;">
-    
-
-        <h1 style="margin-top: 0rem;" class="hds-heading  hero-section__title hero-section__title--background hds-heading--xl" style="margin: 0; color: #000; font-size: clamp(2.6rem, 5vw, 5.8rem); line-height: 0.95; font-weight: 500; max-width: 16ch;">
- <img class="or-donates-art" src="assets/external/i.imgur.com/D9Pvn2i__56f7fa0cdb7077d37f.png" style="width:84%; max-width:900px; transform:rotate(30deg); transform-origin:center; margin:1.5rem 1rem 3rem 0; filter:drop-shadow(18px 20px 0 rgba(124,58,237,.98)) drop-shadow(27px 31px 0 rgba(236,72,153,.95)) drop-shadow(36px 42px 0 rgba(255,107,28,.92)) drop-shadow(48px 56px 34px rgba(82,32,120,.34));">
-          <p style="margin: 0; max-width: 64rem; margin-top: 0rem;  font-weight: 400;  color: #000000; line-height:1.3;">
-   OpenRockets Donates. Together, We Change Lives. You're Part of It.</p>
-   <br><span style="display: inline-flex; cursor: pointer; color: #01a6ff !important; font-weight: 600; font-size: 60% !important;" onclick="window.open('https://opencollective.com/openrocketsinc#category-ABOUT')">
-    OpenCollective Donations<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-up-right-circle" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.854 10.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707z"/>
-</svg>
-   </span>
+<section id="openrockets-donates" class="hds-color-mode section section--white hds-mode--light">
+  <style id="openrockets-donates-art-style">
+    #openrockets-donates{
+      margin:.5rem 0!important;
+      overflow:visible;
+    }
+    #openrockets-donates .section-container{
+      padding:1.5rem 1.5rem 1.25rem;
+      overflow:visible;
+    }
+    .or-donates-shell{
+      width:min(1100px,100%);
+      margin:0 auto;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      overflow:visible;
+    }
+    .or-donates-copy{
+      position:relative;
+      z-index:5;
+      width:100%;
+      max-width:980px;
+    }
+    .or-donates-title{
+      margin:0;
+      color:#000;
+      font-size:clamp(2.6rem,5vw,5.8rem);
+      line-height:1.03;
+      font-weight:500;
+      max-width:16ch;
+    }
+    .or-donates-link{
+      display:inline-flex;
+      align-items:center;
+      gap:.4rem;
+      margin-top:1rem;
+      cursor:pointer;
+      color:#01a6ff!important;
+      font-weight:600;
+      font-size:clamp(1rem,2vw,1.35rem);
+      text-decoration:none;
+    }
+    .or-donates-art-stage{
+      position:relative;
+      width:100%;
+      min-height:100vh;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      overflow:visible;
+      margin-top:clamp(1.5rem,4vw,3.5rem);
+      padding-top:clamp(1rem,3vw,2rem);
+      box-sizing:border-box;
+    }
+    .or-donates-art{
+      position:relative;
+      z-index:2;
+      display:block;
+      width:min(82vw,900px);
+      max-width:100%;
+      height:auto;
+      transform:rotate(30deg);
+      transform-origin:center;
+      filter:
+        drop-shadow(28px 34px 0 rgba(124,58,237,.40))
+        drop-shadow(62px 78px 0 rgba(236,72,153,.40))
+        drop-shadow(98px 124px 0 rgba(255,107,28,.40))
+        drop-shadow(-34px 42px 0 rgba(124,58,237,.40))
+        drop-shadow(-72px 88px 0 rgba(236,72,153,.40))
+        drop-shadow(-112px 142px 0 rgba(255,107,28,.40))
+        drop-shadow(0 190px 70px rgba(82,32,120,.22));
+    }
+    @media(max-width:760px){
+      .or-donates-art-stage{
+        min-height:92vh;
+        margin-top:1.25rem;
+        align-items:flex-start;
+      }
+      .or-donates-art{
+        width:min(92vw,720px);
+        transform:rotate(24deg);
+        filter:
+          drop-shadow(18px 28px 0 rgba(124,58,237,.40))
+          drop-shadow(42px 62px 0 rgba(236,72,153,.40))
+          drop-shadow(68px 98px 0 rgba(255,107,28,.40))
+          drop-shadow(-20px 34px 0 rgba(124,58,237,.40))
+          drop-shadow(-46px 72px 0 rgba(236,72,153,.40))
+          drop-shadow(-74px 112px 0 rgba(255,107,28,.40))
+          drop-shadow(0 145px 54px rgba(82,32,120,.20));
+      }
+    }
+  </style>
+  <div class="section-container">
+    <div class="or-donates-shell">
+      <div class="or-donates-copy">
+        <h2 class="hds-heading hero-section__title hero-section__title--background hds-heading--xl or-donates-title">
+          OpenRockets Donates. Together, We Change Lives. You're Part of It.
+        </h2>
+        <a class="or-donates-link" href="https://opencollective.com/openrocketsinc#category-ABOUT" target="_blank" rel="noopener noreferrer">
+          OpenCollective Donations
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-arrow-up-right-circle" viewBox="0 0 16 16" aria-hidden="true">
+            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.854 10.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707z"/>
+          </svg>
+        </a>
       </div>
-
+      <div class="or-donates-art-stage" aria-hidden="true">
+        <img class="or-donates-art" src="assets/external/i.imgur.com/D9Pvn2i__56f7fa0cdb7077d37f.png" alt="">
+      </div>
     </div>
   </div>
 </section>

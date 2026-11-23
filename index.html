@@ -421,16 +421,43 @@
     background: #fff;
     box-shadow: none;
   }
-  .maple-substack-frame iframe {
+  .maple-substack-fallback {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #000;
+    background: #f4f4f4;
+    color: #000;
+    text-decoration: none !important;
+  }
+  .maple-substack-fallback img {
     display: block;
-    width: 100% !important;
-    min-width: 100% !important;
-    max-width: none !important;
-    height: 430px !important;
-    min-height: 430px !important;
-    border: 0 !important;
-    border-radius: 0 !important;
-    background: #fff;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 793 / 525;
+    object-fit: cover;
+    background: #eee;
+  }
+  .maple-substack-fallback-copy {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 12px 14px;
+    border-top: 1px solid #000;
+    color: #000;
+    font-family: var(--or-font, Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
+  }
+  .maple-substack-fallback-copy strong {
+    font-size: .95rem;
+    font-weight: 700;
+  }
+  .maple-substack-fallback-copy > span {
+    font-size: .88rem;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
 
   .maple-why {
@@ -608,7 +635,7 @@
     #petition-modal { width: 100% !important; max-height: 96dvh !important; border-radius: 0 !important; }
     .maple-modal-scroll { padding: 20px 14px 24px; }
     #petition-modal-message { max-width: 21ch !important; font-size: clamp(1.42rem,6.8vw,2.02rem) !important; }
-    .maple-substack-frame iframe { height: 450px !important; min-height: 450px !important; }
+    
     .maple-why { grid-template-columns: 1fr; }
     .maple-modal-footer { grid-template-columns: 1fr; }
     .maple-help { text-align: left; }
@@ -776,14 +803,7 @@
     margin-right: auto !important;
   }
   .maple-substack-frame { overflow: hidden !important; }
-  .maple-substack-frame iframe {
-    display: block !important;
-    width: 100% !important;
-    height: 520px !important;
-    min-height: 520px !important;
-    overflow: hidden !important;
-    border: 0 !important;
-  }
+  
   .maple-research-pdf {
     width: 100%;
     margin: 24px 0 0;
@@ -802,7 +822,7 @@
       font-size: clamp(1.62rem, 8.1vw, 3.42rem) !important;
     }
     #maple-live-section .maple-live-actions { margin-bottom: 24px !important; }
-    .maple-substack-frame iframe { height: 560px !important; min-height: 560px !important; }
+    
     .maple-research-pdf iframe { height: 70vh; min-height: 480px; }
   }
 </style>
@@ -1323,7 +1343,15 @@
         </span>, worldwide.
       </h2>
       <p class="maple-modal-subhead" id="maple-modal-description">MAPLE stands for the Minor Authors' Public License for Expression.</p>
-      <div class="maple-substack-frame"><iframe src="https://maplelicense.substack.com/embed" title="MAPLE Open Source License for Minors" loading="lazy" scrolling="no"></iframe></div>
+      <div class="maple-substack-frame">
+        <a class="maple-substack-fallback" href="https://maplelicense.substack.com/" target="_blank" rel="noopener noreferrer" aria-label="Open MAPLE on Substack">
+          <img src="assets/external/maple/maple-nano.jpg" alt="MAPLE nano by OpenRockets" loading="lazy" decoding="async">
+          <span class="maple-substack-fallback-copy">
+            <strong>MAPLE on Substack</strong>
+            <span>Read updates and subscribe <span aria-hidden="true">↗</span></span>
+          </span>
+        </a>
+      </div>
       <div class="maple-youtube-video maple-youtube-video--popup" id="maple-popup-video">
         <iframe src="https://www.youtube.com/embed/2zl3vOhvbGU" title="MAPLE video" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>

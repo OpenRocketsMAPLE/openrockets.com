@@ -111,7 +111,7 @@
     #interkid-search-gateway {
       background: #fff;
       color: #000;
-      padding: clamp(3.25rem, 7vw, 6.5rem) 1.25rem;
+      padding: 1.5rem 1.25rem;
     }
     .interkid-gateway-shell {
       width: min(740px, calc(100% - 32px));
@@ -230,7 +230,7 @@
         bottom: 12px;
         padding: 15px;
       }
-      #interkid-search-gateway { padding: 3rem 1rem; }
+      #interkid-search-gateway { padding: 1.5rem 1rem; }
       .interkid-gateway-shell { width: min(100%, 740px); }
       .interkid-gateway-brand { margin-left: 0; gap: .8rem; }
       .interkid-gateway-brand img {
@@ -2101,26 +2101,44 @@
     <div class="maple-youtube-video maple-youtube-video--home" id="maple-home-video">
       <iframe src="https://www.youtube.com/embed/2zl3vOhvbGU" title="MAPLE video" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
-   <!-- Elfsight Twitter Feed | Untitled Twitter Feed -->
-    <div class="maple-twitter-feed" id="maple-twitter-feed">
-      <script src="https://elfsightcdn.com/platform.js" async></script>
-      <div class="elfsight-app-739491f1-b20f-438a-837a-73fb487ee5f2"></div>
+   <!-- Native Twitter/X post embed with visible fallback -->
+    <div class="maple-twitter-embed" id="maple-twitter-embed">
+      <blockquote class="twitter-tweet" data-theme="light" data-dnt="true">
+        <p lang="en" dir="ltr">World is moving fast</p>
+        &mdash; MAPLE OpenSource License for Minors (@maplelicense)
+        <a href="https://twitter.com/maplelicense/status/2123890252083593440">November 20, 2026</a>
+      </blockquote>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <noscript>
+        <a href="https://x.com/maplelicense/status/2123890252083593440" target="_blank" rel="noopener">View this MAPLE post on X</a>
+      </noscript>
     </div>
-    <style id="maple-twitter-feed-display-style">
-      #maple-twitter-feed { display:block !important; width:100% !important; max-width:1125px; min-height:520px; margin:24px 0 0; overflow:visible !important; }
-      #maple-twitter-feed .elfsight-app-739491f1-b20f-438a-837a-73fb487ee5f2 { display:block !important; width:100% !important; min-height:520px !important; visibility:visible !important; opacity:1 !important; }
-      #maple-twitter-feed iframe { display:block !important; width:100% !important; min-height:520px !important; border:0 !important; visibility:visible !important; opacity:1 !important; }
+    <style id="maple-twitter-embed-style">
+      #maple-twitter-embed {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 100% !important;
+        max-width: 1125px;
+        min-height: 220px;
+        margin: 24px 0 0;
+        overflow: visible !important;
+      }
+      #maple-twitter-embed .twitter-tweet,
+      #maple-twitter-embed iframe {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        max-width: 100% !important;
+      }
+      #maple-twitter-embed .twitter-tweet {
+        margin: 0 !important;
+        padding: 18px;
+        border: 1px solid #d9d9d9;
+        background: #fff;
+        color: #111;
+      }
     </style>
-    <script id="maple-twitter-feed-display-script">
-      document.addEventListener('DOMContentLoaded', function () {
-        const host=document.querySelector('#maple-twitter-feed .elfsight-app-739491f1-b20f-438a-837a-73fb487ee5f2');
-        if(!host) return;
-        const reveal=()=>{ host.style.display='block'; host.style.visibility='visible'; host.style.opacity='1'; host.querySelectorAll('iframe').forEach((frame)=>{ frame.style.display='block'; frame.style.width='100%'; frame.style.minHeight='520px'; frame.style.visibility='visible'; frame.style.opacity='1'; frame.removeAttribute('hidden'); }); };
-        reveal();
-        new MutationObserver(reveal).observe(host,{childList:true,subtree:true,attributes:true});
-        setTimeout(reveal,1000); setTimeout(reveal,3000);
-      });
-    </script></div>
   </div>
 </section>
 <script src="https://www.jotform.com/website-widgets/embed/01a100a980d870008b35e8fb080072500552" defer></script>
@@ -2252,8 +2270,8 @@
 <!-- ═══════════════════════════════════════════ -->
 <!-- NETWORK STATS / BLACK & WHITE SECTION      -->
 <!-- ═══════════════════════════════════════════ -->
-<section style="margin-top: 2rem !important;" class="hds-color-mode section section--white hds-mode--light">
-  <div class="section-container" style="padding: 4rem 1.5rem 2.5rem;">
+<section style="margin-top: .5rem !important;" class="hds-color-mode section section--white hds-mode--light">
+  <div class="section-container" style="padding: 1.5rem 1.5rem 1.25rem;">
     <div style="max-width: 1100px; margin: 0 auto;">
       <div style="display: flex; flex-direction: column; align-items: flex-end; text-align: left; gap: 1rem;">
     
@@ -2310,8 +2328,8 @@ Handling 2.9M daily requests and over 115TB of traffic while blocking 300,000+ a
 
 
 
-<section style="margin-top: 2rem !important;" class="hds-color-mode section section--white hds-mode--light">
-  <div class="section-container" style="padding: 4rem 1.5rem 2.5rem;">
+<section style="margin-top: .5rem !important;" class="hds-color-mode section section--white hds-mode--light">
+  <div class="section-container" style="padding: 1.5rem 1.5rem 1.25rem;">
     <div style="max-width: 1100px; margin: 0 auto;">
       <div style="display: flex; flex-direction: column; align-items: flex-start; text-align: left; gap: 1rem;">
         <h1 style="margin-top: 0rem !important;" class="hds-heading hero-section__title hero-section__title--background hds-heading--xl" style="margin: 0; color: #000; font-size: clamp(2.6rem, 5vw, 5.8rem); line-height: 0.95; font-weight: 500; max-width: 16ch;">
@@ -2328,8 +2346,8 @@ Handling 2.9M daily requests and over 115TB of traffic while blocking 300,000+ a
 <!-- ═══════════════════════════════════════════ -->
 <!-- SEARCH BAR SECTION                         -->
 <!-- ═══════════════════════════════════════════ -->
-<section style="margin-top: 2rem !important; margin-bottom: 2rem !important;" class="hds-color-mode section section--white hds-mode--light">
-  <div class="section-container" style="padding: 3rem 1.5rem 3rem;">
+<section style="margin-top: .5rem !important; margin-bottom: .5rem !important;" class="hds-color-mode section section--white hds-mode--light">
+  <div class="section-container" style="padding: 1.5rem 1.5rem;">
     <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; width: 100%;">
       
       <!-- Hexagonal Rubik Cube Image -->
@@ -2377,8 +2395,8 @@ Handling 2.9M daily requests and over 115TB of traffic while blocking 300,000+ a
     </div>
   </div>
 </section>
-<section style="margin-bottom: 5rem; margin-top: 2rem !important;" class="hds-color-mode section section--white hds-mode--light">
-  <div class="section-container" style="padding: 4rem 1.5rem 2.5rem;">
+<section style="margin-bottom: .5rem; margin-top: .5rem !important;" class="hds-color-mode section section--white hds-mode--light">
+  <div class="section-container" style="padding: 1.5rem 1.5rem 1.25rem;">
     <div style="max-width: 1100px; margin: 0 auto;">
       <div style="display: flex; flex-direction: column; align-items: flex-end; text-align: left; gap: 1rem;">
     
@@ -2458,7 +2476,7 @@ Handling 2.9M daily requests and over 115TB of traffic while blocking 300,000+ a
       <!-- The Scientific Teenager -->
       <div class="partner-box">
         <div class="partner-feature-media scientific-teenager-media">
-          <img src="assets/home/the-scientific-teenager.png" alt="OpenRockets SCIENTEEN — The Scientific Teenager" class="partner-feature-image scientific-teenager-logo" loading="lazy" decoding="async">
+          <img src="v/85974.png" alt="The Scientific Teenager" class="partner-feature-image scientific-teenager-logo" loading="lazy" decoding="async" style="filter: invert(1); width: min(100%, 640px) !important; height: auto !important; object-fit: contain !important; margin: 0 auto;">
         </div>
         <div class="partner-description">A preprint repository for almost anything licensed under OpenRockets open source licenses, including Beaver, Kangaroo, and Hummingbird. The repository hosts hundreds of artifacts, including photographs, scientific preprints, new findings, 3D objects, and software codes. Acting as a core part of OpenRockets Press, it ensures that all forms of scientific and creative digital work are accessible to the community.</div>
         <a href="https://scienteen.com/" class="partner-link" target="_blank" rel="noopener">
@@ -3093,7 +3111,7 @@ Introducing OpenRockets InterKid™ + TeenDNS, a Free & Advanced Safe Search Eng
         .blog-slider {
           --card-width: min(72vw, 680px);
           overflow: hidden;
-          padding: clamp(3rem, 7vw, 6rem) 0;
+          padding: 1.5rem 0 2rem;
           width: 100%;
           color: #000;
           background: #fff;
@@ -3119,7 +3137,7 @@ Introducing OpenRockets InterKid™ + TeenDNS, a Free & Advanced Safe Search Eng
         .blog-slider__arrow:active:not(:disabled) { transform: translateY(2px); }
         .blog-slider__arrow:disabled { cursor: not-allowed; opacity: .25; }
         .blog-slider__arrow svg { width: 55%; fill: none; stroke: currentColor; stroke-linecap: square; stroke-linejoin: miter; stroke-width: 2; }
-        .blog-slider__status { margin: 8rem auto 0; text-align: center; }
+        .blog-slider__status { margin: 1.5rem auto 0; text-align: center; }
         .blog-slider__status a { color: inherit; font-weight: 700; }
         .blog-slider__position { min-height: 1.25rem; margin: 1rem 0 0; text-align: center; font-size: .8rem; font-weight: 700; letter-spacing: .08em; }
         @media (max-width: 640px) {

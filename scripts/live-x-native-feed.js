@@ -102,35 +102,236 @@
     return [];
   };
 
-  const makeEmbed = (post) => {
+  const svg = (path, className = "") => {
+    const ns = "http://www.w3.org/2000/svg";
+    const node = document.createElementNS(ns, "svg");
+    node.setAttribute("viewBox", "0 0 24 24");
+    node.setAttribute("aria-hidden", "true");
+    if (className) node.setAttribute("class", className);
+    const p = document.createElementNS(ns, "path");
+    p.setAttribute("d", path);
+    p.setAttribute("fill", "currentColor");
+    node.appendChild(p);
+    return node;
+  };
+
+  const verifiedIcon = () => {
+    const span = document.createElement("span");
+    span.className = "or-x-inline-verified";
+    span.setAttribute("aria-label", "Verified");
+    span.appendChild(svg("M20.396 11c0-1.278-1.006-2.282-1.906-3.09.098-1.206-.175-2.566-1.128-3.518-.952-.952-2.31-1.225-3.516-1.127C13.036 2.366 12.033 1.36 10.754 1.36S8.472 2.366 7.664 3.265c-1.207-.098-2.566.175-3.518 1.127-.952.952-1.225 2.312-1.127 3.518-.9.808-1.906 1.812-1.906 3.09s1.006 2.282 1.906 3.09c-.098 1.206.175 2.566 1.127 3.518.952.952 2.311 1.225 3.518 1.127.808.9 1.812 1.905 3.09 1.905s2.282-1.006 3.092-1.905c1.206.098 2.564-.175 3.516-1.127.953-.952 1.226-2.312 1.128-3.518.9-.808 1.906-1.812 1.906-3.09Zm-11.3 4.047-3.11-3.11 1.414-1.414 1.696 1.696 4.41-4.41 1.414 1.414-5.824 5.824Z"));
+    return span;
+  };
+
+  const linkifyCaption = (text) => {
+    const fragment = document.createDocumentFragment();
+    const cleaned = String(text || "").replace(/https:\/\/t\.co\/\S+/g, "").trim();
+    const pattern = /(@[A-Za-z0-9_]+|https?:\/\/\S+)/g;
+    let last = 0;
+
+    cleaned.replace(pattern, (match, _group, offset) => {
+      if (offset > last) fragment.append(document.createTextNode(cleaned.slice(last, offset)));
+
+      const anchor = document.createElement("a");
+      anchor.className = "or-x-inline-link";
+      anchor.target = "_blank";
+      anchor.rel = "noopener noreferrer";
+      anchor.textContent = match;
+      anchor.href = match.startsWith("@") ? `https://x.com/${match.slice(1)}` : match;
+      fragment.append(anchor);
+      last = offset + match.length;
+      return match;
+    });
+
+    if (last < cleaned.length) fragment.append(document.createTextNode(cleaned.slice(last)));
+    return fragment;
+  };
+
+  const mediaUrl = (media) =>
+    media?.standard?.url || media?.original?.url || media?.thumbnail?.url || null;
+
+  const buildAuthor = (author, compact = false) => {
+    const row = document.createElement("div");
+    row.className = compact ? "or-x-author or-x-author--compact" : "or-x-author";
+
+    if (author?.profilePictureUrl) {
+      const avatar = document.createElement("img");
+      avatar.className = "or-x-avatar";
+      avatar.src = author.profilePictureUrl;
+      avatar.alt = "";
+      avatar.loading = "lazy";
+      avatar.decoding = "async";
+      row.appendChild(avatar);
+    }
+
+    const identity = document.createElement("div");
+    identity.className = "or-x-identity";
+
+    const nameLine = document.createElement("div");
+    nameLine.className = "or-x-name-line";
+
+    const name = document.createElement("strong");
+    name.className = "or-x-display-name";
+    name.textContent = author?.name || author?.username || "OpenRockets";
+    nameLine.append(name, verifiedIcon());
+
+    const handleLine = document.createElement("div");
+    handleLine.className = "or-x-handle-line";
+
+    const handle = document.createElement("span");
+    handle.className = "or-x-handle";
+    handle.textContent = `@${author?.username || "openrockets"}`;
+    handleLine.appendChild(handle);
+
+    if (!compact) {
+      const separator = document.createElement("span");
+      separator.className = "or-x-handle-separator";
+      separator.textContent = "·";
+
+      const follow = document.createElement("a");
+      follow.className = "or-x-follow";
+      follow.href = `https://x.com/${author?.username || "openrockets"}`;
+      follow.target = "_blank";
+      follow.rel = "noopener noreferrer";
+      follow.textContent = "Follow";
+
+      handleLine.append(separator, follow);
+    }
+
+    identity.append(nameLine, handleLine);
+    row.appendChild(identity);
+    return row;
+  };
+
+  const buildQuotedPost = (quoted) => {
+    if (!quoted) return null;
+
+    const box = document.createElement("a");
+    box.className = "or-x-quote";
+    box.href = postUrl(quoted);
+    box.target = "_blank";
+    box.rel = "noopener noreferrer";
+
+    box.appendChild(buildAuthor(quoted.author, true));
+
+    if (quoted.caption) {
+      const copy = document.createElement("div");
+      copy.className = "or-x-quote-copy";
+      copy.appendChild(linkifyCaption(quoted.caption));
+      box.appendChild(copy);
+    }
+
+    const firstMedia = (quoted.media || []).map(mediaUrl).find(Boolean);
+    if (firstMedia) {
+      const img = document.createElement("img");
+      img.className = "or-x-quote-media";
+      img.src = firstMedia;
+      img.alt = "";
+      img.loading = "lazy";
+      img.decoding = "async";
+      box.appendChild(img);
+    }
+
+    return box;
+  };
+
+  const buildPost = (post) => {
     const url = postUrl(post);
     if (!url) return null;
 
-    const slot = document.createElement("div");
-    slot.className = "or-native-x-slot";
+    const card = document.createElement("article");
+    card.className = "or-x-card";
 
-    const quote = document.createElement("blockquote");
-    quote.className = "twitter-tweet";
-    quote.setAttribute("data-theme", "light");
-    quote.setAttribute("data-dnt", "true");
-    quote.setAttribute("data-conversation", "none");
+    const head = document.createElement("div");
+    head.className = "or-x-card-head";
+    head.appendChild(buildAuthor(post.author));
 
-    const link = document.createElement("a");
-    link.href = url;
-    link.textContent = "";
-    quote.appendChild(link);
+    const x = document.createElement("a");
+    x.className = "or-x-brand";
+    x.href = url;
+    x.target = "_blank";
+    x.rel = "noopener noreferrer";
+    x.setAttribute("aria-label", "Open this post on X");
+    x.textContent = "𝕏";
+    head.appendChild(x);
+    card.appendChild(head);
 
-    const badge = document.createElement("span");
-    badge.className = "or-native-x-verified-badge";
-    badge.setAttribute("aria-label", "Verified");
-    badge.innerHTML = '<svg viewBox="0 0 22 22" aria-hidden="true"><path fill="currentColor" d="M20.396 11c0-1.278-1.006-2.282-1.906-3.09.098-1.206-.175-2.566-1.128-3.518-.952-.952-2.31-1.225-3.516-1.127C13.036 2.366 12.033 1.36 10.754 1.36S8.472 2.366 7.664 3.265c-1.207-.098-2.566.175-3.518 1.127-.952.952-1.225 2.312-1.127 3.518-.9.808-1.906 1.812-1.906 3.09s1.006 2.282 1.906 3.09c-.098 1.206.175 2.566 1.127 3.518.952.952 2.311 1.225 3.518 1.127.808.9 1.812 1.905 3.09 1.905s2.282-1.006 3.092-1.905c1.206.098 2.564-.175 3.516-1.127.953-.952 1.226-2.312 1.128-3.518.9-.808 1.906-1.812 1.906-3.09Zm-11.3 4.047-3.11-3.11 1.414-1.414 1.696 1.696 4.41-4.41 1.414 1.414-5.824 5.824Z"/></svg>';
+    const bodyLink = document.createElement("a");
+    bodyLink.className = "or-x-card-body";
+    bodyLink.href = url;
+    bodyLink.target = "_blank";
+    bodyLink.rel = "noopener noreferrer";
 
-    const dateMask = document.createElement("span");
-    dateMask.className = "or-native-x-date-mask";
-    dateMask.setAttribute("aria-hidden", "true");
+    const text = document.createElement("div");
+    text.className = "or-x-card-copy";
+    text.appendChild(linkifyCaption(post.caption));
+    bodyLink.appendChild(text);
 
-    slot.append(quote, badge, dateMask);
-    return slot;
+    const quoted = buildQuotedPost(post.extra?.quoted);
+    if (quoted) bodyLink.appendChild(quoted);
+
+    const firstMedia = (post.media || []).map(mediaUrl).find(Boolean);
+    if (firstMedia) {
+      const img = document.createElement("img");
+      img.className = "or-x-media";
+      img.src = firstMedia;
+      img.alt = "";
+      img.loading = "lazy";
+      img.decoding = "async";
+      bodyLink.appendChild(img);
+    }
+
+    card.appendChild(bodyLink);
+
+    const actions = document.createElement("div");
+    actions.className = "or-x-actions";
+
+    const likes = document.createElement("span");
+    likes.className = "or-x-action or-x-action--likes";
+    likes.appendChild(svg("M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"));
+    const likeCount = document.createElement("span");
+    likeCount.textContent = String(post.likesCount || 0);
+    likes.appendChild(likeCount);
+
+    const replies = document.createElement("a");
+    replies.className = "or-x-action";
+    replies.href = url;
+    replies.target = "_blank";
+    replies.rel = "noopener noreferrer";
+    replies.appendChild(svg("M20 2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4l4 4 4-4h4a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"));
+    const replyText = document.createElement("span");
+    replyText.textContent = "Reply";
+    replies.appendChild(replyText);
+
+    const copy = document.createElement("button");
+    copy.type = "button";
+    copy.className = "or-x-action or-x-copy";
+    copy.appendChild(svg("M3.9 12c0-2.8 2.3-5.1 5.1-5.1h3v2H9a3.1 3.1 0 1 0 0 6.2h3v2H9A5.1 5.1 0 0 1 3.9 12Zm6.1 1v-2h4v2h-4Zm5-6.1h-3v-2h3a5.1 5.1 0 0 1 0 10.2h-3v-2h3a3.1 3.1 0 1 0 0-6.2Z"));
+    const copyText = document.createElement("span");
+    copyText.textContent = "Copy link to post";
+    copy.appendChild(copyText);
+    copy.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(url);
+        copyText.textContent = "Copied";
+        setTimeout(() => { copyText.textContent = "Copy link to post"; }, 1400);
+      } catch (_) {
+        window.open(url, "_blank", "noopener,noreferrer");
+      }
+    });
+
+    actions.append(likes, replies, copy);
+    card.appendChild(actions);
+
+    const more = document.createElement("a");
+    more.className = "or-x-read-more";
+    more.href = url;
+    more.target = "_blank";
+    more.rel = "noopener noreferrer";
+    more.textContent = "Read more on X";
+    card.appendChild(more);
+
+    return card;
   };
 
   const ensureShowMore = (placement, onClick) => {
@@ -151,65 +352,39 @@
     return shell;
   };
 
-  const loadTwitterRenderer = async () => {
-    if (window.twttr?.widgets?.load) return;
-
-    let script = document.querySelector('script[data-or-x-widgets="true"]');
-    if (!script) {
-      script = document.createElement("script");
-      script.src = "https://platform.twitter.com/widgets.js";
-      script.async = true;
-      script.charset = "utf-8";
-      script.dataset.orXWidgets = "true";
-      document.head.appendChild(script);
-    }
-
-    await new Promise((resolve) => {
-      if (window.twttr?.widgets?.load) return resolve();
-      script.addEventListener("load", resolve, { once: true });
-      script.addEventListener("error", resolve, { once: true });
-      setTimeout(resolve, 8000);
-    });
-  };
-
-  const renderGrid = async (grid) => {
-    await loadTwitterRenderer();
-    if (window.twttr?.widgets?.load) {
-      await window.twttr.widgets.load(grid);
-    }
-  };
-
-  const distribute = async (posts) => {
+  const distribute = (posts) => {
     const groups = Array.from({ length: grids.length }, () => []);
     posts.forEach((post, index) => groups[index % grids.length].push(post));
 
-    await Promise.all(grids.map(async (grid, index) => {
+    grids.forEach((grid, index) => {
       grid.replaceChildren();
       const placement = grid.closest(".or-native-x-placement");
       if (!placement) return;
-
       placement.querySelector(".or-native-x-more-shell")?.remove();
 
       const group = groups[index];
       let visible = 0;
 
-      const append = async (amount) => {
+      const append = (amount) => {
         const next = group.slice(visible, visible + amount);
         if (!next.length) return;
 
         const fragment = document.createDocumentFragment();
         next.forEach((post) => {
-          const embed = makeEmbed(post);
-          if (embed) fragment.appendChild(embed);
+          const card = buildPost(post);
+          if (card) {
+            const slot = document.createElement("div");
+            slot.className = "or-native-x-slot";
+            slot.appendChild(card);
+            fragment.appendChild(slot);
+          }
         });
+
         grid.appendChild(fragment);
         visible += next.length;
 
-        await renderGrid(grid);
-
-        const shell = placement.querySelector(".or-native-x-more-shell");
         if (visible >= group.length) {
-          shell?.remove();
+          placement.querySelector(".or-native-x-more-shell")?.remove();
         }
       };
 
@@ -217,8 +392,8 @@
         ensureShowMore(placement, () => append(LOAD_MORE_STEP));
       }
 
-      await append(INITIAL_PER_SECTION);
-    }));
+      append(INITIAL_PER_SECTION);
+    });
   };
 
   (async () => {
@@ -230,6 +405,6 @@
       posts = await fetchCachedPosts();
     }
 
-    await distribute(posts);
+    distribute(posts);
   })();
 })();

@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
     paths:
+      - '.github/scripts/rebuild_verified_source.py'
       - '.github/workflows/finalize-source-rebuild.yml'
   workflow_dispatch:
 
@@ -30,8 +31,8 @@ jobs:
       - name: Remove temporary recovery tooling
         run: |
           rm -f .github/scripts/rebuild_verified_source.py
-          rm -f .github/workflows/diagnose-rebuild.yml
           rm -f .github/workflows/finalize-source-rebuild.yml
+          rm -f .github/workflows/diagnose-rebuild.yml
 
       - name: Commit verified recovered source
         run: |

@@ -1,4 +1,6 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OpenRockets Merch | Official Store</title>
@@ -23,44 +25,50 @@
 <body style="display:flex;flex-direction:column;min-height:100vh;">
 
   <!-- ═══ HEADER ═══ -->
-  <header id="site-header" style="position: sticky; top: 0px; z-index: 50; background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(16px); border-bottom: 1px solid rgb(0, 0, 0); box-shadow: none;" class="border-b border-gray-200 bg-white/80 backdrop-blur-md shadow-sm">
+  <header id="site-header" style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid #000000;">
     <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
       <div style="display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px;">
 
         <!-- Logo -->
         <a href="index.html" style="flex-shrink:0;display:flex;align-items:center;">
-          <img src="../v/openrockets-w.png" alt="OpenRockets" class="merch-header-logo">
+          <img src="../v/openrockets-w.png" alt="OpenRockets" class="merch-header-logo" />
         </a>
 
         <!-- Desktop Search -->
-        <div style="flex: 1 1 0%; max-width: 420px; display: block;" id="desktop-search-wrap" class="desktop-search-visible">
+        <div style="flex:1;max-width:420px;display:none;" id="desktop-search-wrap" class="desktop-search-visible">
           <div style="position:relative;">
-            <svg style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#000000;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
-            <input id="search-desktop" type="search" placeholder="Search products…" class="merch-search-input" autocomplete="off">
+            <svg style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#000000;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input
+              id="search-desktop"
+              type="search"
+              placeholder="Search products…"
+              class="merch-search-input"
+              autocomplete="off"
+            />
           </div>
         </div>
 
         <!-- Right side -->
         <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;">
           <!-- Back to openrockets.com -->
-          <a href="../index.html" class="merch-back-link" style="display: inline-flex;" id="back-link-desktop">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
+          <a href="../index.html" class="merch-back-link" style="display:none;" id="back-link-desktop">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
             Back to OpenRockets.com
           </a>
 
           <!-- Mobile search button -->
           <button id="mobile-search-btn" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:none;background:transparent;cursor:pointer;color:#000000;" aria-label="Search">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
           </button>
 
           <!-- Cart -->
           <a href="cart.html" id="cart-link" class="cart-badge-container" style="position:relative;display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;color:#000000;text-decoration:none;transition:background 0.15s;" aria-label="View cart">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
           </a>
 
           <!-- Mobile menu button -->
           <button id="mobile-menu-btn" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:none;background:transparent;cursor:pointer;color:#000000;" aria-label="Menu">
-            <svg id="mobile-menu-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+            <svg id="mobile-menu-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
           </button>
         </div>
       </div>
@@ -68,15 +76,21 @@
       <!-- Mobile search bar -->
       <div id="mobile-search" style="display:none;padding:12px 0 8px;">
         <div style="position:relative;">
-          <svg style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#000000;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
-          <input id="search-mobile" type="search" placeholder="Search products…" class="merch-search-input" autocomplete="off">
+          <svg style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#000000;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input
+            id="search-mobile"
+            type="search"
+            placeholder="Search products…"
+            class="merch-search-input"
+            autocomplete="off"
+          />
         </div>
       </div>
 
       <!-- Mobile nav -->
       <nav id="mobile-menu" style="display:none;padding:8px 0 16px;border-top:1px solid #000000;">
         <a href="../index.html" class="merch-back-link" style="display:inline-flex;margin-top:4px;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
           Back to OpenRockets.com
         </a>
       </nav>
@@ -88,205 +102,9 @@
     <div class="merch-page-hero">
       <h1>Merch</h1>
     </div>
-    <div id="product-list" class="merch-product-grid"><div class="merch-product-card group">
-        <a href="product.html?id=1" class="merch-card-img-wrap block">
-          <img src="public/images/openrockets-hackerman-skull-dark.png" alt="OpenRockets Hackerman Skull Sticker (Dark)" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div class="merch-card-overlay">
-            <span class="btn-primary" style="pointer-events:none;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path><circle cx="12" cy="12" r="3"></circle></svg>
-              View Details
-            </span>
-          </div>
-        </a>
-        <div class="merch-card-body">
-          <a href="product.html?id=1" style="text-decoration:none;">
-            <h2 class="merch-card-name">OpenRockets Hackerman Skull Sticker (Dark)</h2>
-          </a>
-          <p class="merch-card-price">$2.90</p>
-          <div style="margin-top:auto;padding-top:8px;">
-            <button class="btn-primary" style="width:100%;" onclick="handleAddToCart(this, 1, event)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg>
-              Add to Cart
-            </button>
-          </div>
-        </div>
-      </div><div class="merch-product-card group">
-        <a href="product.html?id=2" class="merch-card-img-wrap block">
-          <img src="public/images/openrockets-hackerman-skull-light.png" alt="OpenRockets Hackerman Skull Sticker (Light)" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div class="merch-card-overlay">
-            <span class="btn-primary" style="pointer-events:none;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path><circle cx="12" cy="12" r="3"></circle></svg>
-              View Details
-            </span>
-          </div>
-        </a>
-        <div class="merch-card-body">
-          <a href="product.html?id=2" style="text-decoration:none;">
-            <h2 class="merch-card-name">OpenRockets Hackerman Skull Sticker (Light)</h2>
-          </a>
-          <p class="merch-card-price">$2.90</p>
-          <div style="margin-top:auto;padding-top:8px;">
-            <button class="btn-primary" style="width:100%;" onclick="handleAddToCart(this, 2, event)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg>
-              Add to Cart
-            </button>
-          </div>
-        </div>
-      </div><div class="merch-product-card group">
-        <a href="product.html?id=3" class="merch-card-img-wrap block">
-          <img src="public/images/openrockets-inkpen-black.png" alt="OpenRockets Ink Pen Black" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div class="merch-card-overlay">
-            <span class="btn-primary" style="pointer-events:none;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path><circle cx="12" cy="12" r="3"></circle></svg>
-              View Details
-            </span>
-          </div>
-        </a>
-        <div class="merch-card-body">
-          <a href="product.html?id=3" style="text-decoration:none;">
-            <h2 class="merch-card-name">OpenRockets Ink Pen Black</h2>
-          </a>
-          <p class="merch-card-price">$5.00</p>
-          <div style="margin-top:auto;padding-top:8px;">
-            <button class="btn-primary" style="width:100%;" onclick="handleAddToCart(this, 3, event)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg>
-              Add to Cart
-            </button>
-          </div>
-        </div>
-      </div><div class="merch-product-card group">
-        <a href="product.html?id=4" class="merch-card-img-wrap block">
-          <img src="public/images/openrockets-laptop-sticket-black.png" alt="OpenRockets Laptop Sticker (Black)" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div class="merch-card-overlay">
-            <span class="btn-primary" style="pointer-events:none;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path><circle cx="12" cy="12" r="3"></circle></svg>
-              View Details
-            </span>
-          </div>
-        </a>
-        <div class="merch-card-body">
-          <a href="product.html?id=4" style="text-decoration:none;">
-            <h2 class="merch-card-name">OpenRockets Laptop Sticker (Black)</h2>
-          </a>
-          <p class="merch-card-price">$1.00</p>
-          <div style="margin-top:auto;padding-top:8px;">
-            <button class="btn-primary" style="width:100%;" onclick="handleAddToCart(this, 4, event)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg>
-              Add to Cart
-            </button>
-          </div>
-        </div>
-      </div><div class="merch-product-card group">
-        <a href="product.html?id=5" class="merch-card-img-wrap block">
-          <img src="public/images/openrockets-laptop-sticket-lightpng.png" alt="OpenRockets Laptop Sticker (Light)" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div class="merch-card-overlay">
-            <span class="btn-primary" style="pointer-events:none;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path><circle cx="12" cy="12" r="3"></circle></svg>
-              View Details
-            </span>
-          </div>
-        </a>
-        <div class="merch-card-body">
-          <a href="product.html?id=5" style="text-decoration:none;">
-            <h2 class="merch-card-name">OpenRockets Laptop Sticker (Light)</h2>
-          </a>
-          <p class="merch-card-price">$1.00</p>
-          <div style="margin-top:auto;padding-top:8px;">
-            <button class="btn-primary" style="width:100%;" onclick="handleAddToCart(this, 5, event)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg>
-              Add to Cart
-            </button>
-          </div>
-        </div>
-      </div><div class="merch-product-card group">
-        <a href="product.html?id=6" class="merch-card-img-wrap block">
-          <img src="public/images/openrockets-metal-bottle-back.png" alt="OpenRockets Metal Bottle" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div class="merch-card-overlay">
-            <span class="btn-primary" style="pointer-events:none;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path><circle cx="12" cy="12" r="3"></circle></svg>
-              View Details
-            </span>
-          </div>
-        </a>
-        <div class="merch-card-body">
-          <a href="product.html?id=6" style="text-decoration:none;">
-            <h2 class="merch-card-name">OpenRockets Metal Bottle</h2>
-          </a>
-          <p class="merch-card-price">$19.20</p>
-          <div style="margin-top:auto;padding-top:8px;">
-            <button class="btn-primary" style="width:100%;" onclick="handleAddToCart(this, 6, event)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg>
-              Add to Cart
-            </button>
-          </div>
-        </div>
-      </div><div class="merch-product-card group">
-        <a href="product.html?id=7" class="merch-card-img-wrap block">
-          <img src="public/images/openrockets-metal-bottle-light.png" alt="OpenRockets Metal Bottle (Light Edition)" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div class="merch-card-overlay">
-            <span class="btn-primary" style="pointer-events:none;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path><circle cx="12" cy="12" r="3"></circle></svg>
-              View Details
-            </span>
-          </div>
-        </a>
-        <div class="merch-card-body">
-          <a href="product.html?id=7" style="text-decoration:none;">
-            <h2 class="merch-card-name">OpenRockets Metal Bottle (Light Edition)</h2>
-          </a>
-          <p class="merch-card-price">$19.20</p>
-          <div style="margin-top:auto;padding-top:8px;">
-            <button class="btn-primary" style="width:100%;" onclick="handleAddToCart(this, 7, event)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg>
-              Add to Cart
-            </button>
-          </div>
-        </div>
-      </div><div class="merch-product-card group">
-        <a href="product.html?id=8" class="merch-card-img-wrap block">
-          <img src="public/images/openrockets-hackerman-skull-4x-dark.png" alt="OpenRockets Hackerman 4X Skull (Dark)" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div class="merch-card-overlay">
-            <span class="btn-primary" style="pointer-events:none;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path><circle cx="12" cy="12" r="3"></circle></svg>
-              View Details
-            </span>
-          </div>
-        </a>
-        <div class="merch-card-body">
-          <a href="product.html?id=8" style="text-decoration:none;">
-            <h2 class="merch-card-name">OpenRockets Hackerman 4X Skull (Dark)</h2>
-          </a>
-          <p class="merch-card-price">$8.00</p>
-          <div style="margin-top:auto;padding-top:8px;">
-            <button class="btn-primary" style="width:100%;" onclick="handleAddToCart(this, 8, event)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg>
-              Add to Cart
-            </button>
-          </div>
-        </div>
-      </div><div class="merch-product-card group">
-        <a href="product.html?id=9" class="merch-card-img-wrap block">
-          <img src="public/images/openrockets-hackerman-skull-4x-light.png" alt="OpenRockets Hackerman 4X Skull (Light)" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div class="merch-card-overlay">
-            <span class="btn-primary" style="pointer-events:none;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path><circle cx="12" cy="12" r="3"></circle></svg>
-              View Details
-            </span>
-          </div>
-        </a>
-        <div class="merch-card-body">
-          <a href="product.html?id=9" style="text-decoration:none;">
-            <h2 class="merch-card-name">OpenRockets Hackerman 4X Skull (Light)</h2>
-          </a>
-          <p class="merch-card-price">$8.00</p>
-          <div style="margin-top:auto;padding-top:8px;">
-            <button class="btn-primary" style="width:100%;" onclick="handleAddToCart(this, 9, event)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg>
-              Add to Cart
-            </button>
-          </div>
-        </div>
-      </div></div>
+    <div id="product-list" class="merch-product-grid">
+      <!-- Products injected by home.js -->
+    </div>
   </main>
 
   <!-- ═══ FOOTER (from main openrockets.com) ═══ -->
@@ -300,14 +118,14 @@
     <div class="home-shell footer-content" style="display: flex; flex-direction: column; gap: 30px;">
 
       <div style="display: flex; flex-direction: column; align-items: flex-start; width: 100%; margin-bottom: 10px;">
-        <img src="../i/assets/static/brand/DARKMODEFAVICON.png" alt="OpenRockets Logo" style="width: 7rem; max-width: 100%;">
-        <hr style="width: 100%; border: none; border-top: 1px solid rgba(255,255,255,0.2); margin-top: 20px;">
+        <img src="../i/assets/static/brand/DARKMODEFAVICON.png" alt="OpenRockets Logo" style="width: 7rem; max-width: 100%;" />
+        <hr style="width: 100%; border: none; border-top: 1px solid rgba(255,255,255,0.2); margin-top: 20px;" />
       </div>
 
       <div class="footer-top-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px;">
 
         <div class="footer-col" style="text-align: left; display: flex; flex-direction: column; align-items: flex-start;">
-          <img src="../i/assets/static/brand/271742354.png" alt="OpenRockets Logo" width="220" style="margin-bottom: 15px; display: block; filter: invert(1) brightness(100);">
+          <img src="../i/assets/static/brand/271742354.png" alt="OpenRockets Logo" width="220" style="margin-bottom: 15px; display: block; filter: invert(1) brightness(100);" />
           <p style="color: #ffffff; font-size: 14px; line-height: 1.6; text-align: left;">An infrastructure service provider for nonprofits run by exceptional minors and teenagers worldwide.</p>
           <p style="color: #ffffff; font-size: 14px; line-height: 1.6; margin-top: 10px; text-align: left;">Revitalize youth volunteering. Make a difference. Join the network of elites.</p>
         </div>
@@ -362,7 +180,7 @@
       </div>
 
       <div class="footer-bottom-row" style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 15px;">
-        <span style="color: #ffffff; font-size: 13px; text-align: left;">OpenRockets is a 100% teen-run United States C-Corporation.<br>© &amp; (TM) 2022-2026 OpenRockets Incorporated. All Rights Reserved.</span>
+        <span style="color: #ffffff; font-size: 13px; text-align: left;">OpenRockets is a 100% teen-run United States C-Corporation.<br/>© &amp; (TM) 2022-2026 OpenRockets Incorporated. All Rights Reserved.</span>
       </div>
     </div>
   </footer>
@@ -410,6 +228,5 @@
       }
     });
   </script>
-
-
-</body></html>
+</body>
+</html>

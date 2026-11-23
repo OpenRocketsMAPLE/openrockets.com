@@ -98,8 +98,7 @@
       color: #000;
       font-weight: 500;
     }
-    .magazine-software-cta .hds-button,
-    .interkid-institution-cta.hds-button {
+    .magazine-software-cta .hds-button {
       display: inline-flex !important;
       align-items: center;
       justify-content: center;
@@ -107,119 +106,6 @@
       min-width: 0 !important;
       text-decoration: none !important;
     }
-
-    #interkid-search-gateway {
-      background: #fff;
-      color: #000;
-      padding: 1.5rem 1.25rem;
-    }
-    .interkid-gateway-shell {
-      width: min(740px, calc(100% - 32px));
-      margin: 0 auto;
-    }
-    .interkid-gateway-brand {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin: 0 0 1.35rem 2px;
-      color: #111;
-    }
-    .interkid-gateway-brand img {
-      width: 88px;
-      height: 88px;
-      flex: 0 0 88px;
-      object-fit: contain;
-      border-radius: .2rem;
-    }
-    .interkid-gateway-wordmark {
-      color: #111;
-      font-family: "Google Sans Flex", "Outfit", "Google Sans", "Product Sans", Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: clamp(3.6rem, 9vw, 5.5rem);
-      font-weight: 500;
-      line-height: .94;
-      letter-spacing: -.055em;
-    }
-    .interkid-search-form {
-      position: relative;
-      width: 100%;
-      margin: 0 auto;
-    }
-    .interkid-search-surface {
-      position: relative;
-      display: grid;
-      grid-template-columns: 46px minmax(0, 1fr) auto;
-      align-items: center;
-      min-height: 52px;
-      padding: 3px 5px 3px 2px;
-      border: 1px solid rgba(0,0,0,.16);
-      border-radius: 999px;
-      background: rgba(255,255,255,.97);
-      box-shadow: 0 12px 42px rgba(0,0,0,.22), 0 2px 10px rgba(0,0,0,.12), inset 0 0 0 1px rgba(255,255,255,.75);
-      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    }
-    .interkid-search-surface:focus-within {
-      transform: translateY(-1px);
-      border-color: #000;
-      box-shadow: 0 15px 50px rgba(0,0,0,.26), 0 0 0 3px rgba(255,255,255,.22), inset 0 0 0 1px rgba(255,255,255,.8);
-    }
-    .interkid-search-icon {
-      width: 20px;
-      height: 20px;
-      margin: auto;
-      color: #151515;
-      pointer-events: none;
-    }
-    .interkid-search-input {
-      width: 100%;
-      min-width: 0;
-      height: 42px;
-      padding: 0 9px 0 0;
-      border: 0;
-      outline: 0;
-      background: transparent;
-      color: #111;
-      font: 500 1.02rem/1.2 "Google Sans Flex", "Outfit", system-ui, sans-serif;
-      letter-spacing: -.012em;
-      appearance: none;
-      -webkit-appearance: none;
-    }
-    .interkid-search-input::placeholder {
-      color: #777;
-      opacity: 1;
-      font-weight: 400;
-    }
-    .interkid-search-actions { display: flex; align-items: center; gap: 3px; }
-    .interkid-submit-button {
-      width: 38px;
-      height: 38px;
-      display: grid;
-      place-items: center;
-      padding: 0;
-      border: 0;
-      border-radius: 50%;
-      cursor: pointer;
-      background: #0b0b0b;
-      color: #fff;
-      box-shadow: 0 2px 8px rgba(0,0,0,.24);
-    }
-    .interkid-submit-button svg { width: 18px; height: 18px; }
-    .interkid-submit-button:focus-visible { outline: 3px solid #54a9ff; outline-offset: 3px; }
-
-    /* Reuse the exact OpenRockets hero-heading treatment used by the nearby Handling 2.9M statement. */
-    .interkid-safety-copy {
-      margin-top: 1.65rem;
-      color: #000;
-    }
-    .interkid-safety-copy > p {
-      margin: 0;
-      max-width: 64rem;
-      font-weight: 400;
-      color: #000;
-      line-height: 1.3;
-    }
-    .interkid-institution-actions { margin-top: 1.25rem; }
 
     @media (max-width: 768px) {
       .partner-feature-media { width: 100%; margin-bottom: 1.15rem; }
@@ -230,15 +116,6 @@
         bottom: 12px;
         padding: 15px;
       }
-      #interkid-search-gateway { padding: 1.5rem 1rem; }
-      .interkid-gateway-shell { width: min(100%, 740px); }
-      .interkid-gateway-brand { margin-left: 0; gap: .8rem; }
-      .interkid-gateway-brand img {
-        width: 72px;
-        height: 72px;
-        flex-basis: 72px;
-      }
-      .interkid-gateway-wordmark { font-size: clamp(3rem, 16vw, 4.4rem); }
       #as-seen-on-section .or-section-header h2 {
         width: 100%;
         text-align: center;
@@ -913,21 +790,21 @@
 <style id="or-native-x-layout-style">
   @font-face{
     font-family:"TwitterChirp";
-    src:url("https://abs.twimg.com/fonts/subset/Chirp-Regular.c88864db.latin.woff2") format("woff2");
+    src:url("assets/fonts/twitter/Chirp-Regular.woff2") format("woff2");
     font-weight:400;
     font-style:normal;
     font-display:swap;
   }
   @font-face{
     font-family:"TwitterChirp";
-    src:url("https://abs.twimg.com/fonts/subset/Chirp-Medium.ca6d679a.latin.woff2") format("woff2");
+    src:url("assets/fonts/twitter/Chirp-Medium.woff2") format("woff2");
     font-weight:500 600;
     font-style:normal;
     font-display:swap;
   }
   @font-face{
     font-family:"TwitterChirp";
-    src:url("https://abs.twimg.com/fonts/subset/Chirp-Bold.d8ac01b2.latin.woff2") format("woff2");
+    src:url("assets/fonts/twitter/Chirp-Bold.woff2") format("woff2");
     font-weight:700 900;
     font-style:normal;
     font-display:swap;
@@ -941,21 +818,17 @@
   .or-native-x-grid{
     width:min(1120px,calc(100% - 2rem));
     margin:0 auto;
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    align-items:start;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:flex-start;
     gap:22px;
   }
   .or-native-x-slot{
-    width:100%;
+    flex:0 1 calc(50% - 11px);
+    width:calc(50% - 11px);
     max-width:549px;
     min-width:0;
-    justify-self:stretch;
-  }
-  .or-native-x-slot:last-child:nth-child(odd){
-    grid-column:1 / -1;
-    width:min(100%,549px);
-    justify-self:center;
   }
   .or-x-card{
     width:100%;
@@ -1020,14 +893,23 @@
   .or-native-x-show-more{appearance:none;border:1px solid #cfd9de;border-radius:999px;background:#fff;color:#0f1419;min-width:150px;height:38px;padding:0 22px;font:700 14px/1 "TwitterChirp",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;cursor:pointer;box-shadow:0 5px 18px rgba(15,20,25,.08)}
   .or-native-x-show-more:hover,.or-native-x-show-more:focus-visible{background:#f7f9f9;border-color:#8b98a5;outline:none}
   @media(max-width:760px){
-    .or-native-x-grid{width:min(100% - 1rem,550px);grid-template-columns:minmax(0,1fr)}
-    .or-native-x-slot,.or-native-x-slot:last-child:nth-child(odd){grid-column:auto;width:100%;max-width:550px;justify-self:stretch}
+    .or-native-x-grid{width:min(100% - 1rem,550px)}
+    .or-native-x-slot{flex-basis:100%;width:100%;max-width:550px}
     .or-native-x-more-shell{width:min(100% - 1rem,550px)}
     .or-x-card-head{padding:16px 16px 0}
     .or-x-card-body{padding:13px 16px 0}
     .or-x-actions{margin-left:16px;margin-right:16px;gap:16px;flex-wrap:wrap}
     .or-x-read-more{margin-left:16px;margin-right:16px}
   }
+</style>
+<style id="or-stat-feature-style">
+  .or-stat-feature .section-container{padding:1.5rem 1.5rem 1.25rem}
+  .or-stat-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:flex-end}
+  .or-stat-copy{width:min(100%,700px);color:#000;text-align:left}
+  .or-stat-copy img{display:block;width:100px;height:100px;object-fit:contain;margin:0 0 2rem}
+  .or-stat-copy h2{margin:0;color:#000;font:500 clamp(2.6rem,5vw,5.8rem)/1.08 var(--or-font,"sohne-var",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif);letter-spacing:-.04em}
+  .or-stat-copy .hds-button{margin-top:1.5rem;height:3.5rem;background:#000}
+  @media(max-width:760px){.or-stat-feature .section-container{padding:1.5rem 1rem}.or-stat-copy img{width:80px;height:80px;margin-bottom:1.5rem}}
 </style>
 </head>
 
@@ -2369,44 +2251,23 @@
 <!-- ═══════════════════════════════════════════ -->
 <!-- NETWORK STATS / BLACK & WHITE SECTION      -->
 <!-- ═══════════════════════════════════════════ -->
-<section style="margin-top: .5rem !important;" class="hds-color-mode section section--white hds-mode--light">
-  <div class="section-container" style="padding: 1.5rem 1.5rem 1.25rem;">
-    <div style="max-width: 1100px; margin: 0 auto;">
-      <div style="display: flex; flex-direction: column; align-items: flex-end; text-align: left; gap: 1rem;">
-    
-
-        <h1 style="margin-top: 0rem;" class="hds-heading  hero-section__title hero-section__title--background hds-heading--xl" style="margin: 0; color: #000; font-size: clamp(2.6rem, 5vw, 5.8rem); line-height: 0.95; font-weight: 500; max-width: 16ch;">
-<img src="v/shield.jpg" style="margin-bottom: 2rem;" width="100px" alt="">
-        <p style="margin: 0; max-width: 64rem; margin-top: 0rem;  font-weight: 400;  color: #000000; line-height:1.3;">
-Handling 2.9M daily requests and over 115TB of traffic while blocking 300,000+ attacks to keep your infrastructure secure.</p>
-      </div>
-
-    </div>
-  </div>
+<section class="hds-color-mode section section--white hds-mode--light or-stat-feature">
+  <div class="section-container"><div class="or-stat-inner"><div class="or-stat-copy">
+    <img src="v/shield.jpg" alt="" width="100" height="100">
+    <h2>Handling 2.9M daily requests and over 115TB of traffic while blocking 300,000+ attacks to keep your infrastructure secure.</h2>
+  </div></div></div>
 </section>
 <!-- OR-NATIVE-X-GRID:4 -->
 <section class="or-native-x-placement" aria-label="Twitter posts">
   <div class="or-native-x-grid" data-or-x-grid="4"></div>
 </section>
 
-<section id="openrockets-opensource-feature" style="margin-top:.5rem!important;" class="hds-color-mode section section--white hds-mode--light">
-  <div class="section-container" style="padding:1.5rem 1.5rem 1.25rem;">
-    <div style="max-width:1100px;margin:0 auto;">
-      <div style="display:flex;flex-direction:column;align-items:flex-end;text-align:left;gap:1rem;">
-        <div class="hds-heading hero-section__title hero-section__title--background hds-heading--xl" style="margin:0;color:#000;font-size:clamp(2.6rem,5vw,5.8rem);line-height:.95;font-weight:500;max-width:16ch;">
-          <img src="assets/external/raw.githubusercontent.com/interkid-browser-icon__41b54560b6b2577c11.png" style="display:block;width:100px;height:100px;object-fit:contain;margin-bottom:2rem;" alt="OpenRockets OpenSource">
-          <p style="margin:0;max-width:64rem;font-weight:400;color:#000;line-height:1.3;">OpenRockets OpenSource. We make everything open source for the benefit of humanity.</p>
-        </div>
-        <a style="background:black;height:3.5rem;" class="hds-button hds-button--primary" href="https://opensource.openrockets.com/" target="_blank" rel="noopener noreferrer">
-          Explore OpenSource
-          <svg class="hds-icon hds-icon-hover-arrow" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M0.5 5.5h7"></path>
-            <path d="M1.5 1.5l4 4-4 4"></path>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </div>
+<section id="openrockets-opensource-feature" class="hds-color-mode section section--white hds-mode--light or-stat-feature">
+  <div class="section-container"><div class="or-stat-inner"><div class="or-stat-copy">
+    <img src="assets/external/raw.githubusercontent.com/interkid-browser-icon__41b54560b6b2577c11.png" alt="" width="100" height="100">
+    <h2>OpenRockets OpenSource. We make everything open source for the benefit of humanity.</h2>
+    <a class="hds-button hds-button--primary" href="https://opensource.openrockets.com/" target="_blank" rel="noopener noreferrer">Explore OpenSource</a>
+  </div></div></div>
 </section>
 <!-- OR-NATIVE-X-GRID:5 -->
 <section class="or-native-x-placement" aria-label="Twitter posts">
@@ -2489,11 +2350,11 @@ Handling 2.9M daily requests and over 115TB of traffic while blocking 300,000+ a
   <style id="openrockets-donates-art-style">
     #openrockets-donates{
       margin:.5rem 0!important;
-      overflow:visible;
+      overflow:hidden;
     }
     #openrockets-donates .section-container{
       padding:1.5rem 1.5rem 1.25rem;
-      overflow:visible;
+      overflow:hidden;
     }
     .or-donates-shell{
       width:min(1100px,100%);
@@ -2501,7 +2362,7 @@ Handling 2.9M daily requests and over 115TB of traffic while blocking 300,000+ a
       display:flex;
       flex-direction:column;
       align-items:flex-start;
-      overflow:visible;
+      overflow:hidden;
     }
     .or-donates-copy{
       position:relative;
@@ -2531,50 +2392,33 @@ Handling 2.9M daily requests and over 115TB of traffic while blocking 300,000+ a
     .or-donates-art-stage{
       position:relative;
       width:100%;
-      min-height:100vh;
       display:flex;
-      align-items:flex-start;
+      align-items:center;
       justify-content:center;
-      overflow:visible;
-      margin-top:clamp(1.5rem,4vw,3.5rem);
-      padding-top:clamp(1rem,3vw,2rem);
+      margin-top:clamp(2.5rem,6vw,5rem);
+      padding:1rem 2rem clamp(4rem,8vw,7rem);
       box-sizing:border-box;
     }
     .or-donates-art{
       position:relative;
       z-index:2;
       display:block;
-      width:min(82vw,900px);
+      width:min(100%,590px);
       max-width:100%;
       height:auto;
-      transform:rotate(30deg);
-      transform-origin:center;
       filter:
-        drop-shadow(28px 34px 0 rgba(124,58,237,.40))
-        drop-shadow(62px 78px 0 rgba(236,72,153,.40))
-        drop-shadow(98px 124px 0 rgba(255,107,28,.40))
-        drop-shadow(-34px 42px 0 rgba(124,58,237,.40))
-        drop-shadow(-72px 88px 0 rgba(236,72,153,.40))
-        drop-shadow(-112px 142px 0 rgba(255,107,28,.40))
-        drop-shadow(0 190px 70px rgba(82,32,120,.22));
+        drop-shadow(12px 14px 0 rgba(124,58,237,.72))
+        drop-shadow(18px 20px 0 rgba(236,72,153,.72))
+        drop-shadow(24px 26px 0 rgba(255,107,28,.78))
+        drop-shadow(0 24px 24px rgba(82,32,120,.18));
     }
     @media(max-width:760px){
       .or-donates-art-stage{
-        min-height:92vh;
-        margin-top:1.25rem;
-        align-items:flex-start;
+        margin-top:2.5rem;
+        padding:1rem 1.5rem 5rem;
       }
       .or-donates-art{
-        width:min(92vw,720px);
-        transform:rotate(24deg);
-        filter:
-          drop-shadow(18px 28px 0 rgba(124,58,237,.40))
-          drop-shadow(42px 62px 0 rgba(236,72,153,.40))
-          drop-shadow(68px 98px 0 rgba(255,107,28,.40))
-          drop-shadow(-20px 34px 0 rgba(124,58,237,.40))
-          drop-shadow(-46px 72px 0 rgba(236,72,153,.40))
-          drop-shadow(-74px 112px 0 rgba(255,107,28,.40))
-          drop-shadow(0 145px 54px rgba(82,32,120,.20));
+        width:min(100%,430px);
       }
     }
   </style>
@@ -3269,7 +3113,7 @@ Handling 2.9M daily requests and over 115TB of traffic while blocking 300,000+ a
     #licenseu18-petition{margin-top:2rem!important;background:#fff;color:#000}
     .licenseu18-wrap{width:min(1100px,calc(100% - 2rem));margin:0 auto;padding:clamp(2rem,5vw,4rem) 0;display:flex;flex-direction:column;align-items:center;text-align:center}
     .licenseu18-art-link{display:block;width:min(100%,900px);text-decoration:none}
-    .licenseu18-art{display:block;width:100%;height:auto;object-fit:contain;border-radius:34% 42% 31% 39% / 27% 34% 30% 38%;filter:drop-shadow(0 18px 34px rgba(0,0,0,.14))}
+    .licenseu18-art{display:block;width:100%;height:auto;object-fit:contain;filter:drop-shadow(0 18px 34px rgba(0,0,0,.14))}
     .licenseu18-title{max-width:18ch;margin:clamp(1.5rem,4vw,2.5rem) auto .5rem;color:#000;font:500 clamp(2.3rem,5vw,5rem)/1.02 var(--or-font,"sohne-var",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif);letter-spacing:-.045em}
     .licenseu18-minute{margin:.5rem 0 1.5rem;color:#e4002b;font:700 clamp(1rem,2vw,1.35rem)/1.2 var(--or-font,"sohne-var",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif)}
     .licenseu18-button{background:#e4002b!important;height:3.5rem;color:#fff!important}
@@ -4117,8 +3961,8 @@ button.rounded-md,button.rounded-lg,button.rounded-full,a.rounded-md,a.rounded-l
               LinkedIn
             </a>
             <a href="https://x.com/openrockets" style="color: #ffffff; text-decoration: none; font-size: 14px; display: flex; align-items: center; gap: 8px; text-align: left;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
-              Twitter / X
+              <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.28A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15"></path></svg>
+              Twitter
             </a>
             <a href="https://blog.openrockets.com" style="color: #ffffff; text-decoration: none; font-size: 14px; display: flex; align-items: center; gap: 8px; text-align: left;">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h18v18H3V3zm15 15V6H6v12h12zm-2-9H8v2h8V9zm0 4H8v2h8v-2z"></path></svg>

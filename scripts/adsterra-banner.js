@@ -1,53 +1,109 @@
 (() => {
-  const slot = document.querySelector('[data-openrockets-ad]');
-  if (!slot) return;
+  const primarySlot = document.getElementById('homepage-advertisement');
+  if (!primarySlot || primarySlot.dataset.openrocketsPromotion) return;
 
-  const productIds = slot.dataset.adProductIds;
-  const productId = new URLSearchParams(window.location.search).get('id');
-  if (productIds && !productIds.split(',').includes(productId)) return;
+  // The network stays disconnected until Adsterra confirms the requested category restrictions.
+  const promotions = [
+    [
+      "homepage-advertisement",
+      "OpenRockets Press",
+      "Publish a research project, invention, or creative work.",
+      "https://press.openrockets.com/"
+    ],
+    [
+      "maple-live-section",
+      "MDN Web Docs",
+      "Learn HTML, CSS, and JavaScript at your own pace.",
+      "https://developer.mozilla.org/en-US/docs/Learn_web_development"
+    ],
+    [
+      "impact-missions-section",
+      "PART Telescope Initiative",
+      "See how students designed an affordable radio telescope.",
+      "https://part.zeroprofit.org/"
+    ],
+    [
+      "network-security-section",
+      "Hack Club",
+      "Meet other teen coders and build something together.",
+      "https://hackclub.com/"
+    ],
+    [
+      "openrockets-opensource-feature",
+      "OpenRockets Open Source",
+      "Explore the tools and licenses behind youth-led open source.",
+      "https://opensource.openrockets.com/"
+    ],
+    [
+      "free-infrastructure-section",
+      "ZeroProfit",
+      "Explore resources for starting a youth-led nonprofit.",
+      "https://zeroprofit.org/"
+    ],
+    [
+      "openrockets-donates",
+      "Daydream",
+      "See what teen game developers built at a global game jam.",
+      "https://daydream.hackclub.com/"
+    ],
+    [
+      "blog-slider-title",
+      "SCIENTEEN",
+      "Read student science writing and research.",
+      "https://scienteen.com/"
+    ],
+    [
+      "licenseu18-petition",
+      "OpenRockets License Library",
+      "Compare licenses for sharing your code and creative work.",
+      "https://about.openrockets.com/docs/licenses/about"
+    ],
+    [
+      "license-family-section",
+      "National Youth Research Journal",
+      "Explore research and publishing opportunities for students.",
+      "https://www.nyrj.org/"
+    ],
+    [
+      "teen-nonprofit-forum",
+      "OpenRockets Apps",
+      "Explore apps and games from young developers.",
+      "https://apps.openrockets.com/"
+    ]
+  ];
 
-  let mount;
-  let observer;
+  const style = document.createElement('style');
+  style.textContent = ".or-project-promotion{box-sizing:border-box;width:min(100% - 2rem,680px);margin:24px auto;padding:14px 18px;border:1px solid #d7dce5;border-radius:12px;background:#f6f8ff;color:#192136;font:inherit;text-align:left}\n.or-project-promotion p{margin:0}\n.or-project-promotion .or-promotion-label{color:#44516c;font-size:.75rem}\n.or-project-promotion a{display:inline-block;margin:3px 0;color:#2547a3;font-weight:700;text-decoration:underline;text-underline-offset:2px;overflow-wrap:anywhere}\n.or-project-promotion .or-promotion-copy{font-size:.875rem;line-height:1.45}";
+  document.head.append(style);
 
-  function removeBanner() {
-    observer?.disconnect();
-    mount?.remove();
-    mount = undefined;
-    slot.hidden = true;
-  }
+  for (const [anchorId, name, description, url] of promotions) {
+    const anchor = document.getElementById(anchorId);
+    if (!anchor) continue;
 
-  function updateBanner() {
-    const consent = window.cookieconsent?.cookieConsentObject?.userConsent;
-    const allowed = consent?.userAccepted === true && consent.acceptedLevels?.targeting === true;
-    if (!allowed) {
-      removeBanner();
-      return;
+    const primary = anchor === primarySlot;
+    const slot = primary ? primarySlot : document.createElement('aside');
+    slot.classList.add('or-project-promotion');
+    slot.dataset.openrocketsPromotion = 'true';
+    slot.setAttribute('aria-label', 'Promotion: ' + name);
+
+    const label = document.createElement('p');
+    label.className = 'or-promotion-label';
+    label.textContent = 'Promotion';
+
+    const link = document.createElement('a');
+    link.href = url;
+    link.textContent = name;
+
+    const copy = document.createElement('p');
+    copy.className = 'or-promotion-copy';
+    copy.textContent = description;
+
+    slot.replaceChildren(label, link, copy);
+    if (primary) {
+      slot.removeAttribute('style');
+      slot.hidden = false;
+    } else {
+      (anchor.closest('section') || anchor).after(slot);
     }
-    if (mount) return;
-
-    const container = document.createElement('div');
-    container.style.cssText = 'width:320px;max-width:100%;margin:auto';
-    mount = container;
-
-    observer = new MutationObserver(() => {
-      if (container.querySelector('iframe')) slot.hidden = false;
-    });
-    observer.observe(container, {childList: true, subtree: true});
-
-    const config = document.createElement('script');
-    config.textContent = "\n  atOptions = {\n    'key' : '024af405dcb2d4af2e5d497869257276',\n    'format' : 'iframe',\n    'height' : 50,\n    'width' : 320,\n    'params' : {}\n  };\n";
-    const loader = document.createElement('script');
-    loader.async = false;
-    loader.setAttribute('data-cfasync', 'false');
-    loader.src = "https://bauval.org/22/024af405dcb2d4af2e5d497869257276";
-    loader.addEventListener('error', () => {
-      if (mount === container) removeBanner();
-    }, {once: true});
-
-    slot.append(container);
-    container.append(config, loader);
   }
-
-  document.addEventListener('cc_userConsentSaved', updateBanner);
-  updateBanner();
 })();

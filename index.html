@@ -283,7 +283,7 @@
 
 <style id="maple-campaign-refresh">
   :root {
-    --maple-acid: #ff6b1c;
+    --maple-acid: #fff;
     --maple-ink: #000;
     --maple-paper: #fff;
   }
@@ -1479,15 +1479,7 @@
         </span>, worldwide.
       </h2>
       <p class="maple-modal-subhead" id="maple-modal-description">MAPLE stands for the Minor Authors' Public License for Expression.</p>
-      <div class="maple-substack-frame">
-        <a class="maple-substack-fallback" href="https://maplelicense.substack.com/" target="_blank" rel="noopener noreferrer" aria-label="Open MAPLE on Substack">
-          <img src="assets/external/maple/maple-nano.jpg" alt="MAPLE nano by OpenRockets" loading="lazy" decoding="async">
-          <span class="maple-substack-fallback-copy">
-            <strong>MAPLE on Substack</strong>
-            <span>Read updates and subscribe <span aria-hidden="true">↗</span></span>
-          </span>
-        </a>
-      </div>
+      <div class="maple-substack-frame"><iframe src="https://maplelicense.substack.com/embed" title="MAPLE Open Source License for Minors" loading="lazy" scrolling="no"></iframe></div>
       <div class="maple-youtube-video maple-youtube-video--popup" id="maple-popup-video">
         <iframe src="https://www.youtube.com/embed/2zl3vOhvbGU" title="MAPLE video" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
@@ -4292,7 +4284,7 @@ button.rounded-md,button.rounded-lg,button.rounded-full,a.rounded-md,a.rounded-l
     const closeBtn = document.getElementById('petition-modal-close');
     if (!overlay || !closeBtn) return;
 
-    const storageKey = 'openrocketsPetitionModalDismissed-maple-2026-11-restored';
+    const storageKey = 'openrocketsPetitionModalDismissed-maple-2026-11-white-substack';
     const dismiss = () => {
       overlay.classList.remove('is-open');
       overlay.setAttribute('aria-hidden', 'true');

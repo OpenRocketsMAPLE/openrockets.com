@@ -1,0 +1,44 @@
+name: Refresh X feed
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-x-feed
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Refresh MAPLE X cache
+        run: node scripts/refresh-x-feed.mjs
+
+      - name: Commit refreshed cache
+        shell: bash
+        run: |
+          if git diff --quiet -- data/x-feed.json; then
+            echo "No X feed changes to commit."
+            exit 0
+          fi
+          git config user.name "OpenRockets X Feed Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/x-feed.json
+          git commit -m "Refresh MAPLE X feed"
+          git pull --rebase origin main
+          git push origin HEAD:main

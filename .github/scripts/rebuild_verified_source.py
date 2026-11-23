@@ -109,18 +109,24 @@ def route_relative(file_path: Path, raw: str):
     else:
         return raw
 
-    target=site_path.lstrip("/")
-    if not target:
-        target="index.html"
-
     start=file_path.parent.relative_to(ROOT).as_posix()
     if start==".":
         start="."
+
+    # A URL of "/" means the website root directory, not index.html.
+    # This matters especially for <base href="/"> on nested pages.
+    if site_path == "/":
+        rel=posixpath.relpath(".", start=start)
+        if rel == ".":
+            rel="./"
+        elif not rel.endswith("/"):
+            rel += "/"
+        return urlunsplit(("", "", rel, p.query, p.fragment))
+
+    target=site_path.lstrip("/")
     rel=posixpath.relpath(target,start=start)
     if site_path.endswith("/") and not rel.endswith("/"):
         rel += "/"
-    if site_path=="/" and rel=="index.html":
-        rel="./"
     return urlunsplit(("", "", rel, p.query, p.fragment))
 
 ATTR_RE=re.compile(
@@ -348,7 +354,7 @@ def local_refs(html_file: Path):
         raw=html.unescape(raw.strip()).replace("\\","/")
         if not raw or raw.startswith(("#","data:","blob:","javascript:","mailto:","tel:","//","http://","https://")):
             continue
-        clean=urlsplit(raw).path
+        clean=unquote(urlsplit(raw).path)
         if not static_ref_re.search(clean):
             continue
 

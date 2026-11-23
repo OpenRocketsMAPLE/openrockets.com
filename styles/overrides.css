@@ -441,7 +441,7 @@ iframe{
   top: 50%;
   transform: translateY(-50%) rotate(-5deg);
   background-image: url("../assets/home/decorations/crisis-sun.svg");
-  opacity: .23;
+  opacity: .38;
 }
 
 /* 2.9M daily requests / 115TB — brown firewall/castle on the right. */
@@ -452,7 +452,7 @@ iframe{
   top: 52%;
   transform: translateY(-50%);
   background-image: url("../assets/home/decorations/firewall-castle.svg");
-  opacity: .21;
+  opacity: .34;
 }
 
 /* OpenRockets OpenSource — simple green open-source-inspired mark, centered. */
@@ -463,7 +463,7 @@ iframe{
   top: 50%;
   transform: translate(-50%, -50%);
   background-image: url("../assets/home/decorations/open-source-mark.svg");
-  opacity: .16;
+  opacity: .28;
 }
 
 /* Free infrastructure — beaver working at a blue screen, left aligned. */
@@ -474,7 +474,7 @@ iframe{
   top: 53%;
   transform: translateY(-50%);
   background-image: url("../assets/home/decorations/free-beaver.svg");
-  opacity: .17;
+  opacity: .30;
 }
 
 /* LicenseU18 petition — paint-brush artwork behind the petition copy. */
@@ -485,7 +485,7 @@ iframe{
   top: 53%;
   transform: translate(-50%, -50%) rotate(-1deg);
   background-image: url("../assets/home/decorations/petition-brush.svg");
-  opacity: .19;
+  opacity: .28;
 }
 
 /* Beaver / Hummingbird / Kangaroo — giant disc with a GitHub-style mark. */
@@ -496,7 +496,7 @@ iframe{
   top: 50%;
   transform: translateY(-50%) rotate(-9deg);
   background-image: url("../assets/home/decorations/github-disc.svg");
-  opacity: .17;
+  opacity: .30;
 }
 
 /* ZeroProfit — light yellow/green brush behind the title. */
@@ -507,7 +507,7 @@ iframe{
   top: 52%;
   transform: translateY(-50%) rotate(1.5deg);
   background-image: url("../assets/home/decorations/zeroprofit-brush.svg");
-  opacity: .42;
+  opacity: .56;
 }
 
 .zp-normal-title {

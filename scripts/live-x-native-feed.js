@@ -1,17 +1,28 @@
 (() => {
   const WIDGET_ID = "739491f1-b20f-438a-837a-73fb487ee5f2";
   const MAX_POSTS = 100;
+  const INITIAL_PER_SECTION = 4;
+  const LOAD_MORE_STEP = 4;
+  const MIN_WORDS = 6;
   const CORE_URL = "https://core.service.elfsight.com";
   const DATA_URL = "https://widget-data.service.elfsight.com";
 
   const grids = Array.from(document.querySelectorAll(".or-native-x-grid[data-or-x-grid]"));
   if (!grids.length) return;
 
+  const meaningfulWordCount = (text) =>
+    String(text || "")
+      .replace(/https?:\/\/\S+/g, " ")
+      .replace(/[@#][\p{L}\p{N}_-]+/gu, " ")
+      .match(/[\p{L}\p{N}][\p{L}\p{N}'’_-]*/gu)?.length || 0;
+
+  const qualifies = (post) => meaningfulWordCount(post?.caption) >= MIN_WORDS;
+
   const uniquePosts = (posts) => {
     const seen = new Set();
     return (posts || []).filter((post) => {
       const id = String(post?.vendorId || post?.id || "");
-      if (!id || seen.has(id)) return false;
+      if (!id || seen.has(id) || !qualifies(post)) return false;
       seen.add(id);
       return true;
     }).slice(0, MAX_POSTS);
@@ -106,35 +117,36 @@
     link.href = url;
     link.textContent = "";
     quote.appendChild(link);
-    slot.appendChild(quote);
+
+    const badge = document.createElement("span");
+    badge.className = "or-native-x-verified-badge";
+    badge.setAttribute("aria-label", "Verified");
+    badge.textContent = "✓";
+
+    slot.append(quote, badge);
     return slot;
   };
 
-  const distribute = (posts) => {
-    grids.forEach((grid) => grid.replaceChildren());
-    if (!posts.length) return;
+  const ensureShowMore = (placement, onClick) => {
+    let shell = placement.querySelector(".or-native-x-more-shell");
+    if (!shell) {
+      shell = document.createElement("div");
+      shell.className = "or-native-x-more-shell";
 
-    const base = Math.floor(posts.length / grids.length);
-    let remainder = posts.length % grids.length;
-    let cursor = 0;
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "or-native-x-show-more";
+      button.textContent = "Show more";
+      button.addEventListener("click", onClick);
 
-    grids.forEach((grid) => {
-      const count = base + (remainder-- > 0 ? 1 : 0);
-      const fragment = document.createDocumentFragment();
-      posts.slice(cursor, cursor + count).forEach((post) => {
-        const embed = makeEmbed(post);
-        if (embed) fragment.appendChild(embed);
-      });
-      cursor += count;
-      grid.appendChild(fragment);
-    });
+      shell.appendChild(button);
+      placement.appendChild(shell);
+    }
+    return shell;
   };
 
-  const renderNativeX = async () => {
-    if (window.twttr?.widgets?.load) {
-      await window.twttr.widgets.load();
-      return;
-    }
+  const loadTwitterRenderer = async () => {
+    if (window.twttr?.widgets?.load) return;
 
     let script = document.querySelector('script[data-or-x-widgets="true"]');
     if (!script) {
@@ -152,10 +164,55 @@
       script.addEventListener("error", resolve, { once: true });
       setTimeout(resolve, 8000);
     });
+  };
 
+  const renderGrid = async (grid) => {
+    await loadTwitterRenderer();
     if (window.twttr?.widgets?.load) {
-      await window.twttr.widgets.load();
+      await window.twttr.widgets.load(grid);
     }
+  };
+
+  const distribute = async (posts) => {
+    const groups = Array.from({ length: grids.length }, () => []);
+    posts.forEach((post, index) => groups[index % grids.length].push(post));
+
+    await Promise.all(grids.map(async (grid, index) => {
+      grid.replaceChildren();
+      const placement = grid.closest(".or-native-x-placement");
+      if (!placement) return;
+
+      placement.querySelector(".or-native-x-more-shell")?.remove();
+
+      const group = groups[index];
+      let visible = 0;
+
+      const append = async (amount) => {
+        const next = group.slice(visible, visible + amount);
+        if (!next.length) return;
+
+        const fragment = document.createDocumentFragment();
+        next.forEach((post) => {
+          const embed = makeEmbed(post);
+          if (embed) fragment.appendChild(embed);
+        });
+        grid.appendChild(fragment);
+        visible += next.length;
+
+        await renderGrid(grid);
+
+        const shell = placement.querySelector(".or-native-x-more-shell");
+        if (visible >= group.length) {
+          shell?.remove();
+        }
+      };
+
+      if (group.length > INITIAL_PER_SECTION) {
+        ensureShowMore(placement, () => append(LOAD_MORE_STEP));
+      }
+
+      await append(INITIAL_PER_SECTION);
+    }));
   };
 
   (async () => {
@@ -167,7 +224,6 @@
       posts = await fetchCachedPosts();
     }
 
-    distribute(posts);
-    await renderNativeX();
+    await distribute(posts);
   })();
 })();

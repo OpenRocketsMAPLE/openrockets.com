@@ -299,23 +299,30 @@ async def main():
                     "error": f"{type(exc).__name__}: {exc}",
                 })
 
-        semaphore = asyncio.Semaphore(20)
+        semaphore = asyncio.Semaphore(6)
 
         async def probe(url):
             async with semaphore:
-                try:
-                    response = await context.request.get(
-                        url,
-                        fail_on_status_code=False,
-                        timeout=15000,
-                    )
-                    return {"url": url, "status": response.status}
-                except Exception as exc:
-                    return {
-                        "url": url,
-                        "status": None,
-                        "error": f"{type(exc).__name__}: {exc}",
-                    }
+                last = None
+                for attempt in range(3):
+                    try:
+                        response = await context.request.get(
+                            url,
+                            fail_on_status_code=False,
+                            timeout=20000,
+                            headers={"Cache-Control": "no-cache"},
+                        )
+                        last = {"url": url, "status": response.status}
+                        if response.status not in {429, 500, 502, 503, 504}:
+                            return last
+                    except Exception as exc:
+                        last = {
+                            "url": url,
+                            "status": None,
+                            "error": f"{type(exc).__name__}: {exc}",
+                        }
+                    await asyncio.sleep(0.8 * (attempt + 1))
+                return last
 
         probe_results = []
         if same_site_assets:
@@ -461,6 +468,7 @@ async def main():
             "same_site_assets_probed": len(probe_results),
             "escaped_project_static_url_count": len(escaped_project_urls),
             "broken_same_site_asset_count": len(broken_same_site),
+            "broken_same_site_assets": broken_same_site,
             "bad_external_image_response_count": len(escaped_image_responses),
             "bad_same_site_image_response_count": len(bad_same_site_image_responses),
             "failed_image_request_count": len(failed_image_requests),

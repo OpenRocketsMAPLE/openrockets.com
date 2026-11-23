@@ -983,6 +983,150 @@
   }
 </style>
 
+
+<style id="maple-popup-fade-carousel">
+  #petition-modal .maple-modal-scroll {
+    position: relative !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    min-height: 0 !important;
+  }
+
+  #petition-modal .maple-popup-slides {
+    position: relative;
+    width: 100%;
+    height: min(68dvh, 620px);
+    min-height: 460px;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  #petition-modal .maple-popup-slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: scale(.992);
+    transition:
+      opacity .6s ease,
+      transform .6s ease,
+      visibility 0s linear .6s;
+    background: #fff;
+  }
+
+  #petition-modal .maple-popup-slide.is-active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: scale(1);
+    transition:
+      opacity .6s ease,
+      transform .6s ease,
+      visibility 0s linear 0s;
+  }
+
+  #petition-modal .maple-popup-slide--intro {
+    flex-direction: column;
+    padding: clamp(28px, 5vw, 54px);
+  }
+
+  #petition-modal .maple-popup-slide--intro #petition-modal-message {
+    margin-bottom: 18px !important;
+  }
+
+  #petition-modal .maple-popup-slide--intro .maple-modal-subhead {
+    margin: 0 auto !important;
+  }
+
+  #petition-modal .maple-popup-slide--substack {
+    padding: 0;
+    align-items: stretch;
+  }
+
+  #petition-modal .maple-popup-slide--substack .maple-substack-frame,
+  #petition-modal .maple-popup-slide--substack .maple-substack-frame iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100% !important;
+    min-height: 100% !important;
+    margin: 0 !important;
+  }
+
+  #petition-modal .maple-popup-slide--petition {
+    overflow: hidden;
+  }
+
+  #petition-modal .maple-popup-slide--petition .maple-popup-licenseu18 {
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: clamp(14px, 2vw, 24px) clamp(18px, 4vw, 38px) !important;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  #petition-modal .maple-popup-slide--petition .licenseu18-art-link {
+    width: min(100%, 650px) !important;
+    height: min(31vh, 250px) !important;
+    flex: 0 1 auto !important;
+  }
+
+  #petition-modal .maple-popup-slide--petition .licenseu18-art {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+
+  #petition-modal .maple-popup-slide--petition .licenseu18-title {
+    margin: .7rem auto .3rem !important;
+    font-size: clamp(1.55rem, 2.7vw, 2.55rem) !important;
+  }
+
+  #petition-modal .maple-popup-slide--petition .licenseu18-minute {
+    margin: .2rem 0 .65rem !important;
+  }
+
+  @media (max-width: 720px) {
+    #petition-modal .maple-popup-slides {
+      height: calc(96dvh - 148px);
+      min-height: 0;
+    }
+
+    #petition-modal .maple-popup-slide--intro {
+      padding: 24px 16px;
+    }
+
+    #petition-modal .maple-popup-slide--petition .maple-popup-licenseu18 {
+      padding: 12px 14px !important;
+    }
+
+    #petition-modal .maple-popup-slide--petition .licenseu18-art-link {
+      height: min(28vh, 220px) !important;
+    }
+
+    #petition-modal .maple-popup-slide--petition .licenseu18-title {
+      font-size: clamp(1.35rem, 6.2vw, 2rem) !important;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #petition-modal .maple-popup-slide {
+      transform: none !important;
+      transition: opacity .2s linear, visibility 0s linear .2s !important;
+    }
+    #petition-modal .maple-popup-slide.is-active {
+      transition: opacity .2s linear, visibility 0s linear 0s !important;
+    }
+  }
+</style>
+
 </head>
 
 <body style="padding-top: 0rem;">
@@ -1424,7 +1568,9 @@
       </button>
     </div>
     <div class="maple-modal-scroll">
-      <h2 id="petition-modal-message">
+      <div class="maple-popup-slides" aria-live="off">
+        <section class="maple-popup-slide maple-popup-slide--intro is-active" data-maple-slide="intro" aria-hidden="false">
+          <h2 id="petition-modal-message">
         We are creating the
         <span class="maple-inline-icon" aria-label="world">
           <svg viewBox="0 0 48 48" role="img" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#0b86ff" stroke="#000" stroke-width="2"/><path d="M10 13c5-5 10-7 16-7l2 5 6 2 1 5-6 2-4-3-5 3-7-2-3-5Zm23 13 7 1-2 9-7 6-4-3 1-7 5-6ZM9 25l7 2 2 7-5 4-5-8 1-5Z" fill="#36c975" stroke="#000" stroke-width="1.2" stroke-linejoin="round"/></svg>
@@ -1435,9 +1581,12 @@
         </span>, worldwide.
       </h2>
       <p class="maple-modal-subhead" id="maple-modal-description">MAPLE stands for the Minor Authors' Public License for Expression.</p>
-      <div class="maple-substack-frame"><iframe src="https://maplelicense.substack.com/embed" title="MAPLE Open Source License for Minors" loading="lazy" scrolling="no"></iframe></div>
-
-      <div class="maple-popup-licenseu18" aria-label="Sign the LicenseU18 petition">
+        </section>
+        <section class="maple-popup-slide maple-popup-slide--substack" data-maple-slide="substack" aria-hidden="true">
+          <div class="maple-substack-frame"><iframe src="https://maplelicense.substack.com/embed" title="MAPLE Open Source License for Minors" loading="lazy" scrolling="no"></iframe></div>
+        </section>
+        <section class="maple-popup-slide maple-popup-slide--petition" data-maple-slide="petition" aria-hidden="true">
+          <div class="maple-popup-licenseu18" aria-label="Sign the LicenseU18 petition">
         <a class="licenseu18-art-link" href="https://change.org/LicenseU18" target="_blank" rel="noopener noreferrer" aria-label="Sign the LicenseU18 petition on Change.org">
           <img class="licenseu18-art" src="https://raw.githubusercontent.com/OpenRocketsMAPLE/openrockets.com/main/assets/home/changeorg-licenseu18-cloud.png" alt="change.org/LicenseU18">
         </a>
@@ -1453,6 +1602,9 @@
       </div>
      
     </div>
+        </section>
+      </div>
+    
     <div class="maple-modal-footer">
       <div class="maple-help">Copyright help: <a href="mailto:communications@scienteen.com">communications@scienteen.com</a></div>
       <div id="petition-modal-action-row">
@@ -1463,6 +1615,64 @@
     </div>
   </section>
 </div>
+
+
+<script id="maple-popup-fade-carousel-script">
+(() => {
+  const overlay = document.getElementById('petition-modal-overlay');
+  const stage = document.querySelector('#petition-modal .maple-popup-slides');
+  if (!overlay || !stage) return;
+
+  const slides = Array.from(stage.querySelectorAll('.maple-popup-slide'));
+  if (slides.length !== 3) return;
+
+  let index = 0;
+  let timer = null;
+
+  const show = (nextIndex) => {
+    index = nextIndex % slides.length;
+    slides.forEach((slide, i) => {
+      const active = i === index;
+      slide.classList.toggle('is-active', active);
+      slide.setAttribute('aria-hidden', active ? 'false' : 'true');
+    });
+  };
+
+  const stop = () => {
+    if (timer !== null) {
+      clearInterval(timer);
+      timer = null;
+    }
+  };
+
+  const start = () => {
+    stop();
+    show(0);
+    timer = setInterval(() => show(index + 1), 3000);
+  };
+
+  const sync = () => {
+    if (overlay.classList.contains('is-open') && overlay.getAttribute('aria-hidden') !== 'true') {
+      start();
+    } else {
+      stop();
+      show(0);
+    }
+  };
+
+  new MutationObserver(sync).observe(overlay, {
+    attributes: true,
+    attributeFilter: ['class', 'aria-hidden']
+  });
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stop();
+    else sync();
+  });
+
+  sync();
+})();
+</script>
 
 <script id="maple-modal-boundary" type="application/json">{}</script>
 

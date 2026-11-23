@@ -2101,16 +2101,72 @@
     <div class="maple-youtube-video maple-youtube-video--home" id="maple-home-video">
       <iframe src="https://www.youtube.com/embed/2zl3vOhvbGU" title="MAPLE video" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
-   <!-- Native Twitter/X post embed with visible fallback -->
+   <!-- Native Twitter/X multi-post feed -->
     <div class="maple-twitter-embed" id="maple-twitter-embed">
-      <blockquote class="twitter-tweet" data-theme="light" data-dnt="true">
-        <p lang="en" dir="ltr">World is moving fast</p>
-        &mdash; MAPLE OpenSource License for Minors (@maplelicense)
-        <a href="https://twitter.com/maplelicense/status/2123890252083593440">November 20, 2026</a>
-      </blockquote>
+      <div class="maple-tweet-grid">
+      <div class="maple-tweet-slot">
+        <blockquote class="twitter-tweet" data-theme="light" data-dnt="true" data-conversation="none">
+          <p lang="en" dir="ltr">World is moving fast</p>
+          &mdash; MAPLE OpenSource License for Minors (@maplelicense)
+          <a href="https://x.com/maplelicense/status/2123890252083593440">Nov 20, 2026</a>
+        </blockquote>
+      </div>
+      <div class="maple-tweet-slot">
+        <blockquote class="twitter-tweet" data-theme="light" data-dnt="true" data-conversation="none">
+          <p lang="en" dir="ltr">This is amazing!
+- Raj,Oak Park</p>
+          &mdash; MAPLE OpenSource License for Minors (@maplelicense)
+          <a href="https://x.com/maplelicense/status/2123498614710505958">Nov 19, 2026</a>
+        </blockquote>
+      </div>
+      <div class="maple-tweet-slot">
+        <blockquote class="twitter-tweet" data-theme="light" data-dnt="true" data-conversation="none">
+          <p lang="en" dir="ltr">&quot;It makes my heart soar to live in times, where we can finally start to build a safer space for our minors🧡&quot;
+- Constantine A​.​A., Valencia</p>
+          &mdash; MAPLE OpenSource License for Minors (@maplelicense)
+          <a href="https://x.com/maplelicense/status/2123498457856135578">Nov 19, 2026</a>
+        </blockquote>
+      </div>
+      <div class="maple-tweet-slot">
+        <blockquote class="twitter-tweet" data-theme="light" data-dnt="true" data-conversation="none">
+          <p lang="en" dir="ltr">&quot;In this era of AI-driven development, I believe this will hold great significance for the future.&quot;
+- Ashimine Nishisugamo</p>
+          &mdash; MAPLE OpenSource License for Minors (@maplelicense)
+          <a href="https://x.com/maplelicense/status/2123498238032642482">Nov 19, 2026</a>
+        </blockquote>
+      </div>
+      <div class="maple-tweet-slot">
+        <blockquote class="twitter-tweet" data-theme="light" data-dnt="true" data-conversation="none">
+          <p lang="en" dir="ltr">OpenRockets is the Google under-18.</p>
+          &mdash; MAPLE OpenSource License for Minors (@maplelicense)
+          <a href="https://x.com/maplelicense/status/2121798824389923122">Nov 15, 2026</a>
+        </blockquote>
+      </div>
+      <div class="maple-tweet-slot">
+        <blockquote class="twitter-tweet" data-theme="light" data-dnt="true" data-conversation="none">
+          <p lang="en" dir="ltr">Support is all we need.</p>
+          &mdash; MAPLE OpenSource License for Minors (@maplelicense)
+          <a href="https://x.com/maplelicense/status/2121798486417133948">Nov 15, 2026</a>
+        </blockquote>
+      </div>
+      <div class="maple-tweet-slot">
+        <blockquote class="twitter-tweet" data-theme="light" data-dnt="true" data-conversation="none">
+          <p lang="en" dir="ltr">Thanks @weaviate_io!</p>
+          &mdash; MAPLE OpenSource License for Minors (@maplelicense)
+          <a href="https://x.com/maplelicense/status/2121798435666100299">Nov 15, 2026</a>
+        </blockquote>
+      </div>
+      <div class="maple-tweet-slot">
+        <blockquote class="twitter-tweet" data-theme="light" data-dnt="true" data-conversation="none">
+          <p lang="en" dir="ltr">Thanks @Linear!</p>
+          &mdash; MAPLE OpenSource License for Minors (@maplelicense)
+          <a href="https://x.com/maplelicense/status/2121798366615269616">Nov 15, 2026</a>
+        </blockquote>
+      </div>
+      </div>
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       <noscript>
-        <a href="https://x.com/maplelicense/status/2123890252083593440" target="_blank" rel="noopener">View this MAPLE post on X</a>
+        <a href="https://x.com/maplelicense" target="_blank" rel="noopener">View @maplelicense on X</a>
       </noscript>
     </div>
     <style id="maple-twitter-embed-style">
@@ -2120,23 +2176,44 @@
         opacity: 1 !important;
         width: 100% !important;
         max-width: 1125px;
-        min-height: 220px;
         margin: 24px 0 0;
         overflow: visible !important;
+      }
+      #maple-twitter-embed .maple-tweet-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        width: 100%;
+        align-items: start;
+      }
+      #maple-twitter-embed .maple-tweet-slot {
+        min-width: 0;
+        min-height: 220px;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
       }
       #maple-twitter-embed .twitter-tweet,
       #maple-twitter-embed iframe {
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
-        max-width: 100% !important;
+        width: 100% !important;
+        max-width: 550px !important;
+        margin: 0 auto !important;
       }
       #maple-twitter-embed .twitter-tweet {
-        margin: 0 !important;
+        box-sizing: border-box;
         padding: 18px;
         border: 1px solid #d9d9d9;
+        border-radius: 12px;
         background: #fff;
         color: #111;
+      }
+      @media (max-width: 760px) {
+        #maple-twitter-embed .maple-tweet-grid {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </div>

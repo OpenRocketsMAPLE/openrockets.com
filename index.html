@@ -266,6 +266,12 @@
         max-height: 72px !important;
         object-fit: contain !important;
       }
+      #as-seen-on-section .linux-foundation-feature-logo {
+        width: min(92vw, 440px) !important;
+        max-width: min(92vw, 440px) !important;
+        height: auto !important;
+        max-height: none !important;
+      }
     }
   </style>
 
@@ -905,17 +911,259 @@
 </style>
 
 <style id="or-native-x-layout-style">
-  .or-native-x-placement{width:100%;padding:clamp(.75rem,2vw,1.35rem) 0;background:#fff;position:relative;}
-  .or-native-x-grid{width:min(1120px,calc(100% - 2rem));margin:0 auto;column-count:2;column-gap:22px;}
-  .or-native-x-slot{position:relative;isolation:isolate;display:inline-block;width:100%;min-width:0;margin:0 0 18px;break-inside:avoid;page-break-inside:avoid;vertical-align:top;}
-  .or-native-x-slot>.twitter-tweet,.or-native-x-slot>iframe{margin:0 auto!important;position:relative!important;z-index:1!important;}
-  .or-native-x-verified-badge{position:absolute!important;z-index:60!important;top:28px;right:52px;display:grid!important;place-items:center;width:21px;height:21px;color:#1d9bf0;background:#fff;border-radius:50%;box-shadow:0 0 0 2px #fff,0 1px 4px rgba(0,0,0,.18);pointer-events:none!important;}
-  .or-native-x-verified-badge svg{display:block;width:21px;height:21px;}
-  .or-native-x-date-mask{position:absolute!important;z-index:55!important;left:18px;bottom:92px;width:255px;height:31px;background:#fff;box-shadow:0 0 0 7px #fff;border-radius:4px;pointer-events:none!important;}
-  .or-native-x-more-shell{position:relative;z-index:30;width:min(1120px,calc(100% - 2rem));height:74px;margin:-18px auto 0;display:flex;align-items:flex-end;justify-content:center;padding:28px 0 4px;background:linear-gradient(to bottom,rgba(255,255,255,0),rgba(255,255,255,.94) 38%,#fff 70%);box-sizing:border-box;}
-  .or-native-x-show-more{appearance:none;border:1px solid #cfd9de;border-radius:999px;background:#fff;color:#0f1419;min-width:150px;height:38px;padding:0 22px;font:700 14px/1 var(--or-font,"sohne-var",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif);cursor:pointer;box-shadow:0 5px 18px rgba(15,20,25,.08);}
-  .or-native-x-show-more:hover,.or-native-x-show-more:focus-visible{background:#f7f9f9;border-color:#8b98a5;outline:none;}
-  @media(max-width:760px){.or-native-x-grid{width:min(100% - 1rem,550px);column-count:1}.or-native-x-more-shell{width:min(100% - 1rem,550px)}.or-native-x-verified-badge{right:54px}}
+  .or-native-x-placement{
+    width:100%;
+    padding:clamp(.75rem,2vw,1.35rem) 0;
+    background:#fff;
+    position:relative;
+  }
+  .or-native-x-grid{
+    width:min(1120px,calc(100% - 2rem));
+    margin:0 auto;
+    column-count:2;
+    column-gap:22px;
+  }
+  .or-native-x-slot{
+    display:inline-block;
+    width:100%;
+    margin:0 0 18px;
+    break-inside:avoid;
+    page-break-inside:avoid;
+    vertical-align:top;
+  }
+  .or-x-card{
+    width:100%;
+    box-sizing:border-box;
+    border:1px solid #cfd9de;
+    border-radius:16px;
+    background:#fff;
+    color:#0f1419;
+    overflow:hidden;
+    font-family:var(--or-font,"sohne-var",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif);
+  }
+  .or-x-card-head{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:14px;
+    padding:18px 20px 0;
+  }
+  .or-x-author{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    min-width:0;
+  }
+  .or-x-author--compact{gap:8px}
+  .or-x-avatar{
+    width:44px;
+    height:44px;
+    flex:0 0 44px;
+    border-radius:50%;
+    object-fit:cover;
+    background:#eee;
+  }
+  .or-x-author--compact .or-x-avatar{
+    width:28px;
+    height:28px;
+    flex-basis:28px;
+  }
+  .or-x-identity{min-width:0}
+  .or-x-name-line{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    min-width:0;
+  }
+  .or-x-display-name{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    font-size:17px;
+    line-height:1.18;
+    font-weight:750;
+    color:#0f1419;
+  }
+  .or-x-author--compact .or-x-display-name{font-size:15px}
+  .or-x-inline-verified{
+    display:inline-flex;
+    flex:0 0 auto;
+    width:18px;
+    height:18px;
+    color:#1d9bf0;
+  }
+  .or-x-inline-verified svg{
+    display:block;
+    width:18px;
+    height:18px;
+  }
+  .or-x-handle-line{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    min-width:0;
+    margin-top:2px;
+    color:#536471;
+    font-size:15px;
+    line-height:1.2;
+  }
+  .or-x-handle{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+  .or-x-follow{
+    color:#006fd6;
+    font-weight:700;
+    text-decoration:none;
+  }
+  .or-x-brand{
+    flex:0 0 auto;
+    color:#0f1419;
+    text-decoration:none;
+    font-size:28px;
+    line-height:1;
+  }
+  .or-x-card-body{
+    display:block;
+    color:inherit;
+    text-decoration:none;
+    padding:14px 20px 0;
+  }
+  .or-x-card-copy{
+    white-space:pre-wrap;
+    overflow-wrap:anywhere;
+    font-size:18px;
+    line-height:1.38;
+    color:#0f1419;
+  }
+  .or-x-inline-link{
+    color:#1d9bf0;
+    text-decoration:none;
+  }
+  .or-x-quote{
+    display:block;
+    margin-top:14px;
+    overflow:hidden;
+    border:1px solid #cfd9de;
+    border-radius:14px;
+    color:#0f1419;
+    text-decoration:none;
+    background:#fff;
+  }
+  .or-x-quote .or-x-author{
+    padding:12px 14px 0;
+  }
+  .or-x-quote-copy{
+    padding:10px 14px 14px;
+    white-space:pre-wrap;
+    overflow-wrap:anywhere;
+    font-size:15px;
+    line-height:1.38;
+  }
+  .or-x-quote-media{
+    display:block;
+    width:100%;
+    max-height:330px;
+    object-fit:cover;
+    border-top:1px solid #cfd9de;
+  }
+  .or-x-media{
+    display:block;
+    width:100%;
+    max-height:520px;
+    margin-top:14px;
+    border:1px solid #cfd9de;
+    border-radius:14px;
+    object-fit:cover;
+    box-sizing:border-box;
+  }
+  .or-x-actions{
+    display:flex;
+    align-items:center;
+    gap:22px;
+    margin:16px 20px 0;
+    padding:13px 0 0;
+    border-top:1px solid #cfd9de;
+    color:#536471;
+  }
+  .or-x-action{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    border:0;
+    padding:0;
+    background:transparent;
+    color:#536471;
+    text-decoration:none;
+    font:650 14px/1 var(--or-font,"sohne-var",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif);
+    cursor:pointer;
+  }
+  .or-x-action svg{
+    width:20px;
+    height:20px;
+  }
+  .or-x-action--likes{
+    color:#e0245e;
+  }
+  .or-x-read-more{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:40px;
+    margin:14px 20px 18px;
+    border:1px solid #cfd9de;
+    border-radius:999px;
+    color:#006fd6;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:750;
+  }
+  .or-native-x-more-shell{
+    position:relative;
+    z-index:10;
+    width:min(1120px,calc(100% - 2rem));
+    height:74px;
+    margin:-18px auto 0;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    padding:28px 0 4px;
+    background:linear-gradient(to bottom,rgba(255,255,255,0),rgba(255,255,255,.94) 38%,#fff 70%);
+    box-sizing:border-box;
+  }
+  .or-native-x-show-more{
+    appearance:none;
+    border:1px solid #cfd9de;
+    border-radius:999px;
+    background:#fff;
+    color:#0f1419;
+    min-width:150px;
+    height:38px;
+    padding:0 22px;
+    font:700 14px/1 var(--or-font,"sohne-var",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif);
+    cursor:pointer;
+    box-shadow:0 5px 18px rgba(15,20,25,.08);
+  }
+  .or-native-x-show-more:hover,
+  .or-native-x-show-more:focus-visible{
+    background:#f7f9f9;
+    border-color:#8b98a5;
+    outline:none;
+  }
+  @media(max-width:760px){
+    .or-native-x-grid{
+      width:min(100% - 1rem,550px);
+      column-count:1;
+    }
+    .or-native-x-more-shell{
+      width:min(100% - 1rem,550px);
+    }
+    .or-x-card-head{padding:16px 16px 0}
+    .or-x-card-body{padding:13px 16px 0}
+    .or-x-actions{margin-left:16px;margin-right:16px;gap:16px;flex-wrap:wrap}
+    .or-x-read-more{margin-left:16px;margin-right:16px}
+  }
 </style>
 </head>
 
@@ -2150,7 +2398,7 @@
 
   <div class="as-seen-on-box" style="background-color: #ffffff; padding: 40px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; gap: 32px; box-sizing: border-box;">
     <a href="https://insights.linuxfoundation.org/organization/openrockets" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; text-decoration: none;">
-      <img src="assets/external/i.imgur.com/bzNtedW__161f17bbbfd3019c1b.png" alt="Linux Foundation Insights" style="width: 200px; max-width: 100%; height: auto; display: block;">
+      <img class="linux-foundation-feature-logo" src="assets/external/i.imgur.com/bzNtedW__161f17bbbfd3019c1b.png" alt="Linux Foundation Insights" style="width: 200px; max-width: 100%; height: auto; display: block;">
     </a>
     <img src="assets/external/i.imgur.com/19bWNMU__62d0431f7d9f9d107f.png" style="width: 250px; max-width: 100%; height: auto; display: block;">
     <img src="assets/external/theoptimist.news/the-optimist-news-logo__4d2529d3f305a367f9.svg"  style="width: 300px; max-width: 100%; height: auto; display: block;" >
@@ -4123,7 +4371,7 @@ button.rounded-md,button.rounded-lg,button.rounded-full,a.rounded-md,a.rounded-l
     document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && overlay.classList.contains('is-open')) close.click(); });
   });
 </script>
-<script src="scripts/live-x-native-feed.js?v=4" defer></script>
+<script src="scripts/live-x-native-feed.js?v=5" defer></script>
 </body>
 
 <!-- Cookie Consent by TermsFeed https://www.TermsFeed.com -->

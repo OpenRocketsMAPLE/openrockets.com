@@ -246,14 +246,17 @@
     head.className = "or-x-card-head";
     head.appendChild(buildAuthor(post.author));
 
-    const x = document.createElement("a");
-    x.className = "or-x-brand";
-    x.href = url;
-    x.target = "_blank";
-    x.rel = "noopener noreferrer";
-    x.setAttribute("aria-label", "Open this post on X");
-    x.textContent = "𝕏";
-    head.appendChild(x);
+    const twitter = document.createElement("a");
+    twitter.className = "or-twitter-brand";
+    twitter.href = url;
+    twitter.target = "_blank";
+    twitter.rel = "noopener noreferrer";
+    twitter.setAttribute("aria-label", "Open this post on Twitter");
+    const twitterIcon = document.createElement("i");
+    twitterIcon.className = "bi bi-twitter";
+    twitterIcon.setAttribute("aria-hidden", "true");
+    twitter.appendChild(twitterIcon);
+    head.appendChild(twitter);
     card.appendChild(head);
 
     const bodyLink = document.createElement("a");
@@ -328,7 +331,7 @@
     more.href = url;
     more.target = "_blank";
     more.rel = "noopener noreferrer";
-    more.textContent = "Read more on X";
+    more.textContent = "Read more on Twitter";
     card.appendChild(more);
 
     return card;

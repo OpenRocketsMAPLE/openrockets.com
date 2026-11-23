@@ -12,6 +12,8 @@
 
   const meaningfulWordCount = (text) =>
     String(text || "")
+      .replace(/<[^>]*>/g, " ")
+      .replace(/&(?:#\d+|#x[0-9a-f]+|[a-z][a-z0-9]+);/gi, " ")
       .replace(/https?:\/\/\S+/g, " ")
       .replace(/[@#][\p{L}\p{N}_-]+/gu, " ")
       .match(/[\p{L}\p{N}][\p{L}\p{N}'’_-]*/gu)?.length || 0;
@@ -121,9 +123,13 @@
     const badge = document.createElement("span");
     badge.className = "or-native-x-verified-badge";
     badge.setAttribute("aria-label", "Verified");
-    badge.textContent = "✓";
+    badge.innerHTML = '<svg viewBox="0 0 22 22" aria-hidden="true"><path fill="currentColor" d="M20.396 11c0-1.278-1.006-2.282-1.906-3.09.098-1.206-.175-2.566-1.128-3.518-.952-.952-2.31-1.225-3.516-1.127C13.036 2.366 12.033 1.36 10.754 1.36S8.472 2.366 7.664 3.265c-1.207-.098-2.566.175-3.518 1.127-.952.952-1.225 2.312-1.127 3.518-.9.808-1.906 1.812-1.906 3.09s1.006 2.282 1.906 3.09c-.098 1.206.175 2.566 1.127 3.518.952.952 2.311 1.225 3.518 1.127.808.9 1.812 1.905 3.09 1.905s2.282-1.006 3.092-1.905c1.206.098 2.564-.175 3.516-1.127.953-.952 1.226-2.312 1.128-3.518.9-.808 1.906-1.812 1.906-3.09Zm-11.3 4.047-3.11-3.11 1.414-1.414 1.696 1.696 4.41-4.41 1.414 1.414-5.824 5.824Z"/></svg>';
 
-    slot.append(quote, badge);
+    const dateMask = document.createElement("span");
+    dateMask.className = "or-native-x-date-mask";
+    dateMask.setAttribute("aria-hidden", "true");
+
+    slot.append(quote, badge, dateMask);
     return slot;
   };
 

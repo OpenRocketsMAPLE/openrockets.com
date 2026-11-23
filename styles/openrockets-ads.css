@@ -1,0 +1,219 @@
+.or-ad-wrapper {
+  margin: 24px auto 40px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.or-ad-wrapper[hidden] {
+  display: none !important;
+}
+
+.or-ad-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.or-ad-link {
+  width: 100%;
+  display: block;
+}
+
+.or-ad-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.or-ad-badge-container {
+  position: relative;
+  margin-top: 8px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.or-ad-badge-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 0;
+  font-family: "Merriweather", Georgia, serif;
+  font-size: 14px;
+  color: #000;
+}
+
+.or-ad-badge-logo {
+  width: 100px;
+  height: auto;
+  max-width: 100px;
+  object-fit: contain;
+  display: block;
+}
+
+.or-ad-badge-separator {
+  color: #888;
+}
+
+.or-ad-badge-text-why {
+  color: #000;
+}
+
+.or-ad-badge-chevron {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+  color: #666;
+}
+
+.or-ad-badge-chevron.expanded {
+  transform: rotate(180deg);
+}
+
+.or-ad-dropdown {
+  position: relative;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.or-ad-dropdown p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  font-family: "Merriweather", Georgia, serif;
+}
+
+.or-ad-dropdown a {
+  color: #5865f2;
+  text-decoration: underline;
+}
+
+.or-vignette-dialog {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: min(900px, 90vw);
+  max-width: 90vw;
+  max-height: 80vh;
+  margin: auto;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  overflow: visible;
+  background: transparent;
+  box-shadow: none;
+}
+
+.or-vignette-dialog[open] {
+  display: flex;
+}
+
+.or-vignette-dialog::backdrop {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(6px);
+}
+
+.or-vignette-close-row {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+.or-vignette-close {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 999px;
+  background: #1a1a1a;
+  color: #fff;
+  padding: 10px 20px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font: 400 15px/1.2 Arial, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.or-vignette-close:hover {
+  background: #000;
+}
+
+.or-vignette-close svg {
+  width: 20px;
+  height: 20px;
+}
+
+.or-vignette-scroll {
+  width: 100%;
+  max-height: 70vh;
+  overflow-y: auto;
+  background: transparent;
+}
+
+.or-vignette-scroll .or-ad-wrapper {
+  margin: 0;
+  width: 100%;
+}
+
+.or-vignette-scroll .or-ad-container {
+  max-width: none;
+  width: 100%;
+}
+
+.or-vignette-scroll .or-ad-link {
+  display: flex;
+  justify-content: center;
+}
+
+.or-vignette-scroll .or-ad-image {
+  width: auto;
+  max-width: 100%;
+  max-height: 55vh;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .or-vignette-dialog {
+    width: 90vw;
+    max-width: 90vw;
+  }
+
+  .or-vignette-scroll .or-ad-image {
+    max-height: 65vh;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .or-ad-badge-chevron {
+    transition: none;
+  }
+}
+
+.or-ad-badge-toggle:focus-visible,
+.or-ad-link:focus-visible {
+  outline: 2px solid #5865f2;
+  outline-offset: 3px;
+}
+
+[data-openrockets-ad] {
+  box-sizing: border-box;
+  padding-inline: 16px;
+}
+
+[data-openrockets-ad] .or-ad-image {
+  max-height: 240px;
+  object-fit: contain;
+}

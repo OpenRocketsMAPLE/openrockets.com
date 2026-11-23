@@ -1,4 +1,8 @@
 (() => {
+  // Temporarily pause every placement while Adsterra reviews the site's ad restrictions.
+  const deliveryPaused = true;
+  if (deliveryPaused) return;
+
   const primarySlot = document.getElementById('homepage-advertisement');
   if (!primarySlot || primarySlot.dataset.adsterraInitialized) return;
   primarySlot.dataset.adsterraInitialized = 'true';

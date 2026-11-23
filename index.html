@@ -907,9 +907,11 @@
 <style id="or-native-x-layout-style">
   .or-native-x-placement{width:100%;padding:clamp(.75rem,2vw,1.35rem) 0;background:#fff;position:relative;}
   .or-native-x-grid{width:min(1120px,calc(100% - 2rem));margin:0 auto;column-count:2;column-gap:22px;}
-  .or-native-x-slot{position:relative;display:inline-block;width:100%;min-width:0;margin:0 0 18px;break-inside:avoid;page-break-inside:avoid;vertical-align:top;}
-  .or-native-x-slot>.twitter-tweet,.or-native-x-slot>iframe{margin:0 auto!important;}
-  .or-native-x-verified-badge{position:absolute;z-index:20;top:27px;right:58px;display:grid;place-items:center;width:18px;height:18px;border-radius:50%;background:#1d9bf0;color:#fff;border:2px solid #fff;font:800 11px/1 Arial,sans-serif;box-shadow:0 1px 3px rgba(0,0,0,.16);pointer-events:none;}
+  .or-native-x-slot{position:relative;isolation:isolate;display:inline-block;width:100%;min-width:0;margin:0 0 18px;break-inside:avoid;page-break-inside:avoid;vertical-align:top;}
+  .or-native-x-slot>.twitter-tweet,.or-native-x-slot>iframe{margin:0 auto!important;position:relative!important;z-index:1!important;}
+  .or-native-x-verified-badge{position:absolute!important;z-index:60!important;top:28px;right:52px;display:grid!important;place-items:center;width:21px;height:21px;color:#1d9bf0;background:#fff;border-radius:50%;box-shadow:0 0 0 2px #fff,0 1px 4px rgba(0,0,0,.18);pointer-events:none!important;}
+  .or-native-x-verified-badge svg{display:block;width:21px;height:21px;}
+  .or-native-x-date-mask{position:absolute!important;z-index:55!important;left:18px;bottom:92px;width:255px;height:31px;background:#fff;box-shadow:0 0 0 7px #fff;border-radius:4px;pointer-events:none!important;}
   .or-native-x-more-shell{position:relative;z-index:30;width:min(1120px,calc(100% - 2rem));height:74px;margin:-18px auto 0;display:flex;align-items:flex-end;justify-content:center;padding:28px 0 4px;background:linear-gradient(to bottom,rgba(255,255,255,0),rgba(255,255,255,.94) 38%,#fff 70%);box-sizing:border-box;}
   .or-native-x-show-more{appearance:none;border:1px solid #cfd9de;border-radius:999px;background:#fff;color:#0f1419;min-width:150px;height:38px;padding:0 22px;font:700 14px/1 var(--or-font,"sohne-var",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif);cursor:pointer;box-shadow:0 5px 18px rgba(15,20,25,.08);}
   .or-native-x-show-more:hover,.or-native-x-show-more:focus-visible{background:#f7f9f9;border-color:#8b98a5;outline:none;}
@@ -1407,7 +1409,7 @@
             
             <!-- OpenRockets Brand Logo -->
             <div style="flex: 1; display: flex; align-items: center; justify-content: flex-start; padding-left: 15px;">
-              <img src="v/openrockets.png" alt="OpenRockets Logo" style="filter: invert(1); width: 130px; background-color: transparent;">
+              <img src="v/openrockets.png" alt="OpenRockets Logo" style="filter: invert(1); width: 104px; background-color: transparent;">
             </div>
 
             <!-- Menu Links -->
@@ -2406,7 +2408,7 @@ Handling 2.9M daily requests and over 115TB of traffic while blocking 300,000+ a
     
 
         <h1 style="margin-top: 0rem;" class="hds-heading  hero-section__title hero-section__title--background hds-heading--xl" style="margin: 0; color: #000; font-size: clamp(2.6rem, 5vw, 5.8rem); line-height: 0.95; font-weight: 500; max-width: 16ch;">
- <img class="or-donates-art" src="assets/external/i.imgur.com/D9Pvn2i__56f7fa0cdb7077d37f.png" style="width:84%; max-width:900px; filter:drop-shadow(0 8px 0 rgba(124,58,237,.96)) drop-shadow(0 9px 0 rgba(236,72,153,.92)) drop-shadow(0 10px 0 rgba(255,107,28,.88)) drop-shadow(0 18px 24px rgba(35,20,60,.28));">
+ <img class="or-donates-art" src="assets/external/i.imgur.com/D9Pvn2i__56f7fa0cdb7077d37f.png" style="width:84%; max-width:900px; transform:rotate(30deg); transform-origin:center; margin:1.5rem 1rem 3rem 0; filter:drop-shadow(18px 20px 0 rgba(124,58,237,.98)) drop-shadow(27px 31px 0 rgba(236,72,153,.95)) drop-shadow(36px 42px 0 rgba(255,107,28,.92)) drop-shadow(48px 56px 34px rgba(82,32,120,.34));">
           <p style="margin: 0; max-width: 64rem; margin-top: 0rem;  font-weight: 400;  color: #000000; line-height:1.3;">
    OpenRockets Donates. Together, We Change Lives. You're Part of It.</p>
    <br><span style="display: inline-flex; cursor: pointer; color: #01a6ff !important; font-weight: 600; font-size: 60% !important;" onclick="window.open('https://opencollective.com/openrocketsinc#category-ABOUT')">
@@ -3356,21 +3358,16 @@ Introducing OpenRockets InterKid™ + TeenDNS, a Free & Advanced Safe Search Eng
     .merch-rework__stage{position:relative;width:min(1200px,100%);min-height:clamp(430px,55vw,650px);margin:0 auto;display:grid;place-items:center;overflow:visible;padding:clamp(28px,5vw,64px) 20px;box-sizing:border-box;}
     .merch-rework__ghost{position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-52%);z-index:-1;font:900 clamp(8rem,28vw,25rem)/.72 var(--or-font,"sohne-var",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif);letter-spacing:-.09em;color:#f1f1f1;white-space:nowrap;user-select:none;pointer-events:none;}
     .merch-rework__products{position:relative;width:min(860px,92vw);height:clamp(330px,47vw,520px);}
-    .merch-rework__products img{position:absolute;height:auto;object-fit:contain;filter:drop-shadow(0 18px 22px rgba(0,0,0,.22));transition:transform .25s ease;}
-    .merch-rework__products img:hover{transform:translateY(-7px) rotate(0deg) scale(1.035)!important}
+    .merch-rework__products img{position:absolute;height:auto;object-fit:contain;filter:drop-shadow(0 18px 22px rgba(0,0,0,.22));}
     .merch-product--bottle{width:clamp(130px,20vw,230px);left:50%;top:5%;transform:translateX(-50%);z-index:8;}
     .merch-product--shirt-a{width:clamp(155px,25vw,285px);left:4%;top:24%;transform:rotate(-12deg);z-index:3;}
     .merch-product--shirt-b{width:clamp(155px,25vw,285px);right:3%;top:20%;transform:rotate(11deg);z-index:4;}
     .merch-product--shirt-c{width:clamp(135px,21vw,240px);left:23%;top:2%;transform:rotate(-7deg);z-index:2;}
     .merch-product--sticker-a{width:clamp(150px,24vw,270px);right:20%;bottom:3%;transform:rotate(-10deg);z-index:10;}
     .merch-product--sticker-b{width:clamp(95px,15vw,160px);left:26%;bottom:8%;transform:rotate(14deg);z-index:11;}
-    .merch-rework__cta{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);z-index:20;display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border:2px solid #000;border-radius:999px;background:#000;color:#fff!important;text-decoration:none!important;font-weight:750;box-shadow:0 8px 0 #ff6b1c;}
-    .merch-rework__tape{width:110%;margin-left:-5%;overflow:hidden;transform:rotate(-1.2deg);background:#ffd400;color:#000;border-top:3px solid #000;border-bottom:3px solid #000;white-space:nowrap;}
-    .merch-rework__tape-track{display:flex;width:max-content;animation:merchTapeRun 16s linear infinite reverse;}
-    .merch-rework__tape span{display:inline-block;padding:12px 20px;font:900 clamp(1rem,2vw,1.45rem)/1 var(--or-font,"sohne-var",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif);letter-spacing:.07em;text-transform:uppercase;}
-    @keyframes merchTapeRun{to{transform:translateX(-50%)}}
-    @media(max-width:650px){.merch-rework__stage{min-height:440px}.merch-product--shirt-a{left:-2%}.merch-product--shirt-b{right:-2%}.merch-rework__cta{bottom:10px}}
-    @media(prefers-reduced-motion:reduce){.merch-rework__marquee-track,.merch-rework__tape-track{animation:none}}
+    .merch-rework__button-wrap{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);z-index:20;}
+    @media(max-width:650px){.merch-rework__stage{min-height:440px}.merch-product--shirt-a{left:-2%}.merch-product--shirt-b{right:-2%}.merch-rework__button-wrap{bottom:10px}}
+    @media(prefers-reduced-motion:reduce){.merch-rework__marquee-track{animation:none}}
   </style>
   <div class="merch-rework__marquee" aria-hidden="true">
     <div class="merch-rework__marquee-track">
@@ -3388,17 +3385,16 @@ Introducing OpenRockets InterKid™ + TeenDNS, a Free & Advanced Safe Search Eng
       <img class="merch-product--sticker-a" src="merch/public/images/openrockets-laptop-sticket-lightpng.png" alt="OpenRockets light sticker" loading="lazy">
       <img class="merch-product--sticker-b" src="merch/public/images/openrockets-laptop-sticket-black.png" alt="OpenRockets dark sticker" loading="lazy">
     </div>
-    <a class="merch-rework__cta" href="merch/">OpenRockets Merch</a>
-  </div>
-  <div class="merch-rework__tape" aria-hidden="true">
-    <div class="merch-rework__tape-track">
-      <span>OPENROCKETS MERCH • WEARABLES • ACCESSORIES • OPENROCKETS MERCH •</span>
-      <span>OPENROCKETS MERCH • WEARABLES • ACCESSORIES • OPENROCKETS MERCH •</span>
-      <span>OPENROCKETS MERCH • WEARABLES • ACCESSORIES • OPENROCKETS MERCH •</span>
-      <span>OPENROCKETS MERCH • WEARABLES • ACCESSORIES • OPENROCKETS MERCH •</span>
+    <div class="merch-rework__button-wrap">
+      <a style="background-color: black; height: 3.5rem;" class="hds-button hds-button--primary" href="merch/">
+        OpenRockets Merch
+        <svg class="hds-icon hds-icon-hover-arrow" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M0.5 5.5h7"></path>
+          <path d="M1.5 1.5l4 4-4 4"></path>
+        </svg>
+      </a>
     </div>
-  </div>
-</section>
+  </div></section>
 
 <section class="anthropic-section">
   <!-- SVG lines connecting center (50%, 50%) to node centers -->
@@ -3451,7 +3447,7 @@ Introducing OpenRockets InterKid™ + TeenDNS, a Free & Advanced Safe Search Eng
 
     <div style="background-color: #ffffff; color: #ffffff; border: 1px solid #000000; border-radius: 2rem; padding: 56px 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
       <img src="v/teamimage.png" alt="OpenRockets Team" style="max-width: 440px; width: 100%; height: auto; margin-bottom: 24px; display: block;">
-      <h3 style="color: #000000; font-size: clamp(1.5rem, 3.5vw, 2.2rem); font-weight: 600; margin: 0 0 24px 0; font-family: 'Space Grotesk'; letter-spacing: -0.02em; line-height: 1.2;">
+      <h3 style="color: #000000; font-size: clamp(1.5rem, 3.5vw, 2.2rem); font-weight: 600; margin: 0 0 24px 0; font-family: var(--or-font, "sohne-var", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif); letter-spacing: -0.02em; line-height: 1.2;">
         See who's behind OpenRockets
       </h3>
       <a style="background-color: #eca900; height: 3.5rem;" class="hds-button hds-button--primary" href="team/">
@@ -4127,7 +4123,7 @@ button.rounded-md,button.rounded-lg,button.rounded-full,a.rounded-md,a.rounded-l
     document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && overlay.classList.contains('is-open')) close.click(); });
   });
 </script>
-<script src="scripts/live-x-native-feed.js" defer></script>
+<script src="scripts/live-x-native-feed.js?v=4" defer></script>
 </body>
 
 <!-- Cookie Consent by TermsFeed https://www.TermsFeed.com -->

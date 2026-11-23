@@ -1,17 +1,24 @@
 (() => {
   const WIDGET_ID = "739491f1-b20f-438a-837a-73fb487ee5f2";
   const MAX_POSTS = 100;
-  const INITIAL_PER_SECTION = 6;
-  const LOAD_MORE_STEP = 6;
+  const INITIAL_PER_SECTION = 4;
+  const LOAD_MORE_STEP = 4;
+  const MIN_WORDS = 6;
   const CORE_URL = "https://core.service.elfsight.com";
   const DATA_URL = "https://widget-data.service.elfsight.com";
 
   const grids = Array.from(document.querySelectorAll(".or-native-x-grid[data-or-x-grid]"));
   if (!grids.length) return;
 
-  const qualifies = (post) => Boolean(
-    String(post?.caption || "").trim() || post?.media?.length || post?.extra?.quoted
-  );
+  const meaningfulWordCount = (text) =>
+    String(text || "")
+      .replace(/<[^>]*>/g, " ")
+      .replace(/&(?:#\d+|#x[0-9a-f]+|[a-z][a-z0-9]+);/gi, " ")
+      .replace(/https?:\/\/\S+/g, " ")
+      .replace(/[@#][\p{L}\p{N}_-]+/gu, " ")
+      .match(/[\p{L}\p{N}][\p{L}\p{N}'’_-]*/gu)?.length || 0;
+
+  const qualifies = (post) => meaningfulWordCount(post?.caption) >= MIN_WORDS;
 
   const uniquePosts = (posts) => {
     const seen = new Set();
@@ -354,8 +361,7 @@
 
   const distribute = (posts) => {
     const groups = Array.from({ length: grids.length }, () => []);
-    const perSection = Math.ceil(posts.length / grids.length);
-    posts.forEach((post, index) => groups[Math.floor(index / perSection)].push(post));
+    posts.forEach((post, index) => groups[index % grids.length].push(post));
 
     grids.forEach((grid, index) => {
       grid.replaceChildren();

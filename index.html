@@ -896,6 +896,133 @@
   }
 </style>
 
+<style id="or-x-distributed-stream-style">
+  .or-x-stream-section{
+    width:100%;
+    padding:clamp(.8rem,2vw,1.35rem) 0;
+    background:#fff;
+    color:#111;
+    overflow:hidden;
+  }
+  .or-x-stream-shell{
+    width:min(1180px,calc(100% - 2rem));
+    margin:0 auto;
+  }
+  .or-x-stream-meta{
+    display:flex;
+    align-items:center;
+    gap:.55rem;
+    margin:0 0 .6rem;
+    color:#536471;
+    font-size:.78rem;
+    font-weight:650;
+    letter-spacing:.02em;
+  }
+  .or-x-stream-meta span:first-child{
+    color:#000;
+    font-size:1.05rem;
+  }
+  .or-x-stream-meta span:last-child{
+    margin-left:auto;
+    font-variant-numeric:tabular-nums;
+  }
+  .or-x-stream{
+    display:grid;
+    grid-auto-flow:column;
+    grid-auto-columns:minmax(290px,360px);
+    gap:12px;
+    overflow-x:auto;
+    overscroll-behavior-inline:contain;
+    scroll-snap-type:x proximity;
+    padding:0 0 8px;
+    scrollbar-width:thin;
+  }
+  .or-x-post{
+    scroll-snap-align:start;
+    display:flex;
+    flex-direction:column;
+    min-height:230px;
+    padding:16px;
+    border:1px solid #cfd9de;
+    border-radius:16px;
+    background:#fff;
+    color:#0f1419;
+    text-decoration:none;
+    box-sizing:border-box;
+    transition:border-color .15s ease,background .15s ease,transform .15s ease;
+  }
+  .or-x-post:hover{
+    border-color:#8b98a5;
+    background:#f7f9f9;
+    transform:translateY(-1px);
+  }
+  .or-x-post__head{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:12px;
+    margin-bottom:12px;
+  }
+  .or-x-post__identity{
+    min-width:0;
+    display:flex;
+    flex-direction:column;
+    line-height:1.18;
+  }
+  .or-x-post__identity strong{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    font-size:.95rem;
+  }
+  .or-x-post__identity span{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    color:#536471;
+    font-size:.84rem;
+  }
+  .or-x-post__x{
+    flex:0 0 auto;
+    color:#0f1419;
+    font-size:1.35rem;
+    line-height:1;
+  }
+  .or-x-post__text{
+    margin:0;
+    font-size:.98rem;
+    line-height:1.4;
+    overflow-wrap:anywhere;
+  }
+  .or-x-post__media{
+    width:100%;
+    max-height:190px;
+    margin:12px 0 0;
+    border:1px solid #cfd9de;
+    border-radius:12px;
+    object-fit:cover;
+  }
+  .or-x-post__foot{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:8px 12px;
+    margin-top:auto;
+    padding-top:14px;
+    color:#536471;
+    font-size:.74rem;
+  }
+  .or-x-post__metrics{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  @media(max-width:640px){
+    .or-x-stream-shell{width:min(100% - 1rem,1180px)}
+    .or-x-stream{grid-auto-columns:minmax(270px,86vw)}
+    .or-x-post{min-height:210px}
+  }
+</style>
 </head>
 
 <body style="padding-top: 0rem;">
@@ -1996,6 +2123,136 @@
     <img src="v/shape.jpg" alt="Shape">
   </div>
 </section>
+<!-- OR-X-DISTRIBUTED-STREAM-START:1 -->
+<section class="or-x-stream-section" aria-label="OpenRockets X posts">
+  <div class="or-x-stream-shell">
+    <div class="or-x-stream-meta"><span>𝕏</span><span>OpenRockets / MAPLE</span><span>01</span></div>
+    <div class="or-x-stream" tabindex="0">
+      <a class="or-x-post" href="https://x.com/maplelicense/status/2121798319269986517" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">Absolutely!</p>
+  
+  <div class="or-x-post__foot">
+    <time>Nov 15, 2026</time>
+    <div class="or-x-post__metrics"><span>2 likes</span><span>60 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2121798260717416822" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">🍁</p>
+  
+  <div class="or-x-post__foot">
+    <time>Nov 15, 2026</time>
+    <div class="or-x-post__metrics"><span>1 likes</span><span>45 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2121798211530874942" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">Thanks @Baseten!</p>
+  
+  <div class="or-x-post__foot">
+    <time>Nov 15, 2026</time>
+    <div class="or-x-post__metrics"><span>1 likes</span><span>25 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2121798136725426549" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">Thanks @Figma!</p>
+  
+  <div class="or-x-post__foot">
+    <time>Nov 15, 2026</time>
+    <div class="or-x-post__metrics"><span>1 likes</span><span>63 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2121798051241328880" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">Thanks @OpenGov_Asia!</p>
+  
+  <div class="or-x-post__foot">
+    <time>Nov 15, 2026</time>
+    <div class="or-x-post__metrics"><span>1 likes</span><span>21 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2121797909209551274" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">Thanks @MistralAI!</p>
+  
+  <div class="or-x-post__foot">
+    <time>Nov 15, 2026</time>
+    <div class="or-x-post__metrics"><span>1 likes</span><span>12 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2121797843526820322" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">Reposting stuff has never been this fun.</p>
+  
+  <div class="or-x-post__foot">
+    <time>Nov 15, 2026</time>
+    <div class="or-x-post__metrics"><span>4 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2121797665658913173" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">&quot;The initiative is admirable; we would be interested in hearing what exactly you are looking for.&quot;  <br>- Nik Kamra, Operations Associate at @Nerdalize<br>(LeafCloud), on @maplelicense <br><br>November 14, 2026 <br>#CommunityPraise #Testimonials</p>
+  
+  <div class="or-x-post__foot">
+    <time>Nov 15, 2026</time>
+    <div class="or-x-post__metrics"><span>1 likes</span><span>7 views</span></div>
+  </div>
+</a>
+    </div>
+  </div>
+</section>
+<!-- OR-X-DISTRIBUTED-STREAM-END -->
+
 <!-- END ANTHROPIC STYLE SECTION -->
 
 
@@ -2218,6 +2475,136 @@
     </style>
   </div>
 </section>
+<!-- OR-X-DISTRIBUTED-STREAM-START:2 -->
+<section class="or-x-stream-section" aria-label="OpenRockets X posts">
+  <div class="or-x-stream-shell">
+    <div class="or-x-stream-meta"><span>𝕏</span><span>OpenRockets / MAPLE</span><span>02</span></div>
+    <div class="or-x-stream" tabindex="0">
+      <a class="or-x-post" href="https://x.com/maplelicense/status/2121797530128466399" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">&quot;We&#39;d love to work with you on some publishing for the company, feature OpenRockets as a startup to watch...&quot; <br>- Gina Marrs from @TechRoundUK on @maplelicense</p>
+  
+  <div class="or-x-post__foot">
+    <time>Nov 15, 2026</time>
+    <div class="or-x-post__metrics"><span>3 likes</span><span>46 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/openrockets/status/2121790740414201979" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @openrockets">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>OpenRockets Inc.</strong>
+      <span>@openrockets</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">&quot;We&#39;d love to work with you on some publishing for the company, feature OpenRockets as a startup to watch...&quot;<br>- Gina Marrs from @TechRoundUK on @maplelicense<br><br>August 28, 2026 <br>#CommunityPraise #Testimonials</p>
+  <img class="or-x-post__media" src="https://pbs.twimg.com/media/HXIdbb3bgAANZ87.png" alt="" loading="lazy" decoding="async">
+  <div class="or-x-post__foot">
+    <time>Nov 15, 2026</time>
+    <div class="or-x-post__metrics"><span>2 likes</span><span>74 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/openrockets/status/2121790169154228663" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @openrockets">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>OpenRockets Inc.</strong>
+      <span>@openrockets</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">&quot;The initiative is admirable; we would be interested in hearing what exactly you are looking for.&quot; <br>- Nik Kamra, Operations Associate at @Nerdalize<br>(LeafCloud), on @maplelicense <br><br>November 14, 2026  <br>#CommunityPraise #Testimonials</p>
+  <img class="or-x-post__media" src="https://pbs.twimg.com/media/HXIc6I3aQAA2llj.jpg" alt="" loading="lazy" decoding="async">
+  <div class="or-x-post__foot">
+    <time>Nov 15, 2026</time>
+    <div class="or-x-post__metrics"><span>2 likes</span><span>62 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/openrockets/status/2121789337222480146" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @openrockets">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>OpenRockets Inc.</strong>
+      <span>@openrockets</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">&quot;It&#39;s an ambitious project.&quot; <br>- Joey from @AssemblyAI on @maplelicense<br><br>November 12, 2026<br>#CommunityPraise #Testimonials</p>
+  
+  <div class="or-x-post__foot">
+    <time>Nov 15, 2026</time>
+    <div class="or-x-post__metrics"><span>2 likes</span><span>28 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/openrockets/status/2121788789534437569" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @openrockets">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>OpenRockets Inc.</strong>
+      <span>@openrockets</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">&quot;Your work on a license designed specifically for minors is thoughtful and aligns with the values of transparency and accessibility that we aim to support as a European leader in open-source AI.&quot; <br>- @MistralAI Team on @maplelicense <br><br>November 03, 2026<br>Thank you so much!!!🤍</p>
+  <img class="or-x-post__media" src="https://pbs.twimg.com/media/HXIbZIka0AAT0O8.jpg" alt="" loading="lazy" decoding="async">
+  <div class="or-x-post__foot">
+    <time>Nov 15, 2026</time>
+    <div class="or-x-post__metrics"><span>2 likes</span><span>51 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/openrockets/status/2121787747690283295" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @openrockets">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>OpenRockets Inc.</strong>
+      <span>@openrockets</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">&quot;Congratulations on the work your team is doing. The mission behind OpenRockets is both ambitious and meaningful, and I can see the potential impact of the initiatives you described.&quot; <br>- Mohit Sagar from @OpenGov_Asia on @maplelicense <br><br>September 5, 2026<br>Thanks, Mr Mohit!</p>
+  <img class="or-x-post__media" src="https://pbs.twimg.com/media/HXIaqjFaQAA6Eta.png" alt="" loading="lazy" decoding="async">
+  <div class="or-x-post__foot">
+    <time>Nov 15, 2026</time>
+    <div class="or-x-post__metrics"><span>2 likes</span><span>82 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/openrockets/status/2121787189935903083" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @openrockets">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>OpenRockets Inc.</strong>
+      <span>@openrockets</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">&quot;The work you are doing is very important.&quot;  <br>- Figma for Education Team from @Figma on @maplelicense <br><br>Thanks @Figma❤️<br>November 13, 2026 <br>#CommunityPraise #OpenRockets</p>
+  <img class="or-x-post__media" src="https://pbs.twimg.com/media/HXIaMTlb0AAcRFX.jpg" alt="" loading="lazy" decoding="async">
+  <div class="or-x-post__foot">
+    <time>Nov 15, 2026</time>
+    <div class="or-x-post__metrics"><span>2 likes</span><span>94 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/openrockets/status/2121785931825115258" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @openrockets">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>OpenRockets Inc.</strong>
+      <span>@openrockets</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">&quot;It’s impressive what your team has built.&quot;  <br>- Baseten Team from @baseten on @maplelicense <br>November 11, 2026<br>#CommunityPraise</p>
+  <img class="or-x-post__media" src="https://pbs.twimg.com/media/HXIZDLDaMAAZ4ID.jpg" alt="" loading="lazy" decoding="async">
+  <div class="or-x-post__foot">
+    <time>Nov 15, 2026</time>
+    <div class="or-x-post__metrics"><span>2 likes</span><span>46 views</span></div>
+  </div>
+</a>
+    </div>
+  </div>
+</section>
+<!-- OR-X-DISTRIBUTED-STREAM-END -->
+
 <script src="https://www.jotform.com/website-widgets/embed/01a100a980d870008b35e8fb080072500552" defer></script>
 
 
@@ -2341,6 +2728,136 @@
 
 
 </section>
+<!-- OR-X-DISTRIBUTED-STREAM-START:3 -->
+<section class="or-x-stream-section" aria-label="OpenRockets X posts">
+  <div class="or-x-stream-shell">
+    <div class="or-x-stream-meta"><span>𝕏</span><span>OpenRockets / MAPLE</span><span>03</span></div>
+    <div class="or-x-stream" tabindex="0">
+      <a class="or-x-post" href="https://x.com/openrockets/status/2121785320106872863" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @openrockets">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>OpenRockets Inc.</strong>
+      <span>@openrockets</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">&quot;It&#39;s impressive what you and the OpenRockets team are building.&quot; <br>- Hugo from @saturn_cloud on @maplelicense <br><br>#testimonials</p>
+  <img class="or-x-post__media" src="https://pbs.twimg.com/media/HXIYfxiaIAActIV.png" alt="" loading="lazy" decoding="async">
+  <div class="or-x-post__foot">
+    <time>Nov 15, 2026</time>
+    <div class="or-x-post__metrics"><span>1 likes</span><span>59 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/openrockets/status/2121784978006802519" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @openrockets">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>OpenRockets Inc.</strong>
+      <span>@openrockets</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">&quot;What you and your teammates are building for young creators is impressive, especially given the constraints.&quot; <br>- Yurii from @Superhuman on @maplelicense</p>
+  <img class="or-x-post__media" src="https://pbs.twimg.com/media/HXIYL2XakAAOvRC.png" alt="" loading="lazy" decoding="async">
+  <div class="or-x-post__foot">
+    <time>Nov 15, 2026</time>
+    <div class="or-x-post__metrics"><span>1 likes</span><span>76 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/openrockets/status/2121784549197967664" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @openrockets">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>OpenRockets Inc.</strong>
+      <span>@openrockets</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">&quot;We’re impressed by the work you and your team are doing and your commitment to supporting young creators!&quot; <br>- Mariah Bardo from @Linear on @maplelicense</p>
+  <img class="or-x-post__media" src="https://pbs.twimg.com/media/HXIXuzLb0AAj_Cx.jpg" alt="" loading="lazy" decoding="async">
+  <div class="or-x-post__foot">
+    <time>Nov 15, 2026</time>
+    <div class="or-x-post__metrics"><span>1 likes</span><span>53 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/openrockets/status/2121781769745924220" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @openrockets">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>OpenRockets Inc.</strong>
+      <span>@openrockets</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">&quot;This is a really interesting project. Congrats!&quot; <br>- Duda Nogueira from @weaviate_io on @maplelicense</p>
+  
+  <div class="or-x-post__foot">
+    <time>Nov 15, 2026</time>
+    <div class="or-x-post__metrics"><span>1 likes</span><span>54 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/openrockets/status/2121781654368976922" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @openrockets">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>OpenRockets Inc.</strong>
+      <span>@openrockets</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">&quot;It is encouraging to see a group of young technology enthusiasts taking the initiative to build meaningful projects, particularly around making technology and open-source participation more accessible to young creators.&quot;<br>- Devi Chinthireddy from @TowerCloud on @maplelicense</p>
+  
+  <div class="or-x-post__foot">
+    <time>Nov 15, 2026</time>
+    <div class="or-x-post__metrics"><span>1 likes</span><span>34 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2121527945521144300" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">@OpenRockets is the @Disney under 18</p>
+  
+  <div class="or-x-post__foot">
+    <time>Nov 14, 2026</time>
+    <div class="or-x-post__metrics"><span>11 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2121152067654070555" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">🍁#OpenRockets MAPLE nano: A Card. Worth Keeping and Gifting...<br><br>The MAPLE Nano Card gives young creators a simple place to start. OpenRockets is building a way for their work to stay connected to them as they grow.</p>
+  <img class="or-x-post__media" src="https://pbs.twimg.com/media/HW_YGeSa0AAS7aM.jpg" alt="" loading="lazy" decoding="async">
+  <div class="or-x-post__foot">
+    <time>Nov 13, 2026</time>
+    <div class="or-x-post__metrics"><span>1 likes</span><span>19 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2120706395704324493" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">RT @maplelicense: MAPLE NANO: Turning a Physical Card into a Digital Identity <br><br>How @OpenRockets can connect physical membership, NFC technology, software engineering, and digital identity through a single intelligent card. <br> <br>by Nesapriyan E (OpenRockets) <br><br>#opensource @fsf</p>
+  
+  <div class="or-x-post__foot">
+    <time>Nov 12, 2026</time>
+    <div class="or-x-post__metrics"><span>1 reposts</span></div>
+  </div>
+</a>
+    </div>
+  </div>
+</section>
+<!-- OR-X-DISTRIBUTED-STREAM-END -->
+
 
 
 
@@ -2362,6 +2879,136 @@ Handling 2.9M daily requests and over 115TB of traffic while blocking 300,000+ a
     </div>
   </div>
 </section>
+<!-- OR-X-DISTRIBUTED-STREAM-START:4 -->
+<section class="or-x-stream-section" aria-label="OpenRockets X posts">
+  <div class="or-x-stream-shell">
+    <div class="or-x-stream-meta"><span>𝕏</span><span>OpenRockets / MAPLE</span><span>04</span></div>
+    <div class="or-x-stream" tabindex="0">
+      <a class="or-x-post" href="https://x.com/maplelicense/status/2120706376343368030" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">RT @maplelicense: That&#39;s the whole point of OpenRockets MAPLE.🍁<br><br>We are distributing our first few sets of OpenRockets MAPLE Cards to talented teenagers we meet in public places!!  Building the infrastructure to protect and secure the intellectual property of minors!</p>
+  
+  <div class="or-x-post__foot">
+    <time>Nov 12, 2026</time>
+    <div class="or-x-post__metrics"><span>1 reposts</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2120706361864691967" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">RT @maplelicense: That&#39;s the whole point of OpenRockets MAPLE.🍁 We are distributing our first few sets of OpenRockets MAPLE Cards to talented teenagers we meet in public places!!  Building the infrastructure to protect and secure the intellectual property of minors!</p>
+  
+  <div class="or-x-post__foot">
+    <time>Nov 12, 2026</time>
+    <div class="or-x-post__metrics"><span>1 reposts</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2120705269336539602" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">MAPLE NANO: Turning a Physical Card into a Digital Identity <br><br>How @OpenRockets can connect physical membership, NFC technology, software engineering, and digital identity through a single intelligent card. <br> <br>by Nesapriyan E (OpenRockets) <br><br>#opensource @fsf</p>
+  <img class="or-x-post__media" src="https://pbs.twimg.com/media/HW5B0Q1boAASRBu.png" alt="" loading="lazy" decoding="async">
+  <div class="or-x-post__foot">
+    <time>Nov 12, 2026</time>
+    <div class="or-x-post__metrics"><span>1 reposts</span><span>17 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2120444855906345330" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">That&#39;s the whole point of OpenRockets MAPLE.🍁 We are distributing our first few sets of OpenRockets MAPLE Cards to talented teenagers we meet in public places!!  Building the infrastructure to protect and secure the intellectual property of minors!</p>
+  <img class="or-x-post__media" src="https://pbs.twimg.com/media/HW1VUOuboAAU3V-.png" alt="" loading="lazy" decoding="async">
+  <div class="or-x-post__foot">
+    <time>Nov 11, 2026</time>
+    <div class="or-x-post__metrics"><span>1 likes</span><span>1 reposts</span><span>36 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2120444739183169856" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">That&#39;s the whole point of OpenRockets MAPLE.🍁<br><br>We are distributing our first few sets of OpenRockets MAPLE Cards to talented teenagers we meet in public places!!  Building the infrastructure to protect and secure the intellectual property of minors!</p>
+  <img class="or-x-post__media" src="https://pbs.twimg.com/media/HW1VNjJaIAAOBOF.jpg" alt="" loading="lazy" decoding="async">
+  <div class="or-x-post__foot">
+    <time>Nov 11, 2026</time>
+    <div class="or-x-post__metrics"><span>1 likes</span><span>1 reposts</span><span>63 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/code_bandit_/status/2120186086337196053" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @code_bandit_">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>Aptar Hussain</strong>
+      <span>@code_bandit_</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">@maplelicense cool ideaa</p>
+  
+  <div class="or-x-post__foot">
+    <time>Nov 10, 2026</time>
+    <div class="or-x-post__metrics"><span>1 likes</span><span>1 replies</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2120107901927002342" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">🗺️ Shanghai, China<br><br>We are distributing our first few sets of OpenRockets MAPLE Cards to talented teenagers we randomly meet in public places!! <br>We are building the infrastructure layer to protect and secure the intellectual property rights of minors!!</p>
+  <img class="or-x-post__media" src="https://pbs.twimg.com/media/HWwi39nbMAA28AX.jpg" alt="" loading="lazy" decoding="async">
+  <div class="or-x-post__foot">
+    <time>Nov 10, 2026</time>
+    <div class="or-x-post__metrics"><span>3 likes</span><span>1 replies</span><span>39 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2119045195421610336" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">View this post on X</p>
+  <img class="or-x-post__media" src="https://pbs.twimg.com/media/HWhcWvFbUAA_bxH.jpg" alt="" loading="lazy" decoding="async">
+  <div class="or-x-post__foot">
+    <time>Nov 7, 2026</time>
+    <div class="or-x-post__metrics"><span>18 views</span></div>
+  </div>
+</a>
+    </div>
+  </div>
+</section>
+<!-- OR-X-DISTRIBUTED-STREAM-END -->
+
 
 <section id="interkid-search-gateway" aria-labelledby="interkid-gateway-title">
   <div class="interkid-gateway-shell">
@@ -2402,6 +3049,136 @@ Handling 2.9M daily requests and over 115TB of traffic while blocking 300,000+ a
     </div>
   </div>
 </section>
+<!-- OR-X-DISTRIBUTED-STREAM-START:5 -->
+<section class="or-x-stream-section" aria-label="OpenRockets X posts">
+  <div class="or-x-stream-shell">
+    <div class="or-x-stream-meta"><span>𝕏</span><span>OpenRockets / MAPLE</span><span>05</span></div>
+    <div class="or-x-stream" tabindex="0">
+      <a class="or-x-post" href="https://x.com/maplelicense/status/2119043632468791789" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">OpenRockets MAPLE brings: Nano Diaries 📕 <br><br>Around the world, we are distributing our first set of OpenRockets MAPLE Nano Cards to talented teenagers and minors at events, competitions, and more!!!<br><br>Every Card is connected to the OpenRockets IP protocol (IPP) over the internet!</p>
+  <img class="or-x-post__media" src="https://pbs.twimg.com/media/HWha0AgacAA8Spo.jpg" alt="" loading="lazy" decoding="async">
+  <div class="or-x-post__foot">
+    <time>Nov 7, 2026</time>
+    <div class="or-x-post__metrics"><span>2 likes</span><span>18 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2118855993815892000" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">OpenRockets MAPLE brings: Nano Diaries 📕<br><br>Around the world, we are distributing our first set of OpenRockets MAPLE Nano Cards to talented teenagers and minors at events, competitions, and more!!! <br><br>Every Card is connected to the OpenRockets IP protocol (IPP) over the internet!</p>
+  <img class="or-x-post__media" src="https://pbs.twimg.com/media/HWev_r1bYAAjjog.jpg" alt="" loading="lazy" decoding="async">
+  <div class="or-x-post__foot">
+    <time>Nov 7, 2026</time>
+    <div class="or-x-post__metrics"><span>1 likes</span><span>19 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2117991398079402371" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">Intellectual Property of Minors. Posting this message to show that we are working on it. OpenRockets MAPLE 0.1.0 has been released. Please check it out. Thanks to Arjun Jamgade, aka @ScientificAJ<br><br>Preprint:</p>
+  
+  <div class="or-x-post__foot">
+    <time>Nov 4, 2026</time>
+    <div class="or-x-post__metrics"><span>1 reposts</span><span>23 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2112702577859334221" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">OpenRockets MAPLE Team is led by @ScientificAJ aka Arjun, A brilliant high schooler from India!<br><br>If you ever want to contact Arjun, please reach out to arjun@openrockets.com</p>
+  
+  <div class="or-x-post__foot">
+    <time>Oct 21, 2026</time>
+    <div class="or-x-post__metrics"><span>19 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2112686514962669848" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">@DanielleFong @benlandautaylor Congrats!!!!! Really exciting!!</p>
+  
+  <div class="or-x-post__foot">
+    <time>Oct 20, 2026</time>
+    <div class="or-x-post__metrics"></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/DanielleFong/status/2112626217056911416" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @DanielleFong">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>Danielle Fong 🔆</strong>
+      <span>@DanielleFong</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">thanks so much to @benlandautaylor for this chance to talk about the development of new technology</p>
+  
+  <div class="or-x-post__foot">
+    <time>Oct 20, 2026</time>
+    <div class="or-x-post__metrics"><span>101 likes</span><span>14 reposts</span><span>9 replies</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2112164835534438693" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">View this post on X</p>
+  <img class="or-x-post__media" src="https://pbs.twimg.com/media/HU_qn-WaQAAB3zE.jpg" alt="" loading="lazy" decoding="async">
+  <div class="or-x-post__foot">
+    <time>Oct 19, 2026</time>
+    <div class="or-x-post__metrics"><span>1 likes</span><span>19 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2112157724461113635" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">We express our gratitude to Arjun, an @OpenRockets member, who helped us create this informative video.</p>
+  
+  <div class="or-x-post__foot">
+    <time>Oct 19, 2026</time>
+    <div class="or-x-post__metrics"><span>19 views</span></div>
+  </div>
+</a>
+    </div>
+  </div>
+</section>
+<!-- OR-X-DISTRIBUTED-STREAM-END -->
+
 
 
 
@@ -2472,6 +3249,121 @@ Handling 2.9M daily requests and over 115TB of traffic while blocking 300,000+ a
     </div>
   </div>
 </section>
+<!-- OR-X-DISTRIBUTED-STREAM-START:6 -->
+<section class="or-x-stream-section" aria-label="OpenRockets X posts">
+  <div class="or-x-stream-shell">
+    <div class="or-x-stream-meta"><span>𝕏</span><span>OpenRockets / MAPLE</span><span>06</span></div>
+    <div class="or-x-stream" tabindex="0">
+      <a class="or-x-post" href="https://x.com/maplelicense/status/2112156295176577355" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">Pre Release: OpenRockets MAPLE nano Card!</p>
+  <img class="or-x-post__media" src="https://pbs.twimg.com/media/HU_i5z3aoAAIINn.jpg" alt="" loading="lazy" decoding="async">
+  <div class="or-x-post__foot">
+    <time>Oct 19, 2026</time>
+    <div class="or-x-post__metrics"><span>15 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2112156191409438768" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">Arjun Explains: What Is OpenRockets MAPLE and the Upcoming MAPLE Nano Card</p>
+  <img class="or-x-post__media" src="https://pbs.twimg.com/media/HU_iz-LbwAAjU7H.png" alt="" loading="lazy" decoding="async">
+  <div class="or-x-post__foot">
+    <time>Oct 19, 2026</time>
+    <div class="or-x-post__metrics"><span>3 likes</span><span>1 reposts</span><span>65 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2112155413378707538" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">More information will be available soon at: <br><br>Volunteer:</p>
+  
+  <div class="or-x-post__foot">
+    <time>Oct 19, 2026</time>
+    <div class="or-x-post__metrics"></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2112155020049432708" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">There are young inventors inside the hospital who are capable of building remarkable things, and some have already built remarkable things. OpenRockets Shanghai will bring these inventors together in one place. During the event, we will also introduce the OpenRockets MAPLE NFC</p>
+  
+  <div class="or-x-post__foot">
+    <time>Oct 19, 2026</time>
+    <div class="or-x-post__metrics"><span>6 replies</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2112154942819676626" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">OpenRockets Shanghai is coming soon. 📷 With special permission from Shanghai Children’s Medical Center, the event will be hosted by @Extertic ertic in the GW130 Presentation Room on November 3, 2026.</p>
+  
+  <div class="or-x-post__foot">
+    <time>Oct 19, 2026</time>
+    <div class="or-x-post__metrics"><span>8 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2109638813710708814" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">@LedermanHarvey This is good</p>
+  
+  <div class="or-x-post__foot">
+    <time>Oct 12, 2026</time>
+    <div class="or-x-post__metrics"></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2109638764066951371" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">@PeterDiamandis Health is wealth</p>
+  
+  <div class="or-x-post__foot">
+    <time>Oct 12, 2026</time>
+    <div class="or-x-post__metrics"></div>
+  </div>
+</a>
+    </div>
+  </div>
+</section>
+<!-- OR-X-DISTRIBUTED-STREAM-END -->
+
 <section style="margin-bottom: .5rem; margin-top: .5rem !important;" class="hds-color-mode section section--white hds-mode--light">
   <div class="section-container" style="padding: 1.5rem 1.5rem 1.25rem;">
     <div style="max-width: 1100px; margin: 0 auto;">
@@ -2511,6 +3403,106 @@ Handling 2.9M daily requests and over 115TB of traffic while blocking 300,000+ a
         </div>
         <p class="blog-slider__position" aria-live="polite"></p>
       </section>
+<!-- OR-X-DISTRIBUTED-STREAM-START:7 -->
+<section class="or-x-stream-section" aria-label="OpenRockets X posts">
+  <div class="or-x-stream-shell">
+    <div class="or-x-stream-meta"><span>𝕏</span><span>OpenRockets / MAPLE</span><span>07</span></div>
+    <div class="or-x-stream" tabindex="0">
+      <a class="or-x-post" href="https://x.com/maplelicense/status/2109638689689325891" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">@coryalthoff I don&#39;t like it</p>
+  
+  <div class="or-x-post__foot">
+    <time>Oct 12, 2026</time>
+    <div class="or-x-post__metrics"></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2109638644244095441" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">@tomowenmorgan I think so</p>
+  
+  <div class="or-x-post__foot">
+    <time>Oct 12, 2026</time>
+    <div class="or-x-post__metrics"><span>1 likes</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2109638456175640881" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">We are so back</p>
+  
+  <div class="or-x-post__foot">
+    <time>Oct 12, 2026</time>
+    <div class="or-x-post__metrics"><span>13 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/tomowenmorgan/status/2109362385521877063" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @tomowenmorgan">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>Tom Morgan</strong>
+      <span>@tomowenmorgan</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">“The soul will often disturb and destroy a surface life in order to create a deeper one.”- David Whyte</p>
+  
+  <div class="or-x-post__foot">
+    <time>Oct 11, 2026</time>
+    <div class="or-x-post__metrics"><span>37 likes</span><span>4 reposts</span><span>3 replies</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/PeterDiamandis/status/2109343760102400276" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @PeterDiamandis">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>Peter H. Diamandis, MD</strong>
+      <span>@PeterDiamandis</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">An AI health assistant in China reportedly surpassed 100 million users, offering services including free medical-report interpretation. While not a replacement for doctors, it shows how quickly access to health information can scale. The opportunity is enormous.</p>
+  
+  <div class="or-x-post__foot">
+    <time>Oct 11, 2026</time>
+    <div class="or-x-post__metrics"><span>1189 likes</span><span>110 reposts</span><span>72 replies</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/coryalthoff/status/2109343436331438555" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @coryalthoff">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>Cory Althoff</strong>
+      <span>@coryalthoff</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">Unpopular opinion: the next ten years are your last opportunity to earn money</p>
+  
+  <div class="or-x-post__foot">
+    <time>Oct 11, 2026</time>
+    <div class="or-x-post__metrics"><span>949 likes</span><span>39 reposts</span><span>221 replies</span></div>
+  </div>
+</a>
+    </div>
+  </div>
+</section>
+<!-- OR-X-DISTRIBUTED-STREAM-END -->
+
       <!-- ═══════════════════════════════════════════ -->
       <!-- OUR PARTNERS SECTION                       -->
       <!-- ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ -->
@@ -2875,6 +3867,91 @@ Handling 2.9M daily requests and over 115TB of traffic while blocking 300,000+ a
     </div>
   </div>
 </section>
+<!-- OR-X-DISTRIBUTED-STREAM-START:8 -->
+<section class="or-x-stream-section" aria-label="OpenRockets X posts">
+  <div class="or-x-stream-shell">
+    <div class="or-x-stream-meta"><span>𝕏</span><span>OpenRockets / MAPLE</span><span>08</span></div>
+    <div class="or-x-stream" tabindex="0">
+      <a class="or-x-post" href="https://x.com/LedermanHarvey/status/2109321513174229101" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @LedermanHarvey">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>Harvey Lederman</strong>
+      <span>@LedermanHarvey</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">great thread dealing with some of the issue of incentives and assessment in math. as I’ve said before, I wish we were having a more general thoughtful and serious conversation on these questions in philosophy now</p>
+  
+  <div class="or-x-post__foot">
+    <time>Oct 11, 2026</time>
+    <div class="or-x-post__metrics"><span>22 likes</span><span>2 replies</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2107859885396566475" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">Open-Source Hasn&#39;t Solved Ageing (And That’s Okay! Mistakes Happen)</p>
+  <img class="or-x-post__media" src="https://pbs.twimg.com/media/HUCfYseaYAE9UjZ.jpg" alt="" loading="lazy" decoding="async">
+  <div class="or-x-post__foot">
+    <time>Oct 7, 2026</time>
+    <div class="or-x-post__metrics"><span>19 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2107627811163021660" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">MAPLE stands for Minor Authors&#39; Public License for Expression.</p>
+  
+  <div class="or-x-post__foot">
+    <time>Oct 7, 2026</time>
+    <div class="or-x-post__metrics"><span>17 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2107088649326395817" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">🍁Subscribe to our newsletter, now with over 18,000 subscribers. <br><br>We are developing the world&#39;s first open-source license to protect the intellectual property of minors and to break the corporate monopoly over intellectual property concerning minors.</p>
+  <img class="or-x-post__media" src="https://pbs.twimg.com/media/HT3hJGybMAERkr4.png" alt="" loading="lazy" decoding="async">
+  <div class="or-x-post__foot">
+    <time>Oct 5, 2026</time>
+    <div class="or-x-post__metrics"><span>23 views</span></div>
+  </div>
+</a>
+<a class="or-x-post" href="https://x.com/maplelicense/status/2099626519480189151" target="_blank" rel="noopener noreferrer" aria-label="Open this X post by @maplelicense">
+  <div class="or-x-post__head">
+    <div class="or-x-post__identity">
+      <strong>MAPLE OpenSource License for Minors</strong>
+      <span>@maplelicense</span>
+    </div>
+    <span class="or-x-post__x" aria-hidden="true">𝕏</span>
+  </div>
+  <p class="or-x-post__text">There are about 1.3 billion global children who have zero internet connection in their lives. This is in the age of supercomputing, Starlink, and #AGI. The best way to solve these problems is to ensure that the friction of invention is very low—the birth of IP #freedom is MAPLE.</p>
+  <img class="or-x-post__media" src="https://pbs.twimg.com/media/HSNfHgqbkAAOZ7V.jpg" alt="" loading="lazy" decoding="async">
+  <div class="or-x-post__foot">
+    <time>Sep 14, 2026</time>
+    <div class="or-x-post__metrics"><span>6 likes</span><span>5 reposts</span><span>1 replies</span></div>
+  </div>
+</a>
+    </div>
+  </div>
+</section>
+<!-- OR-X-DISTRIBUTED-STREAM-END -->
+
 
 
 <!-- ═══════════════════════════════════════════ -->

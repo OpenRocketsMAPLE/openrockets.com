@@ -1062,6 +1062,83 @@
   }
 </style>
 
+
+<style id="maple-popup-licenseu18-copy">
+  #petition-modal .maple-popup-licenseu18 {
+    width: 100%;
+    margin: 28px 0 0;
+    padding: clamp(2rem,5vw,4rem) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #fff;
+    color: #000;
+    box-sizing: border-box;
+  }
+  #petition-modal .maple-popup-licenseu18 .licenseu18-art-link {
+    display: block;
+    width: min(100%,900px);
+    text-decoration: none;
+  }
+  #petition-modal .maple-popup-licenseu18 .licenseu18-art {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 18px 34px rgba(0,0,0,.14));
+  }
+  #petition-modal .maple-popup-licenseu18 .licenseu18-title {
+    max-width: 18ch;
+    margin: clamp(1.5rem,4vw,2.5rem) auto .5rem;
+    color: #000;
+    font: 500 clamp(2.3rem,5vw,5rem)/1.02 var(--or-font,"sohne-var",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif);
+    letter-spacing: -.045em;
+  }
+  #petition-modal .maple-popup-licenseu18 .licenseu18-minute {
+    margin: .5rem 0 1.5rem;
+    color: #e4002b;
+    font: 700 clamp(1rem,2vw,1.35rem)/1.2 var(--or-font,"sohne-var",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif);
+  }
+  #petition-modal .maple-popup-licenseu18 .licenseu18-button {
+    background: #e4002b !important;
+    height: 3.5rem;
+    color: #fff !important;
+  }
+  @media (min-width:761px) {
+    #petition-modal .maple-popup-licenseu18 {
+      padding: 1rem 0;
+      justify-content: center;
+    }
+    #petition-modal .maple-popup-licenseu18 .licenseu18-art-link {
+      width: min(100%,760px);
+      height: 38vh;
+      max-height: 340px;
+      flex: 0 0 auto;
+    }
+    #petition-modal .maple-popup-licenseu18 .licenseu18-art {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    #petition-modal .maple-popup-licenseu18 .licenseu18-title {
+      max-width: 24ch;
+      margin: .75rem auto .35rem;
+      font-size: clamp(1.75rem,2.65vw,2.65rem);
+      line-height: 1.05;
+      letter-spacing: -.025em;
+    }
+    #petition-modal .maple-popup-licenseu18 .licenseu18-minute {
+      margin: .25rem 0 .75rem;
+      font-size: clamp(.95rem,1.25vw,1.15rem);
+    }
+    #petition-modal .maple-popup-licenseu18 .licenseu18-button {
+      height: 3rem !important;
+      flex: 0 0 auto;
+    }
+  }
+</style>
+
 </head>
 
 <body style="padding-top: 0rem;">
@@ -1515,8 +1592,20 @@
       </h2>
       <p class="maple-modal-subhead" id="maple-modal-description">MAPLE stands for the Minor Authors' Public License for Expression.</p>
       <div class="maple-substack-frame"><iframe src="https://maplelicense.substack.com/embed" title="MAPLE Open Source License for Minors" loading="lazy" scrolling="no"></iframe></div>
-      <div class="maple-youtube-video maple-youtube-video--popup" id="maple-popup-video">
-        <iframe src="https://www.youtube.com/embed/2zl3vOhvbGU" title="MAPLE video" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+      <div class="maple-popup-licenseu18" aria-label="Sign the LicenseU18 petition">
+        <a class="licenseu18-art-link" href="https://change.org/LicenseU18" target="_blank" rel="noopener noreferrer" aria-label="Sign the LicenseU18 petition on Change.org">
+          <img class="licenseu18-art" src="https://raw.githubusercontent.com/OpenRocketsMAPLE/openrockets.com/main/assets/home/changeorg-licenseu18-cloud.png" alt="change.org/LicenseU18">
+        </a>
+        <h2 class="licenseu18-title">Sign the petition to change the intellectual property rights of minors forever.</h2>
+        <p class="licenseu18-minute">It only takes a minute.</p>
+        <a class="hds-button hds-button--primary licenseu18-button" href="https://change.org/LicenseU18" target="_blank" rel="noopener noreferrer">
+          Sign the petition
+          <svg class="hds-icon hds-icon-hover-arrow" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M0.5 5.5h7"></path>
+            <path d="M1.5 1.5l4 4-4 4"></path>
+          </svg>
+        </a>
       </div>
      
     </div>

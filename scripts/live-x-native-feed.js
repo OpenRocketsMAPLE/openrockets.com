@@ -3,28 +3,29 @@
   const MAX_POSTS = 100;
   const INITIAL_PER_SECTION = 6;
   const LOAD_MORE_STEP = 4;
-  const MIN_WORDS = 5;
   const CORE_URL = "https://core.service.elfsight.com";
   const DATA_URL = "https://widget-data.service.elfsight.com";
 
   const grids = Array.from(document.querySelectorAll(".or-native-x-grid[data-or-x-grid]"));
   if (!grids.length) return;
 
-  const meaningfulWordCount = (text) =>
-    String(text || "")
-      .replace(/<[^>]*>/g, " ")
-      .replace(/&(?:#\d+|#x[0-9a-f]+|[a-z][a-z0-9]+);/gi, " ")
-      .replace(/https?:\/\/\S+/g, " ")
-      .replace(/[@#][\p{L}\p{N}_-]+/gu, " ")
-      .match(/[\p{L}\p{N}][\p{L}\p{N}'’_-]*/gu)?.length || 0;
+  const sameHandle = (value) =>
+    String(value || "").replace(/^@/, "").toLowerCase() === "maplelicense";
 
-  const qualifies = (post) => meaningfulWordCount(post?.caption) >= MIN_WORDS;
+  const isAllowedPost = (post) => {
+    if (!post) return false;
+    const author = post?.author?.username;
+    if (author && !sameHandle(author)) return false;
+    if (post?.type === "reply" || post?.extra?.inReplyTo) return false;
+    if (post?.type === "repost" || post?.extra?.repost) return false;
+    return true;
+  };
 
   const uniquePosts = (posts) => {
     const seen = new Set();
     return (posts || []).filter((post) => {
       const id = String(post?.vendorId || post?.id || "");
-      if (!id || seen.has(id) || !qualifies(post)) return false;
+      if (!id || seen.has(id) || !isAllowedPost(post)) return false;
       seen.add(id);
       return true;
     }).slice(0, MAX_POSTS);
@@ -60,12 +61,10 @@
     const account = widget?.settings?.account;
     if (!account?.pid) throw new Error("MAPLE X source PID unavailable");
 
-    const allowed = Array.isArray(widget?.settings?.filterByTypes)
-      ? widget.settings.filterByTypes
-      : ["reply", "repost", "common"];
-    const filters = ["reply", "repost", "common"]
-      .filter((type) => !allowed.includes(type))
-      .map((post_type) => ({ type: "exclude", post_type }));
+    const filters = [
+      { type: "exclude", post_type: "reply" },
+      { type: "exclude", post_type: "repost" }
+    ];
 
     const source = encodeURIComponent(JSON.stringify({ pid: account.pid, filters }));
     const url = `${DATA_URL}/api/posts?sources[]=${source}&sort=date&limit=${MAX_POSTS}&offset=0`;
@@ -150,6 +149,49 @@
   const mediaUrl = (media) =>
     media?.standard?.url || media?.original?.url || media?.thumbnail?.url || null;
 
+  const collectMedia = (post, includeNested = false) => {
+    const urls = [];
+    const seen = new Set();
+
+    const add = (items) => {
+      (items || []).forEach((media) => {
+        const url = mediaUrl(media);
+        if (!url || seen.has(url)) return;
+        seen.add(url);
+        urls.push(url);
+      });
+    };
+
+    add(post?.media);
+
+    // Some providers represent a reposted/embedded status as a nested object.
+    if (post?.extra?.repost && typeof post.extra.repost === "object") {
+      add(post.extra.repost.media);
+    }
+
+    if (includeNested && post?.extra?.quoted) {
+      add(post.extra.quoted.media);
+      if (post.extra.quoted?.extra?.repost && typeof post.extra.quoted.extra.repost === "object") {
+        add(post.extra.quoted.extra.repost.media);
+      }
+      if (post.extra.quoted?.extra?.quoted) add(post.extra.quoted.extra.quoted.media);
+    }
+
+    return urls;
+  };
+
+  const appendMedia = (container, urls, className) => {
+    urls.forEach((url) => {
+      const img = document.createElement("img");
+      img.className = className;
+      img.src = url;
+      img.alt = "";
+      img.loading = "lazy";
+      img.decoding = "async";
+      container.appendChild(img);
+    });
+  };
+
   const buildAuthor = (author, compact = false) => {
     const row = document.createElement("div");
     row.className = compact ? "or-x-author or-x-author--compact" : "or-x-author";
@@ -221,16 +263,7 @@
       box.appendChild(copy);
     }
 
-    const firstMedia = (quoted.media || []).map(mediaUrl).find(Boolean);
-    if (firstMedia) {
-      const img = document.createElement("img");
-      img.className = "or-x-quote-media";
-      img.src = firstMedia;
-      img.alt = "";
-      img.loading = "lazy";
-      img.decoding = "async";
-      box.appendChild(img);
-    }
+    appendMedia(box, collectMedia(quoted, true), "or-x-quote-media");
 
     return box;
   };
@@ -277,16 +310,7 @@
     const quoted = buildQuotedPost(post.extra?.quoted);
     if (quoted) bodyLink.appendChild(quoted);
 
-    const firstMedia = (post.media || []).map(mediaUrl).find(Boolean);
-    if (firstMedia) {
-      const img = document.createElement("img");
-      img.className = "or-x-media";
-      img.src = firstMedia;
-      img.alt = "";
-      img.loading = "lazy";
-      img.decoding = "async";
-      bodyLink.appendChild(img);
-    }
+    appendMedia(bodyLink, collectMedia(post, false), "or-x-media");
 
     card.appendChild(bodyLink);
 
@@ -404,12 +428,14 @@
   };
 
   (async () => {
-    let posts = [];
-    try {
-      posts = await fetchLivePosts();
-    } catch (error) {
-      console.warn("Live X feed unavailable; using cached feed.", error);
-      posts = await fetchCachedPosts();
+    let posts = await fetchCachedPosts();
+
+    if (!posts.length) {
+      try {
+        posts = await fetchLivePosts();
+      } catch (error) {
+        console.warn("Cached and live X feeds are unavailable.", error);
+      }
     }
 
     distribute(posts);

@@ -333,13 +333,13 @@
   min-width: 0;
 }
 
-.or-promo-title {
+.or-promo .or-promo-title {
   display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow-wrap: anywhere;
-  font-family: "Instrument Serif", Georgia, serif;
+  font-family: "Instrument Serif", Georgia, serif !important;
   font-size: clamp(20.91px, 4.92cqi, 38.13px);
   font-weight: 400;
   letter-spacing: -.02em;

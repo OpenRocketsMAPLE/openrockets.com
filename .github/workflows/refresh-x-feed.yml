@@ -4,12 +4,6 @@ on:
   schedule:
     - cron: "*/15 * * * *"
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - "scripts/refresh-x-feed.mjs"
-      - ".github/workflows/refresh-x-feed.yml"
 
 permissions:
   contents: write

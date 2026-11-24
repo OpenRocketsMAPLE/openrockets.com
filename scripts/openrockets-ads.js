@@ -4,7 +4,7 @@
   const SUPABASE_URL = 'https://ahkfuaaryzmcmoarxraq.supabase.co';
   const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_u5nnlGCzUOpDdCtBrbmRtw_doE4Osgl';
   const OPENROCKETS_ADS_LOGO = 'https://openrockets.com/v/89769876987987.png';
-  const SCIENTIFIC_TEENAGER_LOGO = new URL('../assets/images/scientific-teenager-logo.png', document.currentScript.src).href;
+  const SCIENTIFIC_TEENAGER_LOGO = new URL('../assets/brand/scientific-teenager-wordmark-transparent.png', document.currentScript.src).href;
   const WHY_LINK = 'https://zeroprofit.org/ads';
   const slots = Array.from(document.querySelectorAll('[data-openrockets-ad]'));
   if (!slots.length) return;
@@ -265,8 +265,8 @@
     logo.className = 'or-promo-logo';
     logo.src = SCIENTIFIC_TEENAGER_LOGO;
     logo.alt = '';
-    logo.width = 787;
-    logo.height = 327;
+    logo.width = 760;
+    logo.height = 202;
 
     const label = document.createElement('span');
     label.className = 'or-promo-label';
@@ -288,10 +288,6 @@
     const more = document.createElement('span');
     more.className = 'or-promo-more';
     more.textContent = 'Read more';
-    const arrow = document.createElement('span');
-    arrow.setAttribute('aria-hidden', 'true');
-    arrow.textContent = '→';
-    more.append(arrow);
 
     copy.append(brand, articleCopy, more);
     card.append(thumbnail, copy);

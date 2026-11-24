@@ -245,6 +245,14 @@
   }
 }
 
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("../assets/fonts/instrument-serif/InstrumentSerif-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 .or-promo-frame {
   box-sizing: border-box;
   width: 90%;
@@ -278,8 +286,6 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transform: scale(1.045);
-  filter: blur(4px);
 }
 
 .or-promo::after {
@@ -309,7 +315,7 @@
 
 .or-promo-logo {
   display: block;
-  width: clamp(72px, 22cqi, 116px);
+  width: clamp(96px, 30cqi, 156px);
   height: auto;
   max-width: 100%;
   object-fit: contain;
@@ -333,8 +339,9 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow-wrap: anywhere;
-  font-size: clamp(17px, 4cqi, 31px);
-  font-weight: 700;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: clamp(20.91px, 4.92cqi, 38.13px);
+  font-weight: 400;
   letter-spacing: -.02em;
   line-height: 1.12;
 }
@@ -350,18 +357,12 @@
   justify-self: start;
   display: inline-flex;
   align-items: center;
-  gap: 12px;
   padding: 9px 13px;
   background: #174ea6;
   color: #fff;
   font-size: 13px;
   font-weight: 600;
   white-space: nowrap;
-}
-
-.or-promo-more span {
-  font-size: 16px;
-  line-height: 1;
 }
 
 .or-promo:hover .or-promo-more {

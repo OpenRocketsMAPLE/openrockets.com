@@ -4,6 +4,7 @@
   const SUPABASE_URL = 'https://ahkfuaaryzmcmoarxraq.supabase.co';
   const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_u5nnlGCzUOpDdCtBrbmRtw_doE4Osgl';
   const OPENROCKETS_ADS_LOGO = 'https://openrockets.com/v/89769876987987.png';
+  const SCIENTIFIC_TEENAGER_LOGO = new URL('../assets/images/scientific-teenager-logo.png', document.currentScript.src).href;
   const WHY_LINK = 'https://zeroprofit.org/ads';
   const slots = Array.from(document.querySelectorAll('[data-openrockets-ad]'));
   if (!slots.length) return;
@@ -51,6 +52,11 @@
     image.referrerPolicy = 'no-referrer';
     link.append(image);
 
+    container.append(link, createAdBadge());
+    return container;
+  }
+
+  function createAdBadge(isEditorial = false) {
     const badge = document.createElement('div');
     badge.className = 'or-ad-badge-container';
 
@@ -97,7 +103,9 @@
 
     const explanation = document.createElement('p');
     explanation.append(document.createTextNode(
-      'OpenRockets ads is an advertisement network for nonprofits and communities started by people under the age of 20. We provide them the ability to post ads for 100% free with a rigorous moderation process, abuse protection, and analytics for the best visibility.'
+      isEditorial
+        ? 'This placement features an article from The Scientific Teenager, a publication by OpenRockets.'
+        : 'OpenRockets ads is an advertisement network for nonprofits and communities started by people under the age of 20. We provide them the ability to post ads for 100% free with a rigorous moderation process, abuse protection, and analytics for the best visibility.'
     ));
     explanation.append(document.createElement('br'), document.createElement('br'));
     explanation.append(document.createTextNode(
@@ -121,8 +129,7 @@
     });
 
     badge.append(toggle, dropdown);
-    container.append(link, badge);
-    return container;
+    return badge;
   }
 
   async function loadAcceptedAds() {
@@ -233,11 +240,9 @@
     return promos;
   }
 
-  function createArticlePromo(article, slot) {
+  function createArticlePromo(article) {
     const card = document.createElement('a');
     card.className = 'or-promo';
-    card.classList.toggle('or-promo-compact',
-      slot.parentElement.hasAttribute('data-or-ad-rail') || Math.random() < 0.45);
     card.href = article.linkUrl;
     card.target = '_blank';
     card.rel = 'noopener noreferrer';
@@ -253,9 +258,23 @@
     const copy = document.createElement('div');
     copy.className = 'or-promo-copy';
 
+    const brand = document.createElement('div');
+    brand.className = 'or-promo-brand';
+
+    const logo = document.createElement('img');
+    logo.className = 'or-promo-logo';
+    logo.src = SCIENTIFIC_TEENAGER_LOGO;
+    logo.alt = '';
+    logo.width = 787;
+    logo.height = 327;
+
     const label = document.createElement('span');
     label.className = 'or-promo-label';
     label.textContent = 'The Scientific Teenager';
+    brand.append(logo, label);
+
+    const articleCopy = document.createElement('div');
+    articleCopy.className = 'or-promo-article';
 
     const title = document.createElement('strong');
     title.className = 'or-promo-title';
@@ -264,14 +283,23 @@
     const byline = document.createElement('span');
     byline.className = 'or-promo-byline';
     byline.textContent = 'By ' + article.author;
+    articleCopy.append(title, byline);
 
     const more = document.createElement('span');
     more.className = 'or-promo-more';
     more.textContent = 'Read more';
+    const arrow = document.createElement('span');
+    arrow.setAttribute('aria-hidden', 'true');
+    arrow.textContent = '→';
+    more.append(arrow);
 
-    copy.append(label, title, byline, more);
+    copy.append(brand, articleCopy, more);
     card.append(thumbnail, copy);
-    return card;
+
+    const frame = document.createElement('div');
+    frame.className = 'or-promo-frame';
+    frame.append(card, createAdBadge(true));
+    return frame;
   }
 
   function fillSlot(slot, ads, startIndex, loading = 'lazy') {
@@ -284,7 +312,7 @@
       }
       const ad = ads[(startIndex + attempts) % ads.length];
       attempts += 1;
-      const card = ad.type === 'article' ? createArticlePromo(ad, slot) : createAdContents(ad);
+      const card = ad.type === 'article' ? createArticlePromo(ad) : createAdContents(ad);
       const image = card.querySelector('.or-ad-image, .or-promo-thumbnail');
       image.loading = loading;
       image.addEventListener('error', renderNext, { once: true });

@@ -9,6 +9,7 @@ const DATA_URL = "https://widget-data.service.elfsight.com";
 const FX_URL = "https://api.fxtwitter.com";
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+const sameHandle = (value) => String(value || "").replace(/^@/, "").toLowerCase() === HANDLE;
 
 async function fetchWithRetry(url, options = {}, attempts = 3) {
   let lastError;
@@ -33,9 +34,25 @@ async function fetchWithRetry(url, options = {}, attempts = 3) {
   throw lastError;
 }
 
+function rawMediaItems(media = {}) {
+  const source = Array.isArray(media?.all)
+    ? media.all
+    : [
+        ...(Array.isArray(media?.photos) ? media.photos : []),
+        ...(Array.isArray(media?.videos) ? media.videos : [])
+      ];
+
+  const seen = new Set();
+  return source.filter((item) => {
+    const key = String(item?.id || item?.url || item?.thumbnail_url || "");
+    if (!key || seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
 function normalizeMedia(media = {}) {
-  const items = Array.isArray(media?.all) ? media.all : [];
-  return items.map((item) => {
+  return rawMediaItems(media).map((item) => {
     const isVideo = item?.type === "video" || item?.type === "gif";
     const displayUrl = isVideo
       ? (item?.thumbnail_url || item?.url || null)
@@ -72,12 +89,19 @@ function normalizeAuthor(author = {}) {
 function normalizeStatus(status, depth = 0) {
   if (!status || status.type !== "status" || !status.id) return null;
 
-  const reply = status?.replying_to;
-  const quoted = depth < 1 ? normalizeStatus(status?.quote, depth + 1) : null;
+  const reply = status?.replying_to || null;
+  const quoted = depth < 2 ? normalizeStatus(status?.quote, depth + 1) : null;
+  const type = status?.reposted_by
+    ? "repost"
+    : reply
+      ? "reply"
+      : quoted
+        ? "quote"
+        : "post";
 
   return {
     vendorId: String(status.id),
-    type: status?.reposted_by ? "repost" : reply ? "reply" : "common",
+    type,
     link: status?.url || `https://x.com/${status?.author?.screen_name || HANDLE}/status/${status.id}`,
     publishedAt: status?.created_timestamp
       ? new Date(Number(status.created_timestamp) * 1000).toISOString()
@@ -98,7 +122,7 @@ function normalizeStatus(status, depth = 0) {
       inReplyTo: reply
         ? {
             vendorId: reply?.status ? String(reply.status) : null,
-            type: "common",
+            type: "post",
             link: reply?.url || (reply?.status
               ? `https://x.com/${reply?.screen_name || HANDLE}/status/${reply.status}`
               : null),
@@ -114,15 +138,38 @@ function normalizeStatus(status, depth = 0) {
   };
 }
 
+function isAllowedTopLevelFx(status) {
+  if (!status || status.type !== "status" || !status.id) return false;
+  if (!sameHandle(status?.author?.screen_name)) return false;
+  if (status?.replying_to) return false;
+  if (status?.reposted_by) return false;
+  return true;
+}
+
+function isAllowedElfsight(post) {
+  const author = post?.author?.username;
+  if (author && !sameHandle(author)) return false;
+  if (post?.type === "reply" || post?.type === "repost") return false;
+  if (post?.extra?.inReplyTo || post?.extra?.repost) return false;
+  return true;
+}
+
+function normalizeElfsightPost(post) {
+  return {
+    ...post,
+    type: post?.extra?.quoted ? "quote" : "post"
+  };
+}
+
 async function fetchFxTwitterPosts() {
   const collected = [];
   const seen = new Set();
   let cursor = null;
 
-  for (let page = 0; page < 5 && collected.length < MAX_POSTS; page += 1) {
+  for (let page = 0; page < 10 && collected.length < MAX_POSTS; page += 1) {
     const url = new URL(`/2/profile/${HANDLE}/statuses`, FX_URL);
     url.searchParams.set("count", "100");
-    url.searchParams.set("with_replies", "1");
+    url.searchParams.set("with_replies", "0");
     if (cursor) url.searchParams.set("cursor", cursor);
 
     const response = await fetchWithRetry(url);
@@ -134,6 +181,7 @@ async function fetchFxTwitterPosts() {
     }
 
     for (const raw of payload.results) {
+      if (!isAllowedTopLevelFx(raw)) continue;
       const post = normalizeStatus(raw);
       if (!post || seen.has(post.vendorId)) continue;
       seen.add(post.vendorId);
@@ -147,10 +195,12 @@ async function fetchFxTwitterPosts() {
   }
 
   if (!collected.length) {
-    throw new Error("FxTwitter returned no public posts for @maplelicense");
+    throw new Error("FxTwitter returned no original or quote posts for @maplelicense");
   }
 
-  return collected;
+  return collected
+    .sort((a, b) => new Date(b.publishedAt || 0) - new Date(a.publishedAt || 0))
+    .slice(0, MAX_POSTS);
 }
 
 async function fetchElfsightPosts() {
@@ -171,13 +221,10 @@ async function fetchElfsightPosts() {
     throw new Error("Elfsight did not return the MAPLE account source");
   }
 
-  const allowed = Array.isArray(widget?.settings?.filterByTypes)
-    ? widget.settings.filterByTypes
-    : ["reply", "repost", "common"];
-
-  const filters = ["reply", "repost", "common"]
-    .filter((type) => !allowed.includes(type))
-    .map((post_type) => ({ type: "exclude", post_type }));
+  const filters = [
+    { type: "exclude", post_type: "reply" },
+    { type: "exclude", post_type: "repost" }
+  ];
 
   const postsUrl = new URL("/api/posts", DATA_URL);
   postsUrl.searchParams.append(
@@ -198,12 +245,16 @@ async function fetchElfsightPosts() {
   }
 
   const seen = new Set();
-  return payload.payload.filter((post) => {
-    const id = String(post?.vendorId || post?.id || "");
-    if (!id || seen.has(id)) return false;
-    seen.add(id);
-    return true;
-  }).slice(0, MAX_POSTS);
+  return payload.payload
+    .filter(isAllowedElfsight)
+    .map(normalizeElfsightPost)
+    .filter((post) => {
+      const id = String(post?.vendorId || post?.id || "");
+      if (!id || seen.has(id)) return false;
+      seen.add(id);
+      return true;
+    })
+    .slice(0, MAX_POSTS);
 }
 
 let posts;
@@ -212,18 +263,19 @@ let provider;
 try {
   posts = await fetchFxTwitterPosts();
   provider = "fxtwitter";
-  console.log(`Fetched ${posts.length} posts from FxTwitter.`);
+  console.log(`Fetched ${posts.length} original/quote posts from FxTwitter.`);
 } catch (fxError) {
   console.warn("FxTwitter refresh failed; trying Elfsight fallback:", fxError?.message || fxError);
   posts = await fetchElfsightPosts();
   provider = "elfsight";
-  console.log(`Fetched ${posts.length} posts from Elfsight fallback.`);
+  console.log(`Fetched ${posts.length} original/quote posts from Elfsight fallback.`);
 }
 
 const output = {
   fetchedAt: new Date().toISOString(),
   source: "@maplelicense",
   provider,
+  filter: "original-and-quote-posts-only",
   widgetId: WIDGET_ID,
   count: posts.length,
   posts
@@ -231,4 +283,4 @@ const output = {
 
 await fs.mkdir("data", { recursive: true });
 await fs.writeFile("data/x-feed.json", JSON.stringify(output, null, 2) + "\n");
-console.log(`Saved ${posts.length} live X posts to data/x-feed.json via ${provider}`);
+console.log(`Saved ${posts.length} original/quote X posts to data/x-feed.json via ${provider}`);

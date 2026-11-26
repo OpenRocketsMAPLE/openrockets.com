@@ -4692,10 +4692,11 @@ button.rounded-md,button.rounded-lg,button.rounded-full,a.rounded-md,a.rounded-l
     if (!overlay || !closeBtn) return;
 
     const storageKey = 'openrocketsPetitionModalDismissed-maple-2026-11-white-substack';
+    const repeatMs = 3 * 24 * 60 * 60 * 1000;
     const dismiss = () => {
       overlay.classList.remove('is-open');
       overlay.setAttribute('aria-hidden', 'true');
-      localStorage.setItem(storageKey, 'true');
+      localStorage.setItem(storageKey, String(Date.now()));
     };
 
     closeBtn.addEventListener('click', dismiss);
@@ -4703,7 +4704,10 @@ button.rounded-md,button.rounded-lg,button.rounded-full,a.rounded-md,a.rounded-l
       if (event.target === overlay) dismiss();
     });
 
-    if (localStorage.getItem(storageKey) !== 'true') {
+    const rawDismissedAt = localStorage.getItem(storageKey);
+    const dismissedAt = Number(rawDismissedAt);
+    const expired = !Number.isFinite(dismissedAt) || Date.now() - dismissedAt >= repeatMs;
+    if (!rawDismissedAt || expired) {
       overlay.classList.add('is-open');
       overlay.setAttribute('aria-hidden', 'false');
     }

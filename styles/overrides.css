@@ -568,9 +568,51 @@ iframe{
 }
 
 
+/* Homepage action header */
+#navigation-menu .or-nav-actions-wrap{
+  flex:1;
+  display:flex;
+  justify-content:flex-end;
+  min-width:0;
+}
+#navigation-menu .or-header-actions{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:8px;
+  margin:0;
+  padding:0;
+  list-style:none;
+  flex-wrap:nowrap;
+}
+#navigation-menu .or-header-actions>li{margin:0;padding:0}
+#navigation-menu .or-header-action{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  min-height:42px;
+  padding:9px 12px;
+  white-space:nowrap;
+  font-size:13px;
+}
+#navigation-menu .or-header-action .bi{
+  display:inline-grid;
+  place-items:center;
+  flex:none;
+  font-size:16px;
+  line-height:1;
+}
+@media(max-width:1180px) and (min-width:981px){
+  #navigation-menu .or-header-actions{gap:5px}
+  #navigation-menu .or-header-action{padding:8px 8px;font-size:11.5px;gap:5px}
+  #navigation-menu .or-header-action .bi{font-size:14px}
+  #navigation-menu .or-mobile-nav-brand{flex:0 0 auto!important;padding-left:4px!important}
+}
+
 /* 2026 mobile navigation: compact chevron disclosure instead of permanently expanded links. */
 .or-mobile-nav-toggle{display:none}
-@media(max-width:768px){
+@media(max-width:980px){
   header.navigation{padding:0!important}
   header.navigation .navigation__layout{padding:0 14px!important;display:block!important}
   #navigation-menu{

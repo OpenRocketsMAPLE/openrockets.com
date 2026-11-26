@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-26T04:16:40.520Z",
+  "fetchedAt": "2026-11-26T14:13:05.409Z",
   "source": "@maplelicense",
   "provider": "fxtwitter",
   "filter": "original-and-quote-posts-only",
@@ -32,7 +32,7 @@
         "platform": "twitter",
         "replyCount": 0,
         "repostCount": 0,
-        "viewCount": 1,
+        "viewCount": 2,
         "repost": null,
         "inReplyTo": null,
         "quoted": {
@@ -61,7 +61,7 @@
             "platform": "twitter",
             "replyCount": 2,
             "repostCount": 2,
-            "viewCount": 205,
+            "viewCount": 206,
             "repost": null,
             "inReplyTo": null,
             "quoted": null

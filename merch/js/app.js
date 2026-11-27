@@ -65,42 +65,5 @@ function updateCartBadge() {
 document.addEventListener('DOMContentLoaded', () => {
   updateCartBadge();
 
-  // Scroll effect on header
-  const header = document.querySelector('header');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 10) {
-      header.classList.add('bg-white/95', 'backdrop-blur-xl', 'border-b', 'border-gray-200', 'shadow-lg');
-      header.classList.remove('bg-white/80', 'backdrop-blur-md', 'shadow-sm');
-    } else {
-      header.classList.remove('bg-white/95', 'backdrop-blur-xl', 'border-lg', 'shadow-lg');
-      header.classList.add('bg-white/80', 'backdrop-blur-md', 'shadow-sm', 'border-b', 'border-gray-200');
-    }
-  });
 
-  // Mobile menu toggle
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const mobileMenuIcon = document.getElementById('mobile-menu-icon');
-
-  if (mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener('click', () => {
-      const isOpen = !mobileMenu.classList.contains('hidden');
-      if (isOpen) {
-        mobileMenu.classList.add('hidden');
-        mobileMenuIcon.innerHTML = '<path d="M4 12h16M4 6h16M4 18h16"></path>'; // Menu icon
-      } else {
-        mobileMenu.classList.remove('hidden');
-        mobileMenuIcon.innerHTML = '<path d="M18 6 6 18M6 6l12 12"></path>'; // X icon
-      }
-    });
-  }
-
-  // Mobile search toggle
-  const mobileSearchBtn = document.getElementById('mobile-search-btn');
-  const mobileSearch = document.getElementById('mobile-search');
-  if (mobileSearchBtn && mobileSearch) {
-    mobileSearchBtn.addEventListener('click', () => {
-      mobileSearch.classList.toggle('hidden');
-    });
-  }
 });

@@ -2,6 +2,8 @@
   const WIDGET_ID = "739491f1-b20f-438a-837a-73fb487ee5f2";
   const MAX_POSTS = 100;
   const INITIAL_PER_SECTION = 6;
+  const MOBILE_INITIAL_PER_SECTION = 3;
+  const mobileLayout = window.matchMedia("(max-width: 760px)");
   const LOAD_MORE_STEP = 4;
   const CORE_URL = "https://core.service.elfsight.com";
   const DATA_URL = "https://widget-data.service.elfsight.com";
@@ -395,6 +397,8 @@
 
       const group = groups[index];
       let visible = 0;
+      let expanded = false;
+      const initialCount = () => mobileLayout.matches ? MOBILE_INITIAL_PER_SECTION : INITIAL_PER_SECTION;
 
       const append = (amount) => {
         const next = group.slice(visible, visible + amount);
@@ -419,11 +423,21 @@
         }
       };
 
-      if (group.length > INITIAL_PER_SECTION) {
-        ensureShowMore(placement, () => append(LOAD_MORE_STEP));
-      }
-
-      append(INITIAL_PER_SECTION);
+      const showMore = () => {
+        expanded = true;
+        append(LOAD_MORE_STEP);
+      };
+      const resetInitial = () => {
+        if (expanded) return;
+        grid.replaceChildren();
+        visible = 0;
+        placement.querySelector(".or-native-x-more-shell")?.remove();
+        const count = initialCount();
+        if (group.length > count) ensureShowMore(placement, showMore);
+        append(count);
+      };
+      resetInitial();
+      mobileLayout.addEventListener("change", resetInitial);
     });
   };
 

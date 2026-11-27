@@ -58,7 +58,7 @@ body {
 }
 
 /* ── HEADER OVERRIDES ── */
-header {
+.merch-site-header {
   background: rgba(255,255,255,0.92) !important;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -922,3 +922,9 @@ body {
 @media (max-width: 430px) {
   .merch-product-grid { grid-template-columns: 1fr; }
 }
+
+/* Store tools are separate from the OpenRockets global navigation. */
+.merch-store-toolbar{flex:none;width:100%;background:#fff;border-bottom:1px solid #e0e0e0;}
+.merch-store-toolbar .merch-site-nav-shell{display:flex;justify-content:flex-end;min-height:56px;gap:8px;}
+.merch-store-toolbar .merch-store-actions{width:100%;}
+.merch-store-toolbar #desktop-search-wrap{margin-right:auto;}

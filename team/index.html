@@ -189,8 +189,6 @@
     }
   </style>
   <link rel="stylesheet" href="../styles/openrockets-ads.css?v=7">
-  <link rel="stylesheet" href="../shared/master-header.css?v=20261128-original-sizing">
-  <script defer src="../shared/master-header.js?v=20261128-native"></script>
 </head>
 
 <body style="padding-top: 0rem;">
@@ -207,19 +205,83 @@
       <!-- ========================================== -->
       <!--            HEADER / NAVIGATION             -->
       <!-- ========================================== -->
-      <header id="main-header" class="or-master-header" aria-label="OpenRockets master header">
-  <nav id="navigation-menu" class="or-master-navigation" aria-label="OpenRockets navigation">
-    <a class="or-master-brand" href="https://openrockets.com/" aria-label="OpenRockets home"><span class="or-master-logo" aria-hidden="true"></span></a>
-    <button class="or-master-toggle" id="or-mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="or-mobile-nav-panel" aria-label="Expand navigation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-    <ul class="or-master-actions" id="or-mobile-nav-panel">
-      <li><a class="or-master-action" href="https://openrockets.com/groups"><svg class="or-master-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM1 20v-3a6 6 0 0 1 12 0v3H1Zm13 0v-3c0-2-.6-3.8-1.8-5.2A6 6 0 0 1 23 17v3h-9Z"/></svg><span>Join / Start a Group</span></a></li>
-      <li><a class="or-master-action" href="https://press.openrockets.com/"><svg class="or-master-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m16.8 2 5.2 5.2-3 3L13.8 5l3-3ZM12.4 6.4l5.2 5.2-9.9 9.9-6.2 1 1-6.2 9.9-9.9Z"/></svg><span>Write Creative Stuff</span></a></li>
-      <li><a class="or-master-action" href="https://maple.openrockets.com/"><svg class="or-master-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1 2.5 4.6v6.8c0 5.5 3.9 9.4 9.5 11.6 5.6-2.2 9.5-6.1 9.5-11.6V4.6L12 1Zm-1.2 15.4-4.2-4.2 1.7-1.7 2.5 2.5 4.9-5 1.7 1.7-6.6 6.7Z" fill-rule="evenodd"/></svg><span>Protect Your IP</span></a></li>
-      <li><a class="or-master-action or-master-chat" href="https://openrockets.com/our-communities/"><span>Chat with others</span></a></li>
-    </ul>
-  </nav>
-</header>
+      <header id="main-header" style="position: sticky; top: 0; left: 0; width: 100%; filter: invert(1); background-color: white; z-index: 10000; transition: transform 0.3s ease;" class="hds-color-mode navigation section section--white hds-mode--light">
+        <div class="section-container navigation__layout" style="display: flex; width: 100%; max-width: 100%; padding: 0 20px;">
+          <nav class="hds-navigation-menu navigation-menu navigation-menu--homepage" id="navigation-menu" style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            
+            <!-- OpenRockets Brand Logo -->
+            <div style="flex: 1; display: flex; align-items: center; justify-content: flex-start; padding-left: 15px;">
+              <a href="../" style="text-decoration: none;">
+                <img src="../v/openrockets.png" alt="OpenRockets Logo" style="filter: invert(1); width: 104px; background-color: transparent;">
+              </a>
+            </div>
 
+            <!-- Menu Links -->
+            <div class="hds-navigation-menu__content navigation-menu-content" data-status="unmounted" style="flex: 2; display: flex; justify-content: center;">
+              <ul class="hds-navigation-menu__list navigation-menu-list hds-navigation-menu__list--horizontal" style="display: flex; gap: 1.5rem; padding: 0; margin: 0; list-style: none; align-items: center; justify-content: center;">
+                <a style="text-decoration: none;"  href="https://zeroprofit.org" class="hds-navigation-menu__item navigation-item">
+                  <button type="button" class="hds-button hds-navigation-menu__trigger hds-button--transparent">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-patch-check-fill" viewBox="0 0 16 16">
+                      <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708"/>
+                    </svg>
+                    Register your NonProfit
+                  </button>
+                </a>
+                <a style="text-decoration: none;"  href="https://ads.openrockets.com" class="hds-navigation-menu__item navigation-item">
+                  <button type="button" class="hds-button hds-navigation-menu__trigger hds-button--transparent">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+                      <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
+                    </svg>
+                    Advertise for free
+                  </button>
+                </a>
+                <a style="text-decoration: none;"  href="https://press.openrockets.com" class="hds-navigation-menu__item navigation-item">
+                  <button type="button" class="hds-button hds-navigation-menu__trigger hds-button--transparent">
+                    <img src="../i/assets/static/openthread_logo_bash-trans-removebg-preview (1).png" style="width: 20px; filter: invert(1) hue-rotate(45deg);" alt="">
+                    Upload Artifacts
+                  </button>
+                </a>
+                <a style="text-decoration: none;"  href="https://about.openrockets.com/" class="hds-navigation-menu__item navigation-item">
+                  <button type="button" class="hds-button hds-navigation-menu__trigger hds-button--transparent">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-fill" viewBox="0 0 16 16">
+                      <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9 9 0 0 0 8 15"/>
+                    </svg> 
+                    Here to help!
+                  </button>
+                </a>
+                <a href="../our-communities/" style="text-decoration: none;" class="hds-navigation-menu__item navigation-item">
+                  <button type="button" class="hds-button hds-navigation-menu__trigger hds-button--transparent">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-discord" viewBox="0 0 16 16">
+                      <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"/>
+                    </svg> 
+                    Chat with others
+                  </button>
+                </a>
+              </ul>
+            </div>
+
+            <!-- Header Action Buttons -->
+            <div style="flex: 1; display: flex; justify-content: flex-end;">
+              <ul class="navigation-buttons" style="margin: 0; padding: 0;">
+                <li class="hds-navigation-menu__item navigation-item">
+                  <a class="hds-button navigation-cta-button navigation-item__sign-in hds-button--secondary-on-quiet" href="../join.html">
+                    <span class="navigation-button-measure">Apply</span>
+                  </a>
+                </li>
+                <li class="hds-navigation-menu__item navigation-item">
+                  <a class="hds-button navigation-cta-button navigation-item__contact-sales hds-button--primary" href="../our-communities/">
+                    Chat with others
+                    <svg class="hds-icon hds-icon-hover-arrow" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M0.5 5.5h7"></path>
+                      <path d="M1.5 1.5l4 4-4 4"></path>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
 
       <!-- ========================================== -->
       <!--              TEAM PAGE CONTENT             -->

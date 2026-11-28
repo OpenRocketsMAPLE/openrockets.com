@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <base href="../">
+<base href="../">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product | OpenRockets Merch</title>
@@ -21,55 +21,83 @@
   <link rel="stylesheet" href="https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/5e8a245fcb880dab.css">
   <!-- OpenRockets overrides -->
   <link rel="stylesheet" href="../styles/overrides.css">
-  <link rel="stylesheet" href="styles.css?v=shared-header-20261127">
-  <link rel="stylesheet" href="../styles/openrockets-ads.css?v=7">
-  <link rel="stylesheet" href="../shared/master-header.css?v=20261128-original-sizing">
-  <script defer src="../shared/master-header.js?v=20261128-native"></script>
+  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="../../styles/openrockets-ads.css?v=7">
 </head>
 <body style="display:flex;flex-direction:column;min-height:100vh;">
 
   <!-- ═══ HEADER ═══ -->
-  <header id="main-header" class="or-master-header" aria-label="OpenRockets master header">
-  <nav id="navigation-menu" class="or-master-navigation" aria-label="OpenRockets navigation">
-    <a class="or-master-brand" href="https://openrockets.com/" aria-label="OpenRockets home"><span class="or-master-logo" aria-hidden="true"></span></a>
-    <button class="or-master-toggle" id="or-mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="or-mobile-nav-panel" aria-label="Expand navigation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-    <ul class="or-master-actions" id="or-mobile-nav-panel">
-      <li><a class="or-master-action" href="https://openrockets.com/groups"><svg class="or-master-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM1 20v-3a6 6 0 0 1 12 0v3H1Zm13 0v-3c0-2-.6-3.8-1.8-5.2A6 6 0 0 1 23 17v3h-9Z"/></svg><span>Join / Start a Group</span></a></li>
-      <li><a class="or-master-action" href="https://press.openrockets.com/"><svg class="or-master-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m16.8 2 5.2 5.2-3 3L13.8 5l3-3ZM12.4 6.4l5.2 5.2-9.9 9.9-6.2 1 1-6.2 9.9-9.9Z"/></svg><span>Write Creative Stuff</span></a></li>
-      <li><a class="or-master-action" href="https://maple.openrockets.com/"><svg class="or-master-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1 2.5 4.6v6.8c0 5.5 3.9 9.4 9.5 11.6 5.6-2.2 9.5-6.1 9.5-11.6V4.6L12 1Zm-1.2 15.4-4.2-4.2 1.7-1.7 2.5 2.5 4.9-5 1.7 1.7-6.6 6.7Z" fill-rule="evenodd"/></svg><span>Protect Your IP</span></a></li>
-      <li><a class="or-master-action or-master-chat" href="https://openrockets.com/our-communities/"><span>Chat with others</span></a></li>
-    </ul>
-  </nav>
-</header>
+  <header id="site-header" style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid #000000;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px;">
 
-  <div class="merch-store-toolbar" role="region" aria-label="Merchandise tools">
-    <div class="merch-site-nav-shell">
-      <div class="merch-store-actions">
-        <div id="desktop-search-wrap" class="desktop-search-visible">
+        <!-- Logo -->
+        <a href="index.html" style="flex-shrink:0;display:flex;align-items:center;">
+          <img src="../v/openrockets-w.png" alt="OpenRockets" class="merch-header-logo" />
+        </a>
+
+        <!-- Desktop Search -->
+        <div style="flex:1;max-width:420px;display:none;" id="desktop-search-wrap">
           <div style="position:relative;">
-            <svg style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#111;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-            <input id="search-desktop" type="search" placeholder="Search products…" class="merch-search-input" autocomplete="off">
+            <svg style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#000000;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input
+              id="search-desktop"
+              type="search"
+              placeholder="Search products…"
+              class="merch-search-input"
+              autocomplete="off"
+            />
           </div>
         </div>
 
-        <a href="../" class="merch-back-link" id="back-link-desktop" aria-label="Back to OpenRockets.com">Home</a>
+        <!-- Right side -->
+        <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;">
+          <!-- Back to openrockets.com -->
+          <a href="../index.html" class="merch-back-link" style="display:none;" id="back-link-desktop">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+            Back to OpenRockets.com
+          </a>
 
-        <button id="mobile-search-btn" type="button" aria-label="Search" style="display:flex;align-items:center;justify-content:center;border:none;background:transparent;cursor:pointer;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-        </button>
+          <!-- Mobile search button -->
+          <button id="mobile-search-btn" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:none;background:transparent;cursor:pointer;color:#000000;" aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </button>
 
-        <a href="cart.html" id="cart-link" class="cart-badge-container" aria-label="View cart" style="position:relative;display:flex;align-items:center;justify-content:center;text-decoration:none;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+          <!-- Cart -->
+          <a href="cart.html" id="cart-link" class="cart-badge-container" style="position:relative;display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;color:#000000;text-decoration:none;" aria-label="View cart">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+          </a>
+
+          <!-- Mobile menu button -->
+          <button id="mobile-menu-btn" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:none;background:transparent;cursor:pointer;color:#000000;" aria-label="Menu">
+            <svg id="mobile-menu-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile search bar -->
+      <div id="mobile-search" style="display:none;padding:12px 0 8px;">
+        <div style="position:relative;">
+          <svg style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#000000;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input
+            id="search-mobile"
+            type="search"
+            placeholder="Search products…"
+            class="merch-search-input"
+            autocomplete="off"
+          />
+        </div>
+      </div>
+
+      <!-- Mobile nav -->
+      <nav id="mobile-menu" style="display:none;padding:8px 0 16px;border-top:1px solid #000000;">
+        <a href="../index.html" class="merch-back-link" style="display:inline-flex;margin-top:4px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+          Back to OpenRockets.com
         </a>
-      </div>
+      </nav>
     </div>
-    <div id="mobile-search" style="display:none;">
-      <div style="position:relative;">
-        <svg style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#111;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-        <input id="search-mobile" type="search" placeholder="Search products…" class="merch-search-input" autocomplete="off">
-      </div>
-    </div>
-  </div>
+  </header>
 
   <!-- ═══ MAIN ═══ -->
   <main id="product-container" style="flex:1;"></main>
@@ -199,7 +227,17 @@
       }
     });
 
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+      const mm = document.getElementById('mobile-menu');
+      mm.style.display = mm.style.display === 'none' ? 'block' : 'none';
+    });
 
+    // Header scroll effect
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.style.boxShadow = window.scrollY > 10 ? '0 2px 20px rgba(0,0,0,0.08)' : 'none';
+    });
   </script>
   <script src="https://www.termsfeed.com/public/cookie-consent/4.2.0/cookie-consent.js" charset="UTF-8"></script>
   <script>
@@ -207,34 +245,6 @@
       cookieconsent.run({"user_consent_saved_on_page_load":true,"notice_banner_type":"simple","consent_type":"implied","palette":"dark","language":"en","page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],"notice_banner_reject_button_hide":false,"preferences_center_close_button_hide":false,"page_refresh_confirmation_buttons":false,"website_privacy_policy_url":"https://privacy.openrockets.com"});
     });
   </script>
-  <script src="../scripts/openrockets-ads.js?v=6" defer></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const header = document.getElementById('main-header');
-    if (!header) return;
-
-    let lastScrollY = window.scrollY;
-    const scrollThreshold = 50; // trigger a bit earlier
-
-    window.addEventListener('scroll', () => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY > scrollThreshold) {
-        if (currentScrollY > lastScrollY) {
-          // Scrolling down
-          header.style.transform = 'translateY(-100%)';
-        } else {
-          // Scrolling up
-          header.style.transform = 'translateY(0)';
-        }
-      } else {
-        // Near the top of the page
-        header.style.transform = 'translateY(0)';
-      }
-
-      lastScrollY = currentScrollY;
-    });
-  });
-</script>
+  <script src="../../scripts/openrockets-ads.js?v=6" defer></script>
 </body>
 </html>

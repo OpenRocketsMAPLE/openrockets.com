@@ -7,10 +7,10 @@
 #main-header .or-master-logo{display:block!important;width:132px!important;height:52px!important;flex:none!important;background:url("./master-header-logo.png") center / contain no-repeat!important;filter:brightness(0) invert(1)!important;}
 #main-header .or-master-actions{display:flex!important;align-items:center!important;justify-content:flex-end!important;flex:0 1 auto!important;gap:10px!important;flex-wrap:nowrap!important;width:auto!important;height:auto!important;min-width:0!important;margin:0!important;padding:0!important;list-style:none!important;visibility:visible!important;opacity:1!important;}
 #main-header .or-master-actions>li{display:block!important;flex:none!important;list-style:none!important;margin:0!important;padding:0!important;border:0!important;}
-#main-header .or-master-action{appearance:none!important;display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:center!important;gap:9px!important;width:auto!important;min-width:0!important;height:52px!important;min-height:52px!important;margin:0!important;padding:0 26px!important;border:0!important;border-radius:12px!important;box-shadow:none!important;background:#fff!important;color:#243647!important;font-size:22px!important;font-weight:700!important;line-height:1!important;white-space:nowrap!important;cursor:pointer!important;}
+#main-header .or-master-action{appearance:none!important;display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:center!important;gap:9px!important;width:auto!important;min-width:0!important;height:52px!important;min-height:52px!important;margin:0!important;padding:0 26px!important;border:0!important;border-radius:12px!important;box-shadow:none!important;background:#fff!important;color:#263746!important;font-size:22px!important;font-weight:700!important;line-height:1!important;white-space:nowrap!important;cursor:pointer!important;}
 #main-header .or-master-action>span{display:block!important;color:inherit!important;font-size:inherit!important;font-weight:inherit!important;line-height:1!important;}
 #main-header .or-master-icon{display:block!important;flex:0 0 22px!important;width:22px!important;height:22px!important;color:inherit!important;fill:currentColor!important;margin:0!important;padding:0!important;}
-#main-header .or-master-action.or-master-chat{background:#a8c600!important;color:#000!important;border-radius:5px!important;font-size:16px!important;padding:0 24px!important;}
+#main-header .or-master-action.or-master-chat{background:#acc502!important;color:#000!important;border-radius:5px!important;font-size:16px!important;padding:0 24px!important;}
 #main-header .or-master-action:hover{background:#e9eef1!important;}
 #main-header .or-master-action.or-master-chat:hover{background:#c0d725!important;}
 #main-header .or-master-action:focus-visible,#main-header .or-master-brand:focus-visible,#main-header .or-master-toggle:focus-visible{outline:2px solid white!important;outline-offset:3px!important;}
@@ -34,4 +34,13 @@
 #main-header .or-master-toggle[aria-expanded=true]+.or-master-actions{display:grid!important;grid-template-columns:1fr!important;gap:6px!important;}
 #main-header .or-master-action,#main-header .or-master-action.or-master-chat{width:100%!important;height:44px!important;min-height:44px!important;justify-content:flex-start!important;font-size:15px!important;padding:0 12px!important;border-radius:8px!important;}
 #main-header .or-master-icon{width:18px!important;height:18px!important;flex-basis:18px!important;}
+}
+
+/* Desktop geometry sampled from the supplied four-action homepage reference. */
+@media(min-width:1665px){
+  #main-header.or-master-header #navigation-menu.or-master-navigation{max-width:1664px!important;padding:0 14px!important;}
+  #main-header .or-master-actions>li:nth-child(1) .or-master-action{width:280px!important;}
+  #main-header .or-master-actions>li:nth-child(2) .or-master-action{width:283px!important;}
+  #main-header .or-master-actions>li:nth-child(3) .or-master-action{width:237px!important;}
+  #main-header .or-master-actions>li:nth-child(4) .or-master-action{width:157px!important;}
 }

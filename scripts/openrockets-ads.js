@@ -414,7 +414,7 @@
         // The in-memory counter already includes this click.
       }
       const image = adPanel.querySelector('.or-ad-image');
-      if (clickCount % 2 !== 0 || !image?.complete || !image.naturalWidth) return;
+      if (clickCount % 2 === 0 || !image?.complete || !image.naturalWidth) return;
 
       try {
         dialog.showModal();

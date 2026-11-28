@@ -1,0 +1,26 @@
+name: Inspect deployed master header parity
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/master-header-parity.yml'
+      - '.github/scripts/master_header_parity.py'
+      - 'shared/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          python -m pip install playwright
+          python -m playwright install --with-deps chromium
+      - run: python .github/scripts/master_header_parity.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: master-header-browser-evidence
+          path: header-evidence/
